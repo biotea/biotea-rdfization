@@ -18,8 +18,8 @@
 
 	<repositories>
 		<repository>
-		    <id>ao2java-repo</id>
-		    <name>ao2java internal repo</name>
+		    <id>biotea-repo</id>
+		    <name>biotea internal repository</name>
 		    <url>file://${project.basedir}/lib</url>
 		</repository>
 	</repositories>
@@ -28,14 +28,8 @@
 		<java.version>1.7</java.version>
 	</properties>
 
-	<dependencies>
-		<dependency>
-		    <groupId>biotea</groupId>
-		    <artifactId>biotea_ao</artifactId>
-		    <version>1.0</version>
-		</dependency>
-		
-		<dependency>
+	<dependencies>		
+		<!--dependency>
 		    <groupId>biotea</groupId>
 		    <artifactId>biotea_utilities</artifactId>
 		    <version>1.0</version>
@@ -49,20 +43,22 @@
 					<artifactId>junit</artifactId>
 				</exclusion>
 			</exclusions>
-		</dependency>
+		</dependency-->
 		
 		<dependency>
 			<groupId>org.apache.jena</groupId>
 			<artifactId>apache-jena-libs</artifactId>
 			<type>pom</type>
-			<version>2.13.0</version>			
+			<version>3.1.0</version>			
 		</dependency>	
 		
 		<dependency>
-			<groupId>com.hp.hpl.jena</groupId>
-			<artifactId>jena</artifactId>
-			<version>2.6.4</version>
+		    <groupId>org.apache.jena</groupId>
+		    <artifactId>jena</artifactId>
+		    <version>3.1.0</version>
+		    <type>pom</type>
 		</dependency>
+
 		
 		<dependency>
 		    <groupId>edu_stanford_protege</groupId>
@@ -75,7 +71,25 @@
 			<artifactId>protege</artifactId>
 			<version>3.5.1</version>
 		</dependency>
-		
+				
+        <dependency>
+            <groupId>org.semweb4j</groupId>
+            <artifactId>rdfreactor.runtime</artifactId>
+            <version>4.7.0</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.semweb4j</groupId>
+            <artifactId>rdf2go.impl.jena</artifactId>
+            <version>5.0.0</version>
+        </dependency>			
+				
+		<dependency>
+		    <groupId>jdom</groupId>
+		    <artifactId>jdom</artifactId>
+		    <version>1.1</version>
+		</dependency>
+						
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>	
@@ -95,7 +109,7 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.12</version><!--$NO-MVN-MAN-VER$-->
+			<version>4.12</version>
 		</dependency>
 		
 	</dependencies>
