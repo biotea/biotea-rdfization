@@ -21,14 +21,14 @@ One or two (if -sections run option is used) will be generated per each .nxml fi
 * Clone this repository
 * In your IDE, create a dependency from this project to [biotea-utilities](https://github.com/biotea/biotea-utilities)
 * Modify configuration files, i.e., config.properties, in [biotea-utilities](https://github.com/biotea/biotea-utilities) resources folder. Most of the time you only need to change the following properties:
-..*biotea.dataset.prefix
-..* biotea.dataset
-..* biotea.base
+  * biotea.dataset.prefix
+  * biotea.dataset
+  * biotea.base
 * Make sure you include the [biotea-utilities](https://github.com/biotea/biotea-utilities) resources folder in your classpath
 * The main class is ws.biotea.ld2rdf.rdfGeneration.batch.PMCOABatchApplication, two parameters are mandatory, one is optional
-..* -in <input-dir> --mandatory, should have all *.nxml to be processed (remember it should follow the structure and include all the files provided at [inputToProcess](https://github.com/biotea/biotea-rdfization/tree/master/src/main/resources/inputToProcess)
---* -out <output-dir> --mandatory
---* sections --optional, if present text content will be generated in addition to metadata.
+  * -in <input-dir> --mandatory, should have all *.nxml to be processed (remember it should follow the structure and include all the files provided at [inputToProcess](https://github.com/biotea/biotea-rdfization/tree/master/src/main/resources/inputToProcess)
+  * -out <output-dir> --mandatory
+  * sections --optional, if present text content will be generated in addition to metadata.
 
 ### Example
 For instance, if you want to RDFize PMC articles following the [Bio2RDF URL model](https://github.com/bio2rdf/bio2rdf-scripts/wiki/RDFization-Guide) you need this configuration:
@@ -36,11 +36,14 @@ For instance, if you want to RDFize PMC articles following the [Bio2RDF URL mode
 * biotea.dataset=dataset/pmc
 * biotea.base=bio2rdf.org
 
+
 If you want to include section run the batch process as:
 * java ws.biotea.ld2rdf.rdfGeneration.batch.PMCOABatchApplication -in <inputToProcess> -out <output_folder> -sections
 
+
 If you do not want to include sections then use:
 * java ws.biotea.ld2rdf.rdfGeneration.batch.PMCOABatchApplication -in <inputToProcess> -out <output_folder>
+
 
 For the sample input file DELETE_ME_PMC3879346.nxml provided at [inputToProcess](https://github.com/biotea/biotea-rdfization/tree/master/src/main/resources/inputToProcess), the RDF generated is availabel at [PMC3879346.rdf]
 (https://github.com/biotea/biotea-rdfization/blob/master/src/main/resources/output/PMC3879346.rdf) and [PMC3879346_sections.rdf
