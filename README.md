@@ -24,8 +24,8 @@ One or two (if -sections run option is used) will be generated per each .nxml fi
 ..*biotea.dataset.prefix
 ..* biotea.dataset
 ..* biotea.base
-* Make sure you include the [biotea-utilities](https://github.com/biotea/biotea-utilities) resources file in your classpath
-* The main class is at ws.biotea.ld2rdf.rdfGeneration.batch.PMCOABatchApplication, two parameters are mandatory, one is optional
+* Make sure you include the [biotea-utilities](https://github.com/biotea/biotea-utilities) resources folder in your classpath
+* The main class is ws.biotea.ld2rdf.rdfGeneration.batch.PMCOABatchApplication, two parameters are mandatory, one is optional
 ..* -in <input-dir> --mandatory, should have all *.nxml to be processed (remember it should follow the structure and include all the files provided at [inputToProcess](https://github.com/biotea/biotea-rdfization/tree/master/src/main/resources/inputToProcess)
 --* -out <output-dir> --mandatory
 --* sections --optional, if present text content will be generated in addition to metadata.
