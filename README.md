@@ -12,7 +12,7 @@ All but one dependency are configured with Maven. There is a local dependency to
 * Make sure you delete the test file there named DELETE_ME_PMC3879346.nxml
 
 ## Output
-One or two (if -section run option is used) will be generated per each .nxml file in you input folder.
+One or two (if -sections run option is used) will be generated per each .nxml file in you input folder.
 * DATASET-PREFIX_ARTICLE-ID.rdf containing all the metadata, e.g., authors, title, journal, etc.
 * DATASET-PREFIX_ARTICLE-ID_sections.rdf, containing all the text content, i.e., section titles and paragraphs
 
