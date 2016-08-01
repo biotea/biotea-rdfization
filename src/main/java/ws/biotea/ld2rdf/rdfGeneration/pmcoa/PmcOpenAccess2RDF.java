@@ -93,15 +93,27 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 				pmcID = id.getContent();
 			}				
 		}
-		if (pmcID == null) {
+		
+		if ((pmcID == null) && (ResourceConfig.getIdTag().equals("pmc"))) {
+			throw new PMCIdException("No " + PREFIX + " id was found, file cannot be processed");
+		} 
+		if ((pubmedID == null) && (ResourceConfig.getIdTag().equals("pmid"))) {
 			throw new PMCIdException("No " + PREFIX + " id was found, file cannot be processed");
 		}
+		
 		str.delete(0, str.length());
-		str.append(pmcID); //file name
+		if (ResourceConfig.getIdTag().equals("pmc")) {
+			str.append(pmcID); //file name
+		} else if (ResourceConfig.getIdTag().equals("pmid")) { //TODO try it out!
+			str.append(pubmedID); //file name
+		} else { //TODO how to support others?
+			throw new PMCIdException("No valid " + PREFIX + " field " + ResourceConfig.getIdTag() + 
+				" was configured, file cannot be processed");
+		}
+		
 		logger.info("=== ARTICLE-TYPE (" + paper.getName() + " - " + pmcID + "): " + this.articleType);
 		this.global = new GlobalArticleConfig(pmcID);	
 		this.basePaper = GlobalArticleConfig.getArticleRdfUri(pmcID);	
-		//logger.info("FLAG: " + this.basePaper);
 	}
 	
 	/**
