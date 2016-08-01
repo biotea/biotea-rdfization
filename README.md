@@ -33,7 +33,7 @@ One or two (if -sections run option is used) will be generated per each .nxml fi
 ### Example
 For instance, if you want to RDFize PMC articles following the [Bio2RDF URL model](https://github.com/bio2rdf/bio2rdf-scripts/wiki/RDFization-Guide) you need this configuration:
 * biotea.dataset.prefix=pmc
-* biotea.dataset=dataset/pmc
+* biotea.dataset=bio2rdf_dataset:bio2rdf-pmc-vr2
 * biotea.base=bio2rdf.org
 
 
