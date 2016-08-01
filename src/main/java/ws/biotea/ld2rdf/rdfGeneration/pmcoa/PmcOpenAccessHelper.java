@@ -14,6 +14,7 @@ import ws.biotea.ld2rdf.rdfGeneration.RDFBasicHandler;
 import ws.biotea.ld2rdf.rdfGeneration.exception.ArticleTypeException;
 import ws.biotea.ld2rdf.rdfGeneration.exception.DTDException;
 import ws.biotea.ld2rdf.rdfGeneration.exception.PMCIdException;
+import ws.biotea.ld2rdf.rdfGeneration.jats.GlobalArticleConfig;
 import ws.biotea.ld2rdf.util.ClassesAndProperties;
 
 public class PmcOpenAccessHelper {
@@ -22,7 +23,7 @@ public class PmcOpenAccessHelper {
 	public static final String TEXT_PROPERTY = ClassesAndProperties.RDF_PROP_VALUE.getURLValue();
 	
 	public PmcOpenAccessHelper() {
-		this.handler = new RDFBasicHandler(GlobalPmc.BIOTEA_PMC_DATASET, GlobalPmc.BASE_URL, GlobalPmc.BASE_URL_AO);
+		this.handler = new RDFBasicHandler(GlobalArticleConfig.BIOTEA_PMC_DATASET, GlobalArticleConfig.BASE_URL, GlobalArticleConfig.BASE_URL_AO);
 	}
 	/**
 	 * RDFizes a file
@@ -45,7 +46,7 @@ public class PmcOpenAccessHelper {
 		this.handler.setStrPmcId(new StringBuilder());
 		this.handler.setPaper2rdf(new PmcOpenAccess2RDF(subdir, this.handler.getStrPmcId()));
 		String pmc = this.handler.getStrPmcId().toString();
-		this.handler.setPaperURLId(GlobalPmc.getPmcRdfUri(pmc));
+		this.handler.setPaperURLId(GlobalArticleConfig.getArticleRdfUri(pmc));
 		this.handler.setDocumentPaperId(pmc);
 		outRDF = new File (outputDir + "/PMC" + pmc + ".rdf");
 		if (!outRDF.exists()) {
