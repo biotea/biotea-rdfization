@@ -19,8 +19,7 @@ import ws.biotea.ld2rdf.util.ClassesAndProperties;
 
 public class PmcOpenAccessHelper {
 	private RDFBasicHandler handler;
-	Logger logger = Logger.getLogger(PmcOpenAccessHelper.class);
-	public static final String TEXT_PROPERTY = ClassesAndProperties.RDF_PROP_VALUE.getURLValue();
+	Logger logger = Logger.getLogger(PmcOpenAccessHelper.class);	
 	
 	public PmcOpenAccessHelper() {
 		this.handler = new RDFBasicHandler(GlobalArticleConfig.BIOTEA_PMC_DATASET, GlobalArticleConfig.BASE_URL, GlobalArticleConfig.BASE_URL_AO);

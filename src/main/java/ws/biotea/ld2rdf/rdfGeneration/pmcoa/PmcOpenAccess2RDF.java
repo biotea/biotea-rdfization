@@ -30,6 +30,7 @@ import ws.biotea.ld2rdf.rdfGeneration.exception.DTDException;
 import ws.biotea.ld2rdf.rdfGeneration.exception.PMCIdException;
 import ws.biotea.ld2rdf.rdfGeneration.jats.GlobalArticleConfig;
 import ws.biotea.ld2rdf.util.ResourceConfig;
+import ws.biotea.ld2rdf.util.ClassesAndProperties;
 import ws.biotea.ld2rdf.util.Conversion;
 import ws.biotea.ld2rdf.util.HtmlUtil;
 
@@ -2000,7 +2001,7 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 		ParagraphE paragraph = new ParagraphE(model, paragraphURI, true);
 		secDoco.addParagraph(model, paragraph);		
 		PlainLiteral textNode = model.createPlainLiteral(text);
-	    model.addStatement(paragraph.asResource(), new URIImpl(PmcOpenAccessHelper.TEXT_PROPERTY, false), textNode); //text
+	    model.addStatement(paragraph.asResource(), new URIImpl(ClassesAndProperties.TEXT_PROPERTY, false), textNode); //text
 		return text;
 	}
 	/**
