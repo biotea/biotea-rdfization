@@ -6,9 +6,7 @@ import java.io.UnsupportedEncodingException;
 
 import javax.xml.bind.JAXBException;
 
-public interface Publication2RDF {
-	public final static String ISO_ENCODING = "ISO-8859-1";
-	public final static String UTF_ENCODING = "UTF-8";
+public interface Publication2RDF {	
 	/**
 	 * Converts a file into RDF
 	 * @param outputDir

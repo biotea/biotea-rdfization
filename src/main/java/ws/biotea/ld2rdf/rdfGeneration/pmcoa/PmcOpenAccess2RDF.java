@@ -294,7 +294,7 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 		//Writer writer = new OutputStreamWriter(new FileOutputStream(new File("./ontology/" + doi + ".rdf")), Charset.forName("ISO-8859-1"));
 	    
 	    File file = new File(outputFile);
-	    PrintWriter pw = new PrintWriter(file, Publication2RDF.UTF_ENCODING);
+	    PrintWriter pw = new PrintWriter(file, ResourceConfig.UTF_ENCODING);
 	    try {
 			myModel.writeTo(pw);
 		} catch (ModelRuntimeException e) {
@@ -2210,7 +2210,7 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 			}
 		}		
 		PlainLiteral textNode = model.createPlainLiteral(text);
-	    model.addStatement(paragraph.asResource(), new URIImpl(PmcOpenAccessHelper.TEXT_PROPERTY, false), textNode); //text		
+	    model.addStatement(paragraph.asResource(), new URIImpl(ClassesAndProperties.TEXT_PROPERTY, false), textNode); //text		
 	}
 	/**
 	 * Gets the reference id without non-allowed chars.
