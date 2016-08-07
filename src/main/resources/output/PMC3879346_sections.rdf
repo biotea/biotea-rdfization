@@ -144,7 +144,7 @@ Cryptomeria japonica cp genome was sequenced using sucrose gradient method, foll
                                             <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion"/>
                                             <dcterms:title>Chloroplast Genome Sequencing</dcterms:title>
                                             <dcterms:isPartOf>
-                                              <bibo:Document rdf:about="http://bio2rdf.org/pmc:3879346">
+                                              <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pmc:3879346">
                                                 <dcterms:hasPart>
                                                   <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Microscopy-Analysis">
                                                     <dcterms:hasPart>
@@ -309,6 +309,7 @@ Cryptomeria japonica cp genome was sequenced using sucrose gradient method, foll
                                                     <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:3879346"/>
                                                   </doco:Section>
                                                 </dcterms:hasPart>
+                                                <rdf:type rdf:resource="http://purl.org/ontology/bibo/Document"/>
                                                 <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion_Chloroplast-Genome-Sequencing"/>
                                                 <dcterms:hasPart>
                                                   <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:3879346_section_Abstract">
@@ -325,6 +326,8 @@ Cryptomeria japonica cp genome was sequenced using sucrose gradient method, foll
                                                   </doco:Section>
                                                 </dcterms:hasPart>
                                                 <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Protocols"/>
+                                                <dcterms:title
+                                                >An Improved Protocol for Intact Chloroplasts and cpDNA Isolation in Conifers</dcterms:title>
                                                 <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods"/>
                                                 <dcterms:hasPart>
                                                   <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:3879346_section_Introduction">
@@ -499,7 +502,7 @@ Cryptomeria japonica cp genome was sequenced using sucrose gradient method, foll
                                                     <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:3879346"/>
                                                   </doco:Section>
                                                 </dcterms:hasPart>
-                                              </bibo:Document>
+                                              </bibo:AcademicArticle>
                                             </dcterms:isPartOf>
                                           </doco:Section>
                                         </dcterms:hasPart>

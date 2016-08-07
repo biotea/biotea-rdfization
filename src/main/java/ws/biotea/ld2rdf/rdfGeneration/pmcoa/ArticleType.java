@@ -6,7 +6,7 @@ package ws.biotea.ld2rdf.rdfGeneration.pmcoa;
 import org.ontoware.rdf2go.model.node.URI;
 import org.ontoware.rdf2go.model.node.impl.URIImpl;
 
-import ws.biotea.rdfization.util.OntologyRDFizationPrefix;
+import ws.biotea.ld2rdf.util.rdfization.OntologyRDFizationPrefix;
 
 /**
  * @author Leyla Garcia

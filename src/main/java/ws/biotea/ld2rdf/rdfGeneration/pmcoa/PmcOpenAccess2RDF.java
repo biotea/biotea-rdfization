@@ -57,6 +57,7 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 	private String pmcID;
 	private String articleType;
 	private String doi;	
+	private String articleTitle;
 	private Article article;
 	private GlobalArticleConfig global;
 	private final String PREFIX = ResourceConfig.getDatasetPrefix().toUpperCase();
@@ -141,8 +142,7 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 		boolean fatalError = false;
 		//create document
 		try {
-			document = new Document(model, basePaper, true);	
-			//logger.info("FLAG 2: " + this.pmcID + " - " + this.basePaper);
+			document = new Document(model, basePaper, true);
 			String type = this.articleType.replace('-', '_').toUpperCase();
 			if (ArticleType.valueOf(type).getBiboType() != null) {
 			    model.addStatement(document.asResource(), Thing.RDF_TYPE, ArticleType.valueOf(type).getBiboTypeURI()); //rdf:type
@@ -184,6 +184,12 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 			modelSections = createAndOpenModel();
 			try {
 				documentSections = new Document(modelSections, basePaper, true);
+				documentSections.addTitle(modelSections, this.articleTitle);
+				String type = this.articleType.replace('-', '_').toUpperCase();
+				if (ArticleType.valueOf(type).getBiboType() != null) {
+					modelSections.addStatement(documentSections.asResource(), Thing.RDF_TYPE, ArticleType.valueOf(type).getBiboTypeURI()); //rdf:type
+				}
+				
 				String docAbstract = "";
 				for (Abstract ab: article.getFront().getArticleMeta().getAbstracts()) {
 					docAbstract += processAbstractAsSection(ab, modelSections, documentSections, null);			
@@ -272,8 +278,8 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 		myModel.setNamespace(ws.biotea.ld2rdf.util.OntologyPrefix.OWL.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.OWL.getURL());
 		myModel.setNamespace(ws.biotea.ld2rdf.util.OntologyPrefix.RDF.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.RDF.getURL());
 		myModel.setNamespace(ws.biotea.ld2rdf.util.OntologyPrefix.RDFS.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.RDFS.getURL());
-		myModel.setNamespace(ws.biotea.rdfization.util.OntologyRDFizationPrefix.BIBO.getNS(), ws.biotea.rdfization.util.OntologyRDFizationPrefix.BIBO.getURL());
-		myModel.setNamespace(ws.biotea.rdfization.util.OntologyRDFizationPrefix.DOCO.getNS(), ws.biotea.rdfization.util.OntologyRDFizationPrefix.DOCO.getURL());
+		myModel.setNamespace(ws.biotea.ld2rdf.util.rdfization.OntologyRDFizationPrefix.BIBO.getNS(), ws.biotea.ld2rdf.util.rdfization.OntologyRDFizationPrefix.BIBO.getURL());
+		myModel.setNamespace(ws.biotea.ld2rdf.util.rdfization.OntologyRDFizationPrefix.DOCO.getNS(), ws.biotea.ld2rdf.util.rdfization.OntologyRDFizationPrefix.DOCO.getURL());
 		myModel.setNamespace(ws.biotea.ld2rdf.util.OntologyPrefix.FOAF.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.FOAF.getURL());
 		myModel.setNamespace(ws.biotea.ld2rdf.util.OntologyPrefix.DCTERMS.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.DCTERMS.getURL());
 		myModel.setNamespace(ws.biotea.ld2rdf.util.OntologyPrefix.FOAF.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.FOAF.getURL());		
@@ -532,16 +538,16 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
     	
     	//Title
     	try {    		
-    	    String title = "";
+    	    this.articleTitle = "";
     		for (Object ser: article.getFront().getArticleMeta().getTitleGroup().getArticleTitle().getContent()) {
     			if (ser instanceof String) {
-    				title += ser.toString();
+    				this.articleTitle += ser.toString();
     			} else if (ser instanceof JAXBElement<?>) {
     				JAXBElement<?> elem = (JAXBElement<?>)ser;
-    				title += processElement(model, document, elem, null, null);
+    				this.articleTitle += processElement(model, document, elem, null, null);
     			}			
     		}
-    	    document.addTitle(model, title);
+    	    document.addTitle(model, this.articleTitle);
     	} catch (Exception e) {
     		logger.info(paper + ": Article title not processed");
     	}	
