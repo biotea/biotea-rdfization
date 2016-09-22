@@ -50,6 +50,7 @@ import java.util.List;
 
 public class PmcOpenAccess2RDF implements Publication2RDF {
 	private static Logger logger = Logger.getLogger(PmcOpenAccess2RDF.class);	
+	private static final String NON_INITIAL = "[a-z ,;.-]";
 	private int elementCount = 1;
 	//Basic paper
 	private String basePaper;
@@ -571,17 +572,7 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 								for (Object objAut: contrib.getAnonymousesAndCollabsAndNames()) {
 									if (objAut instanceof Name) {
 										Name name = (Name)objAut;
-										String givenNames = "";
-										try {
-											givenNames = name.getGivenNames().getContent().get(0).toString();
-										} catch (Exception e) {}
-										String surname = name.getSurname().getContent().get(0).toString();
-										String idPerson = givenNames + surname;
-										idPerson = idPerson.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
-									    person = new PersonE(model, global.BASE_URL_PERSON_PMC + idPerson, true); //model.createBlankNode(pmcID + "_author_" + idPerson)
-									    person.addName(model, givenNames + " " + surname);
-									    person.addGivenName(model, givenNames);
-									    person.addFamilyName(model, surname);
+										person = createPerson(model, global.BASE_URL_PERSON_PMC, name);										
 									    person.addPublications(model, this.basePaper);
 									} else if (objAut instanceof Email) {
 										try {
@@ -802,7 +793,9 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 			docReference.addPMID(model, pubmed);
 			docReference.addSeeAlso(new URIImpl(GlobalArticleConfig.pubMedURI + pubmed)); //seeAlso for webpages
 			docReference.addSameAs(model, ResourceConfig.IDENTIFIERS_ORG_PUBMED + pubmed); //sameAs for entities
-			docReference.addSameAs(model, ResourceConfig.BIO2RDF_PUBMED + pubmed); //sameAs for entities
+			if (!url.equals(ResourceConfig.BIO2RDF_PUBMED + pubmed)) {
+				docReference.addSameAs(model, ResourceConfig.BIO2RDF_PUBMED + pubmed); //sameAs for entities
+			}			
 			if (doiReference != null) {
 				try {
 					docReference.addDOI(model, doiReference);
@@ -837,16 +830,7 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 	    	if (objPerson instanceof Name) {
 	    		//Author
 	    		Name name = (Name)objPerson;	
-	    		String givenNames = "";
-				try {
-					givenNames = name.getGivenNames().getContent().get(0).toString();
-				} catch (Exception e) {}
-				String surname = name.getSurname().getContent().get(0).toString();
-				String idPerson = (givenNames + surname).replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
-				PersonE person  = new PersonE(model, personBaseURL + idPerson, true); //model.createBlankNode(pmcID + "_reference_" + this.getRefId(ref) + "_" + type + "_" + idPerson)
-			    person.addName(model, givenNames + " " + surname);
-			    person.addGivenName(model, givenNames);
-			    person.addFamilyName(model, surname);			    
+	    		PersonE person = createPerson(model, personBaseURL, name);			    
 			    listOfAuthorsRef.add(person);			    
 	    	}	    	    				    	
 	    }
@@ -942,6 +926,9 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 		}		
 		//process other information
 		for (Object obj: content) {
+			if (obj == null) {
+				continue;
+			}
 			if (obj instanceof ArticleTitle) { //nlm-citation & citation: used for chapter-title
     			try {
     				if (articleTitle == null) {
@@ -1021,24 +1008,17 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 			} else if (obj instanceof PersonGroup) {
 				PersonGroup pg = (PersonGroup)obj;
 				if ((pg.getPersonGroupType() != null) && (pg.getPersonGroupType().equals("editor"))) {
-					listOfEditorsRef = processReferenceCreateListOfAuthors(model, document, ((PersonGroup)obj).getContent(), personBaseURL); //"editor"
+					//TODO: make it clever so it will correctly process editors mixed as a single person
+					//listOfEditorsRef = processReferenceCreateListOfAuthors(model, document, ((PersonGroup)obj).getContent(), personBaseURL); //"editor"
 				} else if ((pg.getPersonGroupType() != null) && (pg.getPersonGroupType().equals("translator"))) {
-					listOfTranslatorsRef = processReferenceCreateListOfAuthors(model, document, ((PersonGroup)obj).getContent(), personBaseURL); //"translator"
+					//TODO: make it clever so it will correctly process translators mixed as a single person
+					//listOfTranslatorsRef = processReferenceCreateListOfAuthors(model, document, ((PersonGroup)obj).getContent(), personBaseURL); //"translator"
 				} else {
 					listOfAuthorsRef = processReferenceCreateListOfAuthors(model, document, ((PersonGroup)obj).getContent(), personBaseURL); //"author"
 				}				
 			} else if (obj instanceof Name) {
 				Name name = (Name)obj;	 
-				String givenNames = "";
-				try {
-					givenNames = name.getGivenNames().getContent().get(0).toString();
-				} catch (Exception e) {}
-				String surname = name.getSurname().getContent().get(0).toString();
-				String idPerson = (givenNames + surname).replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");				
-		    	PersonE person  = new PersonE(model, personBaseURL + idPerson, true); //model.createBlankNode(pmcID + "_authorOrEditorOrTranslator_" + idPerson)
-			    person.addName(model, givenNames + " " + surname);
-			    person.addGivenName(model, givenNames);
-			    person.addFamilyName(model, surname);			    
+				PersonE person = createPerson(model, personBaseURL, name);			    
 		    	listOfAuthorsRef.add(person);			    		    			
 			} else if (obj instanceof Collab) {
 				Collab collab = (Collab)obj;
@@ -1100,10 +1080,12 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
         		    if (volume != null) {
         		    	docReference.addbiboVolume(volume);
         		    }
-        		    OrganizationE publisherOrg = new OrganizationE(model, GlobalArticleConfig.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true ); 
-        		    publisherOrg.addName(model, publisherName);	
-        		    journal.addbiboPublisher(publisherOrg);
-        		    docReference.addbiboPublisher(publisherOrg);
+        		    if (publisherName != null) {
+        		    	OrganizationE publisherOrg = new OrganizationE(model, GlobalArticleConfig.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true ); 
+            		    publisherOrg.addName(model, publisherName);	
+            		    journal.addbiboPublisher(publisherOrg);
+            		    docReference.addbiboPublisher(publisherOrg);
+        		    }        		    
         		    //Issue
         		    if (journal != null) {
         		    	if (issueNumber != null) { //name:<journal_name>/<issue_id>
@@ -1294,7 +1276,7 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
     		    docReference.addbiboProducedin(conf);    			
 	    	} else if (type == ReferenceType.PATENT) {
 	    		if (articleTitle != null) {
-    				docReference.addTitle(model, sectionTitle);
+    				docReference.addTitle(model, articleTitle);
     			}
     		    if (sourceTitle != null) {
     		    	docReference.addComment("Source: " + sourceTitle);
@@ -1302,42 +1284,42 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
     		    docReference.addComment("Note: Inventors, asignees, and others are described in the Authors list.");
 	    	} else if (type == ReferenceType.DATABASE) { //webpage
 	    		if (sourceTitle != null) {
-    				docReference.addTitle(model, sectionTitle);
+    				docReference.addTitle(model, sourceTitle);
     			}
 	    	} else if (type == ReferenceType.WEBPAGE) { //webpage
 	    		if (sourceTitle != null) {
-    				docReference.addTitle(model, sectionTitle);
+    				docReference.addTitle(model, sourceTitle);
     			}
 	    	} else if (type == ReferenceType.COMMUN) { //personal communication
 	    		if (sourceTitle != null) {
-    				docReference.addTitle(model, sectionTitle);
+    				docReference.addTitle(model, sourceTitle);
     			}
 	    	} else if (type == ReferenceType.DISCUSSION) { //webpage with article title
 	    		if (articleTitle != null) {
-    				docReference.addTitle(model, sectionTitle);
+    				docReference.addTitle(model, articleTitle);
     			}
     		    if (sourceTitle != null) {
     		    	docReference.addComment("Discussion/List group: " + sourceTitle);
     		    }
 	    	} else if (type == ReferenceType.BLOG) { //webpage
 	    		if (sourceTitle != null) {
-    				docReference.addTitle(model, sectionTitle);
+    				docReference.addTitle(model, sourceTitle);
     			}
 	    	} else if (type == ReferenceType.WIKI) { //webpage
 	    		if (sourceTitle != null) {
-    				docReference.addTitle(model, sectionTitle);
+    				docReference.addTitle(model, sourceTitle);
     			}
 	    	} else if (type == ReferenceType.SOFTWARE) { //standard
 	    		if (sourceTitle != null) {
-    				docReference.addTitle(model, sectionTitle);
+    				docReference.addTitle(model, sourceTitle);
     			}
 	    	} else if (type == ReferenceType.STANDARD) { //standard
 	    		if (sourceTitle != null) {
-    				docReference.addTitle(model, sectionTitle);
+    				docReference.addTitle(model, sourceTitle);
     			}
 	    	} else if (type == ReferenceType.OTHER) { //standard
 	    		if (sourceTitle != null) {
-    				docReference.addTitle(model, sectionTitle);
+    				docReference.addTitle(model, sourceTitle);
     			}
 	    	} 		
     		//common
@@ -1470,7 +1452,8 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
         	//References of the document
     	    document.addbiboCites(docReference);
     	    docReference.addbiboCitedby(document);
-		} catch (Exception e ) {}    		
+		} catch (Exception e ) {
+		}    		
 	}
 	/**
 	 * Processes an Citation type and creates the bibliographic reference.
@@ -2236,4 +2219,19 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 		}
 		return refId;
 	}	
+	
+	private PersonE createPerson(Model model, String personBaseURL, Name name) {
+		String givenNames = "";
+		try {
+			givenNames = name.getGivenNames().getContent().get(0).toString();
+		} catch (Exception e) {}
+		String surname = name.getSurname().getContent().get(0).toString();
+		String idPerson = givenNames.replaceAll(NON_INITIAL, "") + surname;
+		idPerson = idPerson.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
+	    PersonE person = new PersonE(model, personBaseURL + idPerson, true);
+	    person.addName(model, givenNames + " " + surname);
+	    person.addGivenName(model, givenNames);
+	    person.addFamilyName(model, surname);
+	    return person;
+	}
 }
