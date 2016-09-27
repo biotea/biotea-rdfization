@@ -82,8 +82,9 @@ public class PMCOABatchApplication {
 	public static void main(String[] args) throws IOException {	
 		long startTime = System.currentTimeMillis();		
 		
-		String usage = ("Usage: -in <xml papers dir> -out <output dir> -sections " + 
-				"\n-sections (optional) If present, paper sections will be rdfized");
+		String usage = ("Usage: -in <xml papers dir> -out <output dir> -sections -references" + 
+				"\n-sections (optional) If present, paper sections will be rdfized" + 
+				"\n-references (optional) If present, metadata for references will be generated, otherwise only links");
 		
 		if (args == null) {
 			System.out.println(usage);
@@ -93,7 +94,7 @@ public class PMCOABatchApplication {
 		
 		int initPool = 10, maxPool = 10, keepAlive = 300;
 		String inputDir = null, outputDir = null;
-		boolean sections = false;
+		boolean sections = false, references = false;
 		Integer limit = null;
 		//boolean addIssuedDate = false;
 		for (int i = 0; i < args.length; i++) {
@@ -104,6 +105,8 @@ public class PMCOABatchApplication {
 				outputDir = args[++i];
 			} else if (str.equalsIgnoreCase("-sections")) {
 				sections = true;
+			} else if (str.equalsIgnoreCase("-references")) {
+				references = true;
 			} else if (str.equalsIgnoreCase("-initPool")) {
 				initPool = Integer.parseInt(args[++i]);
 			} else if (str.equalsIgnoreCase("-maxPool")) {
@@ -121,12 +124,13 @@ public class PMCOABatchApplication {
 		
 		System.out.println("Execution variables: " +
 			"\nInput " + inputDir + "\nOutput " + outputDir + 
-			"\nSections " + sections + 
+			"\nSections " + sections +
+			"\nReferences " + references + 
 			"\nInitPool " + initPool + " MaxPool " + maxPool + " KeepAlive " + keepAlive);
 		System.out.println("sections: " + sections);		
 		
 		PMCOABatchApplication handler = new PMCOABatchApplication(initPool, maxPool, keepAlive);
-		handler.rdfizeDirectory(inputDir, outputDir, sections, limit);
+		handler.rdfizeDirectory(inputDir, outputDir, sections, references,  limit);
 		
 		handler.shutDown();
 		while (!handler.isTerminated()); //waiting
@@ -141,7 +145,7 @@ public class PMCOABatchApplication {
 	 * @param sections
 	 * @param limit
 	 */
-	public void rdfizeDirectory(String inputDir, final String outputDir, final boolean sections, Integer limit) {
+	public void rdfizeDirectory(String inputDir, final String outputDir, final boolean sections, final boolean references, Integer limit) {
 		File dir = new File(inputDir);
 		int count = 1;
 		for (final File subdir:dir.listFiles()) {			
@@ -153,7 +157,7 @@ public class PMCOABatchApplication {
 		                public void run() {
 		                	try {
 		                		PmcOpenAccessHelper helper = new PmcOpenAccessHelper();
-								helper.rdfizeFile(subdir, outputDir, sections);
+								helper.rdfizeFile(subdir, outputDir, sections, references);
 								helper = null;
 							} catch (Exception e) {
 								logger.error(subdir.getName() + " could not be processed: " + e.getMessage());

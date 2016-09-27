@@ -25,15 +25,15 @@ public class RDFBasicHandler extends RDFAbstractHandler {
 	/* (non-Javadoc)
 	 * @see ld2rdf.rdfGeneration.RDFHandler#createRDFFromXML(java.io.File, java.lang.String, boolean)
 	 */
-	public File createRDFFromXML(File xml, String outRDFFileName, boolean sections) throws FileNotFoundException, UnsupportedEncodingException, JAXBException {		
-		return this.paper2rdf.paper2rdf(outRDFFileName, xml, sections);
+	public File createRDFFromXML(File xml, String outRDFFileName, boolean sections, boolean references) throws FileNotFoundException, UnsupportedEncodingException, JAXBException {		
+		return this.paper2rdf.paper2rdf(outRDFFileName, xml, sections, references);
 	}
 
 	/* (non-Javadoc)
 	 * @see ld2rdf.rdfGeneration.RDFHandler#createRDFFromXMLString(java.lang.String, java.lang.String, boolean)
 	 */
 	public File createRDFFromXMLString(String xml, String outRDFFileName,
-			boolean sections) throws JAXBException, JDOMException, IOException {
+			boolean section, boolean references) throws JAXBException, JDOMException, IOException {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -42,7 +42,7 @@ public class RDFBasicHandler extends RDFAbstractHandler {
 	 * @see ld2rdf.rdfGeneration.RDFHandler#createRDFFromHTML(java.io.File, java.lang.String, boolean)
 	 */
 	public File createRDFFromHTML(File html, String outRDFFileName,
-			boolean sections) {
+			boolean sections, boolean references) {
 		// TODO Auto-generated method stub
 		return null;
 	}

@@ -128,7 +128,7 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 	 * @throws UnsupportedEncodingException 
 	 * @throws FileNotFoundException 
 	 */
-	public File paper2rdf(String outputDir, File paper, boolean sections) throws JAXBException, FileNotFoundException, UnsupportedEncodingException {	
+	public File paper2rdf(String outputDir, File paper, boolean sections, boolean references) throws JAXBException, FileNotFoundException, UnsupportedEncodingException {	
 		logger.info("=== INIT Rdfization of " + paper.getName());		
 				
 		if (pmcID == null) {
@@ -159,7 +159,7 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 			logger.info("=== authors processed");
 			this.processAbstractAndKeywords(model, document);
 			logger.info("=== abstract and keywords processed");
-			this.processReferences(model, document);
+			this.processReferences(model, document, references);
 			logger.info("=== references processed");
 		} catch (Exception e) {//something went so wrong
 			logger.fatal("- FATAL ERROR - " + pmcID + " threw an uncaugth error: " + e.getMessage());
@@ -709,7 +709,7 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 	/**
 	 * Determines the type of the reference and process it according to its type: Citation, MixedCitation, ElementCitation, or NlmCitation
 	 */
-	private void processReferences(Model model, Document document) {
+	private void processReferences(Model model, Document document, boolean withMetadata) {
 		//References
 	    for (Object obj: article.getBack().getAcksAndAppGroupsAndBios()) {
 	    	if (obj instanceof RefList) {
@@ -721,19 +721,19 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 	    					if (objMix instanceof Citation) {
 	    						Citation citation = (Citation)objMix;
 	    						//System.out.println("SIMPLE");
-	    						processSimpleCitation(model, document, citation, ref);
+	    						processSimpleCitation(model, document, citation, ref, withMetadata);
 	    					} else if (objMix instanceof MixedCitation) {
 	    						MixedCitation citation = (MixedCitation)objMix;
 	    						//System.out.println("MIXED");
-	    						processMixedCitation(model, document, citation, ref);
+	    						processMixedCitation(model, document, citation, ref, withMetadata);
 	    					} else if (objMix instanceof ElementCitation) {
 	    						ElementCitation citation = (ElementCitation)objMix;
 	    						//System.out.println("CITATION");
-	    						processElementCitation(model, document, citation, ref);
+	    						processElementCitation(model, document, citation, ref, withMetadata);
 	    					} else if (objMix instanceof NlmCitation) {
 	    						NlmCitation citation = (NlmCitation)objMix;
 	    						//System.out.println("NLM");
-	    						processNlmCitation(model, document, citation, ref);
+	    						processNlmCitation(model, document, citation, ref, withMetadata);
 	    					} 
 	    				}	    				
 	    			}
@@ -841,51 +841,13 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 	 * @param ref
 	 * @param content
 	 */
-	@SuppressWarnings("rawtypes")
-	private void processReferenceAllTypeCitation(Model model, Document document, Ref ref, List<Object> content, ReferenceType type, Class clazz) {
-		//common
-		List<Agent> listOfAuthorsRef = new ArrayList<Agent>();
-		List<Agent> listOfEditorsRef = new ArrayList<Agent>();
-		List<Agent> listOfTranslatorsRef = new ArrayList<Agent>();		
-		String sourceTitle = null;
-    	String sourceId =  null;
-    	String year = null;
-    	String month = null;
-    	String volume = null;
-    	String issueNumber = null;
-    	String pageStart = null;
-    	String pageEnd = null;
-    	String pubmedReference = null;
-    	String doiReference = null;
-    	
-    	//journal article
-    	String articleTitle = null;
-    	String transTitle = null;
-    	
-    	//book and report
-    	String sectionTitle = null;
-    	String sectionId =  null;		
-		String edition = null;
-		String publisherName = null;
-    	String numPages = null;
-    	String pageCount = null;
-    	String publisherLocation = null;
-    	
-    	//report
+	@SuppressWarnings("rawtypes")	
+	private void processReferenceAllTypeCitation(Model model, Document document, Ref ref, List<Object> content, ReferenceType type, Class clazz, boolean withMetadata) {
+		String pubmedReference = null;
+		String doiReference = null;
     	String pubIdOther = null;
     	
-    	//conference
-    	String confName = null;
-    	String confDate = null;
-    	String confLoc = null;
-    	
-    	//Others
-    	String comment = null;
-    	String dateInCitation = null;
-    	String accessDate = null;
-    	String otherTitle = "";  	
-		
-    	//Process a reference
+		//Process a reference
 		for (Object obj: content) {
 			if (obj instanceof PubId) {
 				PubId pubId = (PubId)obj;
@@ -898,6 +860,8 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 				}			
 			} 
 		}
+		
+		Document docReference = null;
 		String publicationLink = null; 
 		String personBaseURL = null;
 		String organizationBaseURL = null;
@@ -923,7 +887,62 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 			organizationBaseURL = global.BASE_URL_ORGANIZATION_PMC;
 			proceedingsBaseURL = global.BASE_URL_PROCEEDINGS_PMC;
 			conferenceBaseURL = global.BASE_URL_CONFERENCE_PMC;
-		}		
+		}
+		
+		if (!withMetadata) {			
+			docReference = processReferenceCreateArticle(model, document, publicationLink, pubmedReference, doiReference, ref, type);
+			//We need to keep the reference format as a document resource so we can link sections and paragraphs to it		
+			if (pubmedReference != null) {
+				docReference.addSameAs(model, global.BASE_URL_REF + this.getRefId(ref));
+			} else if (doiReference != null) {
+				docReference.addSameAs(model, global.BASE_URL_REF + this.getRefId(ref));
+			}
+			//References of the document
+    	    document.addbiboCites(docReference);
+    	    docReference.addbiboCitedby(document);
+			return;
+		}
+		
+		
+		//common
+		List<Agent> listOfAuthorsRef = new ArrayList<Agent>();
+		List<Agent> listOfEditorsRef = new ArrayList<Agent>();
+		List<Agent> listOfTranslatorsRef = new ArrayList<Agent>();		
+		String sourceTitle = null;
+    	String sourceId =  null;
+    	String year = null;
+    	String month = null;
+    	String volume = null;
+    	String issueNumber = null;
+    	String pageStart = null;
+    	String pageEnd = null;
+    	
+    	
+    	//journal article
+    	String articleTitle = null;
+    	String transTitle = null;
+    	
+    	//book and report
+    	String sectionTitle = null;
+    	String sectionId =  null;		
+		String edition = null;
+		String publisherName = null;
+    	String numPages = null;
+    	String pageCount = null;
+    	String publisherLocation = null;
+    	
+    	//conference
+    	String confName = null;
+    	String confDate = null;
+    	String confLoc = null;
+    	
+    	//Others
+    	String comment = null;
+    	String dateInCitation = null;
+    	String accessDate = null;
+    	String otherTitle = "";  	
+		
+    			
 		//process other information
 		for (Object obj: content) {
 			if (obj == null) {
@@ -1046,8 +1065,7 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 				} catch (Exception e) {}
 			}
 		}						    
-		//Reference
-		Document docReference = null;
+		//Reference		
 		if ((type == ReferenceType.BOOK) && (sectionId != null)) {
 			docReference = processReferenceCreateArticle(model, document, publicationLink, pubmedReference, doiReference, ref, ReferenceType.BOOK_SECTION);
 			type = ReferenceType.BOOK_SECTION;
@@ -1058,7 +1076,7 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 			docReference = processReferenceCreateArticle(model, document, publicationLink, pubmedReference, doiReference, ref, ReferenceType.CONFERENCE_PAPER);
 			type = ReferenceType.CONFERENCE_PAPER;
 		} else {
-			docReference = processReferenceCreateArticle(model, document, publicationLink ,pubmedReference, doiReference, ref, type);
+			docReference = processReferenceCreateArticle(model, document, publicationLink, pubmedReference, doiReference, ref, type);
 		}
 		//We need to keep the reference format as a document resource so we can link sections and paragraphs to it		
 		if (pubmedReference != null) {
@@ -1460,40 +1478,40 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 	 * @param citation
 	 * @param ref
 	 */
-	private void processSimpleCitation(Model model, Document document, Citation citation, Ref ref) {		
+	private void processSimpleCitation(Model model, Document document, Citation citation, Ref ref, boolean withMetadata) {		
 		try {	    	
 	    	if (citation.getPublicationType().contains("book")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.BOOK, Citation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.BOOK, Citation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("journal")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.JOURNAL_ARTICLE, Citation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.JOURNAL_ARTICLE, Citation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("confproc")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.CONFERENCE_PROCS, Citation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.CONFERENCE_PROCS, Citation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("thesis")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.THESIS, Citation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.THESIS, Citation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("report")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.REPORT, Citation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.REPORT, Citation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("gov")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.GOV, Citation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.GOV, Citation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("patent")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.PATENT, Citation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.PATENT, Citation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("standard")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.STANDARD, Citation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.STANDARD, Citation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("web")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.WEBPAGE, Citation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.WEBPAGE, Citation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("discussion")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.DISCUSSION, Citation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.DISCUSSION, Citation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("list")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.DISCUSSION, Citation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.DISCUSSION, Citation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("commun")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.COMMUN, Citation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.COMMUN, Citation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("blog")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.BLOG, Citation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.BLOG, Citation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("wiki")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.WIKI, Citation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.WIKI, Citation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("database")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.DATABASE, Citation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.DATABASE, Citation.class, withMetadata);
 	    	} else if (citation.getPublicationType().equals("other")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.OTHER, Citation.class);	    		
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.OTHER, Citation.class, withMetadata);	    		
 	    	} else if (citation.getPublicationType().equals("display-unstructured")) {
 	    		;	    		
 	    	} else {
@@ -1502,37 +1520,37 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
     	} catch (Exception e) {
     		try {
     			if (citation.getCitationType().contains("book")) {
-    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.BOOK, Citation.class);
+    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.BOOK, Citation.class, withMetadata);
     	    	} else if (citation.getCitationType().contains("journal")) {
-    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.JOURNAL_ARTICLE, Citation.class);
+    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.JOURNAL_ARTICLE, Citation.class, withMetadata);
     	    	} else if (citation.getCitationType().contains("confproc")) {
-    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.CONFERENCE_PROCS, Citation.class);
+    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.CONFERENCE_PROCS, Citation.class, withMetadata);
     	    	} else if (citation.getCitationType().contains("thesis")) {
-    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.THESIS, Citation.class);
+    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.THESIS, Citation.class, withMetadata);
     	    	} else if (citation.getCitationType().contains("report")) {
-    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.REPORT, Citation.class);
+    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.REPORT, Citation.class, withMetadata);
     	    	} else if (citation.getCitationType().contains("gov")) {
-    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.GOV, Citation.class);
+    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.GOV, Citation.class, withMetadata);
     	    	} else if (citation.getCitationType().contains("patent")) {
-    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.PATENT, Citation.class);
+    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.PATENT, Citation.class, withMetadata);
     	    	} else if (citation.getCitationType().contains("standard")) {
-    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.STANDARD, Citation.class);
+    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.STANDARD, Citation.class, withMetadata);
     	    	} else if (citation.getCitationType().contains("web")) {
-    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.WEBPAGE, Citation.class);
+    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.WEBPAGE, Citation.class, withMetadata);
     	    	} else if (citation.getCitationType().contains("discussion")) {
-    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.DISCUSSION, Citation.class);
+    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.DISCUSSION, Citation.class, withMetadata);
     	    	} else if (citation.getCitationType().contains("list")) {
-    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.DISCUSSION, Citation.class);
+    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.DISCUSSION, Citation.class, withMetadata);
     	    	} else if (citation.getCitationType().contains("commun")) {
-    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.COMMUN, Citation.class);
+    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.COMMUN, Citation.class, withMetadata);
     	    	} else if (citation.getCitationType().contains("blog")) {
-    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.BLOG, Citation.class);
+    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.BLOG, Citation.class, withMetadata);
     	    	} else if (citation.getCitationType().contains("wiki")) {
-    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.WIKI, Citation.class);
+    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.WIKI, Citation.class, withMetadata);
     	    	} else if (citation.getCitationType().contains("database")) {
-    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.DATABASE, Citation.class);
+    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.DATABASE, Citation.class, withMetadata);
     	    	} else if (citation.getCitationType().equals("other")) {
-    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.OTHER, Citation.class);	    		
+    	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.OTHER, Citation.class, withMetadata);	    		
     	    	} else if (citation.getCitationType().equals("display-unstructured")) {
     	    		;	    		
     	    	} else {
@@ -1548,40 +1566,40 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 	 * @param citation
 	 * @param ref
 	 */
-	private void processNlmCitation(Model model, Document document, NlmCitation citation, Ref ref) {
+	private void processNlmCitation(Model model, Document document, NlmCitation citation, Ref ref, boolean withMetadata) {
 		try {	    	
 	    	if (citation.getPublicationType().contains("book")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.BOOK, NlmCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.BOOK, NlmCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("journal")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.JOURNAL_ARTICLE, NlmCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.JOURNAL_ARTICLE, NlmCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("confproc")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.CONFERENCE_PROCS, NlmCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.CONFERENCE_PROCS, NlmCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("thesis")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.THESIS, NlmCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.THESIS, NlmCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("report")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.REPORT, NlmCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.REPORT, NlmCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("gov")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.GOV, NlmCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.GOV, NlmCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("patent")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.PATENT, NlmCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.PATENT, NlmCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("standard")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.STANDARD, NlmCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.STANDARD, NlmCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("web")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.WEBPAGE, NlmCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.WEBPAGE, NlmCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("discussion")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.DISCUSSION, NlmCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.DISCUSSION, NlmCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("list")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.DISCUSSION, NlmCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.DISCUSSION, NlmCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("commun")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.COMMUN, NlmCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.COMMUN, NlmCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("blog")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.BLOG, NlmCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.BLOG, NlmCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("wiki")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.WIKI, NlmCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.WIKI, NlmCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("database")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.DATABASE, NlmCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.DATABASE, NlmCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().equals("other")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.OTHER, NlmCitation.class);	    		
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.OTHER, NlmCitation.class, withMetadata);	    		
 	    	} else {
 	    		logger.warn("WARNING - reference " + this.getRefId(ref) + " could not be processed (type not recognized)");		    
 	    	}
@@ -1594,40 +1612,40 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 	 * @param citation
 	 * @param ref
 	 */
-	private void processMixedCitation(Model model, Document document, MixedCitation citation, Ref ref) {
+	private void processMixedCitation(Model model, Document document, MixedCitation citation, Ref ref, boolean withMetadata) {
 		try {	    	
 	    	if (citation.getPublicationType().contains("book")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.BOOK, MixedCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.BOOK, MixedCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("journal")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.JOURNAL_ARTICLE, MixedCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.JOURNAL_ARTICLE, MixedCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("confproc")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.CONFERENCE_PROCS, MixedCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.CONFERENCE_PROCS, MixedCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("thesis")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.THESIS, MixedCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.THESIS, MixedCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("report")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.REPORT, MixedCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.REPORT, MixedCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("gov")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.GOV, MixedCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.GOV, MixedCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("patent")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.PATENT, MixedCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.PATENT, MixedCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("standard")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.STANDARD, MixedCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.STANDARD, MixedCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("web")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.WEBPAGE, MixedCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.WEBPAGE, MixedCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("discussion")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.DISCUSSION, MixedCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.DISCUSSION, MixedCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("list")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.DISCUSSION, MixedCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.DISCUSSION, MixedCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("commun")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.COMMUN, MixedCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.COMMUN, MixedCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("blog")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.BLOG, MixedCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.BLOG, MixedCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("wiki")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.WIKI, MixedCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.WIKI, MixedCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("database")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.DATABASE, MixedCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.DATABASE, MixedCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().equals("other")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.OTHER, MixedCitation.class);	    		
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.OTHER, MixedCitation.class, withMetadata);	    		
 	    	} else {
 	    		logger.warn("WARNING - reference " + this.getRefId(ref) + " could not be processed (type not recognized)");		    
 	    	}
@@ -1640,41 +1658,41 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 	 * @param citation
 	 * @param ref
 	 */
-	private void processElementCitation(Model model, Document document, ElementCitation citation, Ref ref) {
+	private void processElementCitation(Model model, Document document, ElementCitation citation, Ref ref, boolean withMetadata) {
 		try {	    	
 			citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects();
 	    	if (citation.getPublicationType().contains("book")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.BOOK, ElementCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.BOOK, ElementCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("journal")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.JOURNAL_ARTICLE, ElementCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.JOURNAL_ARTICLE, ElementCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("confproc")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.CONFERENCE_PROCS, ElementCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.CONFERENCE_PROCS, ElementCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("thesis")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.THESIS, ElementCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.THESIS, ElementCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("report")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.REPORT, ElementCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.REPORT, ElementCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("gov")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.GOV, ElementCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.GOV, ElementCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("patent")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.PATENT, ElementCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.PATENT, ElementCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("standard")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.STANDARD, ElementCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.STANDARD, ElementCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("web")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.WEBPAGE, ElementCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.WEBPAGE, ElementCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("discussion")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.DISCUSSION, ElementCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.DISCUSSION, ElementCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("list")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.DISCUSSION, ElementCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.DISCUSSION, ElementCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("commun")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.COMMUN, ElementCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.COMMUN, ElementCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("blog")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.BLOG, ElementCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.BLOG, ElementCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("wiki")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.WIKI, ElementCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.WIKI, ElementCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().contains("database")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.DATABASE, ElementCitation.class);
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.DATABASE, ElementCitation.class, withMetadata);
 	    	} else if (citation.getPublicationType().equals("other")) {
-	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.OTHER, ElementCitation.class);	    		
+	    		processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), ReferenceType.OTHER, ElementCitation.class, withMetadata);	    		
 	    	} else {
 	    		logger.warn("WARNING - reference " + this.getRefId(ref) + " could not be processed (type not recognized)");		    
 	    	}

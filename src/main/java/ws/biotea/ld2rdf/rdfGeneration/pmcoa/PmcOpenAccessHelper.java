@@ -15,7 +15,6 @@ import ws.biotea.ld2rdf.rdfGeneration.exception.ArticleTypeException;
 import ws.biotea.ld2rdf.rdfGeneration.exception.DTDException;
 import ws.biotea.ld2rdf.rdfGeneration.exception.PMCIdException;
 import ws.biotea.ld2rdf.rdfGeneration.jats.GlobalArticleConfig;
-import ws.biotea.ld2rdf.util.ClassesAndProperties;
 
 public class PmcOpenAccessHelper {
 	private RDFBasicHandler handler;
@@ -38,7 +37,7 @@ public class PmcOpenAccessHelper {
 	 * @throws ArticleTypeException 
 	 * @throws DTDException 
 	 */
-	public File rdfizeFile(File subdir, String outputDir, boolean sections) throws JAXBException, FileNotFoundException, UnsupportedEncodingException, SAXException, ParserConfigurationException, DTDException, ArticleTypeException, PMCIdException {
+	public File rdfizeFile(File subdir, String outputDir, boolean sections, boolean references) throws JAXBException, FileNotFoundException, UnsupportedEncodingException, SAXException, ParserConfigurationException, DTDException, ArticleTypeException, PMCIdException {
 		logger.info("===RDFize " + subdir.getName() + "===");
 		File outRDF = null; 
 		//1. Create RDF used as a mechanism for improving information retrieval over tagged resources as well as to facilitate the discovery of shared conceptualizations[2,3].
@@ -49,7 +48,7 @@ public class PmcOpenAccessHelper {
 		this.handler.setDocumentPaperId(pmc);
 		outRDF = new File (outputDir + "/PMC" + pmc + ".rdf");
 		if (!outRDF.exists()) {
-			outRDF = this.handler.createRDFFromXML(subdir, outputDir, sections);
+			outRDF = this.handler.createRDFFromXML(subdir, outputDir, sections, references);
 		}	
 		return outRDF;
 	}

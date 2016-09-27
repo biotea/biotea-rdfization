@@ -25,7 +25,7 @@ public interface RDFHandler {
 	 * @throws UnsupportedEncodingException 
 	 * @throws FileNotFoundException 
 	 */
-	public File createRDFFromXML(File xml, String outRDFFileName, boolean sections) throws FileNotFoundException, UnsupportedEncodingException, JAXBException;
+	public File createRDFFromXML(File xml, String outRDFFileName, boolean sections, boolean references) throws FileNotFoundException, UnsupportedEncodingException, JAXBException;
 	/**
 	 * Creates an RDF file from an XML given as string.
 	 * @param xml XML string
@@ -35,14 +35,14 @@ public interface RDFHandler {
 	 * @throws IOException 
 	 * @throws JDOMException 
 	 */
-	public File createRDFFromXMLString(String xml, String outRDFFileName, boolean sections) throws JAXBException, JDOMException, IOException;
+	public File createRDFFromXMLString(String xml, String outRDFFileName, boolean sections, boolean references) throws JAXBException, JDOMException, IOException;
 	/**
 	 * Creates an RDF file from an HTML file.
 	 * @param html HTML file
 	 * @param outRDFFileName Out file absolute name.
 	 * @return RDF file name
 	 */
-	public File createRDFFromHTML(File html, String outRDFFileName, boolean sections);
+	public File createRDFFromHTML(File html, String outRDFFileName, boolean sections, boolean references);
 	/**
 	 * Creates an RDF file from an HTML given as string.
 	 * @param html HTML string
