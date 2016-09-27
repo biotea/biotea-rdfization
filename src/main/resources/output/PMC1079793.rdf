@@ -24,7 +24,6 @@
         <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:1079793"/>
       </bibo:AcademicArticle>
     </bibo:cites>
-    <dcterms:created>27-09-2016 21:58:44</dcterms:created>
     <bibo:cites>
       <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B22">
         <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:1079793"/>
@@ -65,47 +64,34 @@
         <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:1079793"/>
         <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B10"/>
         <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(87)90035-3"/>
-        <dcterms:identifier>doi:10.1016/0378-8741(87)90035-3</dcterms:identifier>
-        <bibo:doi>10.1016/0378-8741(87)90035-3</bibo:doi>
       </bibo:AcademicArticle>
     </bibo:cites>
     <dcterms:identifier>doi:10.1186/1472-6882-5-6</dcterms:identifier>
-    <prov:generatedAtTime>27-09-2016 21:58:44</prov:generatedAtTime>
     <bibo:cites>
       <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pmc_resource:doi_10.1093/jac/41.1.93">
         <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:1079793"/>
         <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B7"/>
         <owl:sameAs rdf:resource="http://dx.doi.org/10.1093/jac/41.1.93"/>
-        <dcterms:identifier>doi:10.1093/jac/41.1.93</dcterms:identifier>
-        <bibo:doi>10.1093/jac/41.1.93</bibo:doi>
       </bibo:AcademicArticle>
     </bibo:cites>
     <dcterms:title>Screening of crude extracts of six medicinal plants used in South-West Nigerian unorthodox medicine for anti-methicillin resistant activity</dcterms:title>
     <bibo:cites>
       <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:8412246">
-        <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(93)90028-4"/>
-        <dcterms:identifier>pmid:8412246</dcterms:identifier>
-        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8412246"/>
-        <bibo:pmid>8412246</bibo:pmid>
-        <dcterms:identifier>doi:10.1016/0378-8741(93)90028-4</dcterms:identifier>
-        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B11"/>
-        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/8412246"/>
-        <bibo:doi>10.1016/0378-8741(93)90028-4</bibo:doi>
         <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B11"/>
+        <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(93)90028-4"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/8412246"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8412246"/>
       </bibo:AcademicArticle>
     </bibo:cites>
     <dcterms:license rdf:resource="http://creativecommons.org/licenses/by/2.0"/>
     <bibo:cites>
       <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:11353619">
-        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B5"/>
-        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/11353619"/>
-        <dcterms:identifier>doi:10.1128/AAC.45.6.1737-1742.2001</dcterms:identifier>
-        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/11353619"/>
-        <bibo:doi>10.1128/AAC.45.6.1737-1742.2001</bibo:doi>
-        <owl:sameAs rdf:resource="http://dx.doi.org/10.1128/AAC.45.6.1737-1742.2001"/>
-        <dcterms:identifier>pmid:11353619</dcterms:identifier>
         <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:1079793"/>
-        <bibo:pmid>11353619</bibo:pmid>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B5"/>
+        <owl:sameAs rdf:resource="http://dx.doi.org/10.1128/AAC.45.6.1737-1742.2001"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/11353619"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/11353619"/>
       </bibo:AcademicArticle>
     </bibo:cites>
     <bibo:cites>
@@ -114,8 +100,6 @@
         <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B28"/>
         <owl:sameAs rdf:resource="http://identifiers.org/pubmed/5356032"/>
         <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/5356032"/>
-        <bibo:pmid>5356032</bibo:pmid>
-        <dcterms:identifier>pmid:5356032</dcterms:identifier>
       </bibo:AcademicArticle>
     </bibo:cites>
     <bibo:cites>
@@ -123,6 +107,7 @@
         <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:1079793"/>
       </bibo:AcademicArticle>
     </bibo:cites>
+    <dcterms:created>27-09-2016 22:14:53</dcterms:created>
     <bibo:pageEnd>6</bibo:pageEnd>
     <bibo:volume>5</bibo:volume>
     <bibo:cites>
@@ -136,11 +121,10 @@
         <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B2"/>
         <owl:sameAs rdf:resource="http://identifiers.org/pubmed/9336672"/>
         <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/9336672"/>
-        <bibo:pmid>9336672</bibo:pmid>
-        <dcterms:identifier>pmid:9336672</dcterms:identifier>
       </bibo:AcademicArticle>
     </bibo:cites>
     <prov:wasAttributedTo rdf:resource="http://bio2rdf.org/agent/biotea_serializer/"/>
+    <prov:generatedAtTime>27-09-2016 22:14:53</prov:generatedAtTime>
     <bibo:cites>
       <bibo:Book rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B31">
         <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:1079793"/>
@@ -154,15 +138,11 @@
     <dcterms:identifier>pmc:1079793</dcterms:identifier>
     <bibo:cites>
       <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:10021469">
-        <dcterms:identifier>doi:10.1056/NEJM199902183400701</dcterms:identifier>
-        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/10021469"/>
-        <dcterms:identifier>pmid:10021469</dcterms:identifier>
-        <bibo:pmid>10021469</bibo:pmid>
-        <owl:sameAs rdf:resource="http://dx.doi.org/10.1056/NEJM199902183400701"/>
-        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B9"/>
-        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/10021469"/>
-        <bibo:doi>10.1056/NEJM199902183400701</bibo:doi>
         <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B9"/>
+        <owl:sameAs rdf:resource="http://dx.doi.org/10.1056/NEJM199902183400701"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/10021469"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/10021469"/>
       </bibo:AcademicArticle>
     </bibo:cites>
     <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/15762997"/>
@@ -174,15 +154,11 @@
     </bibo:cites>
     <bibo:cites>
       <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:8824740">
-        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8824740"/>
-        <dcterms:identifier>doi:10.1016/0378-8741(95)01315-6</dcterms:identifier>
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:1079793"/>
         <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B13"/>
         <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(95)01315-6"/>
         <owl:sameAs rdf:resource="http://identifiers.org/pubmed/8824740"/>
-        <bibo:pmid>8824740</bibo:pmid>
-        <dcterms:identifier>pmid:8824740</dcterms:identifier>
-        <bibo:doi>10.1016/0378-8741(95)01315-6</bibo:doi>
-        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8824740"/>
       </bibo:AcademicArticle>
     </bibo:cites>
     <bibo:cites>
@@ -190,8 +166,6 @@
         <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:1079793"/>
         <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B24"/>
         <owl:sameAs rdf:resource="http://dx.doi.org/10.1021/ac60068a018"/>
-        <dcterms:identifier>doi:10.1021/ac60068a018</dcterms:identifier>
-        <bibo:doi>10.1021/ac60068a018</bibo:doi>
       </bibo:AcademicArticle>
     </bibo:cites>
     <bibo:cites>
@@ -252,14 +226,10 @@
     <bibo:cites>
       <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:3821140">
         <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:1079793"/>
-        <bibo:doi>10.1016/0378-8741(86)90004-8</bibo:doi>
-        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/3821140"/>
-        <dcterms:identifier>pmid:3821140</dcterms:identifier>
-        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/3821140"/>
-        <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(86)90004-8"/>
-        <dcterms:identifier>doi:10.1016/0378-8741(86)90004-8</dcterms:identifier>
-        <bibo:pmid>3821140</bibo:pmid>
         <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B14"/>
+        <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(86)90004-8"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/3821140"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/3821140"/>
       </bibo:AcademicArticle>
     </bibo:cites>
     <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1079793"/>
@@ -293,14 +263,10 @@
     <prov:wasDerivedFrom rdf:resource="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1079793"/>
     <bibo:cites>
       <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:8412245">
-        <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(93)90027-3"/>
-        <dcterms:identifier>doi:10.1016/0378-8741(93)90027-3</dcterms:identifier>
-        <bibo:doi>10.1016/0378-8741(93)90027-3</bibo:doi>
-        <bibo:pmid>8412245</bibo:pmid>
-        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/8412245"/>
         <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:1079793"/>
         <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B12"/>
-        <dcterms:identifier>pmid:8412245</dcterms:identifier>
+        <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(93)90027-3"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/8412245"/>
         <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8412245"/>
       </bibo:AcademicArticle>
     </bibo:cites>
@@ -313,8 +279,6 @@
         <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B3"/>
         <owl:sameAs rdf:resource="http://identifiers.org/pubmed/6643661"/>
         <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/6643661"/>
-        <bibo:pmid>6643661</bibo:pmid>
-        <dcterms:identifier>pmid:6643661</dcterms:identifier>
       </bibo:AcademicArticle>
     </bibo:cites>
     <bibo:cites>

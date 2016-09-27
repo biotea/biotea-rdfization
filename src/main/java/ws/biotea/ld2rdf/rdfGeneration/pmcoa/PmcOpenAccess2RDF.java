@@ -748,7 +748,7 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 	 * @param ref
 	 * @return
 	 */
-	private Document processReferenceCreateArticle(Model model, Document document, String url, String pubmed, String doiReference, Ref ref, ReferenceType type) {		
+	private Document processReferenceCreateArticle(Model model, Document document, String url, String pubmed, String doiReference, Ref ref, ReferenceType type, boolean withMetadata) {		
 		Document docReference = null;		
 
 		//create document
@@ -788,9 +788,11 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 			docReference = new ws.biotea.ld2rdf.rdf.model.bibo.Document(model, url, true);	
 		}			
 		
-		if (pubmed != null) {
-			docReference.addIdentifier(model, "pmid:" + pubmed);
-			docReference.addPMID(model, pubmed);
+		if (pubmed != null) {			
+			if (withMetadata) {
+				docReference.addIdentifier(model, "pmid:" + pubmed);
+				docReference.addPMID(model, pubmed);
+			}			
 			docReference.addSeeAlso(new URIImpl(GlobalArticleConfig.pubMedURI + pubmed)); //seeAlso for webpages
 			docReference.addSameAs(model, ResourceConfig.IDENTIFIERS_ORG_PUBMED + pubmed); //sameAs for entities
 			if (!url.equals(ResourceConfig.BIO2RDF_PUBMED + pubmed)) {
@@ -798,8 +800,10 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 			}			
 			if (doiReference != null) {
 				try {
-					docReference.addDOI(model, doiReference);
-					docReference.addIdentifier(model, "doi:" + doiReference);
+					if (withMetadata) {
+						docReference.addDOI(model, doiReference);
+						docReference.addIdentifier(model, "doi:" + doiReference);
+					}
 					//docReference.addSeeAlso(new URIImpl(global.doiURI + doiReference)); //seeAlso for webpages
 					docReference.addSameAs(model, GlobalArticleConfig.doiURI + doiReference);
 					if (!global.getUriStyle().equals(ResourceConfig.bio2rdf)) {
@@ -808,8 +812,10 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 				} catch (Exception e) {	}
 			}	
 		} else if (doiReference != null) {
-			docReference.addDOI(model, doiReference);
-			docReference.addIdentifier(model, "doi:" + doiReference);
+			if (withMetadata) {
+				docReference.addDOI(model, doiReference);
+				docReference.addIdentifier(model, "doi:" + doiReference);
+			}
 			//docReference.addSeeAlso(new URIImpl(global.doiURI + doiReference)); //seeAlso for webpages
 			docReference.addSameAs(model, GlobalArticleConfig.doiURI + doiReference);
 			if (!global.getUriStyle().equals(ResourceConfig.bio2rdf)) {
@@ -890,7 +896,7 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 		}
 		
 		if (!withMetadata) {			
-			docReference = processReferenceCreateArticle(model, document, publicationLink, pubmedReference, doiReference, ref, type);
+			docReference = processReferenceCreateArticle(model, document, publicationLink, pubmedReference, doiReference, ref, type, withMetadata);
 			//We need to keep the reference format as a document resource so we can link sections and paragraphs to it		
 			if (pubmedReference != null) {
 				docReference.addSameAs(model, global.BASE_URL_REF + this.getRefId(ref));
@@ -1067,16 +1073,16 @@ public class PmcOpenAccess2RDF implements Publication2RDF {
 		}						    
 		//Reference		
 		if ((type == ReferenceType.BOOK) && (sectionId != null)) {
-			docReference = processReferenceCreateArticle(model, document, publicationLink, pubmedReference, doiReference, ref, ReferenceType.BOOK_SECTION);
+			docReference = processReferenceCreateArticle(model, document, publicationLink, pubmedReference, doiReference, ref, ReferenceType.BOOK_SECTION, withMetadata);
 			type = ReferenceType.BOOK_SECTION;
 		} else if ((type == ReferenceType.BOOK) && (articleTitle != null)) {//nlm-citation
-			docReference = processReferenceCreateArticle(model, document, publicationLink, pubmedReference, doiReference, ref, ReferenceType.BOOK_SECTION);
+			docReference = processReferenceCreateArticle(model, document, publicationLink, pubmedReference, doiReference, ref, ReferenceType.BOOK_SECTION, withMetadata);
 			type = ReferenceType.BOOK_SECTION;
 		} else if ((type == ReferenceType.CONFERENCE_PROCS) && (articleTitle != null)) {
-			docReference = processReferenceCreateArticle(model, document, publicationLink, pubmedReference, doiReference, ref, ReferenceType.CONFERENCE_PAPER);
+			docReference = processReferenceCreateArticle(model, document, publicationLink, pubmedReference, doiReference, ref, ReferenceType.CONFERENCE_PAPER, withMetadata);
 			type = ReferenceType.CONFERENCE_PAPER;
 		} else {
-			docReference = processReferenceCreateArticle(model, document, publicationLink, pubmedReference, doiReference, ref, type);
+			docReference = processReferenceCreateArticle(model, document, publicationLink, pubmedReference, doiReference, ref, type, withMetadata);
 		}
 		//We need to keep the reference format as a document resource so we can link sections and paragraphs to it		
 		if (pubmedReference != null) {
