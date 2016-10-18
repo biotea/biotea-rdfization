@@ -11,11 +11,10 @@ import org.ontoware.rdf2go.model.node.impl.URIImpl;
 import org.ontoware.rdf2go.vocabulary.RDF;
 import org.ontoware.rdf2go.vocabulary.RDFS;
 
-import ws.biotea.ld2rdf.rdf.model.bibo.Agent;
 import ws.biotea.ld2rdf.rdf.model.bibo.Thing;
 
 
-public class ListOfAuthorsE extends Thing implements ListE<Agent>{
+public class ListOfAuthorsE extends Thing implements ListE<Thing>{
 	public static final URI RDFS_CLASS = new URIImpl(RDF.Seq.toString(), false);
 	
 	/**
@@ -37,7 +36,7 @@ public class ListOfAuthorsE extends Thing implements ListE<Agent>{
 		super(model, RDFS_CLASS, bnode, write);
 	}
 	
-    public void addMember(Model model, Agent thing, int index) {
+    public void addMember(Model model, Thing thing, int index) {
     	if (index > 0) {
     		Statement stm = model.createStatement(this.asResource(), RDF.li(index), thing.asResource());
             model.addStatement(stm);
@@ -47,15 +46,15 @@ public class ListOfAuthorsE extends Thing implements ListE<Agent>{
     	}    	
     }
 
-    public void addMembers(Model model, Collection<Agent> collection) {
-    	for (Agent thing:collection) {
+    public void addMembers(Model model, Collection<Thing> collection) {
+    	for (Thing thing:collection) {
     		this.addMember(model, thing, 0); 
     	}
     }
     
-    public void addMembersInOrder(Model model, Collection<Agent> collection) {
+    public void addMembersInOrder(Model model, Collection<Thing> collection) {
     	int i = 1;
-    	for (Agent thing:collection) {
+    	for (Thing thing:collection) {
     		this.addMember(model, thing, new Integer(i));
             i++;
     	}

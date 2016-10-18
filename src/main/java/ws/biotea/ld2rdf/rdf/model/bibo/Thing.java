@@ -6,7 +6,9 @@ package ws.biotea.ld2rdf.rdf.model.bibo;
 import org.ontoware.aifbcommons.collection.ClosableIterator;
 import org.ontoware.rdf2go.exception.ModelRuntimeException;
 import org.ontoware.rdf2go.model.Model;
+import org.ontoware.rdf2go.model.Statement;
 import org.ontoware.rdf2go.model.node.BlankNode;
+import org.ontoware.rdf2go.model.node.Node;
 import org.ontoware.rdf2go.model.node.URI;
 import org.ontoware.rdf2go.model.node.impl.URIImpl;
 import org.ontoware.rdfreactor.runtime.Base;
@@ -54,6 +56,8 @@ import org.ontoware.rdfreactor.runtime.ReactorResult;
  */
 public class Thing extends org.ontoware.rdfreactor.schema.rdfs.Class {
 	public static final URI RDF_TYPE = new URIImpl("http://www.w3.org/1999/02/22-rdf-syntax-ns#type", false);
+	public static final String OWL_NS = "http://www.w3.org/2002/07/owl#";
+	public static final URI OWL_SAMEAS = new URIImpl(OWL_NS + "sameAs", false); 
     
 	/** http://www.w3.org/2000/01/rdf-schema#Class */	
 	@SuppressWarnings("hiding")
@@ -282,6 +286,10 @@ public class Thing extends org.ontoware.rdfreactor.schema.rdfs.Class {
 	 */
 	public Thing ( Model model, String uriString, boolean write) throws ModelRuntimeException {
 		super(model, RDFS_CLASS, new URIImpl(uriString,false), write);
+	}
+	
+	public Thing ( Model model, String clazz, String uriString, boolean write) throws ModelRuntimeException {
+		super(model, new URIImpl(clazz, false), new URIImpl(uriString,false), write);
 	}
 
 	/**
@@ -10987,5 +10995,11 @@ public class Thing extends org.ontoware.rdfreactor.schema.rdfs.Class {
      */
 	public void removeAllbiboVersionInfo() {
 		Base.removeAll(this.model, this.getResource(), VERSIONINFO);
+	}
+	
+	public void addSameAs(Model model, String uriString) {
+		Node uriNode = model.createURI(uriString);
+		Statement stm = model.createStatement(this.asResource(), OWL_SAMEAS, uriNode);
+	    model.addStatement(stm); //sameAs
 	}
  }

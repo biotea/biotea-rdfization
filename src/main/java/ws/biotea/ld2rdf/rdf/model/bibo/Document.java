@@ -7497,8 +7497,8 @@ public class Document extends Thing {
 	}
 	
 	public void addIssue(Model model, ws.biotea.ld2rdf.rdf.model.bibo.Issue issue) {
-	    model.addStatement(this.asResource(), DCTERMS_HAS_PART, issue.asResource()); //doc hasPart section
-	    model.addStatement(issue.asResource(), DCTERMS_IS_PART_OF, this.asResource()); //section isPartOf document
+	    model.addStatement(this.asResource(), DCTERMS_IS_PART_OF, issue.asResource()); //doc hasPart section
+	    model.addStatement(issue.asResource(), DCTERMS_HAS_PART, this.asResource()); //section isPartOf document
 	}
 	
 	public void addAppendix(Model model, ws.biotea.ld2rdf.rdf.model.doco.Appendix appendix) {
@@ -7539,12 +7539,6 @@ public class Document extends Thing {
 		PlainLiteral descAsLiteral = model.createPlainLiteral(desc);	    
 	    Statement stm = model.createStatement(this.asResource(), DCTERMS_DESCRIPTION, descAsLiteral);
 	    model.addStatement(stm); //description
-	}
-	
-	public void addSameAs(Model model, String uriString) {
-		Node uriNode = model.createURI(uriString);
-		Statement stm = model.createStatement(this.asResource(), OWL_SAMEAS, uriNode);
-	    model.addStatement(stm); //sameAs
 	}
 	
 	public void addDCLicense(Model model, String uriString) {

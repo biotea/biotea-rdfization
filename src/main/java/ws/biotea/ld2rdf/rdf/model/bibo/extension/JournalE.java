@@ -61,7 +61,5 @@ public class JournalE extends Journal {
 	    Statement stm = model.createStatement(this.asResource(), BIBO_ISSN, doiAsLiteral);
 	    model.addStatement(stm); //name
 	}
-	
-	
 
 }

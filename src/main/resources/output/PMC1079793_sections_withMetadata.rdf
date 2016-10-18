@@ -1,0 +1,540 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:prov="http://www.w3.org/ns/prov#"
+    xmlns:doco="http://purl.org/spar/doco/"
+    xmlns:bibo="http://purl.org/ontology/bibo/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:1079793_section_undefined-section"/>
+  <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Bacterial-culture_para_1">
+    <rdf:value>The MRSA strains used in this study were clinical isolates from urethral swab, seminal fluid, urine, high virginal swab, blood, skin swab and sputum of patients presenting with symptoms of S. aureus-associated diseases. The isolates were identified by standard method[[B21]]. Methicillin resistant S. aureus was determined by the reference broth microdilution methods using the established NCCLS[[B22]] break points. The standard strain used was S. aureus</rdf:value>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B22">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Bacterial-culture_para_1"/>
+      </bibo:Document>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B21">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Bacterial-culture_para_1"/>
+      </bibo:Document>
+    </bibo:cites>
+    <dcterms:isPartOf>
+      <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Bacterial-culture">
+        <dcterms:hasPart>
+          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Bacterial-culture_para_2">
+            <rdf:value>NCIB 8588. The organisms were maintained on agar slope at 4°C and sub-cultured for 24 hr before use.</rdf:value>
+            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Bacterial-culture"/>
+          </doco:Paragraph>
+        </dcterms:hasPart>
+        <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Bacterial-culture_para_1"/>
+        <dcterms:isPartOf>
+          <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:1079793_section_Methods">
+            <dcterms:hasPart>
+              <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Phytochemical-screening-methods">
+                <dcterms:hasPart>
+                  <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Phytochemical-screening-methods_para_2">
+                    <rdf:value>The test for tannins was carried out by subjecting 3 g of each plant extract in 6 ml of distilled water, filtered and ferric chloride reagents added to the filtrate. For cardiac glycosides, legal test and the Killer-Kiliani test[[B26]] were adopted (0.5 g of extract was added to 2 ml acetic anhydrate plus H2SO4). The test for alkaloids was carried out by subjecting 0.5 g aqueous extract in 5 ml 1% HCl, boiled, filtered and Mayer's reagent added [[B26],[B27]]. Cyanogenic glycosides were identified by subjecting 0.5 g extract in 10 ml sterile water, and were filtered. Sodium picrate paper was added to the filtrate and heated to boil. The extract was also tested for carbohydrates using resorcinol solution[[B24]]. The extract was subjected to frothing test for the identification of saponin. Haemolysis test was further performed on the froted extracts in water to remove false positive results[[B25]]. Fehling's solution was added to the extract and heated to detect reducing sugar. The extract was also tested for free glycoside bound anthraquinones[[B24],[B25]]. Five grams of extract was added to 10 ml benzene, filtered and ammonia solution added. The presence of flavonoids was determined using 1% aluminum chloride solution in methanol concentrated HCl, magnesium turnins, and potassium hydroxide solution[[B28]].</rdf:value>
+                    <bibo:cites>
+                      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B28">
+                        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Phytochemical-screening-methods_para_2"/>
+                      </bibo:Document>
+                    </bibo:cites>
+                    <bibo:cites>
+                      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B25">
+                        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Phytochemical-screening-methods_para_2"/>
+                        <bibo:citedBy>
+                          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Phytochemical-screening-methods_para_1">
+                            <rdf:value>All plant parts were extracted on the day of collection. The screening procedures were adapted from Wall et al.,[[B24]] and Sofowora[[B25]]. An extraction of each plant part was prepared by macerating a known weight of the fresh plant material in a blender with redistilled methylated spirit. Each extract was suction-filtered and the process repeated until all soluble compounds had been extracted, as judged by loss of colour of the filtrate. Extract from each plant part was evaporated to dryness in vacuo at about 45°C and further dried to a constant weight at the same temperature in a hot-air oven. A portion of the residue was used to test for plant constituents.</rdf:value>
+                            <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B25"/>
+                            <bibo:cites>
+                              <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B24">
+                                <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Phytochemical-screening-methods_para_2"/>
+                                <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Phytochemical-screening-methods_para_1"/>
+                              </bibo:Document>
+                            </bibo:cites>
+                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Phytochemical-screening-methods"/>
+                          </doco:Paragraph>
+                        </bibo:citedBy>
+                      </bibo:Document>
+                    </bibo:cites>
+                    <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B24"/>
+                    <bibo:cites>
+                      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B27">
+                        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Phytochemical-screening-methods_para_2"/>
+                      </bibo:Document>
+                    </bibo:cites>
+                    <bibo:cites>
+                      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B26">
+                        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Phytochemical-screening-methods_para_2"/>
+                      </bibo:Document>
+                    </bibo:cites>
+                    <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Phytochemical-screening-methods"/>
+                  </doco:Paragraph>
+                </dcterms:hasPart>
+                <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Phytochemical-screening-methods_para_1"/>
+                <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods"/>
+                <dcterms:title>Phytochemical screening methods</dcterms:title>
+                <dcterms:isPartOf>
+                  <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pmc:1079793">
+                    <dcterms:title>Screening of crude extracts of six medicinal plants used in South-West Nigerian unorthodox medicine for anti-methicillin resistant activity</dcterms:title>
+                    <dcterms:hasPart>
+                      <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Determination-of-minimum-inhibitory-concentration--MIC--and-minimum-bactericidal-concentration--MBC-">
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Determination-of-minimum-inhibitory-concentration--MIC--and-minimum-bactericidal-concentration--MBC-_para_1">
+                            <rdf:value>MIC of the extracts was determined by dilution of P, Q, R, S, T &amp;.U to various concentrations of 0.0–32, 0.0–91, 0.0–38, 0.0–42, 0.0–44 and 0.0–35 mcg/ml respectively. Equal volume of each extract and nutrient broth were mixed in a test tube. Specifically 0.1 ml of standardized inoculum (1–2 × 107 cfu/ml) was added to each tube. The tubes were incubated aerobically at 37°C for 18–24 hr. Two control tubes were maintained for each test batch. These included antibiotic control (tube containing extract and the growth medium without inoculum) and organism control (the tube containing the growth medium, physiological saline and the inoculum). The lowest concentration (highest dilution) of the extract that produced no visible bacterial growth (no turbidity) when compared with the control tubes was regarded as MIC. However, the MBC was determined by subculturing the test dilution on to a fresh drug-free solid medium and incubated further for 18–24 hr. The highest dilution that yielded no single bacterial colony on a solid medium was taken as MBC.</rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Determination-of-minimum-inhibitory-concentration--MIC--and-minimum-bactericidal-concentration--MBC-"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods"/>
+                        <dcterms:title>Determination of minimum inhibitory concentration (MIC) and minimum bactericidal concentration (MBC)</dcterms:title>
+                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+                      </doco:Section>
+                    </dcterms:hasPart>
+                    <dcterms:hasPart>
+                      <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Water-extract">
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Water-extract_para_1">
+                            <rdf:value>Leaves of B. ferruginea (P) and A. conyzoides, (Q), and stem barks of T. avicennioides (R) P. discoideus (S) O. gratissimum (T) and A. wilkesiana (U) were oven-dried at temperature of 60°C for 6 days. They were subsequently grounded into fine powder in 25 ml of sterile distilled water, maintained at 60°C for 3 hr. The resulting suspensions were filtered and evaporated to dryness at 60°C in vacuo to produce 0.031, 0.041, 0.038, 0.042, 0.044 and 0.035 g of P, Q, R, S, T, and U respectively. They were further labeled as aqueous extracts and designated as PW, QW, RW SW, TW, and UW respectively.</rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Water-extract"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods"/>
+                        <dcterms:title>Water extract</dcterms:title>
+                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+                      </doco:Section>
+                    </dcterms:hasPart>
+                    <dcterms:hasPart>
+                      <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Extraction">
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Extraction_para_1">
+                            <rdf:value>The extraction method used in this study was a modification of Akinside &amp; Olukoya,[[B15]] and Akinyemi et al.[[B16]]. In line with the traditional methods of preparation, shredded plant materials were put in sterile bottles containing either distilled water or 40% ethanol.</rdf:value>
+                            <bibo:cites>
+                              <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B16">
+                                <bibo:citedBy>
+                                  <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Discussion_para_5">
+                                    <rdf:value>Traditionally, leaves of O. gratissimum and A. wilkesiana and barks of T. avicenniodes and P. discoideus are soaked in ethanol or water (in case of patients forbidding alcoholic intake due to religious belief) for days, large quantities of these extracts, which lack specific concentration are usually administered to patients. Our results therefore tend to support the traditional claim that these four medicinal plants are preferably extracted in ethanol. Strong vibriocidal activity of water and ethanol extracts of T. avicennioides and typhoidal activity of aqueous extracts of O. gratissimum had been reported in Lagos, Nigeria [[B15],[B16]].</rdf:value>
+                                    <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B16"/>
+                                    <bibo:cites>
+                                      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B15">
+                                        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Discussion_para_5"/>
+                                        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Extraction_para_1"/>
+                                        <bibo:citedBy>
+                                          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_5">
+                                            <rdf:value>Terminalia. avicennioides (Combretaceae) is a yellowish brown, hard and durable wood. The roots which are used as chewing sticks have been claimed to cure dental caries and skin infections[[B14]]. Previous studies, showed that the bark extract of T. avicennioides exhibited both vibrocidal and typhoidal activities[[B15],[B16]]. A. conyzoides (Compositae) is an annual herb abundant in preclusive forests and farmland in southern part of Nigeria. Previous study showed that methanolic leaf extracts corrected fibrinogaemia in poultry chicks. Also both methanol and water extracts of the leaves exhibited anti-bacterial effect[[B17]]. B. ferruginea (Euphorbiaceae) is used for treatment of insomnia. The bark in combination with other herbs is used to cure pile in western part of Nigeria[[B18]].</rdf:value>
+                                            <bibo:cites>
+                                              <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B18">
+                                                <bibo:citedBy>
+                                                  <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Discussion_para_2">
+                                                    <rdf:value
+                                                    >The results of the study indicated that four out of six medicinal plants commonly used by traditional medical practitioners to cure skin and upper respiratory tract infections such as pneumonia, carbuncle, purple, impetigo and tonsillitis were active against hospital strains of MRSA. The crude extracts of B. ferruginea and A. conyzoides were weakly active against MRSA strains with ethanol extract of both plants exerting stronger antibacterial activity than water extracts. Previous studies by Ogbeche et al.[[B17]] and Oluyemi[[B18]] indicated that the crude extracts of these plants were effective against S. aureus. The present study was slightly conformed to their findings but the only area of concern is that while their studies only dealt with the effect of crude extracts on S. aureus, our study focused on the effect of crude extract on the MRSA, and determination of both MIC &amp; MBC values of the extracts.</rdf:value>
+                                                    <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B18"/>
+                                                    <bibo:cites>
+                                                      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B17">
+                                                        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Discussion_para_2"/>
+                                                        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_5"/>
+                                                      </bibo:Document>
+                                                    </bibo:cites>
+                                                    <dcterms:isPartOf>
+                                                      <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:1079793_section_Discussion">
+                                                        <dcterms:hasPart>
+                                                          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Discussion_para_6">
+                                                            <rdf:value
+                                                            >The result of phytochemical screening of six plants indicated the presence of tannins, alkaloids and saponins. Interestingly, only the four plant extracts that were active against MRSA in this study contained at least trace amount of anthraquinone (Table [T4]). It is therefore most probable that the presence of anthraquinone contributed to anti-MRSA activity observed. We were unable to carry out bioautography of the extracts due to lack of facilities.</rdf:value>
+                                                            <bibo:cites>
+                                                              <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_T4">
+    <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Discussion_para_6"/>
+    <bibo:citedBy>
+      <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Results_para_3">
+        <rdf:value>The result of photochemical screening showed that all the six tested plants exhibited positive reactions to alkaloids, tannins and saponins. However, anthraquinone was only found in the four active plants in this study. None contained cardiac glycosides and cyanogenic glycosides. Reducing and non-reducing carbohydrates were found in P discoideus, O. gratissimum and T. avicennioides (Table [T4]).</rdf:value>
+        <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_T4"/>
+        <dcterms:isPartOf>
+          <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:1079793_section_Results">
+            <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Results_para_3"/>
+            <dcterms:hasPart>
+              <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Results_para_2">
+                <rdf:value>Both water and ethanol extracts of these plants were effective on MRSA strains. On the other hand, the crude extracts (water &amp; ethanol) of B. ferruginea and A. conyzoides were weakly effective against the cocci as judged by the zones of inhibition (Table [T2]). The MIC and MBC values obtained for the extracts against the MRSA varied from one plant extract to the other. For instance, the MIC values of 20.8 and 18.2 mcg/ml were obtained for water and ethanol extracts of T. avicennioides respectively, while the corresponding MBC values are 33.0 and 30.4 mcg/ml. The MIC and MBC values of 43.0 and 63.2 mcg/ml were recorded for ethanol extract and 71.0 and 84.2 mcg/ml for water extract of A. conyzoides respectively. Also, MIC &amp; MBC values of 55.4 &amp; 63.6 mcg/ml and 30.6 &amp; 55.0 mcg/ml were obtained for water and ethanol extracts of B. ferruginea respectively. These plant extracts were bacteriostatic at lower concentrations and bactericidal at higher concentrations as revealed by MIC and MBC values (Table [T3]).</rdf:value>
+                <bibo:cites>
+                  <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_T3">
+                    <bibo:citedBy>
+                      <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Discussion_para_4">
+                        <rdf:value>Our investigation further showed that both water and ethanol extracts of T. avicennioides, P. discoideus, O. gratissimum and A. wilkessiana were active against S. aureus and MRSA. The MIC value of the four active plant extracts obtained in this study were lower than the MBC values suggesting that the plant extracts were bacteriostatic at lower concentration and bactericidal at higher concentration. The ethanol extract of the four plants exerted greater antibacterial activity than corresponding water extract (Tables [T2] and [T3]) at the same concentrations. These observations may be attributed to two reasons; firstly, the nature of biological active components (saponins, tannins, alkaloids and anthraquinone) which could be enhanced in the presence of ethanol. It has been documented that tannins, saponins and alkaloids are plants metabolites well known for antimicrobial activity[[B31]]. Secondly, the stronger extraction capacity of ethanol could have produced greater number of active constituents responsible for antibacterial activity.</rdf:value>
+                        <bibo:cites>
+                          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B31">
+                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Discussion_para_4"/>
+                          </bibo:Document>
+                        </bibo:cites>
+                        <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_T3"/>
+                        <bibo:cites>
+                          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_T2">
+                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Discussion_para_4"/>
+                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Results_para_2"/>
+                          </bibo:Document>
+                        </bibo:cites>
+                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Discussion"/>
+                      </doco:Paragraph>
+                    </bibo:citedBy>
+                    <bibo:citedBy>
+                      <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Discussion_para_3">
+                        <rdf:value>For example, the MIC values of 30.6 and 43.0 mcg/ml obtained for ethanol extracts of B. ferruginea and A. conyzoides in this study were lowered than their corresponding water extracts of 55.4 and 71.0 mcg/ml. Similarly, MBC values of 63.6 and 84.2 mcg/ml were recorded for ethanol extract of B. ferruginea and A. conyzoides respectively (Table [T3]). These values were too high to be considered active against the pathogen. It is worthy of note that traditional medical practitioners used these plant extracts solely without combining with other plant extracts for the treatment of MRSA-associated skin and respiratory diseases. This finding may disagree with the traditional therapeutic indications claimed on these plants we therefore suggest the immediate stoppage of their traditional use against MRSA-associated diseases in Lagos, Nigeria. However, the in-vitro inactivity of these plants on MRSA may not necessarily translate to their in-vivo inactivity but the extracts may probably be playing immuno-modulatory roles in the body system. Bever[[B30]] had documented immunodulation of chemical compounds from medicinal plants many of which have been proved to be inactive or weakly active in-vitro against pathogens. In this study, we are unable to determine immuno-modulating action of these plants due to lack of facilities.</rdf:value>
+                        <bibo:cites>
+                          <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B30">
+                            <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Discussion_para_3"/>
+                          </bibo:Document>
+                        </bibo:cites>
+                        <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_T3"/>
+                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Discussion"/>
+                      </doco:Paragraph>
+                    </bibo:citedBy>
+                    <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Results_para_2"/>
+                  </bibo:Document>
+                </bibo:cites>
+                <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_T2"/>
+                <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Results"/>
+              </doco:Paragraph>
+            </dcterms:hasPart>
+            <dcterms:hasPart>
+              <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Results_para_1">
+                <rdf:value>The profile of six medicinal plants used in this study is shown in Table [T1]. The results of antibacterial activity of the crude extracts of these plants revealed that only four of the six plants: T. avicennioides, P. discoideus, O. gratissimum and A. wilkesiana showed good antibacterial activity against MRSA used.</rdf:value>
+                <bibo:cites>
+                  <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_T1">
+                    <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Results_para_1"/>
+                  </bibo:Document>
+                </bibo:cites>
+                <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Results"/>
+              </doco:Paragraph>
+            </dcterms:hasPart>
+            <dcterms:title>Results</dcterms:title>
+            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+          </doco:Section>
+        </dcterms:isPartOf>
+      </doco:Paragraph>
+    </bibo:citedBy>                                           </bibo:Document>
+                                                            </bibo:cites>
+                                                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Discussion"/>
+                                                          </doco:Paragraph>
+                                                        </dcterms:hasPart>
+                                                        <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Discussion_para_5"/>
+                                                        <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Discussion_para_4"/>
+                                                        <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Discussion_para_3"/>
+                                                        <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Discussion_para_2"/>
+                                                        <dcterms:hasPart>
+                                                          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Discussion_para_1">
+                                                            <rdf:value
+                                                            >Medicinal plants constitute an effective source of both traditional and modern medicines, herbal medicine has been shown to have genuine utility and about 80% of rural population depends on it as primary health care. Over the years, the World Health Organization advocated that countries should interact with traditional medicine with a view to identifying and exploiting aspects that provide safe and effective remedies for ailments of both microbial and non-microbial origins[[B29]].</rdf:value>
+                                                            <bibo:cites>
+                                                              <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B29">
+    <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Discussion_para_1"/>
+                                                              </bibo:Document>
+                                                            </bibo:cites>
+                                                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Discussion"/>
+                                                          </doco:Paragraph>
+                                                        </dcterms:hasPart>
+                                                        <dcterms:title
+                                                        >Discussion</dcterms:title>
+                                                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+                                                      </doco:Section>
+                                                    </dcterms:isPartOf>
+                                                  </doco:Paragraph>
+                                                </bibo:citedBy>
+                                                <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_5"/>
+                                              </bibo:Document>
+                                            </bibo:cites>
+                                            <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B17"/>
+                                            <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B16"/>
+                                            <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B15"/>
+                                            <bibo:cites>
+                                              <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B14">
+                                                <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_5"/>
+                                              </bibo:Document>
+                                            </bibo:cites>
+                                            <dcterms:isPartOf>
+                                              <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:1079793_section_Background">
+                                                <dcterms:hasPart>
+                                                  <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_3">
+                                                    <rdf:value
+                                                    >The use of medicinal plants all over the world predates the introduction of antibiotics and other modern drugs into Africa continent. Herbal medicine has been widely used and formed an integral part of primary health care in China[[B10]], Ethiopia[[B11]], Argentina[[B12]] and Papau New Guinea[[B13]]. Traditional medical practitioners in Southwest, Nigeria, use a variety of herbal preparations to treat different kinds of microbial diseases including MRSA-associated diseases.</rdf:value>
+                                                    <bibo:cites>
+                                                      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B13">
+                                                        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_3"/>
+                                                      </bibo:Document>
+                                                    </bibo:cites>
+                                                    <bibo:cites>
+                                                      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B12">
+                                                        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_3"/>
+                                                      </bibo:Document>
+                                                    </bibo:cites>
+                                                    <bibo:cites>
+                                                      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B11">
+                                                        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_3"/>
+                                                      </bibo:Document>
+                                                    </bibo:cites>
+                                                    <bibo:cites>
+                                                      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B10">
+                                                        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_3"/>
+                                                      </bibo:Document>
+                                                    </bibo:cites>
+                                                    <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Background"/>
+                                                  </doco:Paragraph>
+                                                </dcterms:hasPart>
+                                                <dcterms:hasPart>
+                                                  <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_6">
+                                                    <rdf:value
+                                                    >Like other Ocimum spp, Ocimum gratissimum (Lamiaceae) traditionally called "Efirin-Aja" has been reported to have medicinal properties. The leaf extracts are popularly used for the treatment of diarrhea while the cold leaf infusions are used for the relief of stomach upset and haemorrhoids. The thymol-riched leaf has been reported to have antimicrobial properties[[B19]]. Acalypha wilkesiana (Euphorbiaceae) is popularly used for the treatment of malaria, dermatological and gastrointestinal disorders[[B20]]. The bark extract of P. discoideus (Euphorbiaceae) is used locally to cure stomachache and lumbago.</rdf:value>
+                                                    <bibo:cites>
+                                                      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B20">
+                                                        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_6"/>
+                                                      </bibo:Document>
+                                                    </bibo:cites>
+                                                    <bibo:cites>
+                                                      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B19">
+                                                        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_6"/>
+                                                      </bibo:Document>
+                                                    </bibo:cites>
+                                                    <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Background"/>
+                                                  </doco:Paragraph>
+                                                </dcterms:hasPart>
+                                                <dcterms:hasPart>
+                                                  <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_1">
+                                                    <rdf:value
+                                                    >Over the last three decades, methicillin resistant Staphylococcus aureus (MRSA) had caused major problems in hospitals throughout the world[[B1]]. The first outbreak caused by MRSA occurred in European hospitals in the early 1960's[[B2]]. During the late 1970's, strains of S. aureus resistant to multiple antibiotics including methicillin and gentamycin were increasingly responsible for many outbreaks in the U.S.A and Great Britain[[B3]], and by 1980's MRSA was considered a major clinical and epidemiological pathogen in human hospitals[[B4]]. Since then strains of MRSA and coagulase-negative Staphylococci had spread worldwide. Recent reports indicated that MRSA strains account for 10 to 40% of S. aureus isolated from some European hospitals[[B5]-[B7]]</rdf:value>
+                                                    <bibo:cites>
+                                                      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B7">
+                                                        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_1"/>
+                                                      </bibo:Document>
+                                                    </bibo:cites>
+                                                    <bibo:cites>
+                                                      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B5">
+                                                        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_1"/>
+                                                      </bibo:Document>
+                                                    </bibo:cites>
+                                                    <bibo:cites>
+                                                      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B4">
+                                                        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_1"/>
+                                                      </bibo:Document>
+                                                    </bibo:cites>
+                                                    <bibo:cites>
+                                                      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B3">
+                                                        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_1"/>
+                                                      </bibo:Document>
+                                                    </bibo:cites>
+                                                    <bibo:cites>
+                                                      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B2">
+                                                        <bibo:citedBy>
+                                                          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_2">
+                                                            <rdf:value
+                                                            >In many parts of the globe, particularly the developed countries, fluoroquinolones (pefloxacin, ciprofloxacin and ofloxacin) are recommended for serious infections associated with Staphylococci, although, occasional resistance among MRSA has been documented[[B2]], Furthermore, in spite of recent reports of vancomycin resistant strains MRSA in some parts of the globe, vancomycin still remain the drug of choice for most MRSA-associated diseases[[B9]].</rdf:value>
+                                                            <bibo:cites>
+                                                              <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B9">
+    <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_2"/>
+                                                              </bibo:Document>
+                                                            </bibo:cites>
+                                                            <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B2"/>
+                                                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Background"/>
+                                                          </doco:Paragraph>
+                                                        </bibo:citedBy>
+                                                        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_1"/>
+                                                      </bibo:Document>
+                                                    </bibo:cites>
+                                                    <bibo:cites>
+                                                      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B1">
+                                                        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_1"/>
+                                                      </bibo:Document>
+                                                    </bibo:cites>
+                                                    <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Background"/>
+                                                  </doco:Paragraph>
+                                                </dcterms:hasPart>
+                                                <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_2"/>
+                                                <dcterms:hasPart>
+                                                  <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_4">
+                                                    <rdf:value
+                                                    >In recent times, the number of traditional healers claiming the efficacies of six medicinal plants viz: Terminalia avicennioides, Bridella ferruginea, Ageratum conyzoides Ocimum gratissimum, Acalypha wilkesiana and Phylantus discoideus for the cure of patients with S. aureus-associated diseases such as, eczema, carbuncles and osteomyelitis is on the increase.</rdf:value>
+                                                    <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Background"/>
+                                                  </doco:Paragraph>
+                                                </dcterms:hasPart>
+                                                <dcterms:title
+                                                >Background</dcterms:title>
+                                                <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+                                                <dcterms:hasPart>
+                                                  <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_7">
+                                                    <rdf:value
+                                                    >The reputed efficacies of these plants have been experienced and passed on from one generation to the other. Apparently, lack of scientific proof of efficacies claimed by traditional medical practitioners in Nigeria called for this study. The present study investigates effects of these medicinal plants against Methicillin Resistant S. aureus.</rdf:value>
+                                                    <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Background"/>
+                                                  </doco:Paragraph>
+                                                </dcterms:hasPart>
+                                                <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_5"/>
+                                              </doco:Section>
+                                            </dcterms:isPartOf>
+                                          </doco:Paragraph>
+                                        </bibo:citedBy>
+                                      </bibo:Document>
+                                    </bibo:cites>
+                                    <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Discussion"/>
+                                  </doco:Paragraph>
+                                </bibo:citedBy>
+                                <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Extraction_para_1"/>
+                                <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_5"/>
+                              </bibo:Document>
+                            </bibo:cites>
+                            <bibo:cites rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B15"/>
+                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Extraction"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods"/>
+                        <dcterms:title>Extraction</dcterms:title>
+                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+                      </doco:Section>
+                    </dcterms:hasPart>
+                    <dcterms:hasPart>
+                      <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:1079793_section_Competing-interests">
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Competing-interests_para_1">
+                            <rdf:value>The author(s) declare that they have no competing interests.</rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Competing-interests"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <dcterms:title>Competing interests</dcterms:title>
+                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+                      </doco:Section>
+                    </dcterms:hasPart>
+                    <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Results"/>
+                    <dcterms:hasPart>
+                      <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:1079793_section_Abstract">
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Abstract_para_1">
+                            <rdf:value>Background: Six Nigerian medicinal plants Terminalia avicennioides, Phylantus discoideus, Bridella ferruginea, Ageratum conyzoides, Ocimum gratissimum and Acalypha wilkesiana used by traditional medical practitioners for the treatment of several ailments of microbial and non-microbial origins were investigated for in vitro anti-methicillin Resistant Staphylococcus aureus (MRSA) activity. Methods: Fresh plant materials were collected from the users. Water and ethanol extracts of the shredded plants were obtained by standard methods. The Bacterial cultures used were strains of MRSA isolated from patients. MRSA was determined by the reference broth microdilution methods using the established National Committee for Clinical Laboratory Standards break points. Staphylococcus aureus NCIB 8588 was used as a standard strain. Susceptibility testing and phytochemical screening of the plant extracts were performed by standard procedures. Controls were maintained for each test batch. Results: Both water and ethanol extracts of T. avicennioides, P. discoideus, O. gratissimum, and A. wilkesiana were effective on MRSA. The Minimum Inhibition Concentration (MIC) and Minimum Bactericidal Concentration (MBC) of the ethanol extracts of these plants range from 18.2 to 24.0 mcg/ml and 30.4 to 37.0 mcg/ml respectively. In contrast, MIC range of 30.6 to 43.0 mcg/ml and 55.4 to 71.0 mcg/ml were recorded for ethanol and water extracts of B. ferruginea, and A. conyzoides respectively. Higher MBC values were obtained for the two plants. These concentrations were too high to be considered active in this study. All the four active plants contained at least trace amount of anthraquinones. Conclusion: Our results offer a scientific basis for the traditional use of water and ethanol extracts of A. wilkesiana, O. gratissimum, T. avicennioides and P. discoideus against MRSA-associated diseases. However, B. ferruginea and A. conyzoides were ineffective in vitro in this study; we therefore suggest the immediate stoppage of their traditional use against MRSA-associated diseases in Lagos, Nigeria. </rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Abstract"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <dcterms:title>Abstract</dcterms:title>
+                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+                      </doco:Section>
+                    </dcterms:hasPart>
+                    <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Background"/>
+                    <dcterms:hasPart>
+                      <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:1079793_section_Authors--contributions">
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Authors--contributions_para_5">
+                            <rdf:value>KAF: Participated in phytochemical screening and susceptibility testing.</rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Authors--contributions"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Authors--contributions_para_4">
+                            <rdf:value>CCI: Carried out susceptibility testing and determined MIC and MBC of the extracts.</rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Authors--contributions"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Authors--contributions_para_3">
+                            <rdf:value>CEO: Participated in both extraction and susceptibility testing.</rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Authors--contributions"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Authors--contributions_para_2">
+                            <rdf:value>OO: Carried out the extraction, susceptibility testing and determined MIC &amp; MBC values of the extract.</rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Authors--contributions"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Authors--contributions_para_1">
+                            <rdf:value>KOA: Conceived the study, designed, coordinated, screened the MRSA strains used and drafted the manuscript.</rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Authors--contributions"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <dcterms:title>Authors' contributions</dcterms:title>
+                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+                      </doco:Section>
+                    </dcterms:hasPart>
+                    <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Phytochemical-screening-methods"/>
+                    <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Discussion"/>
+                    <rdf:type rdf:resource="http://purl.org/ontology/bibo/Document"/>
+                    <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Bacterial-culture"/>
+                    <dcterms:hasPart>
+                      <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Ethanol-extract">
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Ethanol-extract_para_1">
+                            <rdf:value>Six grams of each of the powdered plant materials were put in a soxhlet extractor containing 25 ml of 40% ethanol. The resulting extracts were subsequently weighed to produce 0.032, 0.036, 0.038, 0.040, 0.030 and 0.034 g of P, Q, R, S, T, and U respectively. They were labeled as ethanol extracts and designed PE, QE, RE, SE, TW and UW respectively.</rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Ethanol-extract"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods"/>
+                        <dcterms:title>Ethanol extract</dcterms:title>
+                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+                      </doco:Section>
+                    </dcterms:hasPart>
+                    <dcterms:hasPart>
+                      <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:1079793_section_Conclusion">
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Conclusion_para_1">
+                            <rdf:value>Our results therefore offer a scientific basis for the traditional use of both water and ethanol extracts of A. wilkesiana, O. gratissimum, T. avicennioides and P. discoideus separately against MRSA-associated skin and respiratory diseases. But in vivo studies on these medicinal plants are necessary and should seek to determine toxicity of the active constituents, their side effects, serum-attainable levels, pharmacokinetic properties and diffusion in different body sites. The antimicrobial activities could be enhanced if the active components are purified and adequate dosage determined for proper administration. This may go a long way in curbing administration of inappropriate concentration; a common practice among many traditional medical practitioners in Nigeria. This study represents the first preliminary report on anti-methicillin resistant Staphylococcus aureus activity of the crude extracts of these medicinal plants in Lagos, Nigeria.</rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Conclusion"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <dcterms:title>Conclusion</dcterms:title>
+                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+                      </doco:Section>
+                    </dcterms:hasPart>
+                    <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods"/>
+                    <dcterms:hasPart>
+                      <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Bacterial-susceptibility-testing">
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Bacterial-susceptibility-testing_para_1">
+                            <rdf:value>A standardized inoculum (1–2 × 107 cfu/ml 0.5 McFarland standards) was introduced onto the surface of sterile agar plates, and a sterile glass spreader was used for even distribution of the inoculum. A sterile paper disc previously soaked in a known concentration of extract (20 mcg/ml per disc) was carefully placed at the centre of the labeled seeded plate. The same procedure was used for all the MRSA strains used. The plates were incubated aerobically at 37°C and examined for zones of inhibition after 24 hr. The inhibition zones were measured with a ruler and compared with the control disc23 (disc containing only physiological saline).</rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Bacterial-susceptibility-testing"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods"/>
+                        <dcterms:title>Bacterial susceptibility testing</dcterms:title>
+                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+                      </doco:Section>
+                    </dcterms:hasPart>
+                    <dcterms:hasPart>
+                      <doco:Section rdf:about="http://bio2rdf.org/pmc_resource:1079793_section_Pre-publication-history">
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Pre-publication-history_para_2">
+                            <rdf:value></rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Pre-publication-history"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Pre-publication-history_para_1">
+                            <rdf:value>The pre-publication history for this paper can be accessed here:</rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Pre-publication-history"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <dcterms:title>Pre-publication history</dcterms:title>
+                        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+                      </doco:Section>
+                    </dcterms:hasPart>
+                  </bibo:AcademicArticle>
+                </dcterms:isPartOf>
+              </doco:Section>
+            </dcterms:hasPart>
+            <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Extraction"/>
+            <dcterms:title>Methods</dcterms:title>
+            <dcterms:hasPart>
+              <doco:Paragraph rdf:about="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_para_1">
+                <rdf:value>Fresh plant materials were collected from users of these plants in Imota, Ikorodu, Ojo and Kosofe in Lagos State, Nigeria. Their botanical identities were determined and authenticated by Mr. O. K. Oluwa in Botany department, Lagos State University, Ojo, Lagos. Samples were deposited in the department herbarium.</rdf:value>
+                <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods"/>
+              </doco:Paragraph>
+            </dcterms:hasPart>
+            <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Bacterial-susceptibility-testing"/>
+            <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Ethanol-extract"/>
+            <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Water-extract"/>
+            <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Determination-of-minimum-inhibitory-concentration--MIC--and-minimum-bactericidal-concentration--MBC-"/>
+            <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Bacterial-culture"/>
+          </doco:Section>
+        </dcterms:isPartOf>
+        <dcterms:title>Bacterial culture</dcterms:title>
+        <dcterms:isPartOf rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+      </doco:Section>
+    </dcterms:isPartOf>
+  </doco:Paragraph>
+</rdf:RDF>

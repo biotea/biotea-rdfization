@@ -15,6 +15,7 @@ import ws.biotea.ld2rdf.rdfGeneration.exception.ArticleTypeException;
 import ws.biotea.ld2rdf.rdfGeneration.exception.DTDException;
 import ws.biotea.ld2rdf.rdfGeneration.exception.PMCIdException;
 import ws.biotea.ld2rdf.rdfGeneration.jats.GlobalArticleConfig;
+import ws.biotea.ld2rdf.util.ResourceConfig;
 
 public class PmcOpenAccessHelper {
 	private RDFBasicHandler handler;
@@ -42,7 +43,13 @@ public class PmcOpenAccessHelper {
 		File outRDF = null; 
 		//1. Create RDF used as a mechanism for improving information retrieval over tagged resources as well as to facilitate the discovery of shared conceptualizations[2,3].
 		this.handler.setStrPmcId(new StringBuilder());
-		this.handler.setPaper2rdf(new PmcOpenAccess2RDF(subdir, this.handler.getStrPmcId()));
+		if (ResourceConfig.USE_BIO2RDF) {
+			this.handler.setPaper2rdf(new PmcOpenAccess2MappedRDF(subdir, this.handler.getStrPmcId()));
+		} else if (ResourceConfig.getMappingFile().length() != 0) {
+			this.handler.setPaper2rdf(new PmcOpenAccess2MappedRDF(subdir, this.handler.getStrPmcId()));
+		} else {
+			this.handler.setPaper2rdf(new PmcOpenAccess2RDF(subdir, this.handler.getStrPmcId()));
+		}
 		String pmc = this.handler.getStrPmcId().toString();
 		this.handler.setPaperURLId(GlobalArticleConfig.getArticleRdfUri(pmc));
 		this.handler.setDocumentPaperId(pmc);

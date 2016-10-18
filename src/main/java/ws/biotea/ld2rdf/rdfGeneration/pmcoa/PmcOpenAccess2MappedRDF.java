@@ -5,28 +5,23 @@ package ws.biotea.ld2rdf.rdfGeneration.pmcoa;
 
 import org.ontoware.rdf2go.RDF2Go;
 import org.ontoware.rdf2go.model.Model;
+import org.ontoware.rdf2go.model.Statement;
 import org.ontoware.rdf2go.model.node.Node;
 import org.ontoware.rdf2go.model.node.PlainLiteral;
 import org.ontoware.rdf2go.model.node.Resource;
-import org.ontoware.rdf2go.model.node.impl.PlainLiteralImpl;
+import org.ontoware.rdf2go.model.node.URI;
 import org.ontoware.rdf2go.model.node.impl.URIImpl;
 import pubmed.openAccess.jaxb.generated.*;
-import pubmed.openAccess.jaxb.generated.Issue;
-import ws.biotea.ld2rdf.rdf.model.bibo.*;
-import ws.biotea.ld2rdf.rdf.model.bibo.Conference;
-import ws.biotea.ld2rdf.rdf.model.bibo.extension.*;
-import ws.biotea.ld2rdf.rdf.model.doco.Appendix;
-import ws.biotea.ld2rdf.rdf.model.doco.DocoTable;
-import ws.biotea.ld2rdf.rdf.model.doco.Figure;
-import ws.biotea.ld2rdf.rdf.model.doco.extension.ParagraphE;
-import ws.biotea.ld2rdf.rdf.model.doco.extension.SectionE;
+import ws.biotea.ld2rdf.rdf.model.bibo.Thing;
+import ws.biotea.ld2rdf.rdf.model.bibo.extension.ListOfAuthorsE;
 import ws.biotea.ld2rdf.rdfGeneration.RDFHandler;
 import ws.biotea.ld2rdf.rdfGeneration.exception.ArticleTypeException;
 import ws.biotea.ld2rdf.rdfGeneration.exception.DTDException;
 import ws.biotea.ld2rdf.rdfGeneration.exception.PMCIdException;
 import ws.biotea.ld2rdf.rdfGeneration.jats.GlobalArticleConfig;
 import ws.biotea.ld2rdf.util.ResourceConfig;
-import ws.biotea.ld2rdf.util.ClassesAndProperties;
+import ws.biotea.ld2rdf.util.mapping.MappingConfig;
+import ws.biotea.ld2rdf.util.mapping.Namespace;
 import ws.biotea.ld2rdf.util.Conversion;
 import ws.biotea.ld2rdf.util.HtmlUtil;
 
@@ -37,13 +32,18 @@ import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
-	public PmcOpenAccess2RDF(File paper, StringBuilder str) throws JAXBException, DTDException, ArticleTypeException, PMCIdException {
-		super(paper, str);	
+public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
+	public PmcOpenAccess2MappedRDF(File paper, StringBuilder str) throws JAXBException, DTDException, ArticleTypeException, PMCIdException {
+		super(paper, str);
+	}
+	
+	private void addObjectProperty(Model model, Thing from, String to, String property) {
+		Node uriNodeTo = model.createURI(to);
+		URI uriProperty = new URIImpl(property, false);
+		model.addStatement(from.asResource(), uriProperty, uriNodeTo);
 	}
 	
 	/**
@@ -64,22 +64,19 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		
 		// getting model
 		Model model;			
-		Document document;		
+		Thing document;		
 		File outputFile = null;
 		model = createAndOpenModel();
 		boolean fatalError = false;
 		//create document
 		try {
-			document = new Document(model, basePaper, true);
+			document = new Thing(model, MappingConfig.getClass("bibo", "Document"), basePaper, true);
 			String type = this.articleType.replace('-', '_').toUpperCase();
 			if (ArticleType.valueOf(type).getBiboType() != null) {
-			    model.addStatement(document.asResource(), Thing.RDF_TYPE, ArticleType.valueOf(type).getBiboTypeURI()); //rdf:type
+				document = new Thing(model, MappingConfig.getClass("bibo", ArticleType.valueOf(type).getBiboType()), basePaper, true);
 			}
-			document.addDCDescription(model, this.articleType);
+			this.addDatatypeLiteral(model, document, "dcterms", "description", this.articleType);
 			
-			//TODO Read an existing document (do we really need to do this? Not so far...)
-			//model.readFrom(new FileReader(file));
-		    
 			this.processBasic(model, document, paper.getName());
 			logger.info("=== basic processed");
 			this.processAuthors(model, document, paper.getName());
@@ -105,28 +102,29 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		
 		//process sections		
 		if (sections) {
-			Document documentSections;
+			Thing documentSections;
 			Model modelSections;
 			File outputFileSections = null;
 			boolean fatalErrorSections = false;
 			modelSections = createAndOpenModel();
 			try {
-				documentSections = new Document(modelSections, basePaper, true);
-				documentSections.addTitle(modelSections, this.articleTitle);
+				documentSections = new Thing(modelSections, MappingConfig.getClass("bibo", "Document"), basePaper, true);
 				String type = this.articleType.replace('-', '_').toUpperCase();
 				if (ArticleType.valueOf(type).getBiboType() != null) {
-					modelSections.addStatement(documentSections.asResource(), Thing.RDF_TYPE, ArticleType.valueOf(type).getBiboTypeURI()); //rdf:type
+					documentSections = new Thing(modelSections, MappingConfig.getClass("bibo", ArticleType.valueOf(type).getBiboType()), basePaper, true);
+				}
+				this.addDatatypeLiteral(modelSections, documentSections, "dcterms", "title", this.articleTitle);
+
+				for (Abstract ab: article.getFront().getArticleMeta().getAbstracts()) {
+					processAbstractAsSection(ab, modelSections, documentSections, null);			
 				}
 				
-				String docAbstract = "";
-				for (Abstract ab: article.getFront().getArticleMeta().getAbstracts()) {
-					docAbstract += processAbstractAsSection(ab, modelSections, documentSections, null);			
-				}
 				//process not-in-section-paragraphs
-				SectionE secDoco = new SectionE(modelSections, global.BASE_URL_SECTION + "undefined-section", true);
+				Thing secDoco = new Thing(modelSections, MappingConfig.getClass("doco", "Section"), global.BASE_URL_SECTION + "undefined-section", true);
+				
 				Iterator<Object> itrPara = article.getBody().getAddressesAndAlternativesAndArraies().iterator();			
 				if (processElementsInSection(modelSections, documentSections, "undefined-section", secDoco, itrPara)) {
-					documentSections.addSection(modelSections, secDoco);
+					this.addHasPartIsPartOf(modelSections, documentSections, secDoco);
 				}								
 				//process sections
 				for (Sec section:article.getBody().getSecs()) {										
@@ -138,11 +136,8 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 				fatalErrorSections = true;
 			} finally {
 				if (fatalError || fatalErrorSections) {
-					//close and write model
-					//outputFileSections = serializeAndCloseModel(modelSections, outputDir + "/" + PREFIX + pmcID + "_sections.rdf");		
 					logger.info("=== END of sections rdfization with a fatal error " + pmcID + " (pubmedID: " + pubmedID + "), (doi: " + doi + ")");
 				} else {
-					//close and write model
 					outputFileSections = serializeAndCloseModel(modelSections, outputDir + "/" + PREFIX + pmcID + "_sections.rdf");		
 					logger.info("=== END of sections rdfization OK " + pmcID + " (pubmedID: " + pubmedID + "), (doi: " + doi + ")");
 				}
@@ -151,50 +146,6 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		}
 		return outputFile;
 		//Supplementary material part of sections as well, not supported yet
-		/*for (Object obj: article.getBack().getAcksAndAppGroupsAndBios()) {
-			if (obj instanceof FnGroup) {
-				FnGroup fn = (FnGroup)obj;
-				for (Object o: fn.getFnsAndXS()) {
-					if (o instanceof Fn) {
-						Fn foot = (Fn)o;
-						for (P p: foot.getPS()) {
-							for (Object fnObj: p.getContent()) {
-								if (fnObj instanceof ExtLink)
-								try {
-									String str = ((ExtLink)fnObj).getContent().get(0).toString();
-									if (str.startsWith("http")) {
-										document.addDCReferences(model, str);
-									}
-								} catch (Exception e) {;}	
-							}
-						}
-					}
-				}
-			} else if (obj instanceof Sec) {
-				processSection((Sec)obj, model, document, null, null);
-			} else if (obj instanceof AppGroup) {
-				AppGroup appG = (AppGroup)obj;
-				for (Object o: appG.getAppsAndRefLists()) {
-					if (o instanceof App) {
-						App app = (App)o;
-						String title = processListOfElements(app.getTitle().getContent(), null, null);
-						String titleInURL = title.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
-						if (titleInURL.length() == 0) {
-							title = app.getId();
-							titleInURL = title.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
-						}
-						Appendix appendix = new Appendix(model, BASE_URL_APPENDIX + titleInURL, true);
-						document.addAppendix(model, appendix);
-						//title
-						Node titleNode = new PlainLiteralImpl(title);
-						appendix.adddocoTitle(titleNode);
-						for (Sec sec: app.getSecs()) {
-							processSection(sec, model, document, appendix, titleInURL);
-						}
-					}
-				}															
-			}
-		}*/
 	}
 	/**
 	 * Creates and open an RDF model.
@@ -202,46 +153,45 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 	 */
 	protected Model createAndOpenModel() {
 		Model myModel = RDF2Go.getModelFactory().createModel();
-		myModel.open();					
-		myModel.setNamespace(ws.biotea.ld2rdf.util.OntologyPrefix.OWL.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.OWL.getURL());
-		myModel.setNamespace(ws.biotea.ld2rdf.util.OntologyPrefix.RDF.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.RDF.getURL());
-		myModel.setNamespace(ws.biotea.ld2rdf.util.OntologyPrefix.RDFS.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.RDFS.getURL());
-		myModel.setNamespace(ws.biotea.ld2rdf.util.rdfization.OntologyRDFizationPrefix.BIBO.getNS(), ws.biotea.ld2rdf.util.rdfization.OntologyRDFizationPrefix.BIBO.getURL());
-		myModel.setNamespace(ws.biotea.ld2rdf.util.rdfization.OntologyRDFizationPrefix.DOCO.getNS(), ws.biotea.ld2rdf.util.rdfization.OntologyRDFizationPrefix.DOCO.getURL());
-		myModel.setNamespace(ws.biotea.ld2rdf.util.OntologyPrefix.FOAF.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.FOAF.getURL());
-		myModel.setNamespace(ws.biotea.ld2rdf.util.OntologyPrefix.DCTERMS.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.DCTERMS.getURL());
-		myModel.setNamespace(ws.biotea.ld2rdf.util.OntologyPrefix.FOAF.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.FOAF.getURL());		
-		myModel.setNamespace(ws.biotea.ld2rdf.util.OntologyPrefix.XSP.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.XSP.getURL());		
-		myModel.setNamespace(ws.biotea.ld2rdf.util.OntologyPrefix.RDF.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.RDF.getURL());
-		myModel.setNamespace(ws.biotea.ld2rdf.util.OntologyPrefix.PROV.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.PROV.getURL());
-		myModel.setNamespace(ws.biotea.ld2rdf.util.OntologyPrefix.VOID.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.VOID.getURL());
+		myModel.open();	
+		for (Namespace namespace: MappingConfig.getAllNamespaces()) {
+			myModel.setNamespace(namespace.getNamespace(), namespace.getUrl());
+		}
 		return (myModel);
 	}
+	
 	
 	/**
 	 * Processes doi, pubmed, journal, and title.
 	 */
-	private void processBasic(Model model, Document document, String paper) {
+	private void processBasic(Model model, Thing document, String paper) {
+		String mainId = "";
 		if (ResourceConfig.getIdTag().equals("pmc")) {
-			document.addIdentifier(model, "pmc:" + pmcID);	
-			document.addProvWasDerivedFrom(model, GlobalArticleConfig.pmcURI + pmcID);
+			mainId = "pmc:" + this.pmcID;
 		} else if (ResourceConfig.getIdTag().equals("pmid")) {
-			document.addIdentifier(model, "pmid:" + pmcID);	
-			document.addProvWasDerivedFrom(model, GlobalArticleConfig.pubMedURI + pubmedID);
+			mainId = "pmid:" + this.pubmedID;
 		}
+		this.addDatatypeLiteral(model, document, "dcterms", "identifier", mainId);
+		if (MappingConfig.getIdentifier() != null) {
+			//main identifier also goes directly to model
+			PlainLiteral idAsLiteral = model.createPlainLiteral(mainId);
+			Statement stm = model.createStatement(document.asResource(), new URIImpl(MappingConfig.getIdentifier()), idAsLiteral);
+		    model.addStatement(stm);		    
+		}
+		
+		this.addObjectProperty(model, document, GlobalArticleConfig.pmcURI + pmcID, "prov", "wasDerivedFrom");
 		String now = HtmlUtil.getDateAndTime();
-		document.addDCCreated(model, now);
-		document.addProvGeneratedAt(model, now);
-		document.addDCCreator(model, GlobalArticleConfig.RDF4PMC_AGENT);
-		document.addProvWasAttributedTo(model, GlobalArticleConfig.RDF4PMC_AGENT);
-		document.addInDataset(model, GlobalArticleConfig.BIOTEA_PMC_DATASET);
+		this.addDatatypeLiteral(model, document, "dcterms", "created", now);
+		this.addDatatypeLiteral(model, document, "prov", "generatedAtTime", now);
+		this.addObjectProperty(model, document, GlobalArticleConfig.RDF4PMC_AGENT, "dcterms", "creator");
+		this.addObjectProperty(model, document, GlobalArticleConfig.RDF4PMC_AGENT, "prov", "wasAttributedTo");
+		this.addObjectProperty(model, document, GlobalArticleConfig.BIOTEA_PMC_DATASET, ws.biotea.ld2rdf.util.OntologyPrefix.VOID.getURL() + "inDataset");
 		Resource resPMC = new URIImpl(GlobalArticleConfig.pmcURI + pmcID, true);	
 		document.addSeeAlso(resPMC);	
 		
 		//pubmedID
 		if (pubmedID != null) {
-			document.addPMID(model, pubmedID);			
-		    document.addIdentifier(model, "pmid:" + pubmedID);		
+			this.addDatatypeLiteral(model, document, "bibo", "pmid", this.pubmedID);
 		    //Relations between PMC-RDF and identifiers.org/bio2rdf.org sameAS
 		    if (ResourceConfig.withBio()) {
 		    	document.addSameAs(model, ResourceConfig.IDENTIFIERS_ORG_PUBMED + pubmedID);
@@ -257,11 +207,8 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		
 		//doi
 		if (doi != null) {
-		    document.addDOI(model, doi);
-		    document.addIdentifier(model, "doi:" + doi);
+			this.addDatatypeLiteral(model, document, "bibo", "doi", this.doi);
 		    //relations between PMC-RDF and DOI
-//		    Resource resDOI = new URIImpl(global.doiURI + doi, true);
-//		    document.addSeeAlso(resDOI);
 		    document.addSameAs(model, GlobalArticleConfig.doiURI + doi);
 		    if (!global.getUriStyle().equals(ResourceConfig.bio2rdf)) {
 		    	document.addSameAs(model, GlobalArticleConfig.DOI_DOCUMENT + doi);
@@ -271,11 +218,11 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		//license
 		try {
 			String license = article.getFront().getArticleMeta().getPermissions().getLicenses().get(0).getHref();
-			document.addDCLicense(model, license);
+			this.addObjectProperty(model, document, license, "dcterms", "license");
 		} catch (Exception e) {}		
 	    
 	    //Journal
-		JournalE journal = null;
+		Thing journal = null;
 		String journalTitle = null;
 		String journalISSN = null;
 		String journalTitleInURI = "";				
@@ -300,19 +247,17 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			journalTitleInURI = journalISSN.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
 			//journal creation
 			if ((journalISSN != null)  && (journalISSN.length() != 0)) {//journal by issn
-				journal = new JournalE(model, GlobalArticleConfig.BASE_URL_JOURNAL_ISSN + journalTitleInURI, true); //model.createBlankNode(pmcID + "_journal_" + journalTitleInURI)
-				if ((journalTitle != null) && (journalTitle.length() != 0)) {
-					journal.addTitle(model, journalTitle);
-				}
+				journal = new Thing(model, MappingConfig.getClass("bibo", "Journal"), GlobalArticleConfig.BASE_URL_JOURNAL_ISSN + journalTitleInURI, true);				
+				this.addDatatypeLiteral(model, journal, "dcterms", "title", journalTitle);
 				for (Issn issn: article.getFront().getJournalMeta().getIssns()) {
-		    		journal.addISSN(model, issn.getContent().get(0).toString());
+					this.addDatatypeLiteral(model, journal, "bibo", "issn", issn.getContent().get(0).toString());
 			    }
 				Resource resISSN = new URIImpl(GlobalArticleConfig.NLM_JOURNAL_CATALOG + journalISSN, true);
 				journal.addSeeAlso(resISSN); //link to NLM catalog
 			} else if ((journalTitle != null) && (journalTitle.length() != 0)) { //journal by name
 				journalTitleInURI = journalTitle.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
-				journal = new JournalE(model, GlobalArticleConfig.BASE_URL_JOURNAL_NAME + journalTitleInURI, true); //model.createBlankNode(pmcID + "_journal_" + journalTitleInURI)
-			    journal.addTitle(model, journalTitle);	
+				journal = new Thing(model, MappingConfig.getClass("bibo", "Journal"), GlobalArticleConfig.BASE_URL_JOURNAL_NAME + journalTitleInURI, true);
+				this.addDatatypeLiteral(model, journal, "dcterms", "title", journalTitle);
 			} else {// no journal
 				logger.error(paper + ": Journal title or ISSN both empty.");
 			}						    		 
@@ -325,26 +270,26 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
     		String issueNumber = article.getFront().getArticleMeta().getIssue().getContent().get(0).toString();
     		String issueNumberInURI = issueNumber.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
     		if (journal != null) {
-    			ws.biotea.ld2rdf.rdf.model.bibo.Issue issue = null;
+    			Thing issue = null;
     			if ((issueNumberInURI != null)  && (issueNumberInURI.length() != 0)) {    			        			
         			if ((journalISSN != null)  && (journalISSN.length() != 0)) {//journal by issn then issn:<id>/<issue_id>
         				String[] params = {"issn", journalTitleInURI};
         				String issueURI = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_ISSUE, params);
-            			issue = new ws.biotea.ld2rdf.rdf.model.bibo.Issue(model, issueURI + issueNumberInURI, true);    		
-                		issue.addbiboIssue(issueNumber);
+            			issue = new Thing(model, MappingConfig.getClass("bibo", "Issue"), issueURI + issueNumberInURI, true);    		
+            			this.addDatatypeLiteral(model, issue, "bibo", "issue", issueNumber);
             		} else { //name:<journal_name>/<issue_id>
             			String[] params = {"name", journalTitleInURI};
         				String issueURI = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_ISSUE, params);
-            			issue = new ws.biotea.ld2rdf.rdf.model.bibo.Issue(model, issueURI + issueNumberInURI, true);    		
+            			issue = new Thing(model, MappingConfig.getClass("bibo", "Issue"), issueURI + issueNumberInURI, true);
         			}
-        			journal.addIssue(model, issue);
-        			issue.addDocument(model, document);
+        			this.addObjectProperty(model, journal, issue, "bibo", "issue");
+        			this.addHasPartIsPartOf(model, issue, document);
         		} else {
-        			journal.addDocument(model, document);
+        			this.addHasPartIsPartOf(model, journal, document);
         		} 
     		}
     	} catch (Exception e) {	
-    		journal.addDocument(model, document);
+    		this.addHasPartIsPartOf(model, journal, document);
     	}
     	
 		//Publisher
@@ -359,18 +304,18 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 					}
 				}
 			} catch (Exception eId) {}
-			OrganizationE publisher;
+			Thing publisher;
 			if (publisherPMCId != null) {//we create the publisher with the id
-				publisher = new OrganizationE(model, GlobalArticleConfig.BASE_URL_PUBLISHER_ID + publisherPMCId, true ); 
-				publisher.addName(model, publisherName);
-				PlainLiteral id = model.createPlainLiteral(publisherPMCId);					    
-			    model.addStatement(publisher.asResource(), Document.DCTERMS_IDENTIFIER, id); //id
+				publisher = new Thing(model, MappingConfig.getClass("foaf", "Organization"), GlobalArticleConfig.BASE_URL_PUBLISHER_ID + publisherPMCId, true );
+				this.addDatatypeLiteral(model, publisher, "foaf", "name", publisherName);
+				this.addDatatypeLiteral(model, publisher, "dcterms", "identifier", publisherPMCId);
 			} else {//we create the publisher with the name
-				publisher = new OrganizationE(model, GlobalArticleConfig.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true ); 
-				publisher.addName(model, publisherName);							
+				publisher = new Thing(model, MappingConfig.getClass("foaf", "Organization"), 
+					GlobalArticleConfig.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true );
+				this.addDatatypeLiteral(model, publisher, "foaf", "name", publisherName);							
 			}
-			journal.addbiboPublisher(publisher);
-		    document.addbiboPublisher(publisher); 
+			this.addObjectProperty(model, journal, publisher, "dcterms", "publisher");
+			this.addObjectProperty(model, document, publisher, "dcterms", "publisher");
 	    } catch (Exception e) {}
 	    
 	    //publication dates
@@ -382,39 +327,29 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 	    			for (Object obj: pubDate.getDaiesAndMonthsAndYears()) {
 	    	    		if (obj instanceof Year) {
 	    	    			date = ((Year)obj).getContent();
-	    	    		} /*else if (obj instanceof Month) {
-	    	    			month = ((Month)obj).getContent();
-	    	    		}*/
+	    	    		} 
 	    	    	}
 	    		}
 	    	}
-	    	if (date != null) {
-	    		/*if (month != null) {
-	    			Node dateNode = new PlainLiteralImpl(date + " " + month);
-	            	document.addbiboIssued(dateNode);
-	    		} else {*/
-	    			Node dateNode = new PlainLiteralImpl(date);
-	            	document.addbiboIssued(dateNode);
-	    		//}    		
-	    	}    
+        	this.addDatatypeLiteral(model, document, "dcterms", "issued", date);    
 		} catch (Exception e) {
 			logger.info(paper + ": Date or month not processed");
 		}
     	try {
     		String volume = article.getFront().getArticleMeta().getVolume().getContent().get(0).toString();
-    		document.addbiboVolume(volume);
+    		this.addDatatypeLiteral(model, document, "bibo", "volume", volume);
     	} catch (Exception e) {
     		logger.info(paper + ": Volumen not processed");
     	}    	
 		try {
 			String pageStart = article.getFront().getArticleMeta().getFpage().getContent();
-			document.addbiboPagestart(pageStart);
+			this.addDatatypeLiteral(model, document, "bibo", "pageStart", pageStart);
 		} catch (Exception e) {
 			logger.info(paper + ": Start page not processed");
 		}
     	try {
     		String pageEnd = article.getFront().getArticleMeta().getLpage().getContent();
-    		document.addbiboPageend(pageEnd);
+    		this.addDatatypeLiteral(model, document, "bibo", "pageEnd", pageEnd);
     	} catch (Exception e) {
     		logger.info(paper + ": End page not processed");
     	}    
@@ -430,7 +365,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
     				this.articleTitle += processElement(model, document, elem, null, null);
     			}			
     		}
-    	    document.addTitle(model, this.articleTitle);
+    		this.addDatatypeLiteral(model, document, "dcterms", "title", this.articleTitle);
     	} catch (Exception e) {
     		logger.info(paper + ": Article title not processed");
     	}	
@@ -438,10 +373,10 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 	/**
 	 * Processes authors.
 	 */
-	private void processAuthors(Model model, Document document, String paper) {
+	private void processAuthors(Model model, Thing document, String paper) {
 		try {
 			//List of Authors
-		    Collection<Thing> listOfAuthors = new ArrayList<Thing>();
+		    ArrayList<Thing> listOfAuthors = new ArrayList<Thing>();
 			for (Object obj: article.getFront().getArticleMeta().getContribGroupsAndAfvesAndXS()) {
 				if (obj instanceof ContribGroup) {
 					ContribGroup group = (ContribGroup)obj;
@@ -450,17 +385,17 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 							Contrib contrib = (Contrib)objGr;
 							if (contrib.getContribType().equals("author")) {
 								//Author
-								PersonE person = null;
+								Thing person = null;
 								for (Object objAut: contrib.getAnonymousesAndCollabsAndNames()) {
 									if (objAut instanceof Name) {
 										Name name = (Name)objAut;
-										person = (PersonE)createPerson(model, global.BASE_URL_PERSON_PMC, name, false);										
-									    person.addPublications(model, this.basePaper);
+										person = (Thing)createPerson(model, global.BASE_URL_PERSON_PMC, name, true);
+										this.addObjectProperty(model, person, this.basePaper, "foaf", "publications");
 									} else if (objAut instanceof Email) {
 										try {
 											Email email = (Email)objAut;
 											String str = email.getContent().get(0).toString();
-									    	person.addMBox(model, str);
+											this.addObjectProperty(model, person, "mailto:" + str, "foaf", "mbox");
 									    } catch (Exception e) {}
 									} else if (objAut instanceof Address) {
 										Address address = (Address) objAut;
@@ -469,22 +404,17 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 												try {
 													Email email = (Email) detailAddress;
 													String str = email.getContent().get(0).toString();
-											    	person.addMBox(model, str);
+													this.addObjectProperty(model, person, "mailto:" + str, "foaf", "mbox");
 											    } catch (Exception e) {}
 											}
 										}
 									} else if (objAut instanceof Xref) {
-										/*Xref xref = (Xref)objAut;
-										if (xref.getRefType().equals("aff")) {
-											if (person != null) {
-												processAffiliation(xref, person); 
-											}
-										}*/
 									} else if (objAut instanceof Collab) {
 										Collab collab = (Collab)obj;
 										String orgName = collab.getContent().get(0).toString();
 										String idOrg = orgName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");										
-										OrganizationE org = new OrganizationE(model, global.BASE_URL_ORGANIZATION_PMC + idOrg, true ); //model.createBlankNode(pmcID + "_author_" + idOrg) 
+										Thing org = new Thing(model, MappingConfig.getClass("foaf", "Organization"), 
+											global.BASE_URL_ORGANIZATION_PMC + idOrg, true);
 										listOfAuthors.add(org);
 									}
 								}
@@ -493,13 +423,14 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 								}							
 							} else if (contrib.getContribType().equals("collab")) {
 								//Collaborator
-								OrganizationE org = null;
+								Thing org = null;
 								for (Object objAut: contrib.getAnonymousesAndCollabsAndNames()) {
 									if (objAut instanceof Collab) {
 										Collab collab = (Collab)obj;
 										String orgName = collab.getContent().get(0).toString();
 										String idOrg = orgName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
-										org = new OrganizationE(model, global.BASE_URL_ORGANIZATION_PMC + idOrg, true ); //model.createBlankNode(pmcID + "_author_" + idOrg) 
+										org = new Thing(model, MappingConfig.getClass("foaf", "Organization"), 
+											global.BASE_URL_ORGANIZATION_PMC + idOrg, true ); 
 										listOfAuthors.add(org);
 									}
 								}		
@@ -510,25 +441,24 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			}
 		    //list in rdf: ResourceConfig.BIOTEA_URL + "/{0}/pmc_resource/" + pmcID + "/";
 			String[] params = {"listOfAuthors"};
-		    ListOfAuthorsE loa = new ListOfAuthorsE(model, Conversion.replaceParameter(global.BASE_URL_LIST_PMC, params), true); //model.createBlankNode(pmcID + "_listAuthors")
+			ListOfAuthorsE loa = new ListOfAuthorsE(model, Conversion.replaceParameter(global.BASE_URL_LIST_PMC, params), true); 
 		    loa.addMembersInOrder(model, listOfAuthors); //add members to list
-		    document.addbiboListofauthors(loa); //add list to document
+		    this.addObjectProperty(model, document, loa, "bibo", "authorList");
 		} catch (Exception e){
 			logger.info(paper + ": Authors not processed.");
 		}			
 	}
-
 	
 	/**
 	 * Processes abstract and keywords.
 	 */
-	private void processAbstractAndKeywords(Model model, Document document) {
+	private void processAbstractAndKeywords(Model model, Thing document) {
 		//Abstract
 	    String docAbstract = "";
 		for (Abstract ab: article.getFront().getArticleMeta().getAbstracts()) {
 			docAbstract += getAbstractText(model, document, ab);			
 		}
-	    document.addbiboAbstract(docAbstract);
+		this.addDatatypeLiteral(model, document, "bibo", "abstract", docAbstract);
 	    
 	    //Keywords
 		//Collection<String> docKeywords = new ArrayList<String>();
@@ -544,7 +474,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 							JAXBElement<?> elem = (JAXBElement<?>)cont;
 							key += processElement(model, document, elem, null, null);
 						}
-						document.addbiboShortDescription(key);
+						this.addDatatypeLiteral(model, document, "bibo", "shortDescription", key);
 					}
 				} 
 			}
@@ -554,7 +484,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 	/**
 	 * Determines the type of the reference and process it according to its type: Citation, MixedCitation, ElementCitation, or NlmCitation
 	 */
-	private void processReferences(Model model, Document document, boolean withMetadata) {
+	private void processReferences(Model model, Thing document, boolean withMetadata) {
 		//References
 	    for (Object obj: article.getBack().getAcksAndAppGroupsAndBios()) {
 	    	if (obj instanceof RefList) {
@@ -593,50 +523,49 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 	 * @param ref
 	 * @return
 	 */
-	private Document processReferenceCreateArticle(Model model, Document document, String url, String pubmed, String doiReference, Ref ref, ReferenceType type, boolean withMetadata) {		
-		Document docReference = null;		
+	private Thing processReferenceCreateArticle(Model model, Thing document, String url, String pubmed, String doiReference, Ref ref, ReferenceType type, boolean withMetadata) {		
+		Thing docReference = null;		
 
 		//create document
+		docReference = new Thing(model, MappingConfig.getClass("bibo", "Document"), url, true);
 		if (type == ReferenceType.JOURNAL_ARTICLE) {
-			docReference = new AcademicArticle(model, url, true);			
+			docReference = new Thing(model, MappingConfig.getClass("bibo", "AcademicArticle"), url, true);
 		} else if (type == ReferenceType.BOOK) {
-			docReference = new Book(model, url, true);			
+			docReference = new Thing(model, MappingConfig.getClass("bibo", "Book"), url, true);
 		} else if (type == ReferenceType.BOOK_SECTION) {
-			docReference = new BookSection(model, url, true);			
+			docReference = new Thing(model, MappingConfig.getClass("bibo", "BookSection"), url, true);
 		} else if (type == ReferenceType.REPORT) {
-			docReference = new Report(model, url, true);	
+			docReference = new Thing(model, MappingConfig.getClass("bibo", "Report"), url, true);	
 		} else if (type == ReferenceType.THESIS) {
-			docReference = new Thesis(model, url, true);	
+			docReference = new Thing(model, MappingConfig.getClass("bibo", "Thesis"), url, true);
 		} else if (type == ReferenceType.CONFERENCE_PROCS) {
-			docReference = new Proceedings(model, url, true);
+			docReference = new Thing(model, MappingConfig.getClass("bibo", "Proceedings"), url, true);
 		} else if (type == ReferenceType.CONFERENCE_PAPER) {
-			docReference = new AcademicArticle(model, url, true);	
+			docReference = new Thing(model, MappingConfig.getClass("bibo", "AcademicArticle"), url, true);
 		} else if (type == ReferenceType.PATENT) {
-			docReference = new ws.biotea.ld2rdf.rdf.model.bibo.Patent(model, url, true);	
+			docReference = new Thing(model, MappingConfig.getClass("bibo", "Patent"), url, true);
 		} else if (type == ReferenceType.DATABASE) {
-			docReference = new ws.biotea.ld2rdf.rdf.model.bibo.Webpage(model, url, true);	
+			docReference = new Thing(model, MappingConfig.getClass("bibo", "WebPage"), url, true);
 		} else if (type == ReferenceType.WEBPAGE) {
-			docReference = new ws.biotea.ld2rdf.rdf.model.bibo.Webpage(model, url, true);	
+			docReference = new Thing(model, MappingConfig.getClass("bibo", "WebPage"), url, true);	
 		} else if (type == ReferenceType.COMMUN) {
-			docReference = new ws.biotea.ld2rdf.rdf.model.bibo.PersonalCommunicationDocument(model, url, true);	
+			docReference = new Thing(model, MappingConfig.getClass("bibo", "PersonalCommunicationDocument"), url, true);
 		} else if (type == ReferenceType.DISCUSSION) {
-			docReference = new ws.biotea.ld2rdf.rdf.model.bibo.Webpage(model, url, true);	
+			docReference = new Thing(model, MappingConfig.getClass("bibo", "WebPage"), url, true);	
 		} else if (type == ReferenceType.BLOG) {
-			docReference = new ws.biotea.ld2rdf.rdf.model.bibo.Webpage(model, url, true);	
+			docReference = new Thing(model, MappingConfig.getClass("bibo", "WebPage"), url, true);
 		} else if (type == ReferenceType.WIKI) {
-			docReference = new ws.biotea.ld2rdf.rdf.model.bibo.Webpage(model, url, true);	
+			docReference = new Thing(model, MappingConfig.getClass("bibo", "WebPage"), url, true);
 		} else if (type == ReferenceType.SOFTWARE) {
-			docReference = new ws.biotea.ld2rdf.rdf.model.bibo.Standard(model, url, true);	
+			docReference = new Thing(model, MappingConfig.getClass("bibo", "Standard"), url, true);
 		} else if (type == ReferenceType.STANDARD) {
-			docReference = new ws.biotea.ld2rdf.rdf.model.bibo.Standard(model, url, true);	
-		} else { //other
-			docReference = new ws.biotea.ld2rdf.rdf.model.bibo.Document(model, url, true);	
+			docReference = new Thing(model, MappingConfig.getClass("bibo", "Standard"), url, true);
 		}			
 		
 		if (pubmed != null) {			
 			if (withMetadata) {
-				docReference.addIdentifier(model, "pmid:" + pubmed);
-				docReference.addPMID(model, pubmed);
+				this.addDatatypeLiteral(model, docReference, "dcterms", "identifier", "pmid:" + pubmed);
+				this.addDatatypeLiteral(model, docReference, "bibo", "pmid", pubmed);
 			}			
 			docReference.addSeeAlso(new URIImpl(GlobalArticleConfig.pubMedURI + pubmed)); //seeAlso for webpages
 			docReference.addSameAs(model, ResourceConfig.IDENTIFIERS_ORG_PUBMED + pubmed); //sameAs for entities
@@ -646,8 +575,8 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			if (doiReference != null) {
 				try {
 					if (withMetadata) {
-						docReference.addDOI(model, doiReference);
-						docReference.addIdentifier(model, "doi:" + doiReference);
+						this.addDatatypeLiteral(model, document, "dcterms", "identifier", "doi:" + doiReference);
+						this.addDatatypeLiteral(model, document, "bibo", "doi", doiReference);
 					}
 					//docReference.addSeeAlso(new URIImpl(global.doiURI + doiReference)); //seeAlso for webpages
 					docReference.addSameAs(model, GlobalArticleConfig.doiURI + doiReference);
@@ -658,8 +587,8 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			}	
 		} else if (doiReference != null) {
 			if (withMetadata) {
-				docReference.addDOI(model, doiReference);
-				docReference.addIdentifier(model, "doi:" + doiReference);
+				this.addDatatypeLiteral(model, document, "dcterms", "identifier", "doi:" + doiReference);
+				this.addDatatypeLiteral(model, document, "bibo", "doi", doiReference);
 			}
 			//docReference.addSeeAlso(new URIImpl(global.doiURI + doiReference)); //seeAlso for webpages
 			docReference.addSameAs(model, GlobalArticleConfig.doiURI + doiReference);
@@ -671,17 +600,17 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		return (docReference);
 	}
 	/**
-	 * Creates a list of PersonE with the authors of an article, represented in a list of objects, only Name objects are processed.
+	 * Creates a list of Thing with the authors of an article, represented in a list of objects, only Name objects are processed.
 	 * @param lst
 	 * @return
 	 */
-	private Collection<Thing> processReferenceCreateListOfAuthors(Model model, Document document, List<Object> lst, String personBaseURL){
+	private List<Thing> processReferenceCreateListOfAuthors(Model model, Thing document, List<Object> lst, String personBaseURL){
 		ArrayList<Thing> listOfAuthorsRef = new ArrayList<Thing>();
 		for (Object objPerson: lst) {
 	    	if (objPerson instanceof Name) {
 	    		//Author
 	    		Name name = (Name)objPerson;	
-	    		PersonE person = (PersonE)createPerson(model, personBaseURL, name, false);			    
+	    		Thing person = (Thing)createPerson(model, personBaseURL, name, true);			    
 			    listOfAuthorsRef.add(person);			    
 	    	}	    	    				    	
 	    }
@@ -693,7 +622,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 	 * @param content
 	 */
 	@SuppressWarnings("rawtypes")	
-	private void processReferenceAllTypeCitation(Model model, Document document, Ref ref, List<Object> content, ReferenceType type, Class clazz, boolean withMetadata) {
+	private void processReferenceAllTypeCitation(Model model, Thing document, Ref ref, List<Object> content, ReferenceType type, Class clazz, boolean withMetadata) {
 		String pubmedReference = null;
 		String doiReference = null;
     	String pubIdOther = null;
@@ -712,7 +641,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			} 
 		}
 		
-		Document docReference = null;
+		Thing docReference = null;
 		String publicationLink = null; 
 		String personBaseURL = null;
 		String organizationBaseURL = null;
@@ -749,16 +678,13 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 				docReference.addSameAs(model, global.BASE_URL_REF + this.getRefId(ref));
 			}
 			//References of the document
-    	    document.addbiboCites(docReference);
-    	    docReference.addbiboCitedby(document);
+			this.addCitation(model, document, docReference);
 			return;
 		}
 		
 		
 		//common
-		Collection<Thing> listOfAuthorsRef = new ArrayList<Thing>();
-		List<Agent> listOfEditorsRef = new ArrayList<Agent>();
-		List<Agent> listOfTranslatorsRef = new ArrayList<Agent>();		
+		List<Thing> listOfAuthorsRef = new ArrayList<Thing>();		
 		String sourceTitle = null;
     	String sourceId =  null;
     	String year = null;
@@ -779,8 +705,6 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		String edition = null;
 		String publisherName = null;
     	String numPages = null;
-    	String pageCount = null;
-    	String publisherLocation = null;
     	
     	//conference
     	String confName = null;
@@ -790,8 +714,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
     	//Others
     	String comment = null;
     	String dateInCitation = null;
-    	String accessDate = null;
-    	String otherTitle = "";  	
+    	String accessDate = null;  	
 		
     			
 		//process other information
@@ -818,10 +741,6 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
     		} else if (obj instanceof PublisherName) {
     			try {
     				publisherName = processListOfElements(model, document, ((PublisherName)obj).getContent(), null, null);
-    			} catch (Exception e) {}
-    		} else if (obj instanceof PublisherLoc) {
-    			try {
-    				publisherLocation = processListOfElements(model, document, ((PublisherLoc)obj).getContent(), null, null);
     			} catch (Exception e) {}
     		} else if (obj instanceof Size) {
     			try {
@@ -878,31 +797,23 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			} else if (obj instanceof PersonGroup) {
 				PersonGroup pg = (PersonGroup)obj;
 				if ((pg.getPersonGroupType() != null) && (pg.getPersonGroupType().equals("editor"))) {
-					//TODO: make it clever so it will correctly process editors mixed as a single person
-					//listOfEditorsRef = processReferenceCreateListOfAuthors(model, document, ((PersonGroup)obj).getContent(), personBaseURL); //"editor"
 				} else if ((pg.getPersonGroupType() != null) && (pg.getPersonGroupType().equals("translator"))) {
-					//TODO: make it clever so it will correctly process translators mixed as a single person
-					//listOfTranslatorsRef = processReferenceCreateListOfAuthors(model, document, ((PersonGroup)obj).getContent(), personBaseURL); //"translator"
 				} else {
 					listOfAuthorsRef = processReferenceCreateListOfAuthors(model, document, ((PersonGroup)obj).getContent(), personBaseURL); //"author"
 				}				
 			} else if (obj instanceof Name) {
 				Name name = (Name)obj;	 
-				PersonE person = (PersonE)createPerson(model, personBaseURL, name, false);			    
+				Thing person = (Thing)createPerson(model, personBaseURL, name, true);			    
 		    	listOfAuthorsRef.add(person);			    		    			
 			} else if (obj instanceof Collab) {
 				Collab collab = (Collab)obj;
 				String orgName = collab.getContent().get(0).toString();
 				String idOrg = orgName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
-				OrganizationE org = new OrganizationE(model, organizationBaseURL + idOrg, true ); //model.createBlankNode(pmcID + "_author_" + idOrg) 
+				Thing org = new Thing(model, MappingConfig.getClass("foaf", "Organization"), organizationBaseURL + idOrg, true );
 				listOfAuthorsRef.add(org);
 			} else if (obj instanceof AccessDate) { //nlm-citation
 				try {
 					accessDate = processListOfElements(model, document, ((AccessDate)obj).getContent(), null, null);
-				} catch (Exception e){}
-			} else if (obj instanceof PageCount) { //nlm-citation
-				try {
-					pageCount = ((PageCount)obj).getCount();
 				} catch (Exception e){}
 			} else if (obj instanceof TransTitle) { //nlm-citation
 				try {
@@ -910,10 +821,6 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 				} catch (Exception e){}
 			} else if (obj instanceof PubId) {
 				//it was already processed		
-			} else {
-				try {
-					otherTitle += this.processElement(model, document, obj, null, null);
-				} catch (Exception e) {}
 			}
 		}						    
 		//Reference		
@@ -940,388 +847,211 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
         		//Journal
         		if (sourceId != null) {
         			String journalTitleInURI = sourceId.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
-        			JournalE journal = new JournalE(model, GlobalArticleConfig.BASE_URL_JOURNAL_NAME + journalTitleInURI, true); //model.createBlankNode(pmcID + "_journal_" + sourceId.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"))
-        		    journal.addTitle(model, sourceTitle);
+        			Thing journal = new Thing(model, MappingConfig.getClass("bibo", "Journal"), 
+        					GlobalArticleConfig.BASE_URL_JOURNAL_NAME + journalTitleInURI, true); 
+        			this.addDatatypeLiteral(model, journal, "dcterms", "title", sourceTitle);
         		    //Journal, issue-date, volume, pages, and document        		    
-            		if (articleTitle != null) {
-            			docReference.addTitle(model, articleTitle);
-            		}
-        		    if (volume != null) {
-        		    	docReference.addbiboVolume(volume);
-        		    }
+        			this.addDatatypeLiteral(model, docReference, "dcterms", "title", articleTitle);
+    		    	this.addDatatypeLiteral(model, docReference, "bibo", "volume", volume);
         		    if (publisherName != null) {
-        		    	OrganizationE publisherOrg = new OrganizationE(model, GlobalArticleConfig.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true ); 
-            		    publisherOrg.addName(model, publisherName);	
-            		    journal.addbiboPublisher(publisherOrg);
-            		    docReference.addbiboPublisher(publisherOrg);
+        		    	Thing publisherOrg = new Thing(model, MappingConfig.getClass("foaf", "Organization"), 
+    		    			GlobalArticleConfig.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true );
+        		    	this.addDatatypeLiteral(model, publisherOrg, "foaf", "name", publisherName);
+        		    	this.addObjectProperty(model, journal, publisherOrg, "dcterms", "publisher");
+        		    	this.addObjectProperty(model, docReference, publisherOrg, "dcterms", "publisher");
         		    }        		    
         		    //Issue
         		    if (journal != null) {
         		    	if (issueNumber != null) { //name:<journal_name>/<issue_id>
         		    		String[] params = {"name", journalTitleInURI};
             				String issueURI = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_ISSUE, params);
-                    		ws.biotea.ld2rdf.rdf.model.bibo.Issue issue = 
-                    			new ws.biotea.ld2rdf.rdf.model.bibo.Issue(model, issueURI + issueNumber.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true);    		
-                    		docReference.addIssue(model, issue);
-                    		journal.addIssue(model, issue);
+                    		Thing issue = new Thing(model, MappingConfig.getClass("bibo", "Issue"), 
+                				issueURI + issueNumber.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true);
+                    		this.addHasPartIsPartOf(model, issue, docReference);
+                    		this.addHasPartIsPartOf(model, journal, issue);
                 		} else {
-                			journal.addDocument(model, docReference);
+                			this.addHasPartIsPartOf(model, journal, docReference);
                 		}
         		    }            		
         		}
         		
 	    	} else if (type == ReferenceType.BOOK) { //book
 	    		if (sourceId != null) { 
-        			docReference.addTitle(model, sourceTitle);        		  
+	    			this.addDatatypeLiteral(model, docReference, "dcterms", "title", sourceTitle);
         		}
 	    	} else if (type == ReferenceType.BOOK_SECTION) { //Book section
 	    		if (sectionId != null) {
-	    			if (sectionTitle != null) {
-	    				docReference.addTitle(model, sectionTitle);
-	    			}
-	    		    if (sourceTitle != null) {
-	    		    	docReference.addDCTitle(model, "(Book title) " + sourceTitle); //did not find other way
-	    		    }	    	    	
+    				this.addDatatypeLiteral(model, docReference, "dcterms", "title", sectionTitle);
+    		    	this.addDatatypeLiteral(model, docReference, "dcterms", "title", "(Book title) " + sourceTitle);
 	    		}
 	    	} else if (type == ReferenceType.REPORT) {
 	    		if (sourceId != null) {	 
-	    			docReference.addTitle(model, sourceTitle);
-	    		    if (pubIdOther != null) {
-	    		    	docReference.addIdentifier(model, pubIdOther);
-	    		    } 
+	    			this.addDatatypeLiteral(model, docReference, "dcterms", "title", sourceTitle);
+    		    	this.addDatatypeLiteral(model, docReference, "dcterms", "identifier", pubIdOther);
 				}
-	    	} else if (type == ReferenceType.THESIS) {
-	    		if (sourceId != null) {	 
-	    			if (sourceTitle != null) {
-	    				docReference.addTitle(model, sectionTitle);
-	    			}
-	    		    if (sectionTitle != null) {
-	    		    	docReference.addDCTitle(model, "(Chapter title) " + sectionTitle); //did not find other way
-	    		    }
-				}
+	    	} else if (type == ReferenceType.THESIS) { 
+				this.addDatatypeLiteral(model, docReference, "dcterms", "title", sourceTitle);
+		    	this.addDatatypeLiteral(model, docReference, "dcterms", "title", "(Chapter title) " + sectionTitle);
 	    	} else if (type == ReferenceType.CONFERENCE_PAPER) {//paper (article) and proceedings (book)
-	    		if (articleTitle != null) {
-    				docReference.addTitle(model, sectionTitle);
-    			}    		    
-    		    if (sourceTitle != null) {
-    		    	docReference.addComment("Proceedings title: " + sourceTitle); 
-    		    }
+    			this.addDatatypeLiteral(model, docReference, "dcterms", "title", sectionTitle);
+		    	docReference.addComment("Proceedings title: " + sourceTitle); 
     		    //proceedings
-    		    Document proc = new Proceedings(model, proceedingsBaseURL + this.getRefId(ref), true); //model.createBlankNode(pmcID + "_referencedDocument(Proceedings)_" + pmcID + "_" + this.getRefId(ref))
-    		    proc.addTitle(model, sourceTitle); 
-    		    if (numPages != null) {
-    		    	proc.addbiboNumberofpages(numPages);
-    		    }
-    		    if (edition != null) {
-    		    	proc.addbiboEdition(edition);
-    		    }
+    		    Thing proc = new Thing(model, MappingConfig.getClass("bibo", "Proceedings"), proceedingsBaseURL + this.getRefId(ref), true); 
+    		    this.addDatatypeLiteral(model, proc, "dcterms", "title", sourceTitle);
+		    	this.addDatatypeLiteral(model, proc, "bibo", "numPges", numPages);
+		    	this.addDatatypeLiteral(model, proc, "bibo", "edition", edition);
     		    if (publisherName != null) {
-    		    	OrganizationE publisherOrg = new OrganizationE(model, GlobalArticleConfig.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true ); 
-        		    publisherOrg.addName(model, publisherName);	
-        		    proc.addbiboPublisher(publisherOrg);
-    		    }
-    		    if (publisherLocation != null) {// TODO: publisher location    		    	
-    		    	//Node publisherNode = new PlainLiteralImpl(publisherLocation);
-    		    	//proc.addbiboPublisher(publisherNode);
+    		    	Thing publisherOrg = new Thing(model, MappingConfig.getClass("foaf", "Organization"), 
+		    			GlobalArticleConfig.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true );
+    		    	this.addDatatypeLiteral(model, publisherOrg, "foaf", "name", publisherName);
+        		    this.addObjectProperty(model, proc, publisherOrg, "dcterms", "publisher");
     		    }
         		if (year != null) {
     		    	if (month != null) {
-    		    		Node dateNode = new PlainLiteralImpl(year + " " + month);		 
-    		    		proc.addbiboIssued(dateNode);
+    		    		this.addDatatypeLiteral(model, proc, "dcterms", "issued", year + " " + month);
     		    	} else {
-    		    		Node dateNode = new PlainLiteralImpl(year);		 
-    		    		proc.addbiboIssued(dateNode);
+    		    		this.addDatatypeLiteral(model, proc, "dcterms", "issued", year);
     		    	}    		    			    
     		    }        		      	
         		String refListURL = null;
-    		    String[] params = {GlobalArticleConfig.listOfEditorsAndTranslators, ""};		    		   
-        		String refEditorsURL = null;
-        		String[] params1 = {GlobalArticleConfig.listOfEditors, ""};
-        		String refTranslatorsURL = null;
-        		String[] params2 = {GlobalArticleConfig.listOfTranslators, ""};
+    		    String[] params = {GlobalArticleConfig.listOfEditorsAndTranslators, ""};		    		           		
         		if (pubmedReference != null) {
     				params[1] = pubmedReference;
-    				refListURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_PUBMED, params);
-    				params1[1] = pubmedReference;
-    				refEditorsURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_PUBMED, params1);
-    				params2[1] = pubmedReference;
-    				refTranslatorsURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_PUBMED, params2);
+    				refListURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_PUBMED, params);    				
         		} else if (doiReference != null) {
         			params[1] = doiReference;
-    				refListURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_DOI, params);
-    				params1[1] = doiReference;
-    				refEditorsURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_DOI, params1);
-    				params2[1] = doiReference;
-    				refTranslatorsURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_DOI, params2);
+    				refListURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_DOI, params);    				
         		} else {
         			params[1] = this.getRefId(ref);
-    				refListURL = Conversion.replaceParameter(global.BASE_URL_REF_LIST, params);
-    				params1[1] = this.getRefId(ref);
-    				refEditorsURL = Conversion.replaceParameter(global.BASE_URL_REF_LIST, params1);
-    				params2[1] = this.getRefId(ref);
-    				refTranslatorsURL = Conversion.replaceParameter(global.BASE_URL_REF_LIST, params2);
+    				refListURL = Conversion.replaceParameter(global.BASE_URL_REF_LIST, params);    				
         		}
         		if ((listOfAuthorsRef != null) && (listOfAuthorsRef.size() != 0)) {  
         			for(Thing agent: listOfAuthorsRef) {
-        				if (agent instanceof PersonE) {
-        					((PersonE)agent).addPublications(model, publicationLink);
+        				if (agent instanceof Thing) {
+        					this.addObjectProperty(model, agent, publicationLink, "foaf", "publications");
         				}
         			}        			
         			if (clazz.equals(MixedCitation.class)) {
         				ListOfAuthorsE loaRef = null;
-            			loaRef = new ListOfAuthorsE(model, refListURL, true); //model.createBlankNode(pmcID + "_listEditorsAndTranslatorsReference_" + this.getRefId(ref))
+            			loaRef = new ListOfAuthorsE(model, refListURL, true); 
             			loaRef.addMembersInOrder(model, listOfAuthorsRef); //add members to list
-            			proc.addbiboListofauthors(loaRef); //add list to document  
+            			this.addObjectProperty(model, proc, loaRef, "bibo", "authorList");
             		}    	    				                    		     	
             	}
-            	/*if ((listOfEditorsRef != null) && (listOfEditorsRef.size() != 0)) {
-            		for(Agent agent: listOfEditorsRef) {
-        				if (agent instanceof PersonE) {
-        					((PersonE)agent).addPublications(model, publicationLink);
-        				}
-        			} 
-            		ListOfAuthorsE loaRef = new ListOfAuthorsE(model, refEditorsURL, true); //model.createBlankNode(pmcID + "_listEditorsReference_" + this.getRefId(ref))
-        		    loaRef.addMembersInOrder(model, listOfAuthorsRef); //add members to list
-        		    proc.addbiboListofeditors(loaRef); //add list to document		        	
-            	}
-            	if ((listOfTranslatorsRef != null) && (listOfTranslatorsRef.size() != 0)) {
-            		for(Agent agent: listOfTranslatorsRef) {
-        				if (agent instanceof PersonE) {
-        					((PersonE)agent).addPublications(model, publicationLink);
-        				}
-        			} 
-            		ListOfAuthorsE loaRef = new ListOfAuthorsE(model, refTranslatorsURL, true); // model.createBlankNode(pmcID + "_listlistOfTranslatorsReference_" + this.getRefId(ref))
-        		    loaRef.addMembersInOrder(model, listOfAuthorsRef); //add members to list
-        		    proc.addbiboListofeditors(loaRef); //add list to document		        	
-            	}*/
-            	docReference.addbiboReproducedIn(proc);
+            	this.addObjectProperty(model, docReference, proc, "bibo", "reproducedIn");
     		    //conference
     		    String confYear = confDate != null ? confDate.substring(0,4).replaceAll(" ", "") : "";
     		    String confNameId = confName != null ? confName.replaceAll(" ", "") : "";
     		    String confLocId = confLoc != null ? confLoc.replaceAll(" ", "") : "";
     		    String confId = (confNameId + "_" + confLocId + "_" + confYear).replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
-    		    Conference conf = new Conference(model, conferenceBaseURL + confId, true); //model.createBlankNode(pmcID + "_conference_" + confId)
-    		    if (confName != null) {
-    		    	Node node = new PlainLiteralImpl(confName);	
-    		    	conf.addbiboName(node);
-    		    }    		    
-    		    if (confLoc != null) {
-    		    	conf.addPlace(model, confLoc);
-    		    }
-    		    if (confDate != null) {
-    		    	Node node = new PlainLiteralImpl(confDate);
-    		    	conf.addbiboDate(node);
-    		    }
-    		    docReference.addbiboPresentedat(conf);
-    		    proc.addbiboProducedin(conf);
-	    	} else if (type == ReferenceType.CONFERENCE_PROCS) { //only proceedings (book) 	    		    		    
-	    		docReference.addTitle(model, sourceTitle); 
+    		    Thing conf = new Thing(model, MappingConfig.getClass("bibo", "Conference"), conferenceBaseURL + confId, true); 
+		    	this.addDatatypeLiteral(model, conf, "foaf", "name", confName);    		    	
+		    	this.addDatatypeLiteral(model, conf, "dcterms", "created", confDate);
+    		    this.addObjectProperty(model, docReference, conf, "bibo", "presentedAt");
+	    	} else if (type == ReferenceType.CONFERENCE_PROCS) { //only proceedings (book)
+	    		this.addDatatypeLiteral(model, docReference, "dcterms", "titel", sourceTitle);
     		    //conference
     		    String confYear = confDate != null ? confDate.substring(0,4).replaceAll(" ", "") : "";
     		    String confNameId = confName != null ? confName.replaceAll(" ", "") : "";
     		    String confLocId = confLoc != null ? confLoc.replaceAll(" ", "") : "";
     		    String confId = (confNameId + "_" + confLocId + "_" + confYear).replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
-    		    Conference conf = new Conference(model, conferenceBaseURL + confId, true); //model.createBlankNode(pmcID + "_conference_" + confId)
-    		    if (confName != null) {
-    		    	Node node = new PlainLiteralImpl(confName);	
-    		    	conf.addbiboName(node);
-    		    }    		    
-    		    if (confLoc != null) {
-    		    	conf.addPlace(model, confLoc);
-    		    }
-    		    if (confDate != null) {
-    		    	Node node = new PlainLiteralImpl(confDate);
-    		    	conf.addbiboDate(node);
-    		    }
+    		    Thing conf = new Thing(model, MappingConfig.getClass("bibo", "Conference"), conferenceBaseURL + confId, true); 
+		    	this.addDatatypeLiteral(model, conf, "foaf", "name", confName);
+		    	this.addDatatypeLiteral(model, conf, "dcterms", "created", confDate);
     		    docReference.addbiboProducedin(conf);    			
 	    	} else if (type == ReferenceType.PATENT) {
-	    		if (articleTitle != null) {
-    				docReference.addTitle(model, articleTitle);
-    			}
+	    		this.addDatatypeLiteral(model, docReference, "dcterms", "title", articleTitle);
     		    if (sourceTitle != null) {
     		    	docReference.addComment("Source: " + sourceTitle);
     		    }
     		    docReference.addComment("Note: Inventors, asignees, and others are described in the Authors list.");
 	    	} else if (type == ReferenceType.DATABASE) { //webpage
-	    		if (sourceTitle != null) {
-    				docReference.addTitle(model, sourceTitle);
-    			}
+	    		this.addDatatypeLiteral(model, docReference, "dcterms", "title", sourceTitle);
 	    	} else if (type == ReferenceType.WEBPAGE) { //webpage
-	    		if (sourceTitle != null) {
-    				docReference.addTitle(model, sourceTitle);
-    			}
+	    		this.addDatatypeLiteral(model, docReference, "dcterms", "title", sourceTitle);
 	    	} else if (type == ReferenceType.COMMUN) { //personal communication
-	    		if (sourceTitle != null) {
-    				docReference.addTitle(model, sourceTitle);
-    			}
+	    		this.addDatatypeLiteral(model, docReference, "dcterms", "title", sourceTitle);
 	    	} else if (type == ReferenceType.DISCUSSION) { //webpage with article title
-	    		if (articleTitle != null) {
-    				docReference.addTitle(model, articleTitle);
-    			}
+	    		this.addDatatypeLiteral(model, docReference, "dcterms", "title", articleTitle);	    		
     		    if (sourceTitle != null) {
     		    	docReference.addComment("Discussion/List group: " + sourceTitle);
     		    }
 	    	} else if (type == ReferenceType.BLOG) { //webpage
-	    		if (sourceTitle != null) {
-    				docReference.addTitle(model, sourceTitle);
-    			}
+	    		this.addDatatypeLiteral(model, docReference, "dcterms", "title", sourceTitle);
 	    	} else if (type == ReferenceType.WIKI) { //webpage
-	    		if (sourceTitle != null) {
-    				docReference.addTitle(model, sourceTitle);
-    			}
+	    		this.addDatatypeLiteral(model, docReference, "dcterms", "title", sourceTitle);
 	    	} else if (type == ReferenceType.SOFTWARE) { //standard
-	    		if (sourceTitle != null) {
-    				docReference.addTitle(model, sourceTitle);
-    			}
+	    		this.addDatatypeLiteral(model, docReference, "dcterms", "title", sourceTitle);
 	    	} else if (type == ReferenceType.STANDARD) { //standard
-	    		if (sourceTitle != null) {
-    				docReference.addTitle(model, sourceTitle);
-    			}
+	    		this.addDatatypeLiteral(model, docReference, "dcterms", "title", sourceTitle);
 	    	} else if (type == ReferenceType.OTHER) { //standard
-	    		if (sourceTitle != null) {
-    				docReference.addTitle(model, sourceTitle);
-    			}
+	    		this.addDatatypeLiteral(model, docReference, "dcterms", "title", sourceTitle);
 	    	} 		
     		//common
-    		if (numPages != null) {
-		    	docReference.addbiboNumberofpages(numPages);
-		    } else {
-		    	if (pageCount != null) { //try with pageCount
-		    		docReference.addbiboNumberofpages(pageCount);
-		    	}
-		    }
-    		if (transTitle != null) {
-    			docReference.addTitle(model, transTitle);
-    		}
-		    if (edition != null) {
-		    	docReference.addbiboEdition(edition);
-		    }
+			this.addDatatypeLiteral(model, docReference, "bibo", "numPages", numPages);		    
+    		this.addDatatypeLiteral(model, docReference, "dcterms", "title", transTitle);
+    		this.addDatatypeLiteral(model, docReference, "bibo", "edition", edition);
 		    if (publisherName != null) {
-		    	OrganizationE publisherOrg = new OrganizationE(model, GlobalArticleConfig.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true ); 
-    		    publisherOrg.addName(model, publisherName);	
-    		    docReference.addbiboPublisher(publisherOrg);
-		    	//Node publisherNode = new PlainLiteralImpl(publisherName);
-			    //docReference.addbiboPublisher(publisherNode);
-		    }
-		    if (publisherLocation != null) {// TODO: publisher location
-		    	//Node publisherNode = new PlainLiteralImpl(publisherLocation);
-		    	//proc.addbiboPublisher(publisherNode);
+		    	Thing publisherOrg = new Thing(model, MappingConfig.getClass("foaf", "Organization"),
+    				GlobalArticleConfig.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true );
+		    	this.addDatatypeLiteral(model, publisherOrg, "foaf", "name", publisherName);
+		    	this.addObjectProperty(model, docReference, publisherOrg, "dcterms", "publisher");
 		    }
     		if (year != null) {
 		    	if (month != null) {
-		    		Node dateNode = new PlainLiteralImpl(year + " " + month);		 
-    			    docReference.addbiboIssued(dateNode);
+		    		this.addDatatypeLiteral(model, docReference, "dcterms", "issued", year + " " + month);		    		
 		    	} else {
-		    		Node dateNode = new PlainLiteralImpl(year);		 
-    			    docReference.addbiboIssued(dateNode);
+		    		this.addDatatypeLiteral(model, docReference, "dcterms", "issued", year);
 		    	}    		    			    
 		    }
-		    if (pageStart != null) {
-		    	docReference.addbiboPagestart(pageStart);
-		    }
-		    if (pageEnd != null) {
-		    	docReference.addbiboPageend(pageEnd);
-		    }
+	    	this.addDatatypeLiteral(model, docReference, "bibo", "pageStart", pageStart);
+	    	this.addDatatypeLiteral(model, docReference, "bibo", "pageEnd", pageEnd);
 		    if (comment != null) {
 		    	docReference.addComment(comment);
 		    }
-		    //otherTitle is just garbage
-		    /*if ((otherTitle != null) && (otherTitle.length() != 0)) {
-		    	docReference.addTitle(model, otherTitle);
-		    }*/
 		    if (dateInCitation != null) {
 		    	docReference.addComment("Access date (aka date in citation): " + dateInCitation);
 		    }
 		    if (accessDate != null) {
 		    	docReference.addComment("Access date: " + accessDate);
 		    }
-		    //list of authors in rdf
-		    String refListURL = null;
-		    String[] params = {GlobalArticleConfig.listOfAuthorsEditorsAndTranslators, ""};		    		   
-    		String refEditorsURL = null;
-    		String[] params1 = {GlobalArticleConfig.listOfEditors, ""};
-    		String refTranslatorsURL = null;
-    		String[] params2 = {GlobalArticleConfig.listOfTranslators, ""};
+		    //list of authors in rdf		    
     		String refAuthorsURL = null;
 		    String[] params3 = {GlobalArticleConfig.listOfAuthors, ""};
     		if (pubmedReference != null) {
-				params[1] = pubmedReference;
-				refListURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_PUBMED, params);
-				params1[1] = pubmedReference;
-				refEditorsURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_PUBMED, params1);
-				params2[1] = pubmedReference;
-				refTranslatorsURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_PUBMED, params2);
 				params3[1] = pubmedReference;
 				refAuthorsURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_PUBMED, params3);
     		} else if (doiReference != null) {
-    			params[1] = doiReference;
-				refListURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_DOI, params);
-				params1[1] = doiReference;
-				refEditorsURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_DOI, params1);
-				params2[1] = doiReference;
-				refTranslatorsURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_DOI, params2);
-				params3[1] = doiReference;
+    			params3[1] = doiReference;
 				refAuthorsURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_DOI, params3);
     		} else {
-    			params[1] = this.getRefId(ref);
-				refListURL = Conversion.replaceParameter(global.BASE_URL_REF_LIST, params);
-				params1[1] = this.getRefId(ref);
-				refEditorsURL = Conversion.replaceParameter(global.BASE_URL_REF_LIST, params1);
-				params2[1] = this.getRefId(ref);
-				refTranslatorsURL = Conversion.replaceParameter(global.BASE_URL_REF_LIST, params2);
-				params3[1] = this.getRefId(ref);
+    			params3[1] = this.getRefId(ref);
 				refAuthorsURL = Conversion.replaceParameter(global.BASE_URL_REF_LIST, params3);
     		}
         	if ((listOfAuthorsRef != null) && (listOfAuthorsRef.size() != 0)) {
         		for(Thing agent: listOfAuthorsRef) {
-    				if (agent instanceof PersonE) {
-    					((PersonE)agent).addPublications(model, publicationLink);
+    				if (agent instanceof Thing) {
+    					this.addObjectProperty(model, agent, publicationLink, "foaf", "publications");
     				}
     			}  
         		ListOfAuthorsE loaRef = null;
-        		if (type != ReferenceType.CONFERENCE_PROCS) { // authors belongs to paper rather than proceedings
-        			if (clazz.equals(MixedCitation.class)) {
-            			loaRef = new ListOfAuthorsE(model, refListURL, true); //model.createBlankNode(pmcID + "_listAuthorsAndEditorsAndTranslatorsReference_" + this.getRefId(ref))
-            		} else {
-            			loaRef = new ListOfAuthorsE(model, refAuthorsURL, true); //model.createBlankNode(pmcID + "_listAuthorsReference_" + this.getRefId(ref))        			    
-            		}    	    				        
+        		if (type != ReferenceType.CONFERENCE_PROCS) { // authors belongs to paper rather than proceedings        			
+        			loaRef = new ListOfAuthorsE(model, refAuthorsURL, true);    	    				        
             		loaRef.addMembersInOrder(model, listOfAuthorsRef); //add members to list
-        		    docReference.addbiboListofauthors(loaRef); //add list to document
+            		this.addObjectProperty(model, docReference, loaRef, "bibo", "authorList");
         		}        		
         	}
-        	/*
-        	if ((listOfEditorsRef != null) && (listOfEditorsRef.size() != 0)) {
-        		for(Agent agent: listOfEditorsRef) {
-    				if (agent instanceof PersonE) {
-    					((PersonE)agent).addPublications(model, publicationLink);
-    				}
-    			} 
-        		ListOfAuthorsE loaRef = new ListOfAuthorsE(model, refEditorsURL, true); //model.createBlankNode(pmcID + "_listEditorsReference_" + this.getRefId(ref))
-    		    loaRef.addMembersInOrder(model, listOfAuthorsRef); //add members to list
-    		    docReference.addbiboListofeditors(loaRef); //add list to document		        	
-        	}
-        	if ((listOfTranslatorsRef != null) && (listOfTranslatorsRef.size() != 0)) {
-        		for(Agent agent: listOfTranslatorsRef) {
-    				if (agent instanceof PersonE) {
-    					((PersonE)agent).addPublications(model, publicationLink);
-    				}
-    			}
-        		ListOfAuthorsE loaRef = new ListOfAuthorsE(model, refTranslatorsURL, true); //model.createBlankNode(pmcID + "_listlistOfTranslatorsReference_" + this.getRefId(ref))
-    		    loaRef.addMembersInOrder(model, listOfAuthorsRef); //add members to list
-    		    docReference.addbiboListofeditors(loaRef); //add list to document		        	
-        	}*/
         	//References of the document
-    	    document.addbiboCites(docReference);
-    	    docReference.addbiboCitedby(document);
+        	this.addCitation(model, document, docReference);
 		} catch (Exception e ) {
 		}    		
 	}
 	/**
-	 * Processes an Citation type and creates the bibliographic reference.
+	 * Processes a Citation type and creates the bibliographic reference.
 	 * @param citation
 	 * @param ref
 	 */
-	private void processSimpleCitation(Model model, Document document, Citation citation, Ref ref, boolean withMetadata) {		
+	private void processSimpleCitation(Model model, Thing document, Citation citation, Ref ref, boolean withMetadata) {		
 		try {	    	
 	    	if (citation.getPublicationType().contains("book")) {
 	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.BOOK, Citation.class, withMetadata);
@@ -1409,7 +1139,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 	 * @param citation
 	 * @param ref
 	 */
-	private void processNlmCitation(Model model, Document document, NlmCitation citation, Ref ref, boolean withMetadata) {
+	private void processNlmCitation(Model model, Thing document, NlmCitation citation, Ref ref, boolean withMetadata) {
 		try {	    	
 	    	if (citation.getPublicationType().contains("book")) {
 	    		processReferenceAllTypeCitation(model, document, ref, citation.getAll(), ReferenceType.BOOK, NlmCitation.class, withMetadata);
@@ -1455,7 +1185,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 	 * @param citation
 	 * @param ref
 	 */
-	private void processMixedCitation(Model model, Document document, MixedCitation citation, Ref ref, boolean withMetadata) {
+	private void processMixedCitation(Model model, Thing document, MixedCitation citation, Ref ref, boolean withMetadata) {
 		try {	    	
 	    	if (citation.getPublicationType().contains("book")) {
 	    		processReferenceAllTypeCitation(model, document, ref, citation.getContent(), ReferenceType.BOOK, MixedCitation.class, withMetadata);
@@ -1501,7 +1231,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 	 * @param citation
 	 * @param ref
 	 */
-	private void processElementCitation(Model model, Document document, ElementCitation citation, Ref ref, boolean withMetadata) {
+	private void processElementCitation(Model model, Thing document, ElementCitation citation, Ref ref, boolean withMetadata) {
 		try {	    	
 			citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects();
 	    	if (citation.getPublicationType().contains("book")) {
@@ -1549,7 +1279,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 	 * @return
 	 */
 	@SuppressWarnings("rawtypes")
-	private String processElement(Model model, Document document, Object obj, SectionE secDoco, String secDocoURI) {
+	private String processElement(Model model, Thing document, Object obj, Thing secDoco, String secDocoURI) {
 		if (obj instanceof NamedContent) {
 			try {
 				String str = ((NamedContent)obj).getContent().get(0).toString();
@@ -1619,7 +1349,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			try {
 				String str = ((ExtLink)obj).getContent().get(0).toString();
 				if (str.startsWith("http")) {
-					document.addDCReferences(model, str);
+					this.addObjectProperty(model, document, str, "dcterms", "references");
 				}
 				return str;
 			} catch (Exception e) {
@@ -1665,12 +1395,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			try {
 				Graphic g = (Graphic)(chem.getContent().get(0));
 				String link = global.CHEM_STRUCT_FIG_LINK + g.getHref();
-				Document image = new Document(model, link, true);
-			    model.addStatement(image.asResource(), Thing.RDF_TYPE, Figure.RDFS_CLASS); //rdf:type Document
-				secDoco.addDCReferences(model, link);
-				document.addDCReferences(model, link);
-				image.addDCIsReferencedBy(model, secDocoURI);
-				image.addDCIsReferencedBy(model, basePaper);
+				processFigureTable(model, link, secDoco, secDocoURI, document, basePaper, "Figure");
 				return "(see also " + link + ")";
 			} catch (Exception e) {
 				return "";
@@ -1680,12 +1405,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			try {
 				InlineGraphic g = (InlineGraphic)(formula.getContent().get(0));
 				String link = global.INLINE_FORM_FIG_LINK + g.getHref();
-				Document image = new Document(model, link, true);
-			    model.addStatement(image.asResource(), Thing.RDF_TYPE, Figure.RDFS_CLASS); //rdf:type Document
-				secDoco.addDCReferences(model, link);
-				document.addDCReferences(model, link);
-				image.addDCIsReferencedBy(model, secDocoURI);
-				image.addDCIsReferencedBy(model, basePaper);
+				processFigureTable(model, link, secDoco, secDocoURI, document, basePaper, "Figure");				
 				return " (see also " + link + ")";
 			} catch (Exception e) {
 				return "";
@@ -1700,12 +1420,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			try {
 				InlineGraphic g = (InlineGraphic)(obj);
 				String link = global.INLINE_FORM_FIG_LINK + g.getHref();
-				Document image = new Document(model, link, true);
-			    model.addStatement(image.asResource(), Thing.RDF_TYPE, Figure.RDFS_CLASS); //rdf:type Document
-				secDoco.addDCReferences(model, link);
-				document.addDCReferences(model, link);
-				image.addDCIsReferencedBy(model, secDocoURI);
-				image.addDCIsReferencedBy(model, basePaper);
+				processFigureTable(model, link, secDoco, secDocoURI, document, basePaper, "Figure");				
 				return " (see also " + link + ")";
 			} catch (Exception e) {
 				return "";
@@ -1746,12 +1461,19 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			return (str);
 		}
 	}
+	private void processFigureTable(Model model, String link, Thing elem, String elemURI, Thing doc, String docURI, String type) {
+		Thing imageTable = new Thing(model, MappingConfig.getClass("doco", type), link, true);
+		this.addObjectProperty(model, elem, link, "dcterms", "references");
+		this.addObjectProperty(model, doc, link, "dcterms", "references");
+		this.addObjectProperty(model, imageTable, elemURI, "dcterms", "isReferencedBy");
+		this.addObjectProperty(model, imageTable, docURI, "dcterms", "isReferencedBy");
+	}
 	/**
 	 * Processes a list of objects.
 	 * @param list
 	 * @return
 	 */
-	private String processListOfElements(Model model, Document document, List<Object> list, SectionE secDoco, String secDocoURI){
+	private String processListOfElements(Model model, Thing document, List<Object> list, Thing secDoco, String secDocoURI){
 		String str = "";
 		for (Object obj: list) {
 			str += processElement(model, document, obj, secDoco, secDocoURI);
@@ -1759,7 +1481,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		return str;
 	}
 	
-	private String getAbstractText(Model model, Document document, Abstract ab) {
+	private String getAbstractText(Model model, Thing document, Abstract ab) {
 		//process paragraphs
 		Iterator<Object> itrPara = ab.getAddressesAndAlternativesAndArraies().iterator();		
 		String text = "";
@@ -1792,7 +1514,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 	 * @param para Paragraph to be processed
 	 * @return
 	 */
-	private String processParagraphInAbstractAsText(Model model, Document document, P para) {
+	private String processParagraphInAbstractAsText(Model model, Thing document, P para) {
 		String text = "";
 		//text
 		for (Object paraObj: para.getContent()) {
@@ -1808,19 +1530,18 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 	 * @param document
 	 * @param parent
 	 */
-	private String processAbstractAsSection(Abstract ab, Model model, Document document, SectionE parent) {
+	private String processAbstractAsSection(Abstract ab, Model model, Thing document, Thing parent) {
 		//Title
 		String title = "Abstract";
 		//add section
 		String secDocoURI = global.BASE_URL_SECTION + title;
-		SectionE secDoco = new SectionE(model, secDocoURI, true);
-		document.addSection(model, secDoco);		
+		Thing secDoco = new Thing(model, MappingConfig.getClass("doco", "Section"), secDocoURI, true);
+		this.addHasPartIsPartOf(model, document, secDoco);
 		//title
-		Node titleNode = new PlainLiteralImpl(title);
-		secDoco.adddocoTitle(titleNode);
+		this.addDatatypeLiteral(model, secDoco, "dcterms", "title", title);
 		//link to parent
 		if (parent != null) {
-			parent.addSection(model, secDoco);
+			this.addHasPartIsPartOf(model, parent, secDoco);
 		}
 		//process paragraphs
 		Iterator<Object> itrPara = ab.getAddressesAndAlternativesAndArraies().iterator();		
@@ -1848,10 +1569,9 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		//paragraph		
 		String[] params = {title};
 		String paragraphURI = Conversion.replaceParameter(global.BASE_URL_PARAGRAPH, params) + "1";
-		ParagraphE paragraph = new ParagraphE(model, paragraphURI, true);
-		secDoco.addParagraph(model, paragraph);		
-		PlainLiteral textNode = model.createPlainLiteral(text);
-	    model.addStatement(paragraph.asResource(), new URIImpl(ClassesAndProperties.TEXT_PROPERTY, false), textNode); //text
+		Thing paragraph = new Thing(model, MappingConfig.getClass("doco", "Paragraph"), paragraphURI, true);
+		this.addHasPartIsPartOf(model, secDoco, paragraph);
+		this.addDatatypeLiteral(model, paragraph, "rdf", "value", text);
 		return text;
 	}
 	/**
@@ -1861,14 +1581,14 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 	 * @param para Paragraph to be processed
 	 * @return
 	 */
-	private String processParagraphInAbstract(Model model, Document document, SectionE secDoco, String secDocoURI, P para) {
+	private String processParagraphInAbstract(Model model, Thing document, Thing secDoco, String secDocoURI, P para) {
 		String text = "";
 		//text
 		List<String[]> references = new ArrayList<String[]>();
 		for (Object paraObj: para.getContent()) {
 			String str = processElement(model, document, paraObj, null, null); 
 			if (str.startsWith("http")) {
-				secDoco.addDCReferences(model, str);
+				this.addObjectProperty(model, secDoco, str, "dcterms", "references");
 			}
 			text += str;
 			if (paraObj instanceof Xref) {
@@ -1881,22 +1601,11 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			for (String ref:refs) { 						
 				if ( !( ref.startsWith("Fig") || ref.startsWith("Tab") || ref.startsWith("fig") || ref.startsWith("tab") ) ) {
 					//Even if it is a pubmed or DOI reference, we still have the reference format as a document resource so we can link sections and paragraphs to it
-					Document docReference = new Document(model, global.BASE_URL_REF + ref, true); //model.createBlankNode(pmcID + "_reference_" + pmcID + "_" + ref)
-					secDoco.addbiboCites(docReference);
+					this.addCitation(model, secDoco, global.BASE_URL_REF + ref);
 				} else if (ref.startsWith("Fig") || ref.startsWith("fig")){
-					Document image = new Document(model, GlobalArticleConfig.pmcURI + pmcID + "/figure/" + ref, true);
-				    model.addStatement(image.asResource(), Thing.RDF_TYPE, Figure.RDFS_CLASS); //rdf:type Document
-					secDoco.addDCReferences(model, GlobalArticleConfig.pmcURI + pmcID + "/figure/" + ref);
-					document.addDCReferences(model, GlobalArticleConfig.pmcURI + pmcID + "/figure/" + ref);
-					image.addDCIsReferencedBy(model, secDocoURI);
-					image.addDCIsReferencedBy(model, basePaper);
+					processFigureTable(model, GlobalArticleConfig.pmcURI + pmcID + "/figure/" + ref, secDoco, secDocoURI, document, basePaper, "Figure");
 				} else if (ref.startsWith("Tab") || ref.startsWith("tab")) {
-					Document table = new Document(model, GlobalArticleConfig.pmcURI + pmcID + "/table/" + ref, true);
-				    model.addStatement(table.asResource(), Thing.RDF_TYPE, DocoTable.RDFS_CLASS); //rdf:type Document
-					secDoco.addDCReferences(model, GlobalArticleConfig.pmcURI + pmcID + "/table/" + ref);
-					document.addDCReferences(model, GlobalArticleConfig.pmcURI + pmcID + "/table/" + ref);
-					table.addDCIsReferencedBy(model, secDocoURI);
-					table.addDCIsReferencedBy(model, basePaper);
+					processFigureTable(model, GlobalArticleConfig.pmcURI + pmcID + "/table/" + ref, secDoco, secDocoURI, document, basePaper, "Table");
 				}
 			}
 		}
@@ -1909,9 +1618,8 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 	 * @param document
 	 * @param parent
 	 */
-	private void processSection(Sec section, Model model, Document document, Object parent, String parentTitleInURL) {
-		if ( (parent != null) && 
-			 ( !((parent instanceof SectionE) || (parent instanceof Appendix)) ) ) {
+	private void processSection(Sec section, Model model, Thing document, Object parent, String parentTitleInURL) {
+		if ( (parent != null) && !(parent instanceof Thing) ) {
 			return;
 		}
 		//Title
@@ -1940,22 +1648,19 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			titleInURL = title.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
 		}
 		//add section
-		SectionE secDoco;
+		Thing secDoco;
 		if (parent == null) {
-			secDoco = new SectionE(model, global.BASE_URL_SECTION + titleInURL, true);
+			secDoco = new Thing(model, MappingConfig.getClass("doco", "Section"), global.BASE_URL_SECTION + titleInURL, true);
 		} else {
-			secDoco = new SectionE(model, global.BASE_URL_SECTION + parentTitleInURL + "_" + titleInURL, true);
-		}		 
-		document.addSection(model, secDoco);
+			secDoco = new Thing(model, MappingConfig.getClass("doco", "Section"), global.BASE_URL_SECTION + parentTitleInURL + "_" + titleInURL, true);
+		}
+		this.addHasPartIsPartOf(model, document, secDoco);
 		//title
-		Node titleNode = new PlainLiteralImpl(title);
-		secDoco.adddocoTitle(titleNode);
+		this.addDatatypeLiteral(model, secDoco, "dcterms", "title", title);
 		//link to parent
 		if (parent != null) {
-			if (parent instanceof SectionE) {
-				((SectionE)parent).addSection(model, secDoco);
-			} else if (parent instanceof Appendix) {
-				((Appendix)parent).addSection(model, secDoco);
+			if (parent instanceof Thing) {
+				this.addHasPartIsPartOf(model, (Thing)parent, secDoco);
 			}
 			
 		}
@@ -1980,7 +1685,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 	    }
 	}	
 	
-	private boolean processElementsInSection(Model model, Document document, String titleInURL, SectionE secDoco, Iterator<Object> itrPara) {
+	private boolean processElementsInSection(Model model, Thing document, String titleInURL, Thing secDoco, Iterator<Object> itrPara) {
 		int countPara = 0;
 		boolean processed = false;
 		while (itrPara.hasNext()){
@@ -1996,8 +1701,8 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 							String str = ((ExtLink)obj).getContent().get(0).toString();
 							if (str.startsWith("http")) {
 								processed = true;
-								document.addDCReferences(model, str);
-								secDoco.addDCReferences(model, str);
+								this.addObjectProperty(model, document, str, "dcterms", "references");
+								this.addObjectProperty(model, secDoco, str, "dcterms", "references");
 							}
 						} catch (Exception e) {;}	
 					}
@@ -2013,11 +1718,11 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		return ((countPara > 0) || (processed));
 	}
 	
-	private void processParagraph(Model model, Document document, String titleInURL, int countPara, SectionE secDoco, P para) {
+	private void processParagraph(Model model, Thing document, String titleInURL, int countPara, Thing secDoco, P para) {
 		String[] params = {titleInURL};
 		String paragraphURI = Conversion.replaceParameter(global.BASE_URL_PARAGRAPH, params) + countPara;
-		ParagraphE paragraph = new ParagraphE(model, paragraphURI, true);
-		secDoco.addParagraph(model, paragraph);
+		Thing paragraph = new Thing(model, MappingConfig.getClass("doco", "Paragraph"), paragraphURI, true);
+		this.addHasPartIsPartOf(model, secDoco, paragraph);
 					
 		String text = "";
 		//text
@@ -2025,8 +1730,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		for (Object paraObj: para.getContent()) {
 			String str = processElement(model, document, paraObj, secDoco, global.BASE_URL_SECTION + titleInURL); 
 			if (str.startsWith("http")) {
-				paragraph.addDCReferences(model, str);
- 				//this.document.addDCReferences(model, str); //already added when process the paragraph
+				this.addObjectProperty(model, paragraph, str, "dcterms", "references");
 			}
 			text += str;
 			if (paraObj instanceof Xref) {
@@ -2039,27 +1743,29 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			for (String ref:refs) {
 				if ( !( ref.startsWith("Fig") || ref.startsWith("Tab") ) ){ 
 					//Even if it is a pubmed or DOI reference, we still have the reference format as a document resource so we can link sections and paragraphs to it
-					Document docReference = new Document(model, global.BASE_URL_REF + ref, true);
-					paragraph.addbiboCites(docReference);
-					docReference.addbiboCitedby(paragraph);
+					this.addCitation(model, paragraph, global.BASE_URL_REF + ref);
 				} else if (ref.startsWith("Fig") || ref.startsWith("fig")) {
-					Document image = new Document(model, global.BASE_URL_EXT_FIGURE + ref, true);
-				    model.addStatement(image.asResource(), Thing.RDF_TYPE, Figure.RDFS_CLASS); //rdf:type Document
-					paragraph.addDCReferences(model, global.BASE_URL_EXT_FIGURE + ref);
-					document.addDCReferences(model, global.BASE_URL_EXT_FIGURE + ref);
-					image.addDCIsReferencedBy(model, paragraphURI);
-					image.addDCIsReferencedBy(model, basePaper);
+					processFigureTable(model, global.BASE_URL_EXT_FIGURE + ref, paragraph, paragraphURI, document, basePaper, "Figure");
 				} else if (ref.startsWith("Tab") || ref.startsWith("tab")) {
-					Document table = new Document(model, global.BASE_URL_EXT_TABLE + ref, true);
-				    model.addStatement(table.asResource(), Thing.RDF_TYPE, DocoTable.RDFS_CLASS); //rdf:type Document
-					paragraph.addDCReferences(model, global.BASE_URL_EXT_TABLE + ref);
-					document.addDCReferences(model, global.BASE_URL_EXT_TABLE + ref);
-					table.addDCIsReferencedBy(model, paragraphURI);
-					table.addDCIsReferencedBy(model, basePaper);
+					processFigureTable(model, global.BASE_URL_EXT_TABLE + ref, paragraph, paragraphURI, document, basePaper, "Table");
 				} 
 			}
-		}		
-		PlainLiteral textNode = model.createPlainLiteral(text);
-	    model.addStatement(paragraph.asResource(), new URIImpl(ClassesAndProperties.TEXT_PROPERTY, false), textNode); //text		
+		}
+		this.addDatatypeLiteral(model, paragraph, "rdf", "value", text);		
+	}
+	
+	private void addCitation(Model model, Thing origin, String reference) {
+		this.addObjectProperty(model, origin, reference, "bibo", "cites");
+		this.addObjectProperty(model, reference, origin, "bibo", "citedBy");
+	}
+	
+	private void addCitation(Model model, Thing origin, Thing reference) {
+		this.addObjectProperty(model, origin, reference, "bibo", "cites");
+		this.addObjectProperty(model, reference, origin, "bibo", "citedBy");
+	}
+	
+	private void addHasPartIsPartOf(Model model, Thing whole, Thing element) {
+		this.addObjectProperty(model, whole, element, "dcterms", "hasPart");
+		this.addObjectProperty(model, element, whole, "dcterms", "isPartOf");
 	}
 }
