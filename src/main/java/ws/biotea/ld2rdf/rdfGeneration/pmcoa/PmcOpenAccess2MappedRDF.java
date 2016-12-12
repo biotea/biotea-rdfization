@@ -13,7 +13,7 @@ import org.ontoware.rdf2go.model.node.URI;
 import org.ontoware.rdf2go.model.node.impl.URIImpl;
 import pubmed.openAccess.jaxb.generated.*;
 import ws.biotea.ld2rdf.rdf.model.bibo.Thing;
-import ws.biotea.ld2rdf.rdf.model.bibo.extension.ListOfAuthorsE;
+import ws.biotea.ld2rdf.rdf.model.bibo.extension.ListOfElements;
 import ws.biotea.ld2rdf.rdfGeneration.RDFHandler;
 import ws.biotea.ld2rdf.rdfGeneration.exception.ArticleTypeException;
 import ws.biotea.ld2rdf.rdfGeneration.exception.DTDException;
@@ -36,6 +36,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
+	private ListOfElements mainListOfSections;	
+	
 	public PmcOpenAccess2MappedRDF(File paper, StringBuilder str) throws JAXBException, DTDException, ArticleTypeException, PMCIdException {
 		super(paper, str);
 	}
@@ -116,20 +118,20 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 				this.addDatatypeLiteral(modelSections, documentSections, "dcterms", "title", this.articleTitle);
 
 				for (Abstract ab: article.getFront().getArticleMeta().getAbstracts()) {
-					processAbstractAsSection(ab, modelSections, documentSections, null);			
-				}
-				
-				//process not-in-section-paragraphs
-				Thing secDoco = new Thing(modelSections, MappingConfig.getClass("doco", "Section"), global.BASE_URL_SECTION + "undefined-section", true);
-				
-				Iterator<Object> itrPara = article.getBody().getAddressesAndAlternativesAndArraies().iterator();			
-				if (processElementsInSection(modelSections, documentSections, "undefined-section", secDoco, itrPara)) {
-					this.addHasPartIsPartOf(modelSections, documentSections, secDoco);
-				}								
+					processAbstractAsSection(ab, modelSections, documentSections);			
+				}				
 				//process sections
 				for (Sec section:article.getBody().getSecs()) {										
 					processSection(section, modelSections, documentSections, null, null);
-				}			
+				}
+				//process not-in-section-paragraphs
+				Iterator<Object> itrPara = article.getBody().getAddressesAndAlternativesAndArraies().iterator();
+				if (itrPara.hasNext()) {
+					Thing secDoco = new Thing(modelSections, MappingConfig.getClass("doco", "Section"), global.BASE_URL_SECTION + "undefined-section", true);					
+					if (processElementsInSection(modelSections, documentSections, "undefined-section", secDoco, itrPara)) {
+						this.mainListOfSections = this.linkSection(modelSections, documentSections, secDoco, this.mainListOfSections, this.mainListOfSectionsURI);
+					}
+				}				
 				logger.info("=== sections processed");
 			} catch (Exception e) {//something went so wrong
 				logger.fatal("- FATAL ERROR SECTIONS - " + pmcID + " threw an uncaugth error: " + e.getMessage());
@@ -185,7 +187,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		this.addDatatypeLiteral(model, document, "prov", "generatedAtTime", now);
 		this.addObjectProperty(model, document, GlobalArticleConfig.RDF4PMC_AGENT, "dcterms", "creator");
 		this.addObjectProperty(model, document, GlobalArticleConfig.RDF4PMC_AGENT, "prov", "wasAttributedTo");
-		this.addObjectProperty(model, document, GlobalArticleConfig.BIOTEA_PMC_DATASET, ws.biotea.ld2rdf.util.OntologyPrefix.VOID.getURL() + "inDataset");
+		this.addObjectProperty(model, document, GlobalArticleConfig.BIOTEA_PMC_DATASET, ws.biotea.ld2rdf.util.OntologyPrefix.SIO.getURL() + "SIO_001278");
 		Resource resPMC = new URIImpl(GlobalArticleConfig.pmcURI + pmcID, true);	
 		document.addSeeAlso(resPMC);	
 		
@@ -195,6 +197,8 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		    //Relations between PMC-RDF and identifiers.org/bio2rdf.org sameAS
 		    if (ResourceConfig.withBio()) {
 		    	document.addSameAs(model, ResourceConfig.IDENTIFIERS_ORG_PUBMED + pubmedID);
+		    	Resource resIdOrgPubMed = new URIImpl(ResourceConfig.IDENTIFIERS_ORG_PAGE_PUBMED + pubmedID, true);
+		    	document.addSeeAlso(resIdOrgPubMed);
 			    document.addSameAs(model, ResourceConfig.BIO2RDF_PUBMED + pubmedID);
 		    }		    
 		    if (!global.getUriStyle().equals(ResourceConfig.bio2rdf)) {
@@ -376,7 +380,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 	private void processAuthors(Model model, Thing document, String paper) {
 		try {
 			//List of Authors
-		    ArrayList<Thing> listOfAuthors = new ArrayList<Thing>();
+		    ArrayList<org.ontoware.rdfreactor.schema.rdfs.Class> listOfAuthors = new ArrayList<org.ontoware.rdfreactor.schema.rdfs.Class>();
 			for (Object obj: article.getFront().getArticleMeta().getContribGroupsAndAfvesAndXS()) {
 				if (obj instanceof ContribGroup) {
 					ContribGroup group = (ContribGroup)obj;
@@ -440,8 +444,8 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 				}
 			}
 		    //list in rdf: ResourceConfig.BIOTEA_URL + "/{0}/pmc_resource/" + pmcID + "/";
-			String[] params = {"listOfAuthors"};
-			ListOfAuthorsE loa = new ListOfAuthorsE(model, Conversion.replaceParameter(global.BASE_URL_LIST_PMC, params), true); 
+			String[] params = {"listOfAuthors", "1"};
+			ListOfElements loa = new ListOfElements(model, Conversion.replaceParameter(global.BASE_URL_LIST_PMC, params), true); 
 		    loa.addMembersInOrder(model, listOfAuthors); //add members to list
 		    this.addObjectProperty(model, document, loa, "bibo", "authorList");
 		} catch (Exception e){
@@ -569,6 +573,8 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 			}			
 			docReference.addSeeAlso(new URIImpl(GlobalArticleConfig.pubMedURI + pubmed)); //seeAlso for webpages
 			docReference.addSameAs(model, ResourceConfig.IDENTIFIERS_ORG_PUBMED + pubmed); //sameAs for entities
+			Resource resIdOrgPubMed = new URIImpl(ResourceConfig.IDENTIFIERS_ORG_PAGE_PUBMED + pubmed, true);
+	    	docReference.addSeeAlso(resIdOrgPubMed);
 			if (!url.equals(ResourceConfig.BIO2RDF_PUBMED + pubmed)) {
 				docReference.addSameAs(model, ResourceConfig.BIO2RDF_PUBMED + pubmed); //sameAs for entities
 			}			
@@ -604,8 +610,8 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 	 * @param lst
 	 * @return
 	 */
-	private List<Thing> processReferenceCreateListOfAuthors(Model model, Thing document, List<Object> lst, String personBaseURL){
-		ArrayList<Thing> listOfAuthorsRef = new ArrayList<Thing>();
+	private List<org.ontoware.rdfreactor.schema.rdfs.Class> processReferenceCreateListOfAuthors(Model model, Thing document, List<Object> lst, String personBaseURL){
+		ArrayList<org.ontoware.rdfreactor.schema.rdfs.Class> listOfAuthorsRef = new ArrayList<org.ontoware.rdfreactor.schema.rdfs.Class>();
 		for (Object objPerson: lst) {
 	    	if (objPerson instanceof Name) {
 	    		//Author
@@ -669,7 +675,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 			conferenceBaseURL = global.BASE_URL_CONFERENCE_PMC;
 		}
 		
-		if (!withMetadata) {			
+		if (!withMetadata && ((pubmedReference != null) || (doiReference != null))) {			
 			docReference = processReferenceCreateArticle(model, document, publicationLink, pubmedReference, doiReference, ref, type, withMetadata);
 			//We need to keep the reference format as a document resource so we can link sections and paragraphs to it		
 			if (pubmedReference != null) {
@@ -680,11 +686,13 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 			//References of the document
 			this.addCitation(model, document, docReference);
 			return;
-		}
+		} else {
+			withMetadata = true;
+		}		
 		
 		
 		//common
-		List<Thing> listOfAuthorsRef = new ArrayList<Thing>();		
+		List<org.ontoware.rdfreactor.schema.rdfs.Class> listOfAuthorsRef = new ArrayList<org.ontoware.rdfreactor.schema.rdfs.Class>();		
 		String sourceTitle = null;
     	String sourceId =  null;
     	String year = null;
@@ -926,14 +934,14 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
     				refListURL = Conversion.replaceParameter(global.BASE_URL_REF_LIST, params);    				
         		}
         		if ((listOfAuthorsRef != null) && (listOfAuthorsRef.size() != 0)) {  
-        			for(Thing agent: listOfAuthorsRef) {
+        			for(org.ontoware.rdfreactor.schema.rdfs.Class agent: listOfAuthorsRef) {
         				if (agent instanceof Thing) {
         					this.addObjectProperty(model, agent, publicationLink, "foaf", "publications");
         				}
         			}        			
         			if (clazz.equals(MixedCitation.class)) {
-        				ListOfAuthorsE loaRef = null;
-            			loaRef = new ListOfAuthorsE(model, refListURL, true); 
+        				ListOfElements loaRef = null;
+            			loaRef = new ListOfElements(model, refListURL, true); 
             			loaRef.addMembersInOrder(model, listOfAuthorsRef); //add members to list
             			this.addObjectProperty(model, proc, loaRef, "bibo", "authorList");
             		}    	    				                    		     	
@@ -1029,14 +1037,14 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 				refAuthorsURL = Conversion.replaceParameter(global.BASE_URL_REF_LIST, params3);
     		}
         	if ((listOfAuthorsRef != null) && (listOfAuthorsRef.size() != 0)) {
-        		for(Thing agent: listOfAuthorsRef) {
+        		for(org.ontoware.rdfreactor.schema.rdfs.Class agent: listOfAuthorsRef) {
     				if (agent instanceof Thing) {
     					this.addObjectProperty(model, agent, publicationLink, "foaf", "publications");
     				}
     			}  
-        		ListOfAuthorsE loaRef = null;
+        		ListOfElements loaRef = null;
         		if (type != ReferenceType.CONFERENCE_PROCS) { // authors belongs to paper rather than proceedings        			
-        			loaRef = new ListOfAuthorsE(model, refAuthorsURL, true);    	    				        
+        			loaRef = new ListOfElements(model, refAuthorsURL, true);    	    				        
             		loaRef.addMembersInOrder(model, listOfAuthorsRef); //add members to list
             		this.addObjectProperty(model, docReference, loaRef, "bibo", "authorList");
         		}        		
@@ -1530,19 +1538,15 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 	 * @param document
 	 * @param parent
 	 */
-	private String processAbstractAsSection(Abstract ab, Model model, Thing document, Thing parent) {
+	private String processAbstractAsSection(Abstract ab, Model model, Thing document) {
 		//Title
 		String title = "Abstract";
 		//add section
 		String secDocoURI = global.BASE_URL_SECTION + title;
 		Thing secDoco = new Thing(model, MappingConfig.getClass("doco", "Section"), secDocoURI, true);
-		this.addHasPartIsPartOf(model, document, secDoco);
+		this.mainListOfSections = this.linkSection(model, document, secDoco, this.mainListOfSections, this.mainListOfSectionsURI);
 		//title
 		this.addDatatypeLiteral(model, secDoco, "dcterms", "title", title);
-		//link to parent
-		if (parent != null) {
-			this.addHasPartIsPartOf(model, parent, secDoco);
-		}
 		//process paragraphs
 		Iterator<Object> itrPara = ab.getAddressesAndAlternativesAndArraies().iterator();		
 		String text = "";
@@ -1567,11 +1571,13 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 			} catch (Exception e) {;}
 		}
 		//paragraph		
-		String[] params = {title};
-		String paragraphURI = Conversion.replaceParameter(global.BASE_URL_PARAGRAPH, params) + "1";
+		String[] paramsTitle = {title};
+		String paragraphURI = Conversion.replaceParameter(global.BASE_URL_PARAGRAPH, paramsTitle) + "1";
 		Thing paragraph = new Thing(model, MappingConfig.getClass("doco", "Paragraph"), paragraphURI, true);
-		this.addHasPartIsPartOf(model, secDoco, paragraph);
-		this.addDatatypeLiteral(model, paragraph, "rdf", "value", text);
+		
+		String[] params = {"listOfParagraphs", "" + this.paragraphCounter};
+		secDoco.setListOfParagraphs(this.linkParagraph(model, secDoco, paragraph, text, secDoco.getListOfParagraphs(), Conversion.replaceParameter(global.BASE_URL_LIST_PMC, params)));		
+		
 		return text;
 	}
 	/**
@@ -1622,8 +1628,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		if ( (parent != null) && !(parent instanceof Thing) ) {
 			return;
 		}
-		//Title
-		
+		//Title		
 		String title = "";
 		try {
 			title = processListOfElements(model, document, section.getTitle().getContent(), null, null);
@@ -1654,17 +1659,20 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		} else {
 			secDoco = new Thing(model, MappingConfig.getClass("doco", "Section"), global.BASE_URL_SECTION + parentTitleInURL + "_" + titleInURL, true);
 		}
-		this.addHasPartIsPartOf(model, document, secDoco);
+		this.mainListOfSections = this.linkSection(model, document, secDoco, this.mainListOfSections, this.mainListOfSectionsURI);
 		//title
 		this.addDatatypeLiteral(model, secDoco, "dcterms", "title", title);
 		//link to parent
-		if (parent != null) {
+		if (parent != null) {			
 			if (parent instanceof Thing) {
-				this.addHasPartIsPartOf(model, (Thing)parent, secDoco);
+				String[] params = {"listOfSections", "" + this.sectionCounter};
+				ListOfElements loe = this.linkSection(model, (Thing)parent, secDoco, ((Thing)parent).getListOfSections(), Conversion.replaceParameter(global.BASE_URL_LIST_PMC, params));
+				((Thing)parent).setListOfSections(loe);
 			}
 			
 		}
 		//process paragraphs
+		this.paragraphCounter++;
 		Iterator<Object> itrPara = section.getAddressesAndAlternativesAndArraies().iterator();	
 		if (parent == null) {
 			processElementsInSection(model, document, titleInURL, secDoco, itrPara);
@@ -1676,12 +1684,12 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		Iterator<Sec> itr = section.getSecs().iterator();
 		while (itr.hasNext()){
 			Sec sec = itr.next();
+			this.sectionCounter++;
 			if (parent == null) {
 				processSection(sec, model, document, secDoco, titleInURL);
 			} else {
 				processSection(sec, model, document, secDoco, parentTitleInURL + "_" + titleInURL);
-			}
-			
+			}			
 	    }
 	}	
 	
@@ -1722,7 +1730,6 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		String[] params = {titleInURL};
 		String paragraphURI = Conversion.replaceParameter(global.BASE_URL_PARAGRAPH, params) + countPara;
 		Thing paragraph = new Thing(model, MappingConfig.getClass("doco", "Paragraph"), paragraphURI, true);
-		this.addHasPartIsPartOf(model, secDoco, paragraph);
 					
 		String text = "";
 		//text
@@ -1751,7 +1758,9 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 				} 
 			}
 		}
-		this.addDatatypeLiteral(model, paragraph, "rdf", "value", text);		
+		
+		String[] paramsPara = {"listOfParagraphs", "" + this.paragraphCounter};
+		secDoco.setListOfParagraphs(this.linkParagraph(model, secDoco, paragraph, text, secDoco.getListOfParagraphs(), Conversion.replaceParameter(global.BASE_URL_LIST_PMC, paramsPara)));
 	}
 	
 	private void addCitation(Model model, Thing origin, String reference) {
@@ -1767,5 +1776,27 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 	private void addHasPartIsPartOf(Model model, Thing whole, Thing element) {
 		this.addObjectProperty(model, whole, element, "dcterms", "hasPart");
 		this.addObjectProperty(model, element, whole, "dcterms", "isPartOf");
+	}
+	
+	private ListOfElements linkSection(Model model, Thing document, Thing secDoco, ListOfElements loe, String uri) {
+		this.addHasPartIsPartOf(model, document, secDoco);
+		if (loe == null) {
+			loe = new ListOfElements(model, uri, true); 
+			this.addObjectProperty(model, document, loe, "biotea", "sectionList");
+		}
+		loe.addMember(model, secDoco, true);
+		return loe;
+	}
+	
+	private ListOfElements linkParagraph(Model model, Thing secDoco, Thing paragraph, String text, ListOfElements loe, String uri) {
+		this.addHasPartIsPartOf(model, secDoco, paragraph);
+		this.addDatatypeLiteral(model, paragraph, "rdf", "value", text);
+				
+		if (loe == null) {
+			loe = new ListOfElements(model, uri, true); 
+			this.addObjectProperty(model, secDoco, loe, "biotea", "paragraphList");
+		}
+		loe.addMember(model, paragraph, true);
+		return loe;
 	}
 }

@@ -22,6 +22,7 @@ import ws.biotea.ld2rdf.rdfGeneration.exception.ArticleTypeException;
 import ws.biotea.ld2rdf.rdfGeneration.exception.DTDException;
 import ws.biotea.ld2rdf.rdfGeneration.exception.PMCIdException;
 import ws.biotea.ld2rdf.rdfGeneration.jats.GlobalArticleConfig;
+import ws.biotea.ld2rdf.util.Conversion;
 import ws.biotea.ld2rdf.util.ResourceConfig;
 import ws.biotea.ld2rdf.util.mapping.DatatypeProperty;
 import ws.biotea.ld2rdf.util.mapping.MappingConfig;
@@ -52,6 +53,10 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 	protected GlobalArticleConfig global;
 	protected final String PREFIX = ResourceConfig.getDatasetPrefix().toUpperCase();
 	//Sections
+	protected int sectionCounter = 1;
+	protected int paragraphCounter = 1;
+	protected final String[] listOfsectionsParam = {"listOfSections", "1"};
+	protected final String mainListOfSectionsURI;
 	
 	protected PmcOpenAccess2AbstractRDF(File paper, StringBuilder str) throws JAXBException, DTDException, ArticleTypeException, PMCIdException {
 		this.logger = Logger.getLogger(this.getClass());
@@ -106,7 +111,8 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 		
 		this.logger.info("=== ARTICLE-TYPE (" + paper.getName() + " - " + pmcID + "): " + this.articleType);
 		this.global = new GlobalArticleConfig(pmcID);	
-		this.basePaper = GlobalArticleConfig.getArticleRdfUri(pmcID);	
+		this.basePaper = GlobalArticleConfig.getArticleRdfUri(pmcID);
+		this.mainListOfSectionsURI = Conversion.replaceParameter(global.BASE_URL_LIST_PMC, listOfsectionsParam);
 	} 
 	
 	/**
@@ -139,7 +145,7 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 		return file;
 	}
 	
-	protected void addDatatypeLiteral(Model model, Thing document, String namespace, String dtpName, String literal) {
+	protected void addDatatypeLiteral(Model model, org.ontoware.rdfreactor.schema.rdfs.Class document, String namespace, String dtpName, String literal) {
 		if ((literal != null) && (literal.length() != 0)) {
 			DatatypeProperty dtp = MappingConfig.getDatatypeProperty(namespace, dtpName);
 			if (dtp != null) {
@@ -159,7 +165,7 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 		}		
 	}
 	
-	protected void addObjectProperty(Model model, Thing from, Thing to, String namespace, String opName) {
+	protected void addObjectProperty(Model model, org.ontoware.rdfreactor.schema.rdfs.Class from, org.ontoware.rdfreactor.schema.rdfs.Class to, String namespace, String opName) {
 		String str = MappingConfig.getObjectProperty(namespace, opName);
 		if (str != null) {
 			URI uri = new URIImpl(str, false);
@@ -167,7 +173,7 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 		}
 	}
 	
-	protected void addObjectProperty(Model model, Thing from, String to, String namespace, String opName) {
+	protected void addObjectProperty(Model model, org.ontoware.rdfreactor.schema.rdfs.Class from, String to, String namespace, String opName) {
 		Node uriNodeTo = model.createURI(to);
 		String str = MappingConfig.getObjectProperty(namespace, opName);
 		if (str != null) {
@@ -176,7 +182,7 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 		}
 	}
 	
-	protected void addObjectProperty(Model model, String from, Thing to, String namespace, String opName) {
+	protected void addObjectProperty(Model model, String from, org.ontoware.rdfreactor.schema.rdfs.Class to, String namespace, String opName) {
 		Node uriNodeFrom = model.createURI(from);
 		String str = MappingConfig.getObjectProperty(namespace, opName);
 		if (str != null) {

@@ -1,100 +1,114 @@
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:void="http://rdfs.org/ns/void#"
     xmlns:dcterms="http://purl.org/dc/terms/"
-    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
     xmlns:prov="http://www.w3.org/ns/prov#"
     xmlns:doco="http://purl.org/spar/doco/"
     xmlns:bibo="http://purl.org/ontology/bibo/"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:sio="http://semanticscience.org/resource/"
+    xmlns:biotea="https://github.com/biotea/biotea-ontololgy#"
     xmlns:foaf="http://xmlns.com/foaf/0.1/"
-    xmlns:void="http://rdfs.org/ns/void#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
-  <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/undefined-section"/>
-  <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Competing-interests">
-    <dcterms:hasPart>
-      <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Competing-interests:para_1">
-        <rdf:value>The author(s) declare that they have no competing interests.</rdf:value>
-        <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Competing-interests"/>
-      </doco:Paragraph>
-    </dcterms:hasPart>
-    <dcterms:title>Competing interests</dcterms:title>
+  <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods:para_1">
+    <rdf:value>Fresh plant materials were collected from users of these plants in Imota, Ikorodu, Ojo and Kosofe in Lagos State, Nigeria. Their botanical identities were determined and authenticated by Mr. O. K. Oluwa in Botany department, Lagos State University, Ojo, Lagos. Samples were deposited in the department herbarium.</rdf:value>
     <dcterms:isPartOf>
-      <bibo:Document rdf:about="http://biotea.ws/pmcdoc/pmc/1079793">
+      <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Methods">
+        <dcterms:title>Methods</dcterms:title>
         <dcterms:hasPart>
-          <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Pre-publication-history">
+          <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods">
             <dcterms:hasPart>
-              <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Pre-publication-history:para_2">
-                <rdf:value></rdf:value>
-                <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Pre-publication-history"/>
-              </doco:Paragraph>
-            </dcterms:hasPart>
-            <dcterms:hasPart>
-              <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Pre-publication-history:para_1">
-                <rdf:value>The pre-publication history for this paper can be accessed here:</rdf:value>
-                <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Pre-publication-history"/>
-              </doco:Paragraph>
-            </dcterms:hasPart>
-            <dcterms:title>Pre-publication history</dcterms:title>
-            <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
-          </doco:Section>
-        </dcterms:hasPart>
-        <dcterms:hasPart>
-          <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Determination-of-minimum-inhibitory-concentration--MIC--and-minimum-bactericidal-concentration--MBC-">
-            <dcterms:hasPart>
-              <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Determination-of-minimum-inhibitory-concentration--MIC--and-minimum-bactericidal-concentration--MBC-:para_1">
-                <rdf:value>MIC of the extracts was determined by dilution of P, Q, R, S, T &amp;.U to various concentrations of 0.0–32, 0.0–91, 0.0–38, 0.0–42, 0.0–44 and 0.0–35 mcg/ml respectively. Equal volume of each extract and nutrient broth were mixed in a test tube. Specifically 0.1 ml of standardized inoculum (1–2 × 107 cfu/ml) was added to each tube. The tubes were incubated aerobically at 37°C for 18–24 hr. Two control tubes were maintained for each test batch. These included antibiotic control (tube containing extract and the growth medium without inoculum) and organism control (the tube containing the growth medium, physiological saline and the inoculum). The lowest concentration (highest dilution) of the extract that produced no visible bacterial growth (no turbidity) when compared with the control tubes was regarded as MIC. However, the MBC was determined by subculturing the test dilution on to a fresh drug-free solid medium and incubated further for 18–24 hr. The highest dilution that yielded no single bacterial colony on a solid medium was taken as MBC.</rdf:value>
-                <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Determination-of-minimum-inhibitory-concentration--MIC--and-minimum-bactericidal-concentration--MBC-"/>
-              </doco:Paragraph>
-            </dcterms:hasPart>
-            <dcterms:isPartOf>
-              <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Methods">
-                <dcterms:title>Methods</dcterms:title>
-                <dcterms:hasPart>
-                  <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods">
-                    <dcterms:hasPart>
-                      <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods:para_2">
-                        <rdf:value>The test for tannins was carried out by subjecting 3 g of each plant extract in 6 ml of distilled water, filtered and ferric chloride reagents added to the filtrate. For cardiac glycosides, legal test and the Killer-Kiliani test[[B26]] were adopted (0.5 g of extract was added to 2 ml acetic anhydrate plus H2SO4). The test for alkaloids was carried out by subjecting 0.5 g aqueous extract in 5 ml 1% HCl, boiled, filtered and Mayer's reagent added [[B26],[B27]]. Cyanogenic glycosides were identified by subjecting 0.5 g extract in 10 ml sterile water, and were filtered. Sodium picrate paper was added to the filtrate and heated to boil. The extract was also tested for carbohydrates using resorcinol solution[[B24]]. The extract was subjected to frothing test for the identification of saponin. Haemolysis test was further performed on the froted extracts in water to remove false positive results[[B25]]. Fehling's solution was added to the extract and heated to detect reducing sugar. The extract was also tested for free glycoside bound anthraquinones[[B24],[B25]]. Five grams of extract was added to 10 ml benzene, filtered and ammonia solution added. The presence of flavonoids was determined using 1% aluminum chloride solution in methanol concentrated HCl, magnesium turnins, and potassium hydroxide solution[[B28]].</rdf:value>
+              <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods:para_2">
+                <rdf:value>The test for tannins was carried out by subjecting 3 g of each plant extract in 6 ml of distilled water, filtered and ferric chloride reagents added to the filtrate. For cardiac glycosides, legal test and the Killer-Kiliani test[[B26]] were adopted (0.5 g of extract was added to 2 ml acetic anhydrate plus H2SO4). The test for alkaloids was carried out by subjecting 0.5 g aqueous extract in 5 ml 1% HCl, boiled, filtered and Mayer's reagent added [[B26],[B27]]. Cyanogenic glycosides were identified by subjecting 0.5 g extract in 10 ml sterile water, and were filtered. Sodium picrate paper was added to the filtrate and heated to boil. The extract was also tested for carbohydrates using resorcinol solution[[B24]]. The extract was subjected to frothing test for the identification of saponin. Haemolysis test was further performed on the froted extracts in water to remove false positive results[[B25]]. Fehling's solution was added to the extract and heated to detect reducing sugar. The extract was also tested for free glycoside bound anthraquinones[[B24],[B25]]. Five grams of extract was added to 10 ml benzene, filtered and ammonia solution added. The presence of flavonoids was determined using 1% aluminum chloride solution in methanol concentrated HCl, magnesium turnins, and potassium hydroxide solution[[B28]].</rdf:value>
+                <bibo:cites>
+                  <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B28">
+                    <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods:para_2"/>
+                  </bibo:Document>
+                </bibo:cites>
+                <bibo:cites>
+                  <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B25">
+                    <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods:para_2"/>
+                    <bibo:citedBy>
+                      <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods:para_1">
+                        <rdf:value>All plant parts were extracted on the day of collection. The screening procedures were adapted from Wall et al.,[[B24]] and Sofowora[[B25]]. An extraction of each plant part was prepared by macerating a known weight of the fresh plant material in a blender with redistilled methylated spirit. Each extract was suction-filtered and the process repeated until all soluble compounds had been extracted, as judged by loss of colour of the filtrate. Extract from each plant part was evaporated to dryness in vacuo at about 45°C and further dried to a constant weight at the same temperature in a hot-air oven. A portion of the residue was used to test for plant constituents.</rdf:value>
+                        <bibo:cites rdf:resource="http://biotea.ws/reference/pmcdoc_resource/1079793/B25"/>
                         <bibo:cites>
-                          <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B28">
+                          <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B24">
                             <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods:para_2"/>
-                          </bibo:Document>
-                        </bibo:cites>
-                        <bibo:cites>
-                          <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B25">
-                            <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods:para_2"/>
-                            <bibo:citedBy>
-                              <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods:para_1">
-                                <rdf:value>All plant parts were extracted on the day of collection. The screening procedures were adapted from Wall et al.,[[B24]] and Sofowora[[B25]]. An extraction of each plant part was prepared by macerating a known weight of the fresh plant material in a blender with redistilled methylated spirit. Each extract was suction-filtered and the process repeated until all soluble compounds had been extracted, as judged by loss of colour of the filtrate. Extract from each plant part was evaporated to dryness in vacuo at about 45°C and further dried to a constant weight at the same temperature in a hot-air oven. A portion of the residue was used to test for plant constituents.</rdf:value>
-                                <bibo:cites rdf:resource="http://biotea.ws/reference/pmcdoc_resource/1079793/B25"/>
-                                <bibo:cites>
-                                  <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B24">
-                                    <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods:para_2"/>
-                                    <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods:para_1"/>
-                                  </bibo:Document>
-                                </bibo:cites>
-                                <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods"/>
-                              </doco:Paragraph>
-                            </bibo:citedBy>
-                          </bibo:Document>
-                        </bibo:cites>
-                        <bibo:cites rdf:resource="http://biotea.ws/reference/pmcdoc_resource/1079793/B24"/>
-                        <bibo:cites>
-                          <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B27">
-                            <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods:para_2"/>
-                          </bibo:Document>
-                        </bibo:cites>
-                        <bibo:cites>
-                          <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B26">
-                            <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods:para_2"/>
+                            <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods:para_1"/>
                           </bibo:Document>
                         </bibo:cites>
                         <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods"/>
                       </doco:Paragraph>
+                    </bibo:citedBy>
+                  </bibo:Document>
+                </bibo:cites>
+                <bibo:cites rdf:resource="http://biotea.ws/reference/pmcdoc_resource/1079793/B24"/>
+                <bibo:cites>
+                  <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B27">
+                    <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods:para_2"/>
+                  </bibo:Document>
+                </bibo:cites>
+                <bibo:cites>
+                  <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B26">
+                    <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods:para_2"/>
+                  </bibo:Document>
+                </bibo:cites>
+                <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods"/>
+              </doco:Paragraph>
+            </dcterms:hasPart>
+            <dcterms:hasPart rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods:para_1"/>
+            <biotea:paragraphList>
+              <rdf:Seq rdf:about="http://biotea.ws/listOfParagraphs/pmcdoc_resource/1079793/list9">
+                <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods:para_1"/>
+                <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods:para_2"/>
+              </rdf:Seq>
+            </biotea:paragraphList>
+            <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods"/>
+            <dcterms:title>Phytochemical screening methods</dcterms:title>
+            <dcterms:isPartOf>
+              <bibo:Document rdf:about="http://biotea.ws/pmcdoc/pmc/1079793">
+                <dcterms:hasPart>
+                  <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Pre-publication-history">
+                    <dcterms:hasPart>
+                      <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Pre-publication-history:para_2">
+                        <rdf:value></rdf:value>
+                        <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Pre-publication-history"/>
+                      </doco:Paragraph>
                     </dcterms:hasPart>
-                    <dcterms:hasPart rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods:para_1"/>
+                    <dcterms:hasPart>
+                      <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Pre-publication-history:para_1">
+                        <rdf:value>The pre-publication history for this paper can be accessed here:</rdf:value>
+                        <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Pre-publication-history"/>
+                      </doco:Paragraph>
+                    </dcterms:hasPart>
+                    <biotea:paragraphList>
+                      <rdf:Seq rdf:about="http://biotea.ws/listOfParagraphs/pmcdoc_resource/1079793/list15">
+                        <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Pre-publication-history:para_1"/>
+                        <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Pre-publication-history:para_2"/>
+                      </rdf:Seq>
+                    </biotea:paragraphList>
+                    <dcterms:title>Pre-publication history</dcterms:title>
+                    <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
+                  </doco:Section>
+                </dcterms:hasPart>
+                <dcterms:hasPart>
+                  <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Determination-of-minimum-inhibitory-concentration--MIC--and-minimum-bactericidal-concentration--MBC-">
+                    <dcterms:hasPart>
+                      <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Determination-of-minimum-inhibitory-concentration--MIC--and-minimum-bactericidal-concentration--MBC-:para_1">
+                        <rdf:value>MIC of the extracts was determined by dilution of P, Q, R, S, T &amp;.U to various concentrations of 0.0–32, 0.0–91, 0.0–38, 0.0–42, 0.0–44 and 0.0–35 mcg/ml respectively. Equal volume of each extract and nutrient broth were mixed in a test tube. Specifically 0.1 ml of standardized inoculum (1–2 × 107 cfu/ml) was added to each tube. The tubes were incubated aerobically at 37°C for 18–24 hr. Two control tubes were maintained for each test batch. These included antibiotic control (tube containing extract and the growth medium without inoculum) and organism control (the tube containing the growth medium, physiological saline and the inoculum). The lowest concentration (highest dilution) of the extract that produced no visible bacterial growth (no turbidity) when compared with the control tubes was regarded as MIC. However, the MBC was determined by subculturing the test dilution on to a fresh drug-free solid medium and incubated further for 18–24 hr. The highest dilution that yielded no single bacterial colony on a solid medium was taken as MBC.</rdf:value>
+                        <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Determination-of-minimum-inhibitory-concentration--MIC--and-minimum-bactericidal-concentration--MBC-"/>
+                      </doco:Paragraph>
+                    </dcterms:hasPart>
+                    <biotea:paragraphList>
+                      <rdf:Seq rdf:about="http://biotea.ws/listOfParagraphs/pmcdoc_resource/1079793/list8">
+                        <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Determination-of-minimum-inhibitory-concentration--MIC--and-minimum-bactericidal-concentration--MBC-:para_1"/>
+                      </rdf:Seq>
+                    </biotea:paragraphList>
                     <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods"/>
-                    <dcterms:title>Phytochemical screening methods</dcterms:title>
+                    <dcterms:title>Determination of minimum inhibitory concentration (MIC) and minimum bactericidal concentration (MBC)</dcterms:title>
                     <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
                   </doco:Section>
                 </dcterms:hasPart>
@@ -131,61 +145,60 @@
                                                 <dcterms:isPartOf>
                                                   <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Discussion">
                                                     <dcterms:hasPart>
-                                                      <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_6">
+                                                      <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_4">
                                                         <rdf:value
-                                                        >The result of phytochemical screening of six plants indicated the presence of tannins, alkaloids and saponins. Interestingly, only the four plant extracts that were active against MRSA in this study contained at least trace amount of anthraquinone (Table [T4]). It is therefore most probable that the presence of anthraquinone contributed to anti-MRSA activity observed. We were unable to carry out bioautography of the extracts due to lack of facilities.</rdf:value>
+                                                        >Our investigation further showed that both water and ethanol extracts of T. avicennioides, P. discoideus, O. gratissimum and A. wilkessiana were active against S. aureus and MRSA. The MIC value of the four active plant extracts obtained in this study were lower than the MBC values suggesting that the plant extracts were bacteriostatic at lower concentration and bactericidal at higher concentration. The ethanol extract of the four plants exerted greater antibacterial activity than corresponding water extract (Tables [T2] and [T3]) at the same concentrations. These observations may be attributed to two reasons; firstly, the nature of biological active components (saponins, tannins, alkaloids and anthraquinone) which could be enhanced in the presence of ethanol. It has been documented that tannins, saponins and alkaloids are plants metabolites well known for antimicrobial activity[[B31]]. Secondly, the stronger extraction capacity of ethanol could have produced greater number of active constituents responsible for antibacterial activity.</rdf:value>
                                                         <bibo:cites>
-                                                          <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/T4">
-                                                            <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_6"/>
+                                                          <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B31">
+                                                            <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_4"/>
+                                                          </bibo:Document>
+                                                        </bibo:cites>
+                                                        <bibo:cites>
+                                                          <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/T3">
+                                                            <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_4"/>
                                                             <bibo:citedBy>
-                                                              <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Results:para_3">
-    <rdf:value>The result of photochemical screening showed that all the six tested plants exhibited positive reactions to alkaloids, tannins and saponins. However, anthraquinone was only found in the four active plants in this study. None contained cardiac glycosides and cyanogenic glycosides. Reducing and non-reducing carbohydrates were found in P discoideus, O. gratissimum and T. avicennioides (Table [T4]).</rdf:value>
-    <bibo:cites rdf:resource="http://biotea.ws/reference/pmcdoc_resource/1079793/T4"/>
+                                                              <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_3">
+    <rdf:value>For example, the MIC values of 30.6 and 43.0 mcg/ml obtained for ethanol extracts of B. ferruginea and A. conyzoides in this study were lowered than their corresponding water extracts of 55.4 and 71.0 mcg/ml. Similarly, MBC values of 63.6 and 84.2 mcg/ml were recorded for ethanol extract of B. ferruginea and A. conyzoides respectively (Table [T3]). These values were too high to be considered active against the pathogen. It is worthy of note that traditional medical practitioners used these plant extracts solely without combining with other plant extracts for the treatment of MRSA-associated skin and respiratory diseases. This finding may disagree with the traditional therapeutic indications claimed on these plants we therefore suggest the immediate stoppage of their traditional use against MRSA-associated diseases in Lagos, Nigeria. However, the in-vitro inactivity of these plants on MRSA may not necessarily translate to their in-vivo inactivity but the extracts may probably be playing immuno-modulatory roles in the body system. Bever[[B30]] had documented immunodulation of chemical compounds from medicinal plants many of which have been proved to be inactive or weakly active in-vitro against pathogens. In this study, we are unable to determine immuno-modulating action of these plants due to lack of facilities.</rdf:value>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B30">
+        <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_3"/>
+      </bibo:Document>
+    </bibo:cites>
+    <bibo:cites rdf:resource="http://biotea.ws/reference/pmcdoc_resource/1079793/T3"/>
+    <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Discussion"/>
+                                                              </doco:Paragraph>
+                                                            </bibo:citedBy>
+                                                            <bibo:citedBy>
+                                                              <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Results:para_2">
+    <rdf:value>Both water and ethanol extracts of these plants were effective on MRSA strains. On the other hand, the crude extracts (water &amp; ethanol) of B. ferruginea and A. conyzoides were weakly effective against the cocci as judged by the zones of inhibition (Table [T2]). The MIC and MBC values obtained for the extracts against the MRSA varied from one plant extract to the other. For instance, the MIC values of 20.8 and 18.2 mcg/ml were obtained for water and ethanol extracts of T. avicennioides respectively, while the corresponding MBC values are 33.0 and 30.4 mcg/ml. The MIC and MBC values of 43.0 and 63.2 mcg/ml were recorded for ethanol extract and 71.0 and 84.2 mcg/ml for water extract of A. conyzoides respectively. Also, MIC &amp; MBC values of 55.4 &amp; 63.6 mcg/ml and 30.6 &amp; 55.0 mcg/ml were obtained for water and ethanol extracts of B. ferruginea respectively. These plant extracts were bacteriostatic at lower concentrations and bactericidal at higher concentrations as revealed by MIC and MBC values (Table [T3]).</rdf:value>
+    <bibo:cites rdf:resource="http://biotea.ws/reference/pmcdoc_resource/1079793/T3"/>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/T2">
+        <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_4"/>
+        <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Results:para_2"/>
+      </bibo:Document>
+    </bibo:cites>
     <dcterms:isPartOf>
       <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Results">
-        <dcterms:hasPart rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Results:para_3"/>
         <dcterms:hasPart>
-          <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Results:para_2">
-            <rdf:value>Both water and ethanol extracts of these plants were effective on MRSA strains. On the other hand, the crude extracts (water &amp; ethanol) of B. ferruginea and A. conyzoides were weakly effective against the cocci as judged by the zones of inhibition (Table [T2]). The MIC and MBC values obtained for the extracts against the MRSA varied from one plant extract to the other. For instance, the MIC values of 20.8 and 18.2 mcg/ml were obtained for water and ethanol extracts of T. avicennioides respectively, while the corresponding MBC values are 33.0 and 30.4 mcg/ml. The MIC and MBC values of 43.0 and 63.2 mcg/ml were recorded for ethanol extract and 71.0 and 84.2 mcg/ml for water extract of A. conyzoides respectively. Also, MIC &amp; MBC values of 55.4 &amp; 63.6 mcg/ml and 30.6 &amp; 55.0 mcg/ml were obtained for water and ethanol extracts of B. ferruginea respectively. These plant extracts were bacteriostatic at lower concentrations and bactericidal at higher concentrations as revealed by MIC and MBC values (Table [T3]).</rdf:value>
+          <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Results:para_3">
+            <rdf:value>The result of photochemical screening showed that all the six tested plants exhibited positive reactions to alkaloids, tannins and saponins. However, anthraquinone was only found in the four active plants in this study. None contained cardiac glycosides and cyanogenic glycosides. Reducing and non-reducing carbohydrates were found in P discoideus, O. gratissimum and T. avicennioides (Table [T4]).</rdf:value>
             <bibo:cites>
-              <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/T3">
+              <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/T4">
                 <bibo:citedBy>
-                  <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_4">
-                    <rdf:value>Our investigation further showed that both water and ethanol extracts of T. avicennioides, P. discoideus, O. gratissimum and A. wilkessiana were active against S. aureus and MRSA. The MIC value of the four active plant extracts obtained in this study were lower than the MBC values suggesting that the plant extracts were bacteriostatic at lower concentration and bactericidal at higher concentration. The ethanol extract of the four plants exerted greater antibacterial activity than corresponding water extract (Tables [T2] and [T3]) at the same concentrations. These observations may be attributed to two reasons; firstly, the nature of biological active components (saponins, tannins, alkaloids and anthraquinone) which could be enhanced in the presence of ethanol. It has been documented that tannins, saponins and alkaloids are plants metabolites well known for antimicrobial activity[[B31]]. Secondly, the stronger extraction capacity of ethanol could have produced greater number of active constituents responsible for antibacterial activity.</rdf:value>
-                    <bibo:cites>
-                      <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B31">
-                        <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_4"/>
-                      </bibo:Document>
-                    </bibo:cites>
-                    <bibo:cites rdf:resource="http://biotea.ws/reference/pmcdoc_resource/1079793/T3"/>
-                    <bibo:cites>
-                      <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/T2">
-                        <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_4"/>
-                        <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Results:para_2"/>
-                      </bibo:Document>
-                    </bibo:cites>
+                  <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_6">
+                    <rdf:value>The result of phytochemical screening of six plants indicated the presence of tannins, alkaloids and saponins. Interestingly, only the four plant extracts that were active against MRSA in this study contained at least trace amount of anthraquinone (Table [T4]). It is therefore most probable that the presence of anthraquinone contributed to anti-MRSA activity observed. We were unable to carry out bioautography of the extracts due to lack of facilities.</rdf:value>
+                    <bibo:cites rdf:resource="http://biotea.ws/reference/pmcdoc_resource/1079793/T4"/>
                     <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Discussion"/>
                   </doco:Paragraph>
                 </bibo:citedBy>
-                <bibo:citedBy>
-                  <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_3">
-                    <rdf:value>For example, the MIC values of 30.6 and 43.0 mcg/ml obtained for ethanol extracts of B. ferruginea and A. conyzoides in this study were lowered than their corresponding water extracts of 55.4 and 71.0 mcg/ml. Similarly, MBC values of 63.6 and 84.2 mcg/ml were recorded for ethanol extract of B. ferruginea and A. conyzoides respectively (Table [T3]). These values were too high to be considered active against the pathogen. It is worthy of note that traditional medical practitioners used these plant extracts solely without combining with other plant extracts for the treatment of MRSA-associated skin and respiratory diseases. This finding may disagree with the traditional therapeutic indications claimed on these plants we therefore suggest the immediate stoppage of their traditional use against MRSA-associated diseases in Lagos, Nigeria. However, the in-vitro inactivity of these plants on MRSA may not necessarily translate to their in-vivo inactivity but the extracts may probably be playing immuno-modulatory roles in the body system. Bever[[B30]] had documented immunodulation of chemical compounds from medicinal plants many of which have been proved to be inactive or weakly active in-vitro against pathogens. In this study, we are unable to determine immuno-modulating action of these plants due to lack of facilities.</rdf:value>
-                    <bibo:cites>
-                      <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B30">
-                        <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_3"/>
-                      </bibo:Document>
-                    </bibo:cites>
-                    <bibo:cites rdf:resource="http://biotea.ws/reference/pmcdoc_resource/1079793/T3"/>
-                    <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Discussion"/>
-                  </doco:Paragraph>
-                </bibo:citedBy>
-                <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Results:para_2"/>
+                <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Results:para_3"/>
               </bibo:Document>
             </bibo:cites>
-            <bibo:cites rdf:resource="http://biotea.ws/reference/pmcdoc_resource/1079793/T2"/>
             <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Results"/>
           </doco:Paragraph>
         </dcterms:hasPart>
+        <dcterms:hasPart rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Results:para_2"/>
         <dcterms:hasPart>
           <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Results:para_1">
             <rdf:value>The profile of six medicinal plants used in this study is shown in Table [T1]. The results of antibacterial activity of the crude extracts of these plants revealed that only four of the six plants: T. avicennioides, P. discoideus, O. gratissimum and A. wilkesiana showed good antibacterial activity against MRSA used.</rdf:value>
@@ -197,6 +210,13 @@
             <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Results"/>
           </doco:Paragraph>
         </dcterms:hasPart>
+        <biotea:paragraphList>
+          <rdf:Seq rdf:about="http://biotea.ws/listOfParagraphs/pmcdoc_resource/1079793/list10">
+            <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Results:para_1"/>
+            <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Results:para_2"/>
+            <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Results:para_3"/>
+          </rdf:Seq>
+        </biotea:paragraphList>
         <dcterms:title>Results</dcterms:title>
         <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
       </doco:Section>
@@ -204,11 +224,12 @@
                                                             </bibo:citedBy>
                                                           </bibo:Document>
                                                         </bibo:cites>
+                                                        <bibo:cites rdf:resource="http://biotea.ws/reference/pmcdoc_resource/1079793/T2"/>
                                                         <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Discussion"/>
                                                       </doco:Paragraph>
                                                     </dcterms:hasPart>
-                                                    <dcterms:hasPart rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_5"/>
-                                                    <dcterms:hasPart rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_4"/>
+                                                    <dcterms:title
+                                                    >Discussion</dcterms:title>
                                                     <dcterms:hasPart rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_3"/>
                                                     <dcterms:hasPart rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_2"/>
                                                     <dcterms:hasPart>
@@ -223,9 +244,19 @@
                                                         <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Discussion"/>
                                                       </doco:Paragraph>
                                                     </dcterms:hasPart>
-                                                    <dcterms:title
-                                                    >Discussion</dcterms:title>
                                                     <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
+                                                    <biotea:paragraphList>
+                                                      <rdf:Seq rdf:about="http://biotea.ws/listOfParagraphs/pmcdoc_resource/1079793/list11">
+                                                        <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_1"/>
+                                                        <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_2"/>
+                                                        <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_3"/>
+                                                        <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_4"/>
+                                                        <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_5"/>
+                                                        <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_6"/>
+                                                      </rdf:Seq>
+                                                    </biotea:paragraphList>
+                                                    <dcterms:hasPart rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_6"/>
+                                                    <dcterms:hasPart rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Discussion:para_5"/>
                                                   </doco:Section>
                                                 </dcterms:isPartOf>
                                               </doco:Paragraph>
@@ -332,23 +363,35 @@
                                                 <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Background"/>
                                               </doco:Paragraph>
                                             </dcterms:hasPart>
+                                            <biotea:paragraphList>
+                                              <rdf:Seq rdf:about="http://biotea.ws/listOfParagraphs/pmcdoc_resource/1079793/list1">
+                                                <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Background:para_1"/>
+                                                <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Background:para_2"/>
+                                                <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Background:para_3"/>
+                                                <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Background:para_4"/>
+                                                <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Background:para_5"/>
+                                                <rdf:li>
+                                                  <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Background:para_6">
+                                                    <rdf:value
+                                                    >Like other Ocimum spp, Ocimum gratissimum (Lamiaceae) traditionally called "Efirin-Aja" has been reported to have medicinal properties. The leaf extracts are popularly used for the treatment of diarrhea while the cold leaf infusions are used for the relief of stomach upset and haemorrhoids. The thymol-riched leaf has been reported to have antimicrobial properties[[B19]]. Acalypha wilkesiana (Euphorbiaceae) is popularly used for the treatment of malaria, dermatological and gastrointestinal disorders[[B20]]. The bark extract of P. discoideus (Euphorbiaceae) is used locally to cure stomachache and lumbago.</rdf:value>
+                                                    <bibo:cites>
+                                                      <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B20">
+                                                        <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Background:para_6"/>
+                                                      </bibo:Document>
+                                                    </bibo:cites>
+                                                    <bibo:cites>
+                                                      <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B19">
+                                                        <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Background:para_6"/>
+                                                      </bibo:Document>
+                                                    </bibo:cites>
+                                                    <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Background"/>
+                                                  </doco:Paragraph>
+                                                </rdf:li>
+                                                <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Background:para_7"/>
+                                              </rdf:Seq>
+                                            </biotea:paragraphList>
                                             <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
-                                            <dcterms:hasPart>
-                                              <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Background:para_6">
-                                                <rdf:value>Like other Ocimum spp, Ocimum gratissimum (Lamiaceae) traditionally called "Efirin-Aja" has been reported to have medicinal properties. The leaf extracts are popularly used for the treatment of diarrhea while the cold leaf infusions are used for the relief of stomach upset and haemorrhoids. The thymol-riched leaf has been reported to have antimicrobial properties[[B19]]. Acalypha wilkesiana (Euphorbiaceae) is popularly used for the treatment of malaria, dermatological and gastrointestinal disorders[[B20]]. The bark extract of P. discoideus (Euphorbiaceae) is used locally to cure stomachache and lumbago.</rdf:value>
-                                                <bibo:cites>
-                                                  <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B20">
-                                                    <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Background:para_6"/>
-                                                  </bibo:Document>
-                                                </bibo:cites>
-                                                <bibo:cites>
-                                                  <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B19">
-                                                    <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Background:para_6"/>
-                                                  </bibo:Document>
-                                                </bibo:cites>
-                                                <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Background"/>
-                                              </doco:Paragraph>
-                                            </dcterms:hasPart>
+                                            <dcterms:hasPart rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Background:para_6"/>
                                             <dcterms:title>Background</dcterms:title>
                                           </doco:Section>
                                         </dcterms:isPartOf>
@@ -367,13 +410,19 @@
                         <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Extraction"/>
                       </doco:Paragraph>
                     </dcterms:hasPart>
+                    <biotea:paragraphList>
+                      <rdf:Seq rdf:about="http://biotea.ws/listOfParagraphs/pmcdoc_resource/1079793/list3">
+                        <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Extraction:para_1"/>
+                      </rdf:Seq>
+                    </biotea:paragraphList>
                     <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods"/>
                     <dcterms:title>Extraction</dcterms:title>
                     <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
                   </doco:Section>
                 </dcterms:hasPart>
-                <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
-                <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Determination-of-minimum-inhibitory-concentration--MIC--and-minimum-bactericidal-concentration--MBC-"/>
+                <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Results"/>
+                <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Discussion"/>
+                <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods"/>
                 <dcterms:hasPart>
                   <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Water-extract">
                     <dcterms:hasPart>
@@ -382,152 +431,236 @@
                         <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Water-extract"/>
                       </doco:Paragraph>
                     </dcterms:hasPart>
+                    <biotea:paragraphList>
+                      <rdf:Seq rdf:about="http://biotea.ws/listOfParagraphs/pmcdoc_resource/1079793/list4">
+                        <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Water-extract:para_1"/>
+                      </rdf:Seq>
+                    </biotea:paragraphList>
                     <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods"/>
                     <dcterms:title>Water extract</dcterms:title>
                     <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
                   </doco:Section>
                 </dcterms:hasPart>
+                <dcterms:title>Screening of crude extracts of six medicinal plants used in South-West Nigerian unorthodox medicine for anti-methicillin resistant activity</dcterms:title>
                 <dcterms:hasPart>
-                  <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Ethanol-extract">
+                  <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Competing-interests">
                     <dcterms:hasPart>
-                      <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Ethanol-extract:para_1">
-                        <rdf:value>Six grams of each of the powdered plant materials were put in a soxhlet extractor containing 25 ml of 40% ethanol. The resulting extracts were subsequently weighed to produce 0.032, 0.036, 0.038, 0.040, 0.030 and 0.034 g of P, Q, R, S, T, and U respectively. They were labeled as ethanol extracts and designed PE, QE, RE, SE, TW and UW respectively.</rdf:value>
-                        <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Ethanol-extract"/>
+                      <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Competing-interests:para_1">
+                        <rdf:value>The author(s) declare that they have no competing interests.</rdf:value>
+                        <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Competing-interests"/>
                       </doco:Paragraph>
                     </dcterms:hasPart>
-                    <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods"/>
-                    <dcterms:title>Ethanol extract</dcterms:title>
+                    <biotea:paragraphList>
+                      <rdf:Seq rdf:about="http://biotea.ws/listOfParagraphs/pmcdoc_resource/1079793/list13">
+                        <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Competing-interests:para_1"/>
+                      </rdf:Seq>
+                    </biotea:paragraphList>
+                    <dcterms:title>Competing interests</dcterms:title>
                     <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
                   </doco:Section>
                 </dcterms:hasPart>
-                <dcterms:hasPart>
-                  <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Bacterial-culture">
-                    <dcterms:hasPart>
-                      <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Bacterial-culture:para_2">
-                        <rdf:value>NCIB 8588. The organisms were maintained on agar slope at 4°C and sub-cultured for 24 hr before use.</rdf:value>
-                        <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Bacterial-culture"/>
-                      </doco:Paragraph>
-                    </dcterms:hasPart>
-                    <dcterms:hasPart>
-                      <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Bacterial-culture:para_1">
-                        <rdf:value>The MRSA strains used in this study were clinical isolates from urethral swab, seminal fluid, urine, high virginal swab, blood, skin swab and sputum of patients presenting with symptoms of S. aureus-associated diseases. The isolates were identified by standard method[[B21]]. Methicillin resistant S. aureus was determined by the reference broth microdilution methods using the established NCCLS[[B22]] break points. The standard strain used was S. aureus</rdf:value>
-                        <bibo:cites>
-                          <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B22">
-                            <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Bacterial-culture:para_1"/>
-                          </bibo:Document>
-                        </bibo:cites>
-                        <bibo:cites>
-                          <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B21">
-                            <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Bacterial-culture:para_1"/>
-                          </bibo:Document>
-                        </bibo:cites>
-                        <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Bacterial-culture"/>
-                      </doco:Paragraph>
-                    </dcterms:hasPart>
-                    <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods"/>
-                    <dcterms:title>Bacterial culture</dcterms:title>
-                    <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
-                  </doco:Section>
-                </dcterms:hasPart>
-                <dcterms:hasPart>
-                  <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Bacterial-susceptibility-testing">
-                    <dcterms:hasPart>
-                      <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Bacterial-susceptibility-testing:para_1">
-                        <rdf:value>A standardized inoculum (1–2 × 107 cfu/ml 0.5 McFarland standards) was introduced onto the surface of sterile agar plates, and a sterile glass spreader was used for even distribution of the inoculum. A sterile paper disc previously soaked in a known concentration of extract (20 mcg/ml per disc) was carefully placed at the centre of the labeled seeded plate. The same procedure was used for all the MRSA strains used. The plates were incubated aerobically at 37°C and examined for zones of inhibition after 24 hr. The inhibition zones were measured with a ruler and compared with the control disc23 (disc containing only physiological saline).</rdf:value>
-                        <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Bacterial-susceptibility-testing"/>
-                      </doco:Paragraph>
-                    </dcterms:hasPart>
-                    <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods"/>
-                    <dcterms:title>Bacterial susceptibility testing</dcterms:title>
-                    <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
-                  </doco:Section>
-                </dcterms:hasPart>
-                <dcterms:hasPart>
-                  <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods:para_1">
-                    <rdf:value>Fresh plant materials were collected from users of these plants in Imota, Ikorodu, Ojo and Kosofe in Lagos State, Nigeria. Their botanical identities were determined and authenticated by Mr. O. K. Oluwa in Botany department, Lagos State University, Ojo, Lagos. Samples were deposited in the department herbarium.</rdf:value>
-                    <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods"/>
-                  </doco:Paragraph>
-                </dcterms:hasPart>
-              </doco:Section>
+                <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods"/>
+                <biotea:sectionList>
+                  <rdf:Seq rdf:about="http://biotea.ws/listOfSections/pmcdoc_resource/1079793/list1">
+                    <rdf:li>
+                      <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Abstract">
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Abstract:para_1">
+                            <rdf:value>Background: Six Nigerian medicinal plants Terminalia avicennioides, Phylantus discoideus, Bridella ferruginea, Ageratum conyzoides, Ocimum gratissimum and Acalypha wilkesiana used by traditional medical practitioners for the treatment of several ailments of microbial and non-microbial origins were investigated for in vitro anti-methicillin Resistant Staphylococcus aureus (MRSA) activity. Methods: Fresh plant materials were collected from the users. Water and ethanol extracts of the shredded plants were obtained by standard methods. The Bacterial cultures used were strains of MRSA isolated from patients. MRSA was determined by the reference broth microdilution methods using the established National Committee for Clinical Laboratory Standards break points. Staphylococcus aureus NCIB 8588 was used as a standard strain. Susceptibility testing and phytochemical screening of the plant extracts were performed by standard procedures. Controls were maintained for each test batch. Results: Both water and ethanol extracts of T. avicennioides, P. discoideus, O. gratissimum, and A. wilkesiana were effective on MRSA. The Minimum Inhibition Concentration (MIC) and Minimum Bactericidal Concentration (MBC) of the ethanol extracts of these plants range from 18.2 to 24.0 mcg/ml and 30.4 to 37.0 mcg/ml respectively. In contrast, MIC range of 30.6 to 43.0 mcg/ml and 55.4 to 71.0 mcg/ml were recorded for ethanol and water extracts of B. ferruginea, and A. conyzoides respectively. Higher MBC values were obtained for the two plants. These concentrations were too high to be considered active in this study. All the four active plants contained at least trace amount of anthraquinones. Conclusion: Our results offer a scientific basis for the traditional use of water and ethanol extracts of A. wilkesiana, O. gratissimum, T. avicennioides and P. discoideus against MRSA-associated diseases. However, B. ferruginea and A. conyzoides were ineffective in vitro in this study; we therefore suggest the immediate stoppage of their traditional use against MRSA-associated diseases in Lagos, Nigeria. </rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Abstract"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <biotea:paragraphList>
+                          <rdf:Seq rdf:about="http://biotea.ws/listOfParagraphs/pmcdoc_resource/1079793/list0">
+                            <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Abstract:para_1"/>
+                          </rdf:Seq>
+                        </biotea:paragraphList>
+                        <dcterms:title>Abstract</dcterms:title>
+                        <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
+                      </doco:Section>
+                    </rdf:li>
+                    <rdf:li rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Background"/>
+                    <rdf:li rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods"/>
+                    <rdf:li rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Extraction"/>
+                    <rdf:li rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Water-extract"/>
+                    <rdf:li>
+                      <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Ethanol-extract">
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Ethanol-extract:para_1">
+                            <rdf:value>Six grams of each of the powdered plant materials were put in a soxhlet extractor containing 25 ml of 40% ethanol. The resulting extracts were subsequently weighed to produce 0.032, 0.036, 0.038, 0.040, 0.030 and 0.034 g of P, Q, R, S, T, and U respectively. They were labeled as ethanol extracts and designed PE, QE, RE, SE, TW and UW respectively.</rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Ethanol-extract"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <biotea:paragraphList>
+                          <rdf:Seq rdf:about="http://biotea.ws/listOfParagraphs/pmcdoc_resource/1079793/list5">
+                            <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Ethanol-extract:para_1"/>
+                          </rdf:Seq>
+                        </biotea:paragraphList>
+                        <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods"/>
+                        <dcterms:title>Ethanol extract</dcterms:title>
+                        <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
+                      </doco:Section>
+                    </rdf:li>
+                    <rdf:li>
+                      <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Bacterial-culture">
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Bacterial-culture:para_2">
+                            <rdf:value>NCIB 8588. The organisms were maintained on agar slope at 4°C and sub-cultured for 24 hr before use.</rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Bacterial-culture"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Bacterial-culture:para_1">
+                            <rdf:value>The MRSA strains used in this study were clinical isolates from urethral swab, seminal fluid, urine, high virginal swab, blood, skin swab and sputum of patients presenting with symptoms of S. aureus-associated diseases. The isolates were identified by standard method[[B21]]. Methicillin resistant S. aureus was determined by the reference broth microdilution methods using the established NCCLS[[B22]] break points. The standard strain used was S. aureus</rdf:value>
+                            <bibo:cites>
+                              <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B22">
+                                <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Bacterial-culture:para_1"/>
+                              </bibo:Document>
+                            </bibo:cites>
+                            <bibo:cites>
+                              <bibo:Document rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B21">
+                                <bibo:citedBy rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Bacterial-culture:para_1"/>
+                              </bibo:Document>
+                            </bibo:cites>
+                            <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Bacterial-culture"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <biotea:paragraphList>
+                          <rdf:Seq rdf:about="http://biotea.ws/listOfParagraphs/pmcdoc_resource/1079793/list6">
+                            <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Bacterial-culture:para_1"/>
+                            <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Bacterial-culture:para_2"/>
+                          </rdf:Seq>
+                        </biotea:paragraphList>
+                        <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods"/>
+                        <dcterms:title>Bacterial culture</dcterms:title>
+                        <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
+                      </doco:Section>
+                    </rdf:li>
+                    <rdf:li>
+                      <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Bacterial-susceptibility-testing">
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Bacterial-susceptibility-testing:para_1">
+                            <rdf:value>A standardized inoculum (1–2 × 107 cfu/ml 0.5 McFarland standards) was introduced onto the surface of sterile agar plates, and a sterile glass spreader was used for even distribution of the inoculum. A sterile paper disc previously soaked in a known concentration of extract (20 mcg/ml per disc) was carefully placed at the centre of the labeled seeded plate. The same procedure was used for all the MRSA strains used. The plates were incubated aerobically at 37°C and examined for zones of inhibition after 24 hr. The inhibition zones were measured with a ruler and compared with the control disc23 (disc containing only physiological saline).</rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Bacterial-susceptibility-testing"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <biotea:paragraphList>
+                          <rdf:Seq rdf:about="http://biotea.ws/listOfParagraphs/pmcdoc_resource/1079793/list7">
+                            <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods_Bacterial-susceptibility-testing:para_1"/>
+                          </rdf:Seq>
+                        </biotea:paragraphList>
+                        <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods"/>
+                        <dcterms:title>Bacterial susceptibility testing</dcterms:title>
+                        <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
+                      </doco:Section>
+                    </rdf:li>
+                    <rdf:li rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Determination-of-minimum-inhibitory-concentration--MIC--and-minimum-bactericidal-concentration--MBC-"/>
+                    <rdf:li rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods"/>
+                    <rdf:li rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Results"/>
+                    <rdf:li rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Discussion"/>
+                    <rdf:li>
+                      <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Conclusion">
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Conclusion:para_1">
+                            <rdf:value>Our results therefore offer a scientific basis for the traditional use of both water and ethanol extracts of A. wilkesiana, O. gratissimum, T. avicennioides and P. discoideus separately against MRSA-associated skin and respiratory diseases. But in vivo studies on these medicinal plants are necessary and should seek to determine toxicity of the active constituents, their side effects, serum-attainable levels, pharmacokinetic properties and diffusion in different body sites. The antimicrobial activities could be enhanced if the active components are purified and adequate dosage determined for proper administration. This may go a long way in curbing administration of inappropriate concentration; a common practice among many traditional medical practitioners in Nigeria. This study represents the first preliminary report on anti-methicillin resistant Staphylococcus aureus activity of the crude extracts of these medicinal plants in Lagos, Nigeria.</rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Conclusion"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <biotea:paragraphList>
+                          <rdf:Seq rdf:about="http://biotea.ws/listOfParagraphs/pmcdoc_resource/1079793/list12">
+                            <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Conclusion:para_1"/>
+                          </rdf:Seq>
+                        </biotea:paragraphList>
+                        <dcterms:title>Conclusion</dcterms:title>
+                        <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
+                      </doco:Section>
+                    </rdf:li>
+                    <rdf:li rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Competing-interests"/>
+                    <rdf:li>
+                      <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Authors--contributions">
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Authors--contributions:para_5">
+                            <rdf:value>KAF: Participated in phytochemical screening and susceptibility testing.</rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Authors--contributions"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Authors--contributions:para_4">
+                            <rdf:value>CCI: Carried out susceptibility testing and determined MIC and MBC of the extracts.</rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Authors--contributions"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Authors--contributions:para_3">
+                            <rdf:value>CEO: Participated in both extraction and susceptibility testing.</rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Authors--contributions"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Authors--contributions:para_2">
+                            <rdf:value>OO: Carried out the extraction, susceptibility testing and determined MIC &amp; MBC values of the extract.</rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Authors--contributions"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <dcterms:hasPart>
+                          <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Authors--contributions:para_1">
+                            <rdf:value>KOA: Conceived the study, designed, coordinated, screened the MRSA strains used and drafted the manuscript.</rdf:value>
+                            <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Authors--contributions"/>
+                          </doco:Paragraph>
+                        </dcterms:hasPart>
+                        <biotea:paragraphList>
+                          <rdf:Seq rdf:about="http://biotea.ws/listOfParagraphs/pmcdoc_resource/1079793/list14">
+                            <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Authors--contributions:para_1"/>
+                            <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Authors--contributions:para_2"/>
+                            <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Authors--contributions:para_3"/>
+                            <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Authors--contributions:para_4"/>
+                            <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Authors--contributions:para_5"/>
+                          </rdf:Seq>
+                        </biotea:paragraphList>
+                        <dcterms:title>Authors' contributions</dcterms:title>
+                        <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
+                      </doco:Section>
+                    </rdf:li>
+                    <rdf:li rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Pre-publication-history"/>
+                  </rdf:Seq>
+                </biotea:sectionList>
+                <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Bacterial-culture"/>
+                <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Ethanol-extract"/>
+                <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Authors--contributions"/>
+                <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Conclusion"/>
+                <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Background"/>
+                <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Abstract"/>
+                <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Bacterial-susceptibility-testing"/>
+                <rdf:type rdf:resource="http://purl.org/ontology/bibo/AcademicArticle"/>
+              </bibo:Document>
             </dcterms:isPartOf>
-            <dcterms:title>Determination of minimum inhibitory concentration (MIC) and minimum bactericidal concentration (MBC)</dcterms:title>
-            <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
           </doco:Section>
         </dcterms:hasPart>
+        <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Determination-of-minimum-inhibitory-concentration--MIC--and-minimum-bactericidal-concentration--MBC-"/>
         <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Extraction"/>
-        <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Results"/>
-        <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Discussion"/>
-        <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods"/>
+        <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
         <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Water-extract"/>
-        <dcterms:title>Screening of crude extracts of six medicinal plants used in South-West Nigerian unorthodox medicine for anti-methicillin resistant activity</dcterms:title>
-        <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Competing-interests"/>
-        <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods"/>
-        <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Bacterial-culture"/>
         <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Ethanol-extract"/>
-        <dcterms:hasPart>
-          <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Authors--contributions">
-            <dcterms:hasPart>
-              <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Authors--contributions:para_5">
-                <rdf:value>KAF: Participated in phytochemical screening and susceptibility testing.</rdf:value>
-                <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Authors--contributions"/>
-              </doco:Paragraph>
-            </dcterms:hasPart>
-            <dcterms:hasPart>
-              <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Authors--contributions:para_4">
-                <rdf:value>CCI: Carried out susceptibility testing and determined MIC and MBC of the extracts.</rdf:value>
-                <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Authors--contributions"/>
-              </doco:Paragraph>
-            </dcterms:hasPart>
-            <dcterms:hasPart>
-              <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Authors--contributions:para_3">
-                <rdf:value>CEO: Participated in both extraction and susceptibility testing.</rdf:value>
-                <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Authors--contributions"/>
-              </doco:Paragraph>
-            </dcterms:hasPart>
-            <dcterms:hasPart>
-              <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Authors--contributions:para_2">
-                <rdf:value>OO: Carried out the extraction, susceptibility testing and determined MIC &amp; MBC values of the extract.</rdf:value>
-                <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Authors--contributions"/>
-              </doco:Paragraph>
-            </dcterms:hasPart>
-            <dcterms:hasPart>
-              <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Authors--contributions:para_1">
-                <rdf:value>KOA: Conceived the study, designed, coordinated, screened the MRSA strains used and drafted the manuscript.</rdf:value>
-                <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Authors--contributions"/>
-              </doco:Paragraph>
-            </dcterms:hasPart>
-            <dcterms:title>Authors' contributions</dcterms:title>
-            <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
-          </doco:Section>
-        </dcterms:hasPart>
-        <dcterms:hasPart>
-          <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Conclusion">
-            <dcterms:hasPart>
-              <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Conclusion:para_1">
-                <rdf:value>Our results therefore offer a scientific basis for the traditional use of both water and ethanol extracts of A. wilkesiana, O. gratissimum, T. avicennioides and P. discoideus separately against MRSA-associated skin and respiratory diseases. But in vivo studies on these medicinal plants are necessary and should seek to determine toxicity of the active constituents, their side effects, serum-attainable levels, pharmacokinetic properties and diffusion in different body sites. The antimicrobial activities could be enhanced if the active components are purified and adequate dosage determined for proper administration. This may go a long way in curbing administration of inappropriate concentration; a common practice among many traditional medical practitioners in Nigeria. This study represents the first preliminary report on anti-methicillin resistant Staphylococcus aureus activity of the crude extracts of these medicinal plants in Lagos, Nigeria.</rdf:value>
-                <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Conclusion"/>
-              </doco:Paragraph>
-            </dcterms:hasPart>
-            <dcterms:title>Conclusion</dcterms:title>
-            <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
-          </doco:Section>
-        </dcterms:hasPart>
-        <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Background"/>
-        <dcterms:hasPart>
-          <doco:Section rdf:about="http://biotea.ws/section/pmcdoc_resource/1079793/Abstract">
-            <dcterms:hasPart>
-              <doco:Paragraph rdf:about="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Abstract:para_1">
-                <rdf:value>Background: Six Nigerian medicinal plants Terminalia avicennioides, Phylantus discoideus, Bridella ferruginea, Ageratum conyzoides, Ocimum gratissimum and Acalypha wilkesiana used by traditional medical practitioners for the treatment of several ailments of microbial and non-microbial origins were investigated for in vitro anti-methicillin Resistant Staphylococcus aureus (MRSA) activity. Methods: Fresh plant materials were collected from the users. Water and ethanol extracts of the shredded plants were obtained by standard methods. The Bacterial cultures used were strains of MRSA isolated from patients. MRSA was determined by the reference broth microdilution methods using the established National Committee for Clinical Laboratory Standards break points. Staphylococcus aureus NCIB 8588 was used as a standard strain. Susceptibility testing and phytochemical screening of the plant extracts were performed by standard procedures. Controls were maintained for each test batch. Results: Both water and ethanol extracts of T. avicennioides, P. discoideus, O. gratissimum, and A. wilkesiana were effective on MRSA. The Minimum Inhibition Concentration (MIC) and Minimum Bactericidal Concentration (MBC) of the ethanol extracts of these plants range from 18.2 to 24.0 mcg/ml and 30.4 to 37.0 mcg/ml respectively. In contrast, MIC range of 30.6 to 43.0 mcg/ml and 55.4 to 71.0 mcg/ml were recorded for ethanol and water extracts of B. ferruginea, and A. conyzoides respectively. Higher MBC values were obtained for the two plants. These concentrations were too high to be considered active in this study. All the four active plants contained at least trace amount of anthraquinones. Conclusion: Our results offer a scientific basis for the traditional use of water and ethanol extracts of A. wilkesiana, O. gratissimum, T. avicennioides and P. discoideus against MRSA-associated diseases. However, B. ferruginea and A. conyzoides were ineffective in vitro in this study; we therefore suggest the immediate stoppage of their traditional use against MRSA-associated diseases in Lagos, Nigeria. </rdf:value>
-                <dcterms:isPartOf rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Abstract"/>
-              </doco:Paragraph>
-            </dcterms:hasPart>
-            <dcterms:title>Abstract</dcterms:title>
-            <dcterms:isPartOf rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
-          </doco:Section>
-        </dcterms:hasPart>
+        <biotea:paragraphList>
+          <rdf:Seq rdf:about="http://biotea.ws/listOfParagraphs/pmcdoc_resource/1079793/list2">
+            <rdf:li rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods:para_1"/>
+          </rdf:Seq>
+        </biotea:paragraphList>
+        <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Bacterial-culture"/>
+        <biotea:sectionList>
+          <rdf:Seq rdf:about="http://biotea.ws/listOfSections/pmcdoc_resource/1079793/list2">
+            <rdf:li rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Extraction"/>
+            <rdf:li rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Water-extract"/>
+            <rdf:li rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Ethanol-extract"/>
+            <rdf:li rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Bacterial-culture"/>
+            <rdf:li rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Bacterial-susceptibility-testing"/>
+            <rdf:li rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Determination-of-minimum-inhibitory-concentration--MIC--and-minimum-bactericidal-concentration--MBC-"/>
+            <rdf:li rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods"/>
+          </rdf:Seq>
+        </biotea:sectionList>
         <dcterms:hasPart rdf:resource="http://biotea.ws/section/pmcdoc_resource/1079793/Methods_Bacterial-susceptibility-testing"/>
-        <rdf:type rdf:resource="http://purl.org/ontology/bibo/AcademicArticle"/>
-      </bibo:Document>
+        <dcterms:hasPart rdf:resource="http://biotea.ws/paragraph/pmcdoc_resource/1079793/Methods:para_1"/>
+      </doco:Section>
     </dcterms:isPartOf>
-  </doco:Section>
+  </doco:Paragraph>
 </rdf:RDF>

@@ -1,14 +1,16 @@
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:void="http://rdfs.org/ns/void#"
     xmlns:dcterms="http://purl.org/dc/terms/"
-    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
     xmlns:prov="http://www.w3.org/ns/prov#"
     xmlns:doco="http://purl.org/spar/doco/"
     xmlns:bibo="http://purl.org/ontology/bibo/"
-    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:sio="http://semanticscience.org/resource/"
+    xmlns:biotea="https://github.com/biotea/biotea-ontololgy#"
     xmlns:foaf="http://xmlns.com/foaf/0.1/"
-    xmlns:void="http://rdfs.org/ns/void#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
   <bibo:AcademicArticle rdf:about="http://biotea.ws/pmcdoc/pmc/1079793">
     <bibo:cites>
@@ -51,6 +53,7 @@
         <owl:sameAs rdf:resource="http://biotea.ws/doidoc/doi/10.1016/0378-8741(95)01315-6"/>
         <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(95)01315-6"/>
         <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:8824740"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/8824740"/>
         <owl:sameAs rdf:resource="http://identifiers.org/pubmed/8824740"/>
         <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8824740"/>
       </bibo:AcademicArticle>
@@ -76,6 +79,7 @@
       </bibo:Book>
     </bibo:cites>
     <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/15762997"/>
+    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:15762997"/>
     <bibo:cites>
       <bibo:AcademicArticle rdf:about="http://biotea.ws/pubmeddoc/pubmed/3821140">
         <bibo:citedBy rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
@@ -83,6 +87,7 @@
         <owl:sameAs rdf:resource="http://biotea.ws/doidoc/doi/10.1016/0378-8741(86)90004-8"/>
         <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(86)90004-8"/>
         <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:3821140"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/3821140"/>
         <owl:sameAs rdf:resource="http://identifiers.org/pubmed/3821140"/>
         <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/3821140"/>
       </bibo:AcademicArticle>
@@ -94,6 +99,7 @@
         <owl:sameAs rdf:resource="http://biotea.ws/doidoc/doi/10.1128/AAC.45.6.1737-1742.2001"/>
         <owl:sameAs rdf:resource="http://dx.doi.org/10.1128/AAC.45.6.1737-1742.2001"/>
         <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:11353619"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/11353619"/>
         <owl:sameAs rdf:resource="http://identifiers.org/pubmed/11353619"/>
         <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/11353619"/>
       </bibo:AcademicArticle>
@@ -108,6 +114,7 @@
         <bibo:citedBy rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
         <owl:sameAs rdf:resource="http://biotea.ws/reference/pmcdoc_resource/1079793/B2"/>
         <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:9336672"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/9336672"/>
         <owl:sameAs rdf:resource="http://identifiers.org/pubmed/9336672"/>
         <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/9336672"/>
       </bibo:AcademicArticle>
@@ -125,7 +132,6 @@
     </bibo:cites>
     <bibo:pageEnd>6</bibo:pageEnd>
     <prov:wasDerivedFrom rdf:resource="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1079793"/>
-    <prov:generatedAtTime>09-10-2016 21:18:37</prov:generatedAtTime>
     <bibo:cites>
       <bibo:AcademicArticle rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B15">
         <bibo:citedBy rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
@@ -138,7 +144,6 @@
         <bibo:citedBy rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
       </bibo:Book>
     </bibo:cites>
-    <void:inDataset rdf:resource="http://biotea.ws/dataset/pmc"/>
     <dcterms:description>research-article</dcterms:description>
     <bibo:volume>5</bibo:volume>
     <bibo:cites>
@@ -154,14 +159,15 @@
         <owl:sameAs rdf:resource="http://dx.doi.org/10.1021/ac60068a018"/>
       </bibo:AcademicArticle>
     </bibo:cites>
-    <dcterms:created>09-10-2016 21:18:37</dcterms:created>
     <bibo:cites>
       <bibo:AcademicArticle rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B6">
         <bibo:citedBy rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
       </bibo:AcademicArticle>
     </bibo:cites>
+    <sio:SIO_001278 rdf:resource="http://biotea.ws/dataset/pmc"/>
     <dcterms:issued>2005</dcterms:issued>
     <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1079793"/>
+    <prov:generatedAtTime>08-12-2016 13:57:56</prov:generatedAtTime>
     <owl:sameAs rdf:resource="http://biotea.ws/pubmeddoc/pubmed/15762997"/>
     <bibo:cites>
       <bibo:Book rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B26">
@@ -177,10 +183,12 @@
         <owl:sameAs rdf:resource="http://biotea.ws/doidoc/doi/10.1016/0378-8741(93)90028-4"/>
         <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(93)90028-4"/>
         <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:8412246"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/8412246"/>
         <owl:sameAs rdf:resource="http://identifiers.org/pubmed/8412246"/>
         <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8412246"/>
       </bibo:AcademicArticle>
     </bibo:cites>
+    <owl:sameAs rdf:resource="http://identifiers.org/pubmed/15762997"/>
     <bibo:cites>
       <bibo:Book rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B31">
         <bibo:citedBy rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
@@ -198,15 +206,6 @@
     <bibo:pageStart>6</bibo:pageStart>
     <rdf:type rdf:resource="http://purl.org/ontology/bibo/Document"/>
     <bibo:cites>
-      <bibo:AcademicArticle rdf:about="http://biotea.ws/pubmeddoc/pubmed/6643661">
-        <bibo:citedBy rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
-        <owl:sameAs rdf:resource="http://biotea.ws/reference/pmcdoc_resource/1079793/B3"/>
-        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:6643661"/>
-        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/6643661"/>
-        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/6643661"/>
-      </bibo:AcademicArticle>
-    </bibo:cites>
-    <bibo:cites>
       <bibo:AcademicArticle rdf:about="http://biotea.ws/doidoc/doi/10.1016/0378-8741(87)90035-3">
         <bibo:citedBy rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
         <owl:sameAs rdf:resource="http://biotea.ws/reference/pmcdoc_resource/1079793/B10"/>
@@ -215,10 +214,21 @@
       </bibo:AcademicArticle>
     </bibo:cites>
     <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://biotea.ws/pubmeddoc/pubmed/6643661">
+        <bibo:citedBy rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
+        <owl:sameAs rdf:resource="http://biotea.ws/reference/pmcdoc_resource/1079793/B3"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:6643661"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/6643661"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/6643661"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/6643661"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
       <bibo:AcademicArticle rdf:about="http://biotea.ws/pubmeddoc/pubmed/5356032">
         <bibo:citedBy rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
         <owl:sameAs rdf:resource="http://biotea.ws/reference/pmcdoc_resource/1079793/B28"/>
         <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:5356032"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/5356032"/>
         <owl:sameAs rdf:resource="http://identifiers.org/pubmed/5356032"/>
         <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/5356032"/>
       </bibo:AcademicArticle>
@@ -228,6 +238,7 @@
         <bibo:citedBy rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
       </bibo:AcademicArticle>
     </bibo:cites>
+    <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/15762997"/>
     <bibo:cites>
       <bibo:AcademicArticle rdf:about="http://biotea.ws/pubmeddoc/pubmed/10021469">
         <bibo:citedBy rdf:resource="http://biotea.ws/pmcdoc/pmc/1079793"/>
@@ -235,10 +246,12 @@
         <owl:sameAs rdf:resource="http://biotea.ws/doidoc/doi/10.1056/NEJM199902183400701"/>
         <owl:sameAs rdf:resource="http://dx.doi.org/10.1056/NEJM199902183400701"/>
         <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:10021469"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/10021469"/>
         <owl:sameAs rdf:resource="http://identifiers.org/pubmed/10021469"/>
         <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/10021469"/>
       </bibo:AcademicArticle>
     </bibo:cites>
+    <dcterms:created>08-12-2016 13:57:56</dcterms:created>
     <dcterms:creator rdf:resource="http://biotea.ws/agent/biotea_serializer/"/>
     <bibo:cites>
       <bibo:AcademicArticle rdf:about="http://biotea.ws/reference/pmcdoc_resource/1079793/B17">
@@ -252,6 +265,7 @@
         <owl:sameAs rdf:resource="http://biotea.ws/doidoc/doi/10.1016/0378-8741(93)90027-3"/>
         <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(93)90027-3"/>
         <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:8412245"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/8412245"/>
         <owl:sameAs rdf:resource="http://identifiers.org/pubmed/8412245"/>
         <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8412245"/>
       </bibo:AcademicArticle>

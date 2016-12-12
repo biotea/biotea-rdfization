@@ -1,0 +1,1765 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:sio="http://semanticscience.org/resource/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <sio:SIO_000111 rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B1">
+    <sio:SIO_000278>
+      <sio:SIO_000148 rdf:about="http://bio2rdf.org/pmc:1079793">
+        <sio:SIO_000277>
+          <sio:SIO_000106 rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B27">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <sio:SIO_000008>
+              <rdf:Seq rdf:about="http://bio2rdf.org/pmc_resource:1079793_listOfAuthors_B27_list1">
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_JBHarborne">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B27"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node209_1481576047390">
+                        <sio:SIO_000300>Harborne</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node208_1481576047390">
+                        <sio:SIO_000300>JB</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node207_1481576047390">
+                        <sio:SIO_000300>JB Harborne</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+              </rdf:Seq>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000943 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageStart_node213_1481576047391">
+                <sio:SIO_000300>279</sio:SIO_000300>
+              </sio:SIO_000943>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_001314 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_issued_node212_1481576047391">
+                <sio:SIO_000300>1973</sio:SIO_000300>
+              </sio:SIO_001314>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000012 rdf:about="http://bio2rdf.org/pmc_resource:publisher_name_Chapman-A---Hall--London">
+                <sio:SIO_000008>
+                  <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node211_1481576047391">
+                    <sio:SIO_000300>Chapman A &amp; Hall. London</sio:SIO_000300>
+                  </sio:SIO_000183>
+                </sio:SIO_000008>
+              </sio:SIO_000012>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node210_1481576047390">
+                <sio:SIO_000300>Photochemical Methods: A Guide to Modern Techniques of Plant Analysis</sio:SIO_000300>
+              </sio:SIO_000175>
+            </sio:SIO_000008>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_000106>
+        </sio:SIO_000277>
+        <sio:SIO_000277>
+          <sio:SIO_001029 rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B8">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <sio:SIO_000008>
+              <rdf:Seq rdf:about="http://bio2rdf.org/pmc_resource:1079793_listOfAuthors_B8_list1">
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_CCSanders">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B8"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node71_1481576047311">
+                        <sio:SIO_000300>Sanders</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node70_1481576047310">
+                        <sio:SIO_000300>CC</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node69_1481576047310">
+                        <sio:SIO_000300>CC Sanders</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_CSanders">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B8"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node74_1481576047311">
+                        <sio:SIO_000300>Sanders</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node73_1481576047311">
+                        <sio:SIO_000300>C</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node72_1481576047311">
+                        <sio:SIO_000300>C Sanders</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_KSThomson">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B8"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node77_1481576047311">
+                        <sio:SIO_000300>Thomson</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node76_1481576047311">
+                        <sio:SIO_000300>KS</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node75_1481576047311">
+                        <sio:SIO_000300>KS Thomson</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+              </rdf:Seq>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000953 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageEnd_node82_1481576047312">
+                <sio:SIO_000300>S11</sio:SIO_000300>
+              </sio:SIO_000953>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000943 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageStart_node81_1481576047312">
+                <sio:SIO_000300>S6</sio:SIO_000300>
+              </sio:SIO_000943>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_001314 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_issued_node80_1481576047312">
+                <sio:SIO_000300>1995</sio:SIO_000300>
+              </sio:SIO_001314>
+            </sio:SIO_000008>
+            <sio:SIO_000068>
+              <sio:SIO_000160 rdf:about="http://bio2rdf.org/pmc_resource:journal_name_EuropeanJournalofClinicalMicrobiologyandInfectiousDiseases">
+                <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B8"/>
+                <sio:SIO_000008>
+                  <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node78_1481576047311">
+                    <sio:SIO_000300>European Journal of Clinical Microbiology and Infectious Diseases</sio:SIO_000300>
+                  </sio:SIO_000175>
+                </sio:SIO_000008>
+              </sio:SIO_000160>
+            </sio:SIO_000068>
+            <sio:SIO_000008>
+              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node79_1481576047311">
+                <sio:SIO_000300>Fluoroquinolones resistance in Staphylococci: New Challenges</sio:SIO_000300>
+              </sio:SIO_000175>
+            </sio:SIO_000008>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_001029>
+        </sio:SIO_000277>
+        <sio:SIO_000277>
+          <sio:SIO_000148 rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B18">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <sio:SIO_000008>
+              <rdf:Seq rdf:about="http://bio2rdf.org/pmc_resource:1079793_listOfAuthors_B18_list1">
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_AOluyemi">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B18"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node133_1481576047339">
+                        <sio:SIO_000300>Oluyemi</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node132_1481576047339">
+                        <sio:SIO_000300>A</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node131_1481576047338">
+                        <sio:SIO_000300>A Oluyemi</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+              </rdf:Seq>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000943 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageStart_node136_1481576047339">
+                <sio:SIO_000300>101</sio:SIO_000300>
+              </sio:SIO_000943>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_001314 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_issued_node135_1481576047339">
+                <sio:SIO_000300>1998</sio:SIO_000300>
+              </sio:SIO_001314>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node134_1481576047339">
+                <sio:SIO_000300>Medicinal Plants and their therapeutic uses in the South West Zone of Nigeria Technical report Nigeria</sio:SIO_000300>
+              </sio:SIO_000175>
+            </sio:SIO_000008>
+          </sio:SIO_000148>
+        </sio:SIO_000277>
+        <sio:SIO_000364 rdf:resource="http://bio2rdf.org/agent/biotea_serializer/"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/15762997"/>
+        <sio:SIO_000277>
+          <sio:SIO_001029 rdf:about="http://bio2rdf.org/pmc_resource:doi_10.1093/jac/41.1.93">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B7"/>
+            <owl:sameAs rdf:resource="http://dx.doi.org/10.1093/jac/41.1.93"/>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_001029>
+        </sio:SIO_000277>
+        <sio:SIO_000671>
+          <sio:SIO_000115 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pmid_node5_1481576047249">
+            <sio:SIO_000300>15762997</sio:SIO_000300>
+          </sio:SIO_000115>
+        </sio:SIO_000671>
+        <sio:SIO_000277>
+          <sio:SIO_001029 rdf:about="http://bio2rdf.org/pubmed:5356032">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B28"/>
+            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/5356032"/>
+            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/5356032"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/5356032"/>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_001029>
+        </sio:SIO_000277>
+        <sio:SIO_000277>
+          <sio:SIO_000106 rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B21">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <sio:SIO_000008>
+              <rdf:Seq rdf:about="http://bio2rdf.org/pmc_resource:1079793_listOfAuthors_B21_list1">
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_STCowan">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B21"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node161_1481576047342">
+                        <sio:SIO_000300>Cowan</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node160_1481576047342">
+                        <sio:SIO_000300>ST</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node159_1481576047342">
+                        <sio:SIO_000300>ST Cowan</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_SSteel">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B21"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node164_1481576047342">
+                        <sio:SIO_000300>Steel</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node163_1481576047342">
+                        <sio:SIO_000300>S</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node162_1481576047342">
+                        <sio:SIO_000300>S Steel</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+              </rdf:Seq>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000943 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageStart_node168_1481576047343">
+                <sio:SIO_000300>32</sio:SIO_000300>
+              </sio:SIO_000943>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_001314 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_issued_node167_1481576047343">
+                <sio:SIO_000300>1993</sio:SIO_000300>
+              </sio:SIO_001314>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000012 rdf:about="http://bio2rdf.org/pmc_resource:publisher_name_Cambridge-University-Press">
+                <sio:SIO_000008>
+                  <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node220_1481576047392">
+                    <sio:SIO_000300>Cambridge University Press</sio:SIO_000300>
+                  </sio:SIO_000183>
+                </sio:SIO_000008>
+                <sio:SIO_000008>
+                  <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node166_1481576047343">
+                    <sio:SIO_000300>Cambridge University Press</sio:SIO_000300>
+                  </sio:SIO_000183>
+                </sio:SIO_000008>
+              </sio:SIO_000012>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node165_1481576047343">
+                <sio:SIO_000300>Manual for the Identification of Medica Bacteria</sio:SIO_000300>
+              </sio:SIO_000175>
+            </sio:SIO_000008>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_000106>
+        </sio:SIO_000277>
+        <sio:SIO_000008>
+          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node15_1481576047257">
+            <sio:SIO_000300>Screening of crude extracts of six medicinal plants used in South-West Nigerian unorthodox medicine for anti-methicillin resistant activity</sio:SIO_000300>
+          </sio:SIO_000175>
+        </sio:SIO_000008>
+        <sio:SIO_000008>
+          <sio:SIO_001314 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_created_node3_1481576047247">
+            <sio:SIO_000300>12-12-2016 20:54:07</sio:SIO_000300>
+          </sio:SIO_001314>
+        </sio:SIO_000008>
+        <sio:SIO_000008>
+          <sio:SIO_001314 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_prov_generatedAtTime_node4_1481576047247">
+            <sio:SIO_000300>12-12-2016 20:54:07</sio:SIO_000300>
+          </sio:SIO_001314>
+        </sio:SIO_000008>
+        <sio:SIO_000277>
+          <sio:SIO_001029 rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B23">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <sio:SIO_000008>
+              <rdf:Seq rdf:about="http://bio2rdf.org/pmc_resource:1079793_listOfAuthors_B23_list1">
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_SASardari">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B23"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node175_1481576047364">
+                        <sio:SIO_000300>Sardari</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node174_1481576047364">
+                        <sio:SIO_000300>SA</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node173_1481576047364">
+                        <sio:SIO_000300>SA Sardari</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_RGholamreza">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B23"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node178_1481576047373">
+                        <sio:SIO_000300>Gholamreza</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node177_1481576047373">
+                        <sio:SIO_000300>R</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node176_1481576047364">
+                        <sio:SIO_000300>R Gholamreza</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_GMcrtich">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B23"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node181_1481576047373">
+                        <sio:SIO_000300>Mcrtich</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node180_1481576047373">
+                        <sio:SIO_000300>G</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node179_1481576047373">
+                        <sio:SIO_000300>G Mcrtich</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_MDaneshtalab">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B23"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node184_1481576047373">
+                        <sio:SIO_000300>Daneshtalab</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node183_1481576047373">
+                        <sio:SIO_000300>M</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node182_1481576047373">
+                        <sio:SIO_000300>M Daneshtalab</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+              </rdf:Seq>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000953 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageEnd_node189_1481576047374">
+                <sio:SIO_000300>188</sio:SIO_000300>
+              </sio:SIO_000953>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000943 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageStart_node188_1481576047374">
+                <sio:SIO_000300>180</sio:SIO_000300>
+              </sio:SIO_000943>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_001314 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_issued_node187_1481576047374">
+                <sio:SIO_000300>1998</sio:SIO_000300>
+              </sio:SIO_001314>
+            </sio:SIO_000008>
+            <sio:SIO_000068>
+              <sio:SIO_000160 rdf:about="http://bio2rdf.org/pmc_resource:journal_name_PharmBiol">
+                <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B23"/>
+                <sio:SIO_000008>
+                  <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node185_1481576047374">
+                    <sio:SIO_000300>Pharm Biol</sio:SIO_000300>
+                  </sio:SIO_000175>
+                </sio:SIO_000008>
+              </sio:SIO_000160>
+            </sio:SIO_000068>
+            <sio:SIO_000008>
+              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node186_1481576047374">
+                <sio:SIO_000300>Phytopharmaceuticals. Part 1: Antifungal Activity of Selected Iranian and Canadian Plants</sio:SIO_000300>
+              </sio:SIO_000175>
+            </sio:SIO_000008>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_001029>
+        </sio:SIO_000277>
+        <sio:SIO_000277>
+          <sio:SIO_000111 rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B4">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <sio:SIO_000008>
+              <rdf:Seq rdf:about="http://bio2rdf.org/pmc_resource:1079793_listOfAuthors_B4_list1">
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_WEKloos">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B4"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node41_1481576047306">
+                        <sio:SIO_000300>Kloos</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node40_1481576047306">
+                        <sio:SIO_000300>WE</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node39_1481576047306">
+                        <sio:SIO_000300>WE Kloos</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_TLBannerman">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B4"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node44_1481576047306">
+                        <sio:SIO_000300>Bannerman</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node43_1481576047306">
+                        <sio:SIO_000300>TL</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node42_1481576047306">
+                        <sio:SIO_000300>TL Bannerman</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+              </rdf:Seq>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000953 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageEnd_node48_1481576047307">
+                <sio:SIO_000300>298</sio:SIO_000300>
+              </sio:SIO_000953>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000943 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageStart_node47_1481576047307">
+                <sio:SIO_000300>282</sio:SIO_000300>
+              </sio:SIO_000943>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_001314 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_issued_node46_1481576047306">
+                <sio:SIO_000300>1995</sio:SIO_000300>
+              </sio:SIO_001314>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000012 rdf:about="http://bio2rdf.org/pmc_resource:publisher_name_ASM-Press--Washington--D--C">
+                <sio:SIO_000008>
+                  <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node45_1481576047306">
+                    <sio:SIO_000300>ASM Press, Washington, D. C</sio:SIO_000300>
+                  </sio:SIO_000183>
+                </sio:SIO_000008>
+              </sio:SIO_000012>
+            </sio:SIO_000008>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_000111>
+        </sio:SIO_000277>
+        <sio:SIO_000671>
+          <sio:SIO_000115 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_identifier_node2_1481576047217">
+            <sio:SIO_000300>pmc:1079793</sio:SIO_000300>
+          </sio:SIO_000115>
+        </sio:SIO_000671>
+        <sio:SIO_000277>
+          <sio:SIO_000111 rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B30">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <sio:SIO_000008>
+              <rdf:Seq rdf:about="http://bio2rdf.org/pmc_resource:1079793_listOfAuthors_B30_list1">
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_BOBever">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B30"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node219_1481576047392">
+                        <sio:SIO_000300>Bever</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node218_1481576047392">
+                        <sio:SIO_000300>BO</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node217_1481576047392">
+                        <sio:SIO_000300>BO Bever</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+              </rdf:Seq>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000943 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageStart_node222_1481576047392">
+                <sio:SIO_000300>68</sio:SIO_000300>
+              </sio:SIO_000943>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_001314 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_issued_node221_1481576047392">
+                <sio:SIO_000300>1986</sio:SIO_000300>
+              </sio:SIO_001314>
+            </sio:SIO_000008>
+            <sio:SIO_000008 rdf:resource="http://bio2rdf.org/pmc_resource:publisher_name_Cambridge-University-Press"/>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_000111>
+        </sio:SIO_000277>
+        <sio:SIO_001278 rdf:resource="http://bio2rdf.org/bio2rdf_dataset:bio2rdf-pmc-vr3"/>
+        <sio:SIO_000277>
+          <sio:SIO_001029 rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B6">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <sio:SIO_000008>
+              <rdf:Seq rdf:about="http://bio2rdf.org/pmc_resource:1079793_listOfAuthors_B6_list1">
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_AVoss">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B6"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node51_1481576047308">
+                        <sio:SIO_000300>Voss</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node50_1481576047307">
+                        <sio:SIO_000300>A</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node49_1481576047307">
+                        <sio:SIO_000300>A Voss</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_DMilatoric">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B6"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node54_1481576047308">
+                        <sio:SIO_000300>Milatoric</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node53_1481576047308">
+                        <sio:SIO_000300>D</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node52_1481576047308">
+                        <sio:SIO_000300>D Milatoric</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_CWSchwarz">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B6"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node57_1481576047308">
+                        <sio:SIO_000300>Schwarz</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node56_1481576047308">
+                        <sio:SIO_000300>CW</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node55_1481576047308">
+                        <sio:SIO_000300>CW Schwarz</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_VTRosdahl">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B6"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node60_1481576047309">
+                        <sio:SIO_000300>Rosdahl</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node59_1481576047308">
+                        <sio:SIO_000300>VT</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node58_1481576047308">
+                        <sio:SIO_000300>VT Rosdahl</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_LBrarenny">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B6"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node63_1481576047309">
+                        <sio:SIO_000300>Brarenny</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node62_1481576047309">
+                        <sio:SIO_000300>L</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node61_1481576047309">
+                        <sio:SIO_000300>L Brarenny</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+              </rdf:Seq>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000953 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageEnd_node68_1481576047310">
+                <sio:SIO_000300>55</sio:SIO_000300>
+              </sio:SIO_000953>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000943 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageStart_node67_1481576047309">
+                <sio:SIO_000300>50</sio:SIO_000300>
+              </sio:SIO_000943>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_001314 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_issued_node66_1481576047309">
+                <sio:SIO_000300>1994</sio:SIO_000300>
+              </sio:SIO_001314>
+            </sio:SIO_000008>
+            <sio:SIO_000068>
+              <sio:SIO_000160 rdf:about="http://bio2rdf.org/pmc_resource:journal_name_EuropeanJournalofCliniclMicrobiologyandInfectiousDisease">
+                <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B6"/>
+                <sio:SIO_000008>
+                  <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node64_1481576047309">
+                    <sio:SIO_000300>European Journal of Clinicl Microbiology and Infectious Disease</sio:SIO_000300>
+                  </sio:SIO_000175>
+                </sio:SIO_000008>
+              </sio:SIO_000160>
+            </sio:SIO_000068>
+            <sio:SIO_000008>
+              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node65_1481576047309">
+                <sio:SIO_000300>Methicillin Resistant Staphylococcus aureus in Europe</sio:SIO_000300>
+              </sio:SIO_000175>
+            </sio:SIO_000008>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_001029>
+        </sio:SIO_000277>
+        <sio:SIO_000277>
+          <sio:SIO_001029 rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B16">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <sio:SIO_000008>
+              <rdf:Seq rdf:about="http://bio2rdf.org/pmc_resource:1079793_listOfAuthors_B16_list1">
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_KOAkinyemi">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B16"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node96_1481576047324">
+                        <sio:SIO_000300>Akinyemi</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node95_1481576047324">
+                        <sio:SIO_000300>KO</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node94_1481576047323">
+                        <sio:SIO_000300>KO Akinyemi</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node18_1481576047259">
+                        <sio:SIO_000300>Akinyemi</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node17_1481576047258">
+                        <sio:SIO_000300>Kabir O</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node16_1481576047258">
+                        <sio:SIO_000300>Kabir O Akinyemi</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_CBayagbon">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B16"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node99_1481576047327">
+                        <sio:SIO_000300>Bayagbon</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node98_1481576047324">
+                        <sio:SIO_000300>C</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node97_1481576047324">
+                        <sio:SIO_000300>C Bayagbon</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_AOBOyefolu">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B16"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node102_1481576047329">
+                        <sio:SIO_000300>Oyefolu</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node101_1481576047327">
+                        <sio:SIO_000300>AOB</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node100_1481576047327">
+                        <sio:SIO_000300>AOB Oyefolu</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_KAAkinside">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B16"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node105_1481576047330">
+                        <sio:SIO_000300>Akinside</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node104_1481576047330">
+                        <sio:SIO_000300>KA</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node103_1481576047330">
+                        <sio:SIO_000300>KA Akinside</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                    <sio:SIO_000212>
+                      <sio:SIO_001029 rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B15">
+                        <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+                        <sio:SIO_000008>
+                          <rdf:Seq rdf:about="http://bio2rdf.org/pmc_resource:1079793_listOfAuthors_B15_list1">
+                            <rdf:li rdf:resource="http://bio2rdf.org/pmc_resource:1079793_person_name_KAAkinside"/>
+                            <rdf:li>
+                              <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_DKOlukoya">
+                                <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B15"/>
+                                <sio:SIO_000008>
+                                  <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node88_1481576047314">
+                                    <sio:SIO_000300>Olukoya</sio:SIO_000300>
+                                  </sio:SIO_000182>
+                                </sio:SIO_000008>
+                                <sio:SIO_000008>
+                                  <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node87_1481576047314">
+                                    <sio:SIO_000300>DK</sio:SIO_000300>
+                                  </sio:SIO_000181>
+                                </sio:SIO_000008>
+                                <sio:SIO_000008>
+                                  <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node86_1481576047314">
+                                    <sio:SIO_000300>DK Olukoya</sio:SIO_000300>
+                                  </sio:SIO_000183>
+                                </sio:SIO_000008>
+                              </sio:SIO_000498>
+                            </rdf:li>
+                          </rdf:Seq>
+                        </sio:SIO_000008>
+                        <sio:SIO_000008>
+                          <sio:SIO_000953 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageEnd_node93_1481576047315">
+                            <sio:SIO_000300>129</sio:SIO_000300>
+                          </sio:SIO_000953>
+                        </sio:SIO_000008>
+                        <sio:SIO_000008>
+                          <sio:SIO_000943 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageStart_node92_1481576047315">
+                            <sio:SIO_000300>127</sio:SIO_000300>
+                          </sio:SIO_000943>
+                        </sio:SIO_000008>
+                        <sio:SIO_000008>
+                          <sio:SIO_001314 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_issued_node91_1481576047315">
+                            <sio:SIO_000300>1995</sio:SIO_000300>
+                          </sio:SIO_001314>
+                        </sio:SIO_000008>
+                        <sio:SIO_000068>
+                          <sio:SIO_000160 rdf:about="http://bio2rdf.org/pmc_resource:journal_name_JDiarhoealDisRes">
+                            <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B15"/>
+                            <sio:SIO_000008>
+                              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node89_1481576047315">
+                                <sio:SIO_000300>J Diarhoeal Dis Res</sio:SIO_000300>
+                              </sio:SIO_000175>
+                            </sio:SIO_000008>
+                          </sio:SIO_000160>
+                        </sio:SIO_000068>
+                        <sio:SIO_000008>
+                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node90_1481576047315">
+                            <sio:SIO_000300>Vibrocidal activities of some local herbs</sio:SIO_000300>
+                          </sio:SIO_000175>
+                        </sio:SIO_000008>
+                        <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+                      </sio:SIO_001029>
+                    </sio:SIO_000212>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node85_1481576047314">
+                        <sio:SIO_000300>Akinside</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node84_1481576047314">
+                        <sio:SIO_000300>KA</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node83_1481576047314">
+                        <sio:SIO_000300>KA Akinside</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_EAOmonigbeyin">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B16"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node108_1481576047330">
+                        <sio:SIO_000300>Omonigbeyin</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node107_1481576047330">
+                        <sio:SIO_000300>EA</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node106_1481576047330">
+                        <sio:SIO_000300>EA Omonigbeyin</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_AOCoker">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B16"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node111_1481576047330">
+                        <sio:SIO_000300>Coker</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node110_1481576047330">
+                        <sio:SIO_000300>AO</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node109_1481576047330">
+                        <sio:SIO_000300>AO Coker</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+              </rdf:Seq>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000953 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageEnd_node116_1481576047331">
+                <sio:SIO_000300>33</sio:SIO_000300>
+              </sio:SIO_000953>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000943 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageStart_node115_1481576047331">
+                <sio:SIO_000300>30</sio:SIO_000300>
+              </sio:SIO_000943>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_001314 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_issued_node114_1481576047331">
+                <sio:SIO_000300>2000</sio:SIO_000300>
+              </sio:SIO_001314>
+            </sio:SIO_000008>
+            <sio:SIO_000068>
+              <sio:SIO_000160 rdf:about="http://bio2rdf.org/pmc_resource:journal_name_JournalofNigerianinfectioncontrolassociation">
+                <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B16"/>
+                <sio:SIO_000008>
+                  <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node112_1481576047331">
+                    <sio:SIO_000300>Journal of Nigerian infection control association</sio:SIO_000300>
+                  </sio:SIO_000175>
+                </sio:SIO_000008>
+              </sio:SIO_000160>
+            </sio:SIO_000068>
+            <sio:SIO_000008>
+              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node113_1481576047331">
+                <sio:SIO_000300>Antibacterial screening of five indigenous Nigerian medicinal plants against S. typhi and S. paratyphi</sio:SIO_000300>
+              </sio:SIO_000175>
+            </sio:SIO_000008>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_001029>
+        </sio:SIO_000277>
+        <sio:SIO_000277>
+          <sio:SIO_001029 rdf:about="http://bio2rdf.org/pubmed:3821140">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B14"/>
+            <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(86)90004-8"/>
+            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/3821140"/>
+            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/3821140"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/3821140"/>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_001029>
+        </sio:SIO_000277>
+        <sio:SIO_000277>
+          <sio:SIO_001029 rdf:about="http://bio2rdf.org/pubmed:9336672">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B2"/>
+            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/9336672"/>
+            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/9336672"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/9336672"/>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_001029>
+        </sio:SIO_000277>
+        <sio:SIO_000277>
+          <sio:SIO_001029 rdf:about="http://bio2rdf.org/pmc_resource:doi_10.1016/0378-8741(87)90035-3">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B10"/>
+            <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(87)90035-3"/>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_001029>
+        </sio:SIO_000277>
+        <sio:SIO_000008>
+          <sio:SIO_000943 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageStart_node13_1481576047257">
+            <sio:SIO_000300>6</sio:SIO_000300>
+          </sio:SIO_000943>
+        </sio:SIO_000008>
+        <sio:SIO_000008>
+          <sio:SIO_000188 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_abstract_node31_1481576047303">
+            <sio:SIO_000300>Background: Six Nigerian medicinal plants Terminalia avicennioides, Phylantus discoideus, Bridella ferruginea, Ageratum conyzoides, Ocimum gratissimum and Acalypha wilkesiana used by traditional medical practitioners for the treatment of several ailments of microbial and non-microbial origins were investigated for in vitro anti-methicillin Resistant Staphylococcus aureus (MRSA) activity. Methods: Fresh plant materials were collected from the users. Water and ethanol extracts of the shredded plants were obtained by standard methods. The Bacterial cultures used were strains of MRSA isolated from patients. MRSA was determined by the reference broth microdilution methods using the established National Committee for Clinical Laboratory Standards break points. Staphylococcus aureus NCIB 8588 was used as a standard strain. Susceptibility testing and phytochemical screening of the plant extracts were performed by standard procedures. Controls were maintained for each test batch. Results: Both water and ethanol extracts of T. avicennioides, P. discoideus, O. gratissimum, and A. wilkesiana were effective on MRSA. The Minimum Inhibition Concentration (MIC) and Minimum Bactericidal Concentration (MBC) of the ethanol extracts of these plants range from 18.2 to 24.0 mcg/ml and 30.4 to 37.0 mcg/ml respectively. In contrast, MIC range of 30.6 to 43.0 mcg/ml and 55.4 to 71.0 mcg/ml were recorded for ethanol and water extracts of B. ferruginea, and A. conyzoides respectively. Higher MBC values were obtained for the two plants. These concentrations were too high to be considered active in this study. All the four active plants contained at least trace amount of anthraquinones. Conclusion: Our results offer a scientific basis for the traditional use of water and ethanol extracts of A. wilkesiana, O. gratissimum, T. avicennioides and P. discoideus against MRSA-associated diseases. However, B. ferruginea and A. conyzoides were ineffective in vitro in this study; we therefore suggest the immediate stoppage of their traditional use against MRSA-associated diseases in Lagos, Nigeria. </sio:SIO_000300>
+          </sio:SIO_000188>
+        </sio:SIO_000008>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/15762997"/>
+        <sio:SIO_000008>
+          <sio:SIO_000012 rdf:about="http://bio2rdf.org/pmc_resource:publisher_pmc_internal_id_1472-6882-5-6">
+            <sio:SIO_000671>
+              <sio:SIO_000115 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_identifier_node10_1481576047255">
+                <sio:SIO_000300>1472-6882-5-6</sio:SIO_000300>
+              </sio:SIO_000115>
+            </sio:SIO_000671>
+            <sio:SIO_000008>
+              <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node9_1481576047255">
+                <sio:SIO_000300>BioMed Central</sio:SIO_000300>
+              </sio:SIO_000183>
+            </sio:SIO_000008>
+          </sio:SIO_000012>
+        </sio:SIO_000008>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/15762997"/>
+        <sio:SIO_000008>
+          <sio:SIO_000309 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_volume_node12_1481576047257">
+            <sio:SIO_000300>5</sio:SIO_000300>
+          </sio:SIO_000309>
+        </sio:SIO_000008>
+        <sio:SIO_000277>
+          <sio:SIO_000111 rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B31">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <sio:SIO_000008>
+              <rdf:Seq rdf:about="http://bio2rdf.org/pmc_resource:1079793_listOfAuthors_B31_list1">
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_RTschesche">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B31"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node225_1481576047397">
+                        <sio:SIO_000300>Tschesche</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node224_1481576047397">
+                        <sio:SIO_000300>R</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node223_1481576047396">
+                        <sio:SIO_000300>R Tschesche</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+              </rdf:Seq>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000953 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageEnd_node229_1481576047397">
+                <sio:SIO_000300>289</sio:SIO_000300>
+              </sio:SIO_000953>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000943 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageStart_node228_1481576047397">
+                <sio:SIO_000300>274</sio:SIO_000300>
+              </sio:SIO_000943>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_001314 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_issued_node227_1481576047397">
+                <sio:SIO_000300>1971</sio:SIO_000300>
+              </sio:SIO_001314>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000012 rdf:about="http://bio2rdf.org/pmc_resource:publisher_name_Springer-Verlag--Berlin-Heidelberg--New-York">
+                <sio:SIO_000008>
+                  <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node226_1481576047397">
+                    <sio:SIO_000300>Springer-Verlag, Berlin Heidelberg, New York</sio:SIO_000300>
+                  </sio:SIO_000183>
+                </sio:SIO_000008>
+              </sio:SIO_000012>
+            </sio:SIO_000008>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_000111>
+        </sio:SIO_000277>
+        <owl:sameAs rdf:resource="http://dx.doi.org/10.1186/1472-6882-5-6"/>
+        <sio:SIO_000277>
+          <sio:SIO_001029 rdf:about="http://bio2rdf.org/pubmed:8412246">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B11"/>
+            <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(93)90028-4"/>
+            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/8412246"/>
+            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/8412246"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8412246"/>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_001029>
+        </sio:SIO_000277>
+        <sio:SIO_000277>
+          <sio:SIO_000106 rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B26">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <sio:SIO_000008>
+              <rdf:Seq rdf:about="http://bio2rdf.org/pmc_resource:1079793_listOfAuthors_B26_list1">
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_GETrease">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B26"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node199_1481576047375">
+                        <sio:SIO_000300>Trease</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node198_1481576047375">
+                        <sio:SIO_000300>GE</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node197_1481576047375">
+                        <sio:SIO_000300>GE Trease</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_WCEvans">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B26"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node202_1481576047375">
+                        <sio:SIO_000300>Evans</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node201_1481576047375">
+                        <sio:SIO_000300>WC</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node200_1481576047375">
+                        <sio:SIO_000300>WC Evans</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+              </rdf:Seq>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000943 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageStart_node206_1481576047390">
+                <sio:SIO_000300>53</sio:SIO_000300>
+              </sio:SIO_000943>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_001314 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_issued_node205_1481576047389">
+                <sio:SIO_000300>1989</sio:SIO_000300>
+              </sio:SIO_001314>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000012 rdf:about="http://bio2rdf.org/pmc_resource:publisher_name_Bailliere-Tinall-Ltd--London">
+                <sio:SIO_000008>
+                  <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node204_1481576047389">
+                    <sio:SIO_000300>Bailliere Tinall Ltd, London</sio:SIO_000300>
+                  </sio:SIO_000183>
+                </sio:SIO_000008>
+              </sio:SIO_000012>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node203_1481576047376">
+                <sio:SIO_000300>A Text-book of Parmacognosy</sio:SIO_000300>
+              </sio:SIO_000175>
+            </sio:SIO_000008>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_000106>
+        </sio:SIO_000277>
+        <sio:SIO_000277>
+          <sio:SIO_001029 rdf:about="http://bio2rdf.org/pmc_resource:doi_10.1021/ac60068a018">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B24"/>
+            <owl:sameAs rdf:resource="http://dx.doi.org/10.1021/ac60068a018"/>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_001029>
+        </sio:SIO_000277>
+        <sio:SIO_000277>
+          <sio:SIO_001029 rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B17">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <sio:SIO_000008>
+              <rdf:Seq rdf:about="http://bio2rdf.org/pmc_resource:1079793_listOfAuthors_B17_list1">
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_AKOgbeche">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B17"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node119_1481576047337">
+                        <sio:SIO_000300>Ogbeche</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node118_1481576047337">
+                        <sio:SIO_000300>AK</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node117_1481576047337">
+                        <sio:SIO_000300>AK Ogbeche</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_GOAjayi">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B17"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node122_1481576047337">
+                        <sio:SIO_000300>Ajayi</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node121_1481576047337">
+                        <sio:SIO_000300>GO</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node120_1481576047337">
+                        <sio:SIO_000300>GO Ajayi</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_POnyeneta">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B17"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node125_1481576047338">
+                        <sio:SIO_000300>Onyeneta</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node124_1481576047337">
+                        <sio:SIO_000300>P</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node123_1481576047337">
+                        <sio:SIO_000300>P Onyeneta</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+              </rdf:Seq>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000953 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageEnd_node130_1481576047338">
+                <sio:SIO_000300>399</sio:SIO_000300>
+              </sio:SIO_000953>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000943 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageStart_node129_1481576047338">
+                <sio:SIO_000300>397</sio:SIO_000300>
+              </sio:SIO_000943>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_001314 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_issued_node128_1481576047338">
+                <sio:SIO_000300>1997</sio:SIO_000300>
+              </sio:SIO_001314>
+            </sio:SIO_000008>
+            <sio:SIO_000068>
+              <sio:SIO_000160 rdf:about="http://bio2rdf.org/pmc_resource:journal_name_NigQtJHospMed">
+                <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B17"/>
+                <sio:SIO_000008>
+                  <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node126_1481576047338">
+                    <sio:SIO_000300>Nig Qt J Hosp Med</sio:SIO_000300>
+                  </sio:SIO_000175>
+                </sio:SIO_000008>
+              </sio:SIO_000160>
+            </sio:SIO_000068>
+            <sio:SIO_000008>
+              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node127_1481576047338">
+                <sio:SIO_000300>Antibacterial activities of the leaf extract of Ageratum conyzoides</sio:SIO_000300>
+              </sio:SIO_000175>
+            </sio:SIO_000008>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_001029>
+        </sio:SIO_000277>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:15762997"/>
+        <sio:SIO_000277>
+          <sio:SIO_000148 rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B29">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <sio:SIO_000008>
+              <sio:SIO_000943 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageStart_node216_1481576047391">
+                <sio:SIO_000300>622</sio:SIO_000300>
+              </sio:SIO_000943>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_001314 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_issued_node215_1481576047391">
+                <sio:SIO_000300>1978</sio:SIO_000300>
+              </sio:SIO_001314>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node214_1481576047391">
+                <sio:SIO_000300>Technical report series</sio:SIO_000300>
+              </sio:SIO_000175>
+            </sio:SIO_000008>
+          </sio:SIO_000148>
+        </sio:SIO_000277>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1079793"/>
+        <sio:SIO_000008>
+          <sio:SIO_001314 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_issued_node11_1481576047256">
+            <sio:SIO_000300>2005</sio:SIO_000300>
+          </sio:SIO_001314>
+        </sio:SIO_000008>
+        <sio:SIO_000277>
+          <sio:SIO_001029 rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B20">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <sio:SIO_000008>
+              <rdf:Seq rdf:about="http://bio2rdf.org/pmc_resource:1079793_listOfAuthors_B20_list1">
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_BEAkinde">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B20"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node150_1481576047341">
+                        <sio:SIO_000300>Akinde</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node149_1481576047341">
+                        <sio:SIO_000300>BE</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node148_1481576047341">
+                        <sio:SIO_000300>BE Akinde</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_OOOdeyemi">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B20"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node153_1481576047341">
+                        <sio:SIO_000300>Odeyemi</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node152_1481576047341">
+                        <sio:SIO_000300>OO</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node151_1481576047341">
+                        <sio:SIO_000300>OO Odeyemi</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+              </rdf:Seq>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000953 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageEnd_node158_1481576047342">
+                <sio:SIO_000300>165</sio:SIO_000300>
+              </sio:SIO_000953>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000943 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageStart_node157_1481576047342">
+                <sio:SIO_000300>163</sio:SIO_000300>
+              </sio:SIO_000943>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_001314 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_issued_node156_1481576047342">
+                <sio:SIO_000300>1987</sio:SIO_000300>
+              </sio:SIO_001314>
+            </sio:SIO_000008>
+            <sio:SIO_000068>
+              <sio:SIO_000160 rdf:about="http://bio2rdf.org/pmc_resource:journal_name_NigMedJ">
+                <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B20"/>
+                <sio:SIO_000008>
+                  <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node154_1481576047342">
+                    <sio:SIO_000300>Nig Med J</sio:SIO_000300>
+                  </sio:SIO_000175>
+                </sio:SIO_000008>
+              </sio:SIO_000160>
+            </sio:SIO_000068>
+            <sio:SIO_000008>
+              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node155_1481576047342">
+                <sio:SIO_000300>Extraction and Microbiological Evaluation of the Oils from the leaves of Acalypha wilkesiana</sio:SIO_000300>
+              </sio:SIO_000175>
+            </sio:SIO_000008>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_001029>
+        </sio:SIO_000277>
+        <sio:SIO_000008 rdf:resource="http://creativecommons.org/licenses/by/2.0"/>
+        <sio:SIO_000277>
+          <sio:SIO_001029 rdf:about="http://bio2rdf.org/pubmed:6643661">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B3"/>
+            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/6643661"/>
+            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/6643661"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/6643661"/>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_001029>
+        </sio:SIO_000277>
+        <sio:SIO_000277>
+          <sio:SIO_001029 rdf:about="http://bio2rdf.org/pubmed:11353619">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B5"/>
+            <owl:sameAs rdf:resource="http://dx.doi.org/10.1128/AAC.45.6.1737-1742.2001"/>
+            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/11353619"/>
+            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/11353619"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/11353619"/>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_001029>
+        </sio:SIO_000277>
+        <sio:SIO_000277 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B1"/>
+        <sio:SIO_000008>
+          <sio:SIO_000953 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageEnd_node14_1481576047257">
+            <sio:SIO_000300>6</sio:SIO_000300>
+          </sio:SIO_000953>
+        </sio:SIO_000008>
+        <sio:SIO_000008>
+          <sio:SIO_000136 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_description_node1_1481576047212">
+            <sio:SIO_000300>research-article</sio:SIO_000300>
+          </sio:SIO_000136>
+        </sio:SIO_000008>
+        <sio:SIO_000253 rdf:resource="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1079793"/>
+        <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_001029"/>
+        <sio:SIO_000008>
+          <rdf:Seq rdf:about="http://bio2rdf.org/pmc_resource:1079793_listOfAuthors_list1">
+            <rdf:li rdf:resource="http://bio2rdf.org/pmc_resource:1079793_person_name_KOAkinyemi"/>
+            <rdf:li>
+              <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_OOladapo">
+                <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+                <sio:SIO_000008>
+                  <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node21_1481576047284">
+                    <sio:SIO_000300>Oladapo</sio:SIO_000300>
+                  </sio:SIO_000182>
+                </sio:SIO_000008>
+                <sio:SIO_000008>
+                  <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node20_1481576047284">
+                    <sio:SIO_000300>Olukayode</sio:SIO_000300>
+                  </sio:SIO_000181>
+                </sio:SIO_000008>
+                <sio:SIO_000008>
+                  <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node19_1481576047284">
+                    <sio:SIO_000300>Olukayode Oladapo</sio:SIO_000300>
+                  </sio:SIO_000183>
+                </sio:SIO_000008>
+              </sio:SIO_000498>
+            </rdf:li>
+            <rdf:li>
+              <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_CEOkwara">
+                <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+                <sio:SIO_000008>
+                  <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node24_1481576047284">
+                    <sio:SIO_000300>Okwara</sio:SIO_000300>
+                  </sio:SIO_000182>
+                </sio:SIO_000008>
+                <sio:SIO_000008>
+                  <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node23_1481576047284">
+                    <sio:SIO_000300>Chidi E</sio:SIO_000300>
+                  </sio:SIO_000181>
+                </sio:SIO_000008>
+                <sio:SIO_000008>
+                  <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node22_1481576047284">
+                    <sio:SIO_000300>Chidi E Okwara</sio:SIO_000300>
+                  </sio:SIO_000183>
+                </sio:SIO_000008>
+              </sio:SIO_000498>
+            </rdf:li>
+            <rdf:li>
+              <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_CCIbe">
+                <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+                <sio:SIO_000008>
+                  <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node27_1481576047285">
+                    <sio:SIO_000300>Ibe</sio:SIO_000300>
+                  </sio:SIO_000182>
+                </sio:SIO_000008>
+                <sio:SIO_000008>
+                  <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node26_1481576047285">
+                    <sio:SIO_000300>Christopher C</sio:SIO_000300>
+                  </sio:SIO_000181>
+                </sio:SIO_000008>
+                <sio:SIO_000008>
+                  <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node25_1481576047285">
+                    <sio:SIO_000300>Christopher C Ibe</sio:SIO_000300>
+                  </sio:SIO_000183>
+                </sio:SIO_000008>
+              </sio:SIO_000498>
+            </rdf:li>
+            <rdf:li>
+              <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_KAFasure">
+                <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+                <sio:SIO_000008>
+                  <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node30_1481576047286">
+                    <sio:SIO_000300>Fasure</sio:SIO_000300>
+                  </sio:SIO_000182>
+                </sio:SIO_000008>
+                <sio:SIO_000008>
+                  <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node29_1481576047286">
+                    <sio:SIO_000300>Kehinde A</sio:SIO_000300>
+                  </sio:SIO_000181>
+                </sio:SIO_000008>
+                <sio:SIO_000008>
+                  <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node28_1481576047286">
+                    <sio:SIO_000300>Kehinde A Fasure</sio:SIO_000300>
+                  </sio:SIO_000183>
+                </sio:SIO_000008>
+              </sio:SIO_000498>
+            </rdf:li>
+          </rdf:Seq>
+        </sio:SIO_000008>
+        <sio:SIO_000277>
+          <sio:SIO_000148 rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B22">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <sio:SIO_000008>
+              <sio:SIO_000953 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageEnd_node172_1481576047364">
+                <sio:SIO_000300>A3</sio:SIO_000300>
+              </sio:SIO_000953>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000943 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageStart_node171_1481576047364">
+                <sio:SIO_000300>M7</sio:SIO_000300>
+              </sio:SIO_000943>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_001314 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_issued_node170_1481576047364">
+                <sio:SIO_000300>1993</sio:SIO_000300>
+              </sio:SIO_001314>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node169_1481576047363">
+                <sio:SIO_000300>Approved Standard: NCCLS document</sio:SIO_000300>
+              </sio:SIO_000175>
+            </sio:SIO_000008>
+          </sio:SIO_000148>
+        </sio:SIO_000277>
+        <sio:SIO_000277>
+          <sio:SIO_001029 rdf:about="http://bio2rdf.org/pubmed:8824740">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B13"/>
+            <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(95)01315-6"/>
+            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/8824740"/>
+            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/8824740"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8824740"/>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_001029>
+        </sio:SIO_000277>
+        <sio:SIO_000277>
+          <sio:SIO_001029 rdf:about="http://bio2rdf.org/pubmed:10021469">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B9"/>
+            <owl:sameAs rdf:resource="http://dx.doi.org/10.1056/NEJM199902183400701"/>
+            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/10021469"/>
+            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/10021469"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/10021469"/>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_001029>
+        </sio:SIO_000277>
+        <sio:SIO_000277>
+          <sio:SIO_001029 rdf:about="http://bio2rdf.org/pubmed:8412245">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B12"/>
+            <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(93)90027-3"/>
+            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/8412245"/>
+            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/8412245"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8412245"/>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_001029>
+        </sio:SIO_000277>
+        <sio:SIO_000671>
+          <sio:SIO_000115 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_doi_node6_1481576047251">
+            <sio:SIO_000300>10.1186/1472-6882-5-6</sio:SIO_000300>
+          </sio:SIO_000115>
+        </sio:SIO_000671>
+        <sio:SIO_000277>
+          <sio:SIO_000106 rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B25">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <sio:SIO_000008>
+              <rdf:Seq rdf:about="http://bio2rdf.org/pmc_resource:1079793_listOfAuthors_B25_list1">
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_ASofowora">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B25"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node192_1481576047374">
+                        <sio:SIO_000300>Sofowora</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node191_1481576047374">
+                        <sio:SIO_000300>A</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node190_1481576047374">
+                        <sio:SIO_000300>A Sofowora</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+              </rdf:Seq>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000943 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageStart_node196_1481576047375">
+                <sio:SIO_000300>256</sio:SIO_000300>
+              </sio:SIO_000943>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_001314 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_issued_node195_1481576047375">
+                <sio:SIO_000300>1993</sio:SIO_000300>
+              </sio:SIO_001314>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000012 rdf:about="http://bio2rdf.org/pmc_resource:publisher_name_Chichester-John--Willey---Sons-New-York">
+                <sio:SIO_000008>
+                  <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node194_1481576047375">
+                    <sio:SIO_000300>Chichester John, Willey &amp; Sons New York</sio:SIO_000300>
+                  </sio:SIO_000183>
+                </sio:SIO_000008>
+              </sio:SIO_000012>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node193_1481576047375">
+                <sio:SIO_000300>Medicinal Plants and Traditional Medicines in Africa</sio:SIO_000300>
+              </sio:SIO_000175>
+            </sio:SIO_000008>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_000106>
+        </sio:SIO_000277>
+        <sio:SIO_000068>
+          <sio:SIO_000160 rdf:about="http://bio2rdf.org/pmc_resource:journal_issn_1472-6882">
+            <sio:SIO_000008 rdf:resource="http://bio2rdf.org/pmc_resource:publisher_pmc_internal_id_1472-6882-5-6"/>
+            <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/nlmcatalog?term=1472-6882"/>
+            <sio:SIO_000671>
+              <sio:SIO_000115 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_issn_node8_1481576047254">
+                <sio:SIO_000300>1472-6882</sio:SIO_000300>
+              </sio:SIO_000115>
+            </sio:SIO_000671>
+            <sio:SIO_000008>
+              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node7_1481576047253">
+                <sio:SIO_000300>BMC Complementary and Alternative Medicine</sio:SIO_000300>
+              </sio:SIO_000175>
+            </sio:SIO_000008>
+          </sio:SIO_000160>
+        </sio:SIO_000068>
+        <sio:SIO_000277 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B15"/>
+        <sio:SIO_000277>
+          <sio:SIO_001029 rdf:about="http://bio2rdf.org/pmc_resource:1079793_reference_B19">
+            <sio:SIO_000278 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+            <sio:SIO_000008>
+              <rdf:Seq rdf:about="http://bio2rdf.org/pmc_resource:1079793_listOfAuthors_B19_list1">
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_JOOlowokudejo">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B19"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node139_1481576047340">
+                        <sio:SIO_000300>Olowokudejo</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node138_1481576047340">
+                        <sio:SIO_000300>JO</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node137_1481576047340">
+                        <sio:SIO_000300>JO Olowokudejo</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+                <rdf:li>
+                  <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_OPereira-Sheteolu">
+                    <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B19"/>
+                    <sio:SIO_000008>
+                      <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node142_1481576047340">
+                        <sio:SIO_000300>Pereira-Sheteolu</sio:SIO_000300>
+                      </sio:SIO_000182>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node141_1481576047340">
+                        <sio:SIO_000300>O</sio:SIO_000300>
+                      </sio:SIO_000181>
+                    </sio:SIO_000008>
+                    <sio:SIO_000008>
+                      <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node140_1481576047340">
+                        <sio:SIO_000300>O Pereira-Sheteolu</sio:SIO_000300>
+                      </sio:SIO_000183>
+                    </sio:SIO_000008>
+                  </sio:SIO_000498>
+                </rdf:li>
+              </rdf:Seq>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000953 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageEnd_node147_1481576047341">
+                <sio:SIO_000300>158</sio:SIO_000300>
+              </sio:SIO_000953>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000943 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageStart_node146_1481576047340">
+                <sio:SIO_000300>147</sio:SIO_000300>
+              </sio:SIO_000943>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_001314 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_issued_node145_1481576047340">
+                <sio:SIO_000300>1988</sio:SIO_000300>
+              </sio:SIO_001314>
+            </sio:SIO_000008>
+            <sio:SIO_000068>
+              <sio:SIO_000160 rdf:about="http://bio2rdf.org/pmc_resource:journal_name_Phytomorphology">
+                <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B19"/>
+                <sio:SIO_000008>
+                  <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node143_1481576047340">
+                    <sio:SIO_000300>Phytomorphology</sio:SIO_000300>
+                  </sio:SIO_000175>
+                </sio:SIO_000008>
+              </sio:SIO_000160>
+            </sio:SIO_000068>
+            <sio:SIO_000008>
+              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node144_1481576047340">
+                <sio:SIO_000300>The taxonomic value of epidermal characters in the genus Ocimum (Lamiaceae)</sio:SIO_000300>
+              </sio:SIO_000175>
+            </sio:SIO_000008>
+            <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+          </sio:SIO_001029>
+        </sio:SIO_000277>
+      </sio:SIO_000148>
+    </sio:SIO_000278>
+    <sio:SIO_000008>
+      <rdf:Seq rdf:about="http://bio2rdf.org/pmc_resource:1079793_listOfAuthors_B1_list1">
+        <rdf:li>
+          <sio:SIO_000498 rdf:about="http://bio2rdf.org/pmc_resource:1079793_person_name_FAWaldyogel">
+            <sio:SIO_000212 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_reference_B1"/>
+            <sio:SIO_000008>
+              <sio:SIO_000182 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_familyName_node34_1481576047304">
+                <sio:SIO_000300>Waldyogel</sio:SIO_000300>
+              </sio:SIO_000182>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000181 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_givenName_node33_1481576047304">
+                <sio:SIO_000300>FA</sio:SIO_000300>
+              </sio:SIO_000181>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
+              <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node32_1481576047304">
+                <sio:SIO_000300>FA Waldyogel</sio:SIO_000300>
+              </sio:SIO_000183>
+            </sio:SIO_000008>
+          </sio:SIO_000498>
+        </rdf:li>
+      </rdf:Seq>
+    </sio:SIO_000008>
+    <sio:SIO_000008>
+      <sio:SIO_000953 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageEnd_node38_1481576047305">
+        <sio:SIO_000300>1777</sio:SIO_000300>
+      </sio:SIO_000953>
+    </sio:SIO_000008>
+    <sio:SIO_000008>
+      <sio:SIO_000943 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_bibo_pageStart_node37_1481576047305">
+        <sio:SIO_000300>1754</sio:SIO_000300>
+      </sio:SIO_000943>
+    </sio:SIO_000008>
+    <sio:SIO_000008>
+      <sio:SIO_001314 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_issued_node36_1481576047305">
+        <sio:SIO_000300>1995</sio:SIO_000300>
+      </sio:SIO_001314>
+    </sio:SIO_000008>
+    <sio:SIO_000008>
+      <sio:SIO_000012 rdf:about="http://bio2rdf.org/pmc_resource:publisher_name_Churchill-Livingstone--New-York">
+        <sio:SIO_000008>
+          <sio:SIO_000183 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_foaf_name_node35_1481576047304">
+            <sio:SIO_000300>Churchill Livingstone, New York</sio:SIO_000300>
+          </sio:SIO_000183>
+        </sio:SIO_000008>
+      </sio:SIO_000012>
+    </sio:SIO_000008>
+    <rdf:type rdf:resource="http://semanticscience.org/resource/SIO_000148"/>
+  </sio:SIO_000111>
+</rdf:RDF>

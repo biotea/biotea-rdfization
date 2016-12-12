@@ -11,11 +11,10 @@ import org.ontoware.rdf2go.model.node.impl.URIImpl;
 import org.ontoware.rdf2go.vocabulary.RDF;
 import org.ontoware.rdf2go.vocabulary.RDFS;
 
-import ws.biotea.ld2rdf.rdf.model.bibo.Thing;
-
-
-public class ListOfAuthorsE extends Thing implements ListE<Thing>{
+public class ListOfElements extends org.ontoware.rdfreactor.schema.rdfs.Class implements ListE<org.ontoware.rdfreactor.schema.rdfs.Class>{
+	private static final long serialVersionUID = 1L;
 	public static final URI RDFS_CLASS = new URIImpl(RDF.Seq.toString(), false);
+	private int size = 0;
 	
 	/**
 	 * Returns a Java wrapper over an RDF object, identified by a URI, given as a String.
@@ -25,38 +24,51 @@ public class ListOfAuthorsE extends Thing implements ListE<Thing>{
 	 * @param write if true, the statement (this, rdf:type, TYPE) is written to the model
 	 * @throws ModelRuntimeException if URI syntax is wrong
 	 */
-	public ListOfAuthorsE ( Model model, String uriString, boolean write) throws ModelRuntimeException {		
+	public ListOfElements ( Model model, String uriString, boolean write) throws ModelRuntimeException {		
 		super(model, RDFS_CLASS, new URIImpl(uriString, false), write);
-		//URI listAuthors = model.createURI("http://www.biotea.ws/elsevier/rdf/authors_mydoi");
-	    //stm = model.createStatement(listAuthors.asResource(), RDF.type, RDF.Seq);
-		//model.addStatement(stm); //type
 	}
 	
-	public ListOfAuthorsE ( Model model, BlankNode bnode, boolean write ) {
+	public ListOfElements ( Model model, BlankNode bnode, boolean write ) {
 		super(model, RDFS_CLASS, bnode, write);
 	}
 	
-    public void addMember(Model model, Thing thing, int index) {
+	public void addMember(Model model, org.ontoware.rdfreactor.schema.rdfs.Class thing, boolean indexed) {
+		this.size++;
+    	if (indexed) {
+    		Statement stm = model.createStatement(this.asResource(), RDF.li(size), thing.asResource());
+            model.addStatement(stm);
+    	} else {
+    		Statement stm = model.createStatement(this.asResource(), RDFS.member, thing.asResource());
+            model.addStatement(stm);
+    	}    	    	
+    }
+	
+    public void addMember(Model model, org.ontoware.rdfreactor.schema.rdfs.Class thing, int index) {
+    	this.size++;
     	if (index > 0) {
     		Statement stm = model.createStatement(this.asResource(), RDF.li(index), thing.asResource());
             model.addStatement(stm);
     	} else {
     		Statement stm = model.createStatement(this.asResource(), RDFS.member, thing.asResource());
             model.addStatement(stm);
-    	}    	
+    	}    	    	
     }
 
-    public void addMembers(Model model, Collection<Thing> collection) {
-    	for (Thing thing:collection) {
+    public void addMembers(Model model, Collection<org.ontoware.rdfreactor.schema.rdfs.Class> collection) {
+    	for (org.ontoware.rdfreactor.schema.rdfs.Class thing:collection) {
     		this.addMember(model, thing, 0); 
     	}
     }
     
-    public void addMembersInOrder(Model model, Collection<Thing> collection) {
+    public void addMembersInOrder(Model model, Collection<org.ontoware.rdfreactor.schema.rdfs.Class> collection) {
     	int i = 1;
-    	for (Thing thing:collection) {
+    	for (org.ontoware.rdfreactor.schema.rdfs.Class thing:collection) {
     		this.addMember(model, thing, new Integer(i));
             i++;
     	}
+    }
+    
+    public int size() {
+    	return this.size;
     }
 }
