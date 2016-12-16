@@ -278,7 +278,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
         				String issueURI = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_ISSUE, params);
             			issue = new Thing(model, MappingConfig.getClass("bibo", "Issue"), issueURI + issueNumberInURI, true);
         			}
-        			this.addObjectProperty(model, journal, issue, "bibo", "issue");
+        			this.addHasPartIsPartOf(model, journal, issue);
         			this.addHasPartIsPartOf(model, issue, document);
         		} else {
         			this.addHasPartIsPartOf(model, journal, document);
