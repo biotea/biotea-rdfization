@@ -145,6 +145,16 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 		return file;
 	}
 	
+	/**
+	 * Adds a datatype property to the model from document to literal, the datatype property is specified by a namespace and dtpName.
+	 * It checks the mapping properties to see if the dtp can be directly mapped (dtp.isReified() false). 
+	 * If not (dtp.isReified() true), it adds an extra level to "reify" the dtp.
+	 * @param model
+	 * @param document
+	 * @param namespace
+	 * @param dtpName
+	 * @param literal
+	 */
 	protected void addDatatypeLiteral(Model model, org.ontoware.rdfreactor.schema.rdfs.Class document, String namespace, String dtpName, String literal) {
 		if ((literal != null) && (literal.length() != 0)) {
 			DatatypeProperty dtp = MappingConfig.getDatatypeProperty(namespace, dtpName);
@@ -165,6 +175,14 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 		}		
 	}
 	
+	/**
+	 * Adds an object property to the model from the RDF class "from" to the RDF class "to", the object property is specified by a namespace and an opName.
+	 * @param model
+	 * @param from
+	 * @param to
+	 * @param namespace
+	 * @param opName
+	 */
 	protected void addObjectProperty(Model model, org.ontoware.rdfreactor.schema.rdfs.Class from, org.ontoware.rdfreactor.schema.rdfs.Class to, String namespace, String opName) {
 		String str = MappingConfig.getObjectProperty(namespace, opName);
 		if (str != null) {
@@ -173,6 +191,14 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 		}
 	}
 	
+	/**
+	 * Adds an object property to the model from the RDF class "from" to URL string "to", the object property is specified by a namespace and an opName.
+	 * @param model
+	 * @param from
+	 * @param to
+	 * @param namespace
+	 * @param opName
+	 */
 	protected void addObjectProperty(Model model, org.ontoware.rdfreactor.schema.rdfs.Class from, String to, String namespace, String opName) {
 		Node uriNodeTo = model.createURI(to);
 		String str = MappingConfig.getObjectProperty(namespace, opName);
@@ -182,6 +208,14 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 		}
 	}
 	
+	/**
+	 * Adds an object property to the model from the URL string "from" to the RDF class "to", the object property is specified by a namespace and an opName.
+	 * @param model
+	 * @param from
+	 * @param to
+	 * @param namespace
+	 * @param opName
+	 */
 	protected void addObjectProperty(Model model, String from, org.ontoware.rdfreactor.schema.rdfs.Class to, String namespace, String opName) {
 		Node uriNodeFrom = model.createURI(from);
 		String str = MappingConfig.getObjectProperty(namespace, opName);
@@ -190,6 +224,21 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 			model.addStatement(uriNodeFrom.asResource(), uri, to.asResource());
 		}
 	}
+	
+	/**
+	 * Adds an object property to the model from the URL string "from" to the string URL "to", the object property is specified by URL string.
+	 * Use carefully as the URL string property could be anything!
+	 * @param model
+	 * @param from
+	 * @param to
+	 * @param property
+	 */
+	protected void addObjectProperty(Model model, Thing from, String to, String property) {
+		Node uriNodeTo = model.createURI(to);
+		URI uriProperty = new URIImpl(property, false);
+		model.addStatement(from.asResource(), uriProperty, uriNodeTo);
+	}
+	
 	/**
 	 * Gets the reference id without non-allowed chars.
 	 * @param ref

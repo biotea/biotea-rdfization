@@ -6,10 +6,8 @@ package ws.biotea.ld2rdf.rdfGeneration.pmcoa;
 import org.ontoware.rdf2go.RDF2Go;
 import org.ontoware.rdf2go.model.Model;
 import org.ontoware.rdf2go.model.Statement;
-import org.ontoware.rdf2go.model.node.Node;
 import org.ontoware.rdf2go.model.node.PlainLiteral;
 import org.ontoware.rdf2go.model.node.Resource;
-import org.ontoware.rdf2go.model.node.URI;
 import org.ontoware.rdf2go.model.node.impl.URIImpl;
 import pubmed.openAccess.jaxb.generated.*;
 import ws.biotea.ld2rdf.rdf.model.bibo.Thing;
@@ -40,12 +38,6 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 	
 	public PmcOpenAccess2MappedRDF(File paper, StringBuilder str) throws JAXBException, DTDException, ArticleTypeException, PMCIdException {
 		super(paper, str);
-	}
-	
-	private void addObjectProperty(Model model, Thing from, String to, String property) {
-		Node uriNodeTo = model.createURI(to);
-		URI uriProperty = new URIImpl(property, false);
-		model.addStatement(from.asResource(), uriProperty, uriNodeTo);
 	}
 	
 	/**
