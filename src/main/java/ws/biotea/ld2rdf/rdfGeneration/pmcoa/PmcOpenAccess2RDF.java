@@ -218,6 +218,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		myModel.setNamespace(ws.biotea.ld2rdf.util.OntologyPrefix.PROV.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.PROV.getURL());
 		myModel.setNamespace(ws.biotea.ld2rdf.util.OntologyPrefix.VOID.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.VOID.getURL());
 		myModel.setNamespace(ws.biotea.ld2rdf.util.OntologyPrefix.SIO.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.SIO.getURL());
+		myModel.setNamespace(ws.biotea.ld2rdf.util.OntologyPrefix.WIKI_DATA.getNS(), ws.biotea.ld2rdf.util.OntologyPrefix.WIKI_DATA.getURL());
 		return (myModel);
 	}
 	
