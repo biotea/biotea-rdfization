@@ -13,7 +13,7 @@ import org.ontoware.rdf2go.model.node.URI;
 import org.ontoware.rdf2go.model.node.impl.URIImpl;
 
 import pubmed.openAccess.jaxb.generated.*;
-import pubmed.openAccess.jaxb.generated.Article;
+import ws.biotea.ld2rdf.rdf.model.bibo.Document;
 import ws.biotea.ld2rdf.rdf.model.bibo.Thing;
 import ws.biotea.ld2rdf.rdf.model.bibo.extension.*;
 import ws.biotea.ld2rdf.rdfGeneration.Publication2RDF;
@@ -36,6 +36,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
 import java.util.Calendar;
+import java.util.List;
 
 public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {	
 	protected int nodeCounter;
@@ -280,7 +281,169 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 		    return person;
 		}
 	}
-	
+	/**
+	 * Gets the reference type from the publication type.
+	 * @param citation
+	 * @return
+	 */
+	private ReferenceType getReferenceTypeFromPublication(GenericCitation citation) {
+		if (citation.getPublicationType().contains("book")) {
+    		return ReferenceType.BOOK;
+    	} else if (citation.getPublicationType().contains("journal")) {
+    		return ReferenceType.JOURNAL_ARTICLE;
+    	} else if (citation.getPublicationType().contains("confproc")) {
+    		return ReferenceType.CONFERENCE_PROCS;
+    	} else if (citation.getPublicationType().contains("thesis")) {
+    		return ReferenceType.THESIS;
+    	} else if (citation.getPublicationType().contains("report")) {
+    		return ReferenceType.REPORT;
+    	} else if (citation.getPublicationType().contains("gov")) {
+    		return ReferenceType.GOV;
+    	} else if (citation.getPublicationType().contains("patent")) {
+    		return ReferenceType.PATENT;
+    	} else if (citation.getPublicationType().contains("standard")) {
+    		return ReferenceType.STANDARD;
+    	} else if (citation.getPublicationType().contains("web")) {
+    		return ReferenceType.WEBPAGE;
+    	} else if (citation.getPublicationType().contains("discussion")) {
+    		return ReferenceType.DISCUSSION;
+    	} else if (citation.getPublicationType().contains("list")) {
+    		return ReferenceType.DISCUSSION;
+    	} else if (citation.getPublicationType().contains("commun")) {
+    		return ReferenceType.COMMUN;
+    	} else if (citation.getPublicationType().contains("blog")) {
+    		return ReferenceType.BLOG;
+    	} else if (citation.getPublicationType().contains("wiki")) {
+    		return ReferenceType.WIKI;
+    	} else if (citation.getPublicationType().contains("database")) {
+    		return ReferenceType.DATABASE;
+    	} else if (citation.getPublicationType().equals("other")) {
+    		return ReferenceType.OTHER;	    		
+    	} else {
+    		return null;	    		
+    	}
+	}
+	/**
+	 * Gets the reference type from the citation type.
+	 * @param citation
+	 * @return
+	 */
+	private ReferenceType getReferenceTypeFromCitation(Citation citation) {
+		if (citation.getCitationType().contains("book")) {
+    		return ReferenceType.BOOK;
+    	} else if (citation.getCitationType().contains("journal")) {
+    		return ReferenceType.JOURNAL_ARTICLE;
+    	} else if (citation.getCitationType().contains("confproc")) {
+    		return ReferenceType.CONFERENCE_PROCS;
+    	} else if (citation.getCitationType().contains("thesis")) {
+    		return ReferenceType.THESIS;
+    	} else if (citation.getCitationType().contains("report")) {
+    		return ReferenceType.REPORT;
+    	} else if (citation.getCitationType().contains("gov")) {
+    		return ReferenceType.GOV;
+    	} else if (citation.getCitationType().contains("patent")) {
+    		return ReferenceType.PATENT;
+    	} else if (citation.getCitationType().contains("standard")) {
+    		return ReferenceType.STANDARD;
+    	} else if (citation.getCitationType().contains("web")) {
+    		return ReferenceType.WEBPAGE;
+    	} else if (citation.getCitationType().contains("discussion")) {
+    		return ReferenceType.DISCUSSION;
+    	} else if (citation.getCitationType().contains("list")) {
+    		return ReferenceType.DISCUSSION;
+    	} else if (citation.getCitationType().contains("commun")) {
+    		return ReferenceType.COMMUN;
+    	} else if (citation.getCitationType().contains("blog")) {
+    		return ReferenceType.BLOG;
+    	} else if (citation.getCitationType().contains("wiki")) {
+    		return ReferenceType.WIKI;
+    	} else if (citation.getCitationType().contains("database")) {
+    		return ReferenceType.DATABASE;
+    	} else if (citation.getCitationType().equals("other")) {
+    		return ReferenceType.OTHER;	    		
+    	} else {
+    		return null;	    		
+    	}
+	}
+	/**
+	 * Processes a Citation type and creates the bibliographic reference.
+	 * @param citation
+	 * @param ref
+	 */
+	protected void processSimpleCitation(Model model, Thing document, Citation citation, Ref ref, boolean withMetadata) {		
+		try {	
+			ReferenceType refType = getReferenceTypeFromPublication(citation); 
+			if (refType != null) {
+				processReferenceAllTypeCitation(model, document, ref, citation.getAll(), refType, Citation.class, withMetadata);
+			} else {
+				logger.warn("WARNING - reference " + this.getRefId(ref) + " could not be processed (type not recognized)");
+			}
+    	} catch (Exception e) {
+    		try {
+    			ReferenceType refType = getReferenceTypeFromCitation(citation); 
+    			if (refType != null) {
+    				processReferenceAllTypeCitation(model, document, ref, citation.getAll(), refType, Citation.class, withMetadata);
+    			} else {
+    				logger.warn("WARNING - reference " + this.getRefId(ref) + " could not be processed (type not recognized)");
+    			}
+    		} catch (Exception ex) {
+        		logger.warn("WARNING - reference " + this.getRefId(ref) + " could not be processed: " + ex.getMessage());
+    		}    		
+    	}
+	}
+	/**
+	 * Processes an NlmCitation type and creates the bibliographic reference.
+	 * @param citation
+	 * @param ref
+	 */
+	protected void processNlmCitation(Model model, Thing document, NlmCitation citation, Ref ref, boolean withMetadata) {
+		try {	
+			ReferenceType refType = getReferenceTypeFromPublication(citation); 
+			if (refType != null) {
+				processReferenceAllTypeCitation(model, document, ref, citation.getAll(), refType, NlmCitation.class, withMetadata);
+			} else {
+				logger.warn("WARNING - reference " + this.getRefId(ref) + " could not be processed (type not recognized)");
+			}	    	
+    	} catch (Exception e) {
+    		logger.warn("WARNING - reference " + this.getRefId(ref) + " could not be processed: " + e.getMessage());
+    	}
+	}
+	/**
+	 * Processes a MixedCitation type and creates the bibliographic reference.
+	 * @param citation
+	 * @param ref
+	 */
+	protected void processMixedCitation(Model model, Thing document, MixedCitation citation, Ref ref, boolean withMetadata) {
+		try {	
+			ReferenceType refType = getReferenceTypeFromPublication(citation); 
+			if (refType != null) {
+				processReferenceAllTypeCitation(model, document, ref, citation.getContent(), refType, MixedCitation.class, withMetadata);
+			} else {
+				logger.warn("WARNING - reference " + this.getRefId(ref) + " could not be processed (type not recognized)");
+			}	
+    	} catch (Exception e) {
+    		logger.warn("WARNING - reference " + this.getRefId(ref) + " could not be processed: " + e.getMessage());
+    	}
+	}
+	/**
+	 * Processes a ElementCitation type and creates the bibliographic reference.
+	 * @param citation
+	 * @param ref
+	 */
+	protected void processElementCitation(Model model, Thing document, ElementCitation citation, Ref ref, boolean withMetadata) {
+		try {	    	
+			ReferenceType refType = getReferenceTypeFromPublication(citation); 
+			if (refType != null) {
+				processReferenceAllTypeCitation(model, document, ref, citation.getInlineSupplementaryMaterialsAndRelatedArticlesAndRelatedObjects(), refType, ElementCitation.class, withMetadata);
+			} else {
+				logger.warn("WARNING - reference " + this.getRefId(ref) + " could not be processed (type not recognized)");
+			}	
+    	} catch (Exception e) {
+    		logger.warn("WARNING - reference " + this.getRefId(ref) + " could not be processed: " + e.getMessage());
+    	}
+	}
+	protected abstract void processReferenceAllTypeCitation(Model model, Thing document, Ref ref, List<Object> content, ReferenceType type, Class<?> clazz, boolean withMetadata);
+	protected abstract void processReferenceAllTypeCitation(Model model, Document document, Ref ref, List<Object> content, ReferenceType type, Class<?> clazz, boolean withMetadata);
 	/**
 	 * Processes the affiliation for authors, creates a group and add the members.
 	 * Note: not in use
