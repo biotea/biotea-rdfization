@@ -27,11 +27,6 @@
         <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Bacterial-culture_para_1"/>
         <sio:SIO_000068>
           <sio:SIO_000111 rdf:about="http://bio2rdf.org/pmc_resource:1079793_section_Methods">
-            <sio:SIO_000008>
-              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node241_1488838992045">
-                <sio:SIO_000300>Methods</sio:SIO_000300>
-              </sio:SIO_000175>
-            </sio:SIO_000008>
             <sio:SIO_000028>
               <sio:SIO_000111 rdf:about="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Phytochemical-screening-methods">
                 <sio:SIO_000028>
@@ -83,7 +78,7 @@
                 <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Phytochemical-screening-methods_para_1"/>
                 <sio:SIO_000068 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods"/>
                 <sio:SIO_000008>
-                  <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node248_1488838992073">
+                  <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node248_1490131634788">
                     <sio:SIO_000300>Phytochemical screening methods</sio:SIO_000300>
                   </sio:SIO_000175>
                 </sio:SIO_000008>
@@ -131,7 +126,7 @@
                         </sio:SIO_000008>
                         <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Authors--contributions_para_1"/>
                         <sio:SIO_000008>
-                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node253_1488838992079">
+                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node253_1490131634793">
                             <sio:SIO_000300>Authors' contributions</sio:SIO_000300>
                           </sio:SIO_000175>
                         </sio:SIO_000008>
@@ -153,7 +148,7 @@
                         <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Determination-of-minimum-inhibitory-concentration--MIC--and-minimum-bactericidal-concentration--MBC-_para_1"/>
                         <sio:SIO_000068 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods"/>
                         <sio:SIO_000008>
-                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node247_1488838992072">
+                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node247_1490131634787">
                             <sio:SIO_000300>Determination of minimum inhibitory concentration (MIC) and minimum bactericidal concentration (MBC)</sio:SIO_000300>
                           </sio:SIO_000175>
                         </sio:SIO_000008>
@@ -175,7 +170,7 @@
                         <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Bacterial-susceptibility-testing_para_1"/>
                         <sio:SIO_000068 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods"/>
                         <sio:SIO_000008>
-                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node246_1488838992069">
+                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node246_1490131634787">
                             <sio:SIO_000300>Bacterial susceptibility testing</sio:SIO_000300>
                           </sio:SIO_000175>
                         </sio:SIO_000008>
@@ -266,7 +261,7 @@
                                                             </sio:SIO_000008>
                                                             <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Results_para_1"/>
                                                             <sio:SIO_000008>
-                                                              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node249_1488838992076">
+                                                              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node249_1490131634789">
     <sio:SIO_000300>Results</sio:SIO_000300>                  </sio:SIO_000175>
                                                             </sio:SIO_000008>
                                                             <sio:SIO_000068 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
@@ -288,7 +283,7 @@
                                             </sio:SIO_000028>
                                             <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Discussion_para_5"/>
                                             <sio:SIO_000008>
-                                              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node250_1488838992077">
+                                              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node250_1490131634790">
                                                 <sio:SIO_000300
                                                 >Discussion</sio:SIO_000300>
                                               </sio:SIO_000175>
@@ -354,6 +349,10 @@
       </rdf:Description>
     </sio:SIO_000277>                                         </sio:SIO_000110>
                                                             </sio:SIO_000028>
+                                                            <sio:SIO_000008>
+                                                              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node240_1490131634779">
+    <sio:SIO_000300>Background</sio:SIO_000300>               </sio:SIO_000175>
+                                                            </sio:SIO_000008>
                                                             <sio:SIO_000068 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
                                                             <sio:SIO_000008>
                                                               <rdf:Seq rdf:about="http://bio2rdf.org/pmc_resource:1079793_listOfParagraphs_list2">
@@ -417,10 +416,6 @@
                                                             </sio:SIO_000008>
                                                             <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_7"/>
                                                             <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_4"/>
-                                                            <sio:SIO_000008>
-                                                              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node240_1488838992034">
-    <sio:SIO_000300>Background</sio:SIO_000300>               </sio:SIO_000175>
-                                                            </sio:SIO_000008>
                                                             <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_3"/>
                                                             <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_5"/>
                                                             <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Background_para_1"/>
@@ -497,13 +492,18 @@
                         <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Extraction_para_1"/>
                         <sio:SIO_000068 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods"/>
                         <sio:SIO_000008>
-                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node242_1488838992046">
+                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node242_1490131634784">
                             <sio:SIO_000300>Extraction</sio:SIO_000300>
                           </sio:SIO_000175>
                         </sio:SIO_000008>
                         <sio:SIO_000068 rdf:resource="http://bio2rdf.org/pmc:1079793"/>
                       </sio:SIO_000111>
                     </sio:SIO_000028>
+                    <sio:SIO_000008>
+                      <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node238_1490131634777">
+                        <sio:SIO_000300>Screening of crude extracts of six medicinal plants used in South-West Nigerian unorthodox medicine for anti-methicillin resistant Staphylococcus aureus activity</sio:SIO_000300>
+                      </sio:SIO_000175>
+                    </sio:SIO_000008>
                     <sio:SIO_000028>
                       <sio:SIO_000111 rdf:about="http://bio2rdf.org/pmc_resource:1079793_section_Conclusion">
                         <sio:SIO_000008>
@@ -518,7 +518,7 @@
                         </sio:SIO_000008>
                         <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Conclusion_para_1"/>
                         <sio:SIO_000008>
-                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node251_1488838992079">
+                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node251_1490131634792">
                             <sio:SIO_000300>Conclusion</sio:SIO_000300>
                           </sio:SIO_000175>
                         </sio:SIO_000008>
@@ -540,7 +540,7 @@
                         <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Ethanol-extract_para_1"/>
                         <sio:SIO_000068 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods"/>
                         <sio:SIO_000008>
-                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node244_1488838992063">
+                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node244_1490131634785">
                             <sio:SIO_000300>Ethanol extract</sio:SIO_000300>
                           </sio:SIO_000175>
                         </sio:SIO_000008>
@@ -561,7 +561,7 @@
                         </sio:SIO_000008>
                         <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Abstract_para_1"/>
                         <sio:SIO_000008>
-                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node239_1488838992032">
+                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node239_1490131634778">
                             <sio:SIO_000300>Abstract</sio:SIO_000300>
                           </sio:SIO_000175>
                         </sio:SIO_000008>
@@ -584,7 +584,7 @@
                         </sio:SIO_000008>
                         <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Competing-interests_para_1"/>
                         <sio:SIO_000008>
-                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node252_1488838992079">
+                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node252_1490131634793">
                             <sio:SIO_000300>Competing interests</sio:SIO_000300>
                           </sio:SIO_000175>
                         </sio:SIO_000008>
@@ -613,7 +613,7 @@
                         </sio:SIO_000008>
                         <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Pre-publication-history_para_1"/>
                         <sio:SIO_000008>
-                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node254_1488838992080">
+                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node254_1490131634794">
                             <sio:SIO_000300>Pre-publication history</sio:SIO_000300>
                           </sio:SIO_000175>
                         </sio:SIO_000008>
@@ -621,11 +621,6 @@
                       </sio:SIO_000111>
                     </sio:SIO_000028>
                     <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Results"/>
-                    <sio:SIO_000008>
-                      <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node238_1488838992032">
-                        <sio:SIO_000300>Screening of crude extracts of six medicinal plants used in South-West Nigerian unorthodox medicine for anti-methicillin resistant Staphylococcus aureus activity</sio:SIO_000300>
-                      </sio:SIO_000175>
-                    </sio:SIO_000008>
                     <sio:SIO_000028>
                       <sio:SIO_000111 rdf:about="http://bio2rdf.org/pmc_resource:1079793_section_Methods_Water-extract">
                         <sio:SIO_000008>
@@ -641,7 +636,7 @@
                         <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_Water-extract_para_1"/>
                         <sio:SIO_000068 rdf:resource="http://bio2rdf.org/pmc_resource:1079793_section_Methods"/>
                         <sio:SIO_000008>
-                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node243_1488838992062">
+                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node243_1490131634785">
                             <sio:SIO_000300>Water extract</sio:SIO_000300>
                           </sio:SIO_000175>
                         </sio:SIO_000008>
@@ -686,6 +681,11 @@
               </sio:SIO_000110>
             </sio:SIO_000028>
             <sio:SIO_000008>
+              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node241_1490131634784">
+                <sio:SIO_000300>Methods</sio:SIO_000300>
+              </sio:SIO_000175>
+            </sio:SIO_000008>
+            <sio:SIO_000008>
               <rdf:Seq rdf:about="http://bio2rdf.org/pmc_resource:1079793_listOfParagraphs_list3">
                 <rdf:li rdf:resource="http://bio2rdf.org/pmc_resource:1079793_paragraph_Methods_para_1"/>
               </rdf:Seq>
@@ -706,7 +706,7 @@
           </sio:SIO_000111>
         </sio:SIO_000068>
         <sio:SIO_000008>
-          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node245_1488838992065">
+          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:1079793_other_dcterms_title_node245_1490131634786">
             <sio:SIO_000300>Bacterial culture</sio:SIO_000300>
           </sio:SIO_000175>
         </sio:SIO_000008>

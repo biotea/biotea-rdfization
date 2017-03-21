@@ -25,7 +25,7 @@ public interface RDFHandler {
 	 * @throws UnsupportedEncodingException 
 	 * @throws FileNotFoundException 
 	 */
-	public File createRDFFromXML(File xml, String outRDFFileName, boolean sections, boolean references) throws FileNotFoundException, UnsupportedEncodingException, JAXBException;
+	public File createRDFFromXML(File xml, String outRDFFileName) throws FileNotFoundException, UnsupportedEncodingException, JAXBException;
 	/**
 	 * Creates an RDF file from an XML given as string.
 	 * @param xml XML string

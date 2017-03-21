@@ -13,7 +13,6 @@ import org.ontoware.rdf2go.model.node.URI;
 import org.ontoware.rdf2go.model.node.impl.URIImpl;
 
 import pubmed.openAccess.jaxb.generated.*;
-import ws.biotea.ld2rdf.rdf.model.bibo.Document;
 import ws.biotea.ld2rdf.rdf.model.bibo.Thing;
 import ws.biotea.ld2rdf.rdf.model.bibo.extension.*;
 import ws.biotea.ld2rdf.rdfGeneration.Publication2RDF;
@@ -58,11 +57,22 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 	protected int paragraphCounter = 1;
 	protected final String[] listOfsectionsParam = {"listOfSections", "1"};
 	protected final String mainListOfSectionsURI;
+	protected final String suffix;
+	protected String bioteaBase;
+	protected String bioteaDataset;
+	protected boolean sections;
+	protected boolean references;
 	
-	protected PmcOpenAccess2AbstractRDF(File paper, StringBuilder str) throws JAXBException, DTDException, ArticleTypeException, PMCIdException {
+	protected PmcOpenAccess2AbstractRDF(File paper, StringBuilder str, String suffix, String bioteaBase, String bioteaDataset, 
+			boolean sections, boolean references) throws JAXBException, DTDException, ArticleTypeException, PMCIdException {
 		this.logger = Logger.getLogger(this.getClass());
 		this.nodeCounter = 0;
 		this.elementCount = 1;
+		this.suffix = suffix;
+		this.bioteaBase = bioteaBase;
+		this.bioteaDataset = bioteaDataset;
+		this.sections = sections;
+		this.references = references;
 		
 		JAXBContext jc = JAXBContext.newInstance("pubmed.openAccess.jaxb.generated");
 		Unmarshaller unmarshaller = jc.createUnmarshaller(); 	
@@ -111,8 +121,8 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 		}
 		
 		this.logger.info("=== ARTICLE-TYPE (" + paper.getName() + " - " + pmcID + "): " + this.articleType);
-		this.global = new GlobalArticleConfig(pmcID);	
-		this.basePaper = GlobalArticleConfig.getArticleRdfUri(pmcID);
+		this.global = new GlobalArticleConfig(bioteaBase, pmcID);	
+		this.basePaper = GlobalArticleConfig.getArticleRdfUri(bioteaBase, pmcID);
 		this.mainListOfSectionsURI = Conversion.replaceParameter(global.BASE_URL_LIST_PMC, listOfsectionsParam);
 	} 
 	
@@ -158,7 +168,7 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 	 */
 	protected void addDatatypeLiteral(Model model, org.ontoware.rdfreactor.schema.rdfs.Class document, String namespace, String dtpName, String literal) {
 		if ((literal != null) && (literal.length() != 0)) {
-			DatatypeProperty dtp = MappingConfig.getDatatypeProperty(namespace, dtpName);
+			DatatypeProperty dtp = MappingConfig.getDatatypeProperty(bioteaBase, namespace, dtpName);
 			if (dtp != null) {
 				PlainLiteral descAsLiteral = model.createPlainLiteral(literal);
 				if (dtp.isReified()) {
@@ -185,7 +195,7 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 	 * @param opName
 	 */
 	protected void addObjectProperty(Model model, org.ontoware.rdfreactor.schema.rdfs.Class from, org.ontoware.rdfreactor.schema.rdfs.Class to, String namespace, String opName) {
-		String str = MappingConfig.getObjectProperty(namespace, opName);
+		String str = MappingConfig.getObjectProperty(this.bioteaBase, namespace, opName);
 		if (str != null) {
 			URI uri = new URIImpl(str, false);
 			model.addStatement(from.asResource(), uri, to.asResource());
@@ -202,7 +212,7 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 	 */
 	protected void addObjectProperty(Model model, org.ontoware.rdfreactor.schema.rdfs.Class from, String to, String namespace, String opName) {
 		Node uriNodeTo = model.createURI(to);
-		String str = MappingConfig.getObjectProperty(namespace, opName);
+		String str = MappingConfig.getObjectProperty(this.bioteaBase, namespace, opName);
 		if (str != null) {
 			URI uri = new URIImpl(str, false);
 			model.addStatement(from.asResource(), uri, uriNodeTo);
@@ -219,7 +229,7 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 	 */
 	protected void addObjectProperty(Model model, String from, org.ontoware.rdfreactor.schema.rdfs.Class to, String namespace, String opName) {
 		Node uriNodeFrom = model.createURI(from);
-		String str = MappingConfig.getObjectProperty(namespace, opName);
+		String str = MappingConfig.getObjectProperty(this.bioteaBase, namespace, opName);
 		if (str != null) {
 			URI uri = new URIImpl(str, false);
 			model.addStatement(uriNodeFrom.asResource(), uri, to.asResource());
@@ -268,7 +278,7 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 		String idPerson = givenNames.replaceAll(NON_INITIAL, "") + surname;
 		idPerson = idPerson.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
 		if (asThing) {
-			Thing person = new Thing(model, MappingConfig.getClass("foaf", "Person"), personBaseURL + idPerson, true);
+			Thing person = new Thing(model, MappingConfig.getClass(this.bioteaBase, "foaf", "Person"), personBaseURL + idPerson, true);
 			this.addDatatypeLiteral(model, person, "foaf", "name", givenNames + " " + surname);
 			this.addDatatypeLiteral(model, person, "foaf", "givenName", givenNames);
 			this.addDatatypeLiteral(model, person, "foaf", "familyName", surname);
@@ -443,7 +453,6 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
     	}
 	}
 	protected abstract void processReferenceAllTypeCitation(Model model, Thing document, Ref ref, List<Object> content, ReferenceType type, Class<?> clazz, boolean withMetadata);
-	protected abstract void processReferenceAllTypeCitation(Model model, Document document, Ref ref, List<Object> content, ReferenceType type, Class<?> clazz, boolean withMetadata);
 	/**
 	 * Processes the affiliation for authors, creates a group and add the members.
 	 * Note: not in use

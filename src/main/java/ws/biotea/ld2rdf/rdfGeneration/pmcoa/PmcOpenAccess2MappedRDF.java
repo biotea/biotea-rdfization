@@ -10,7 +10,6 @@ import org.ontoware.rdf2go.model.node.PlainLiteral;
 import org.ontoware.rdf2go.model.node.Resource;
 import org.ontoware.rdf2go.model.node.impl.URIImpl;
 import pubmed.openAccess.jaxb.generated.*;
-import ws.biotea.ld2rdf.rdf.model.bibo.Document;
 import ws.biotea.ld2rdf.rdf.model.bibo.Thing;
 import ws.biotea.ld2rdf.rdf.model.bibo.extension.ListOfElements;
 import ws.biotea.ld2rdf.rdfGeneration.RDFHandler;
@@ -37,8 +36,9 @@ import java.util.List;
 public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 	private ListOfElements mainListOfSections;	
 	
-	public PmcOpenAccess2MappedRDF(File paper, StringBuilder str) throws JAXBException, DTDException, ArticleTypeException, PMCIdException {
-		super(paper, str);
+	public PmcOpenAccess2MappedRDF(File paper, StringBuilder str, String suffix, String bioteaBase, String bioteaDataset, 
+			boolean sections, boolean references) throws JAXBException, DTDException, ArticleTypeException, PMCIdException {
+		super(paper, str, suffix, bioteaBase, bioteaDataset, sections, references);
 	}
 	
 	/**
@@ -50,9 +50,8 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 	 * @throws UnsupportedEncodingException 
 	 * @throws FileNotFoundException 
 	 */
-	public File paper2rdf(String outputDir, File paper, boolean sections, boolean references) throws JAXBException, FileNotFoundException, UnsupportedEncodingException {	
+	public File paper2rdf(String outputDir, File paper) throws JAXBException, FileNotFoundException, UnsupportedEncodingException {	
 		logger.info("=== INIT Rdfization of " + paper.getName());		
-				
 		if (pmcID == null) {
 			throw new NullPointerException("No pmc id was found, file cannot be processed");
 		}		
@@ -65,10 +64,10 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		boolean fatalError = false;
 		//create document
 		try {
-			document = new Thing(model, MappingConfig.getClass("bibo", "Document"), basePaper, true);
+			document = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "Document"), basePaper, true);
 			String type = this.articleType.replace('-', '_').toUpperCase();
 			if (ArticleType.valueOf(type).getBiboType() != null) {
-				document = new Thing(model, MappingConfig.getClass("bibo", ArticleType.valueOf(type).getBiboType()), basePaper, true);
+				document = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", ArticleType.valueOf(type).getBiboType()), basePaper, true);
 			}
 			this.addDatatypeLiteral(model, document, "dcterms", "description", this.articleType);
 			
@@ -86,27 +85,27 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		} finally {
 			//close and write model
 			if (fatalError) {
-				//outputFile = serializeAndCloseModel(model, outputDir + "/" + PREFIX + pmcID + ".rdf");		
+				//outputFile = serializeAndCloseModel(model, outputDir + "/" + PREFIX + pmcID + suffix + ".rdf");		
 				logger.info("=== END of rdfization with a fatal error " + pmcID + " (pubmedID: " + pubmedID + "), (doi: " + doi + ")");
 			} else {
-				outputFile = serializeAndCloseModel(model, outputDir + "/" + PREFIX + pmcID + ".rdf");		
+				outputFile = serializeAndCloseModel(model, outputDir + "/" + PREFIX + pmcID + "_" + this.suffix + ".rdf");		
 				logger.info("=== END of rdfization OK " + pmcID + " (pubmedID: " + pubmedID + "), (doi: " + doi + ")");
 			}
 			
 		}
 		
 		//process sections		
-		if (sections) {
+		if (this.sections) {
 			Thing documentSections;
 			Model modelSections;
 			File outputFileSections = null;
 			boolean fatalErrorSections = false;
 			modelSections = createAndOpenModel();
 			try {
-				documentSections = new Thing(modelSections, MappingConfig.getClass("bibo", "Document"), basePaper, true);
+				documentSections = new Thing(modelSections, MappingConfig.getClass(this.bioteaBase, "bibo", "Document"), basePaper, true);
 				String type = this.articleType.replace('-', '_').toUpperCase();
 				if (ArticleType.valueOf(type).getBiboType() != null) {
-					documentSections = new Thing(modelSections, MappingConfig.getClass("bibo", ArticleType.valueOf(type).getBiboType()), basePaper, true);
+					documentSections = new Thing(modelSections, MappingConfig.getClass(this.bioteaBase, "bibo", ArticleType.valueOf(type).getBiboType()), basePaper, true);
 				}
 				this.addDatatypeLiteral(modelSections, documentSections, "dcterms", "title", this.articleTitle);
 
@@ -120,7 +119,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 				//process not-in-section-paragraphs
 				Iterator<Object> itrPara = article.getBody().getAddressesAndAlternativesAndArraies().iterator();
 				if (itrPara.hasNext()) {
-					Thing secDoco = new Thing(modelSections, MappingConfig.getClass("doco", "Section"), global.BASE_URL_SECTION + "undefined-section", true);					
+					Thing secDoco = new Thing(modelSections, MappingConfig.getClass(this.bioteaBase, "doco", "Section"), global.BASE_URL_SECTION + "undefined-section", true);					
 					if (processElementsInSection(modelSections, documentSections, "undefined-section", secDoco, itrPara)) {
 						this.mainListOfSections = this.linkSection(modelSections, documentSections, secDoco, this.mainListOfSections, this.mainListOfSectionsURI);
 					}
@@ -133,7 +132,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 				if (fatalError || fatalErrorSections) {
 					logger.info("=== END of sections rdfization with a fatal error " + pmcID + " (pubmedID: " + pubmedID + "), (doi: " + doi + ")");
 				} else {
-					outputFileSections = serializeAndCloseModel(modelSections, outputDir + "/" + PREFIX + pmcID + "_sections.rdf");		
+					outputFileSections = serializeAndCloseModel(modelSections, outputDir + "/" + PREFIX + pmcID + "_" + this.suffix + "_sections.rdf");		
 					logger.info("=== END of sections rdfization OK " + pmcID + " (pubmedID: " + pubmedID + "), (doi: " + doi + ")");
 				}
 			}
@@ -149,7 +148,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 	protected Model createAndOpenModel() {
 		Model myModel = RDF2Go.getModelFactory().createModel();
 		myModel.open();	
-		for (Namespace namespace: MappingConfig.getAllNamespaces()) {
+		for (Namespace namespace: MappingConfig.getAllNamespaces(this.bioteaBase)) {
 			myModel.setNamespace(namespace.getNamespace(), namespace.getUrl());
 		}
 		return (myModel);
@@ -161,16 +160,28 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 	 */
 	private void processBasic(Model model, Thing document, String paper) {
 		String mainId = "";
+		String articleId = pmcID;
 		if (ResourceConfig.getIdTag().equals("pmc")) {
+			articleId = pmcID;
 			mainId = "pmc:" + this.pmcID;
 		} else if (ResourceConfig.getIdTag().equals("pmid")) {
+			articleId = pubmedID;
 			mainId = "pmid:" + this.pubmedID;
 		}
+		
+		String[] sameAsLinks = ResourceConfig.getConfigSameAs(this.suffix);
+		if (sameAsLinks != null) {
+			for (String sameAsLink:sameAsLinks) {
+				String[] params = {articleId};
+				document.addSameAs(model, Conversion.replaceParameter(sameAsLink, params));
+			}
+		}
+		
 		this.addDatatypeLiteral(model, document, "dcterms", "identifier", mainId);
-		if (MappingConfig.getIdentifier() != null) {
+		if (MappingConfig.getIdentifier(this.bioteaBase) != null) {
 			//main identifier also goes directly to model
 			PlainLiteral idAsLiteral = model.createPlainLiteral(mainId);
-			Statement stm = model.createStatement(document.asResource(), new URIImpl(MappingConfig.getIdentifier()), idAsLiteral);
+			Statement stm = model.createStatement(document.asResource(), new URIImpl(MappingConfig.getIdentifier(this.bioteaBase)), idAsLiteral);
 		    model.addStatement(stm);		    
 		}
 		
@@ -180,7 +191,8 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		this.addDatatypeLiteral(model, document, "prov", "generatedAtTime", now);
 		this.addObjectProperty(model, document, GlobalArticleConfig.RDF4PMC_AGENT, "dcterms", "creator");
 		this.addObjectProperty(model, document, GlobalArticleConfig.RDF4PMC_AGENT, "prov", "wasAttributedTo");
-		this.addObjectProperty(model, document, GlobalArticleConfig.BIOTEA_PMC_DATASET, ws.biotea.ld2rdf.util.OntologyPrefix.SIO.getURL() + "SIO_001278");
+		this.addObjectProperty(model, document, this.bioteaDataset, 
+			ws.biotea.ld2rdf.util.OntologyPrefix.SIO.getURL() + "SIO_001278");
 		Resource resPMC = new URIImpl(GlobalArticleConfig.pmcURI + pmcID, true);	
 		document.addSeeAlso(resPMC);	
 		
@@ -195,7 +207,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 			    document.addSameAs(model, ResourceConfig.BIO2RDF_PUBMED + pubmedID);
 		    }		    
 		    if (!global.getUriStyle().equals(ResourceConfig.bio2rdf)) {
-		    	document.addSameAs(model, GlobalArticleConfig.PUBMED_DOCUMENT + pubmedID);
+		    	document.addSameAs(model, this.global.PUBMED_DOCUMENT + pubmedID);
 		    }		    		
 		    //relations between PMC-RDF and PubMed
 		    Resource resPubMed = new URIImpl(GlobalArticleConfig.pubMedURI + pubmedID, true);	
@@ -208,7 +220,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		    //relations between PMC-RDF and DOI
 		    document.addSameAs(model, GlobalArticleConfig.doiURI + doi);
 		    if (!global.getUriStyle().equals(ResourceConfig.bio2rdf)) {
-		    	document.addSameAs(model, GlobalArticleConfig.DOI_DOCUMENT + doi);
+		    	document.addSameAs(model, this.global.DOI_DOCUMENT + doi);
 		    }
 		}
 		
@@ -244,7 +256,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 			journalTitleInURI = journalISSN.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
 			//journal creation
 			if ((journalISSN != null)  && (journalISSN.length() != 0)) {//journal by issn
-				journal = new Thing(model, MappingConfig.getClass("bibo", "Journal"), GlobalArticleConfig.BASE_URL_JOURNAL_ISSN + journalTitleInURI, true);				
+				journal = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "Journal"), this.global.BASE_URL_JOURNAL_ISSN + journalTitleInURI, true);				
 				this.addDatatypeLiteral(model, journal, "dcterms", "title", journalTitle);
 				for (Issn issn: article.getFront().getJournalMeta().getIssns()) {
 					this.addDatatypeLiteral(model, journal, "bibo", "issn", issn.getContent().get(0).toString());
@@ -253,7 +265,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 				journal.addSeeAlso(resISSN); //link to NLM catalog
 			} else if ((journalTitle != null) && (journalTitle.length() != 0)) { //journal by name
 				journalTitleInURI = journalTitle.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
-				journal = new Thing(model, MappingConfig.getClass("bibo", "Journal"), GlobalArticleConfig.BASE_URL_JOURNAL_NAME + journalTitleInURI, true);
+				journal = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "Journal"), this.global.BASE_URL_JOURNAL_NAME + journalTitleInURI, true);
 				this.addDatatypeLiteral(model, journal, "dcterms", "title", journalTitle);
 			} else {// no journal
 				logger.error(paper + ": Journal title or ISSN both empty.");
@@ -271,13 +283,13 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
     			if ((issueNumberInURI != null)  && (issueNumberInURI.length() != 0)) {    			        			
         			if ((journalISSN != null)  && (journalISSN.length() != 0)) {//journal by issn then issn:<id>/<issue_id>
         				String[] params = {"issn", journalTitleInURI};
-        				String issueURI = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_ISSUE, params);
-            			issue = new Thing(model, MappingConfig.getClass("bibo", "Issue"), issueURI + issueNumberInURI, true);    		
+        				String issueURI = Conversion.replaceParameter(this.global.BASE_URL_ISSUE, params);
+            			issue = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "Issue"), issueURI + issueNumberInURI, true);    		
             			this.addDatatypeLiteral(model, issue, "bibo", "issue", issueNumber);
             		} else { //name:<journal_name>/<issue_id>
             			String[] params = {"name", journalTitleInURI};
-        				String issueURI = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_ISSUE, params);
-            			issue = new Thing(model, MappingConfig.getClass("bibo", "Issue"), issueURI + issueNumberInURI, true);
+        				String issueURI = Conversion.replaceParameter(this.global.BASE_URL_ISSUE, params);
+            			issue = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "Issue"), issueURI + issueNumberInURI, true);
         			}
         			this.addHasPartIsPartOf(model, journal, issue);
         			this.addHasPartIsPartOf(model, issue, document);
@@ -303,12 +315,12 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 			} catch (Exception eId) {}
 			Thing publisher;
 			if (publisherPMCId != null) {//we create the publisher with the id
-				publisher = new Thing(model, MappingConfig.getClass("foaf", "Organization"), GlobalArticleConfig.BASE_URL_PUBLISHER_ID + publisherPMCId, true );
+				publisher = new Thing(model, MappingConfig.getClass(this.bioteaBase, "foaf", "Organization"), this.global.BASE_URL_PUBLISHER_ID + publisherPMCId, true );
 				this.addDatatypeLiteral(model, publisher, "foaf", "name", publisherName);
 				this.addDatatypeLiteral(model, publisher, "dcterms", "identifier", publisherPMCId);
 			} else {//we create the publisher with the name
-				publisher = new Thing(model, MappingConfig.getClass("foaf", "Organization"), 
-					GlobalArticleConfig.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true );
+				publisher = new Thing(model, MappingConfig.getClass(this.bioteaBase, "foaf", "Organization"), 
+						this.global.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true );
 				this.addDatatypeLiteral(model, publisher, "foaf", "name", publisherName);							
 			}
 			this.addObjectProperty(model, journal, publisher, "dcterms", "publisher");
@@ -409,7 +421,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 										Collab collab = (Collab)obj;
 										String orgName = collab.getContent().get(0).toString();
 										String idOrg = orgName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");										
-										Thing org = new Thing(model, MappingConfig.getClass("foaf", "Organization"), 
+										Thing org = new Thing(model, MappingConfig.getClass(this.bioteaBase, "foaf", "Organization"), 
 											global.BASE_URL_ORGANIZATION_PMC + idOrg, true);
 										listOfAuthors.add(org);
 									}
@@ -425,7 +437,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 										Collab collab = (Collab)obj;
 										String orgName = collab.getContent().get(0).toString();
 										String idOrg = orgName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
-										org = new Thing(model, MappingConfig.getClass("foaf", "Organization"), 
+										org = new Thing(model, MappingConfig.getClass(this.bioteaBase, "foaf", "Organization"), 
 											global.BASE_URL_ORGANIZATION_PMC + idOrg, true ); 
 										listOfAuthors.add(org);
 									}
@@ -523,39 +535,39 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		Thing docReference = null;		
 
 		//create document
-		docReference = new Thing(model, MappingConfig.getClass("bibo", "Document"), url, true);
+		docReference = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "Document"), url, true);
 		if (type == ReferenceType.JOURNAL_ARTICLE) {
-			docReference = new Thing(model, MappingConfig.getClass("bibo", "AcademicArticle"), url, true);
+			docReference = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "AcademicArticle"), url, true);
 		} else if (type == ReferenceType.BOOK) {
-			docReference = new Thing(model, MappingConfig.getClass("bibo", "Book"), url, true);
+			docReference = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "Book"), url, true);
 		} else if (type == ReferenceType.BOOK_SECTION) {
-			docReference = new Thing(model, MappingConfig.getClass("bibo", "BookSection"), url, true);
+			docReference = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "BookSection"), url, true);
 		} else if (type == ReferenceType.REPORT) {
-			docReference = new Thing(model, MappingConfig.getClass("bibo", "Report"), url, true);	
+			docReference = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "Report"), url, true);	
 		} else if (type == ReferenceType.THESIS) {
-			docReference = new Thing(model, MappingConfig.getClass("bibo", "Thesis"), url, true);
+			docReference = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "Thesis"), url, true);
 		} else if (type == ReferenceType.CONFERENCE_PROCS) {
-			docReference = new Thing(model, MappingConfig.getClass("bibo", "Proceedings"), url, true);
+			docReference = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "Proceedings"), url, true);
 		} else if (type == ReferenceType.CONFERENCE_PAPER) {
-			docReference = new Thing(model, MappingConfig.getClass("bibo", "AcademicArticle"), url, true);
+			docReference = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "AcademicArticle"), url, true);
 		} else if (type == ReferenceType.PATENT) {
-			docReference = new Thing(model, MappingConfig.getClass("bibo", "Patent"), url, true);
+			docReference = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "Patent"), url, true);
 		} else if (type == ReferenceType.DATABASE) {
-			docReference = new Thing(model, MappingConfig.getClass("bibo", "WebPage"), url, true);
+			docReference = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "WebPage"), url, true);
 		} else if (type == ReferenceType.WEBPAGE) {
-			docReference = new Thing(model, MappingConfig.getClass("bibo", "WebPage"), url, true);	
+			docReference = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "WebPage"), url, true);	
 		} else if (type == ReferenceType.COMMUN) {
-			docReference = new Thing(model, MappingConfig.getClass("bibo", "PersonalCommunicationDocument"), url, true);
+			docReference = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "PersonalCommunicationDocument"), url, true);
 		} else if (type == ReferenceType.DISCUSSION) {
-			docReference = new Thing(model, MappingConfig.getClass("bibo", "WebPage"), url, true);	
+			docReference = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "WebPage"), url, true);	
 		} else if (type == ReferenceType.BLOG) {
-			docReference = new Thing(model, MappingConfig.getClass("bibo", "WebPage"), url, true);
+			docReference = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "WebPage"), url, true);
 		} else if (type == ReferenceType.WIKI) {
-			docReference = new Thing(model, MappingConfig.getClass("bibo", "WebPage"), url, true);
+			docReference = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "WebPage"), url, true);
 		} else if (type == ReferenceType.SOFTWARE) {
-			docReference = new Thing(model, MappingConfig.getClass("bibo", "Standard"), url, true);
+			docReference = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "Standard"), url, true);
 		} else if (type == ReferenceType.STANDARD) {
-			docReference = new Thing(model, MappingConfig.getClass("bibo", "Standard"), url, true);
+			docReference = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "Standard"), url, true);
 		}			
 		
 		if (pubmed != null) {			
@@ -579,7 +591,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 					//docReference.addSeeAlso(new URIImpl(global.doiURI + doiReference)); //seeAlso for webpages
 					docReference.addSameAs(model, GlobalArticleConfig.doiURI + doiReference);
 					if (!global.getUriStyle().equals(ResourceConfig.bio2rdf)) {
-						docReference.addSameAs(model, GlobalArticleConfig.DOI_DOCUMENT + doiReference); //same as from pubmed to doi entity
+						docReference.addSameAs(model, this.global.DOI_DOCUMENT + doiReference); //same as from pubmed to doi entity
 					}
 				} catch (Exception e) {	}
 			}	
@@ -591,7 +603,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 			//docReference.addSeeAlso(new URIImpl(global.doiURI + doiReference)); //seeAlso for webpages
 			docReference.addSameAs(model, GlobalArticleConfig.doiURI + doiReference);
 			if (!global.getUriStyle().equals(ResourceConfig.bio2rdf)) {
-				docReference.addSameAs(model, GlobalArticleConfig.DOI_DOCUMENT + doiReference); //same as from pubmed to doi entity
+				docReference.addSameAs(model, this.global.DOI_DOCUMENT + doiReference); //same as from pubmed to doi entity
 			}
 		}
 		
@@ -613,9 +625,6 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 	    	}	    	    				    	
 	    }
 		return (listOfAuthorsRef);
-	}
-	protected void processReferenceAllTypeCitation(Model model, Document document, Ref ref, List<Object> content, ReferenceType type, Class<?> clazz, boolean withMetadata) {
-		
 	}
 	/**
 	 * Creates the reference to a journal article, its journal, and list of authors.
@@ -648,19 +657,19 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		String proceedingsBaseURL = null;
 		String conferenceBaseURL = null;
 		if (pubmedReference != null) {
-			publicationLink = GlobalArticleConfig.PUBMED_DOCUMENT + pubmedReference;
+			publicationLink = this.global.PUBMED_DOCUMENT + pubmedReference;
 			String[] params = {pubmedReference};
-			personBaseURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_PERSON_PUBMED, params);
-			organizationBaseURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_ORGANIZATION_PUBMED, params);
-			proceedingsBaseURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_PROCEEDINGS_PUBMED, params);
-			conferenceBaseURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_CONFERENCE_PUBMED, params);
+			personBaseURL = Conversion.replaceParameter(this.global.BASE_URL_PERSON_PUBMED, params);
+			organizationBaseURL = Conversion.replaceParameter(this.global.BASE_URL_ORGANIZATION_PUBMED, params);
+			proceedingsBaseURL = Conversion.replaceParameter(this.global.BASE_URL_PROCEEDINGS_PUBMED, params);
+			conferenceBaseURL = Conversion.replaceParameter(this.global.BASE_URL_CONFERENCE_PUBMED, params);
 		} else if (doiReference != null) {
-			publicationLink = GlobalArticleConfig.DOI_DOCUMENT + doiReference;
+			publicationLink = this.global.DOI_DOCUMENT + doiReference;
 			String[] params = {doiReference};
-			personBaseURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_PERSON_DOI, params);
-			organizationBaseURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_ORGANIZATION_DOI, params);
-			proceedingsBaseURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_PROCEEDINGS_DOI, params);
-			conferenceBaseURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_CONFERENCE_DOI, params);
+			personBaseURL = Conversion.replaceParameter(this.global.BASE_URL_PERSON_DOI, params);
+			organizationBaseURL = Conversion.replaceParameter(this.global.BASE_URL_ORGANIZATION_DOI, params);
+			proceedingsBaseURL = Conversion.replaceParameter(this.global.BASE_URL_PROCEEDINGS_DOI, params);
+			conferenceBaseURL = Conversion.replaceParameter(this.global.BASE_URL_CONFERENCE_DOI, params);
 		} else {
 			publicationLink = global.BASE_URL_REF + this.getRefId(ref);
 			personBaseURL = global.BASE_URL_PERSON_PMC;
@@ -810,7 +819,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 				Collab collab = (Collab)obj;
 				String orgName = collab.getContent().get(0).toString();
 				String idOrg = orgName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
-				Thing org = new Thing(model, MappingConfig.getClass("foaf", "Organization"), organizationBaseURL + idOrg, true );
+				Thing org = new Thing(model, MappingConfig.getClass(this.bioteaBase, "foaf", "Organization"), organizationBaseURL + idOrg, true );
 				listOfAuthorsRef.add(org);
 			} else if (obj instanceof AccessDate) { //nlm-citation
 				try {
@@ -848,15 +857,15 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
         		//Journal
         		if (sourceId != null) {
         			String journalTitleInURI = sourceId.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
-        			Thing journal = new Thing(model, MappingConfig.getClass("bibo", "Journal"), 
-        					GlobalArticleConfig.BASE_URL_JOURNAL_NAME + journalTitleInURI, true); 
+        			Thing journal = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "Journal"), 
+        					this.global.BASE_URL_JOURNAL_NAME + journalTitleInURI, true); 
         			this.addDatatypeLiteral(model, journal, "dcterms", "title", sourceTitle);
         		    //Journal, issue-date, volume, pages, and document        		    
         			this.addDatatypeLiteral(model, docReference, "dcterms", "title", articleTitle);
     		    	this.addDatatypeLiteral(model, docReference, "bibo", "volume", volume);
         		    if (publisherName != null) {
-        		    	Thing publisherOrg = new Thing(model, MappingConfig.getClass("foaf", "Organization"), 
-    		    			GlobalArticleConfig.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true );
+        		    	Thing publisherOrg = new Thing(model, MappingConfig.getClass(this.bioteaBase, "foaf", "Organization"), 
+        		    			this.global.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true );
         		    	this.addDatatypeLiteral(model, publisherOrg, "foaf", "name", publisherName);
         		    	this.addObjectProperty(model, journal, publisherOrg, "dcterms", "publisher");
         		    	this.addObjectProperty(model, docReference, publisherOrg, "dcterms", "publisher");
@@ -865,8 +874,8 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
         		    if (journal != null) {
         		    	if (issueNumber != null) { //name:<journal_name>/<issue_id>
         		    		String[] params = {"name", journalTitleInURI};
-            				String issueURI = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_ISSUE, params);
-                    		Thing issue = new Thing(model, MappingConfig.getClass("bibo", "Issue"), 
+            				String issueURI = Conversion.replaceParameter(this.global.BASE_URL_ISSUE, params);
+                    		Thing issue = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "Issue"), 
                 				issueURI + issueNumber.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true);
                     		this.addHasPartIsPartOf(model, issue, docReference);
                     		this.addHasPartIsPartOf(model, journal, issue);
@@ -895,13 +904,13 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
     			this.addDatatypeLiteral(model, docReference, "dcterms", "title", sectionTitle);
 		    	docReference.addComment("Proceedings title: " + sourceTitle); 
     		    //proceedings
-    		    Thing proc = new Thing(model, MappingConfig.getClass("bibo", "Proceedings"), proceedingsBaseURL + this.getRefId(ref), true); 
+    		    Thing proc = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "Proceedings"), proceedingsBaseURL + this.getRefId(ref), true); 
     		    this.addDatatypeLiteral(model, proc, "dcterms", "title", sourceTitle);
 		    	this.addDatatypeLiteral(model, proc, "bibo", "numPges", numPages);
 		    	this.addDatatypeLiteral(model, proc, "bibo", "edition", edition);
     		    if (publisherName != null) {
-    		    	Thing publisherOrg = new Thing(model, MappingConfig.getClass("foaf", "Organization"), 
-		    			GlobalArticleConfig.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true );
+    		    	Thing publisherOrg = new Thing(model, MappingConfig.getClass(this.bioteaBase, "foaf", "Organization"), 
+    		    			this.global.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true );
     		    	this.addDatatypeLiteral(model, publisherOrg, "foaf", "name", publisherName);
         		    this.addObjectProperty(model, proc, publisherOrg, "dcterms", "publisher");
     		    }
@@ -916,13 +925,13 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
     		    String[] params = {GlobalArticleConfig.listOfEditorsAndTranslators, ""};		    		           		
         		if (pubmedReference != null) {
     				params[1] = pubmedReference;
-    				refListURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_PUBMED, params);    				
+    				refListURL = Conversion.replaceParameter(this.global.BASE_URL_LIST_PUBMED, params);    				
         		} else if (doiReference != null) {
         			params[1] = doiReference;
-    				refListURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_DOI, params);    				
+    				refListURL = Conversion.replaceParameter(this.global.BASE_URL_LIST_DOI, params);    				
         		} else {
         			params[1] = this.getRefId(ref);
-    				refListURL = Conversion.replaceParameter(global.BASE_URL_REF_LIST, params);    				
+    				refListURL = Conversion.replaceParameter(this.global.BASE_URL_REF_LIST, params);    				
         		}
         		if ((listOfAuthorsRef != null) && (listOfAuthorsRef.size() != 0)) {  
         			for(org.ontoware.rdfreactor.schema.rdfs.Class agent: listOfAuthorsRef) {
@@ -943,7 +952,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
     		    String confNameId = confName != null ? confName.replaceAll(" ", "") : "";
     		    String confLocId = confLoc != null ? confLoc.replaceAll(" ", "") : "";
     		    String confId = (confNameId + "_" + confLocId + "_" + confYear).replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
-    		    Thing conf = new Thing(model, MappingConfig.getClass("bibo", "Conference"), conferenceBaseURL + confId, true); 
+    		    Thing conf = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "Conference"), conferenceBaseURL + confId, true); 
 		    	this.addDatatypeLiteral(model, conf, "foaf", "name", confName);    		    	
 		    	this.addDatatypeLiteral(model, conf, "dcterms", "created", confDate);
     		    this.addObjectProperty(model, docReference, conf, "bibo", "presentedAt");
@@ -954,7 +963,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
     		    String confNameId = confName != null ? confName.replaceAll(" ", "") : "";
     		    String confLocId = confLoc != null ? confLoc.replaceAll(" ", "") : "";
     		    String confId = (confNameId + "_" + confLocId + "_" + confYear).replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
-    		    Thing conf = new Thing(model, MappingConfig.getClass("bibo", "Conference"), conferenceBaseURL + confId, true); 
+    		    Thing conf = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "Conference"), conferenceBaseURL + confId, true); 
 		    	this.addDatatypeLiteral(model, conf, "foaf", "name", confName);
 		    	this.addDatatypeLiteral(model, conf, "dcterms", "created", confDate);
     		    docReference.addbiboProducedin(conf);    			
@@ -991,8 +1000,8 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
     		this.addDatatypeLiteral(model, docReference, "dcterms", "title", transTitle);
     		this.addDatatypeLiteral(model, docReference, "bibo", "edition", edition);
 		    if (publisherName != null) {
-		    	Thing publisherOrg = new Thing(model, MappingConfig.getClass("foaf", "Organization"),
-    				GlobalArticleConfig.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true );
+		    	Thing publisherOrg = new Thing(model, MappingConfig.getClass(this.bioteaBase, "foaf", "Organization"),
+		    			this.global.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true );
 		    	this.addDatatypeLiteral(model, publisherOrg, "foaf", "name", publisherName);
 		    	this.addObjectProperty(model, docReference, publisherOrg, "dcterms", "publisher");
 		    }
@@ -1019,13 +1028,13 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		    String[] params3 = {GlobalArticleConfig.listOfAuthors, ""};
     		if (pubmedReference != null) {
 				params3[1] = pubmedReference;
-				refAuthorsURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_PUBMED, params3);
+				refAuthorsURL = Conversion.replaceParameter(this.global.BASE_URL_LIST_PUBMED, params3);
     		} else if (doiReference != null) {
     			params3[1] = doiReference;
-				refAuthorsURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_DOI, params3);
+				refAuthorsURL = Conversion.replaceParameter(this.global.BASE_URL_LIST_DOI, params3);
     		} else {
     			params3[1] = this.getRefId(ref);
-				refAuthorsURL = Conversion.replaceParameter(global.BASE_URL_REF_LIST, params3);
+				refAuthorsURL = Conversion.replaceParameter(this.global.BASE_URL_REF_LIST, params3);
     		}
         	if ((listOfAuthorsRef != null) && (listOfAuthorsRef.size() != 0)) {
         		for(org.ontoware.rdfreactor.schema.rdfs.Class agent: listOfAuthorsRef) {
@@ -1234,7 +1243,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		}
 	}
 	private void processFigureTable(Model model, String link, Thing elem, String elemURI, Thing doc, String docURI, String type) {
-		Thing imageTable = new Thing(model, MappingConfig.getClass("doco", type), link, true);
+		Thing imageTable = new Thing(model, MappingConfig.getClass(this.bioteaBase, "doco", type), link, true);
 		this.addObjectProperty(model, elem, link, "dcterms", "references");
 		this.addObjectProperty(model, doc, link, "dcterms", "references");
 		this.addObjectProperty(model, imageTable, elemURI, "dcterms", "isReferencedBy");
@@ -1307,7 +1316,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		String title = "Abstract";
 		//add section
 		String secDocoURI = global.BASE_URL_SECTION + title;
-		Thing secDoco = new Thing(model, MappingConfig.getClass("doco", "Section"), secDocoURI, true);
+		Thing secDoco = new Thing(model, MappingConfig.getClass(this.bioteaBase, "doco", "Section"), secDocoURI, true);
 		this.mainListOfSections = this.linkSection(model, document, secDoco, this.mainListOfSections, this.mainListOfSectionsURI);
 		//title
 		this.addDatatypeLiteral(model, secDoco, "dcterms", "title", title);
@@ -1337,7 +1346,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		//paragraph		
 		String[] paramsTitle = {title};
 		String paragraphURI = Conversion.replaceParameter(global.BASE_URL_PARAGRAPH, paramsTitle) + "1";
-		Thing paragraph = new Thing(model, MappingConfig.getClass("doco", "Paragraph"), paragraphURI, true);
+		Thing paragraph = new Thing(model, MappingConfig.getClass(this.bioteaBase, "doco", "Paragraph"), paragraphURI, true);
 		
 		String[] params = {"listOfParagraphs", "" + this.paragraphCounter};
 		secDoco.setListOfParagraphs(this.linkParagraph(model, secDoco, paragraph, text, secDoco.getListOfParagraphs(), Conversion.replaceParameter(global.BASE_URL_LIST_PMC, params)));		
@@ -1419,9 +1428,9 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		//add section
 		Thing secDoco;
 		if (parent == null) {
-			secDoco = new Thing(model, MappingConfig.getClass("doco", "Section"), global.BASE_URL_SECTION + titleInURL, true);
+			secDoco = new Thing(model, MappingConfig.getClass(this.bioteaBase, "doco", "Section"), global.BASE_URL_SECTION + titleInURL, true);
 		} else {
-			secDoco = new Thing(model, MappingConfig.getClass("doco", "Section"), global.BASE_URL_SECTION + parentTitleInURL + "_" + titleInURL, true);
+			secDoco = new Thing(model, MappingConfig.getClass(this.bioteaBase, "doco", "Section"), global.BASE_URL_SECTION + parentTitleInURL + "_" + titleInURL, true);
 		}
 		this.mainListOfSections = this.linkSection(model, document, secDoco, this.mainListOfSections, this.mainListOfSectionsURI);
 		//title
@@ -1493,7 +1502,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 	private void processParagraph(Model model, Thing document, String titleInURL, int countPara, Thing secDoco, P para) {
 		String[] params = {titleInURL};
 		String paragraphURI = Conversion.replaceParameter(global.BASE_URL_PARAGRAPH, params) + countPara;
-		Thing paragraph = new Thing(model, MappingConfig.getClass("doco", "Paragraph"), paragraphURI, true);
+		Thing paragraph = new Thing(model, MappingConfig.getClass(this.bioteaBase, "doco", "Paragraph"), paragraphURI, true);
 					
 		String text = "";
 		//text

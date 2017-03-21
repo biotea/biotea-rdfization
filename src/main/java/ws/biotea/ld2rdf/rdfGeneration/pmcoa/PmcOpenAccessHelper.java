@@ -21,8 +21,9 @@ public class PmcOpenAccessHelper {
 	private RDFBasicHandler handler;
 	Logger logger = Logger.getLogger(PmcOpenAccessHelper.class);	
 	
-	public PmcOpenAccessHelper() {
-		this.handler = new RDFBasicHandler(GlobalArticleConfig.BIOTEA_PMC_DATASET, GlobalArticleConfig.BASE_URL, GlobalArticleConfig.BASE_URL_AO);
+	public PmcOpenAccessHelper(String base, String dataset) {
+		this.handler = new RDFBasicHandler(dataset, ResourceConfig.getBioteaURL(base), 
+				GlobalArticleConfig.getBaseURLAO(base));
 	}
 	/**
 	 * RDFizes a file
@@ -38,24 +39,26 @@ public class PmcOpenAccessHelper {
 	 * @throws ArticleTypeException 
 	 * @throws DTDException 
 	 */
-	public File rdfizeFile(File subdir, String outputDir, boolean sections, boolean references) throws JAXBException, FileNotFoundException, UnsupportedEncodingException, SAXException, ParserConfigurationException, DTDException, ArticleTypeException, PMCIdException {
+	public File rdfizeFile(File subdir, String outputDir, String bioteaBase, String bioteaDataset, boolean sections, 
+		boolean references, String suffix, boolean useBio2RDF) 
+		throws JAXBException, FileNotFoundException, UnsupportedEncodingException, SAXException, ParserConfigurationException, DTDException, ArticleTypeException, PMCIdException {
 		logger.info("===RDFize " + subdir.getName() + "===");
 		File outRDF = null; 
 		//1. Create RDF used as a mechanism for improving information retrieval over tagged resources as well as to facilitate the discovery of shared conceptualizations[2,3].
 		this.handler.setStrPmcId(new StringBuilder());
-		if (ResourceConfig.USE_BIO2RDF) {
-			this.handler.setPaper2rdf(new PmcOpenAccess2MappedRDF(subdir, this.handler.getStrPmcId()));
+		if (useBio2RDF) {
+			this.handler.setPaper2rdf(new PmcOpenAccess2MappedRDF(subdir, this.handler.getStrPmcId(), suffix, bioteaBase, bioteaDataset, sections, references));
 		} else if (ResourceConfig.getMappingFile().length() != 0) {
-			this.handler.setPaper2rdf(new PmcOpenAccess2MappedRDF(subdir, this.handler.getStrPmcId()));
+			this.handler.setPaper2rdf(new PmcOpenAccess2MappedRDF(subdir, this.handler.getStrPmcId(), suffix, bioteaBase, bioteaDataset, sections, references));
 		} else {
-			this.handler.setPaper2rdf(new PmcOpenAccess2RDF(subdir, this.handler.getStrPmcId()));
+			this.handler.setPaper2rdf(new PmcOpenAccess2RDF(subdir, this.handler.getStrPmcId(), suffix, bioteaBase, bioteaDataset, sections, references));
 		}
 		String pmc = this.handler.getStrPmcId().toString();
-		this.handler.setPaperURLId(GlobalArticleConfig.getArticleRdfUri(pmc));
-		this.handler.setDocumentPaperId(pmc);
-		outRDF = new File (outputDir + "/PMC" + pmc + ".rdf");
+		this.handler.setPaperURLId(GlobalArticleConfig.getArticleRdfUri(bioteaBase, pmc));
+		this.handler.setDocumentPaperId(pmc);		
+		outRDF = new File (outputDir + "/PMC" + pmc + suffix + ".rdf");
 		if (!outRDF.exists()) {
-			outRDF = this.handler.createRDFFromXML(subdir, outputDir, sections, references);
+			outRDF = this.handler.createRDFFromXML(subdir, outputDir);
 		}	
 		return outRDF;
 	}

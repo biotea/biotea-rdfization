@@ -25,8 +25,8 @@ public class RDFBasicHandler extends RDFAbstractHandler {
 	/* (non-Javadoc)
 	 * @see ld2rdf.rdfGeneration.RDFHandler#createRDFFromXML(java.io.File, java.lang.String, boolean)
 	 */
-	public File createRDFFromXML(File xml, String outRDFFileName, boolean sections, boolean references) throws FileNotFoundException, UnsupportedEncodingException, JAXBException {		
-		return this.paper2rdf.paper2rdf(outRDFFileName, xml, sections, references);
+	public File createRDFFromXML(File xml, String outRDFFileDir) throws FileNotFoundException, UnsupportedEncodingException, JAXBException {		
+		return this.paper2rdf.paper2rdf(outRDFFileDir, xml);
 	}
 
 	/* (non-Javadoc)

@@ -42,8 +42,9 @@ import java.util.Iterator;
 import java.util.List;
 
 public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
-	public PmcOpenAccess2RDF(File paper, StringBuilder str) throws JAXBException, DTDException, ArticleTypeException, PMCIdException {
-		super(paper, str);	
+	public PmcOpenAccess2RDF(File paper, StringBuilder str, String suffix, String bioteaBase, String bioteaDataset, 
+			boolean sections, boolean references) throws JAXBException, DTDException, ArticleTypeException, PMCIdException {
+		super(paper, str, suffix, bioteaBase, bioteaDataset, sections, references);	
 	}
 	
 	/**
@@ -55,9 +56,9 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 	 * @throws UnsupportedEncodingException 
 	 * @throws FileNotFoundException 
 	 */
-	public File paper2rdf(String outputDir, File paper, boolean sections, boolean references) throws JAXBException, FileNotFoundException, UnsupportedEncodingException {	
+	public File paper2rdf(String outputDir, File paper) throws JAXBException, FileNotFoundException, UnsupportedEncodingException {	
 		logger.info("=== INIT Rdfization of " + paper.getName());		
-				
+		
 		if (pmcID == null) {
 			throw new NullPointerException("No pmc id was found, file cannot be processed");
 		}		
@@ -86,7 +87,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			logger.info("=== authors processed");
 			this.processAbstractAndKeywords(model, document);
 			logger.info("=== abstract and keywords processed");
-			this.processReferences(model, document, references);
+			this.processReferences(model, document, this.references);
 			logger.info("=== references processed");
 		} catch (Exception e) {//something went so wrong
 			logger.fatal("- FATAL ERROR - " + pmcID + " threw an uncaugth error: " + e.getMessage());
@@ -94,10 +95,10 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		} finally {
 			//close and write model
 			if (fatalError) {
-				//outputFile = serializeAndCloseModel(model, outputDir + "/" + PREFIX + pmcID + ".rdf");		
+				//outputFile = serializeAndCloseModel(model, outputDir + "/" + PREFIX + pmcID + suffix + ".rdf");		
 				logger.info("=== END of rdfization with a fatal error " + pmcID + " (pubmedID: " + pubmedID + "), (doi: " + doi + ")");
 			} else {
-				outputFile = serializeAndCloseModel(model, outputDir + "/" + PREFIX + pmcID + ".rdf");		
+				outputFile = serializeAndCloseModel(model, outputDir + "/" + PREFIX + pmcID + "_" + this.suffix + ".rdf");		
 				logger.info("=== END of rdfization OK " + pmcID + " (pubmedID: " + pubmedID + "), (doi: " + doi + ")");
 			}
 			
@@ -140,11 +141,11 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			} finally {
 				if (fatalError || fatalErrorSections) {
 					//close and write model
-					//outputFileSections = serializeAndCloseModel(modelSections, outputDir + "/" + PREFIX + pmcID + "_sections.rdf");		
+					//outputFileSections = serializeAndCloseModel(modelSections, outputDir + "/" + PREFIX + pmcID + suffix + "_sections.rdf");		
 					logger.info("=== END of sections rdfization with a fatal error " + pmcID + " (pubmedID: " + pubmedID + "), (doi: " + doi + ")");
 				} else {
 					//close and write model
-					outputFileSections = serializeAndCloseModel(modelSections, outputDir + "/" + PREFIX + pmcID + "_sections.rdf");		
+					outputFileSections = serializeAndCloseModel(modelSections, outputDir + "/" + PREFIX + pmcID + "_" + this.suffix + "_sections.rdf");		
 					logger.info("=== END of sections rdfization OK " + pmcID + " (pubmedID: " + pubmedID + "), (doi: " + doi + ")");
 				}
 			}
@@ -226,19 +227,33 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 	 * Processes doi, pubmed, journal, and title.
 	 */
 	private void processBasic(Model model, Document document, String paper) {
+		String articleId = pmcID;
 		if (ResourceConfig.getIdTag().equals("pmc")) {
+			articleId = pmcID;
 			document.addIdentifier(model, "pmc:" + pmcID);	
 			document.addProvWasDerivedFrom(model, GlobalArticleConfig.pmcURI + pmcID);
 		} else if (ResourceConfig.getIdTag().equals("pmid")) {
-			document.addIdentifier(model, "pmid:" + pmcID);	
+			articleId = pubmedID;
+			document.addIdentifier(model, "pmid:" + pubmedID);	
 			document.addProvWasDerivedFrom(model, GlobalArticleConfig.pubMedURI + pubmedID);
 		}
+		System.out.println("FLAG 0 ");
+		String[] sameAsLinks = ResourceConfig.getConfigSameAs(this.suffix);
+		System.out.println("FLAG 1 " + sameAsLinks);
+		if (sameAsLinks != null) {
+			for (String sameAsLink:sameAsLinks) {
+				System.out.println("FLAG 2 " + sameAsLink);
+				String[] params = {articleId};
+				document.addSameAs(model, Conversion.replaceParameter(sameAsLink, params));
+			}
+		}
+		
 		String now = HtmlUtil.getDateAndTime();
 		document.addDCCreated(model, now);
 		document.addProvGeneratedAt(model, now);
 		document.addDCCreator(model, GlobalArticleConfig.RDF4PMC_AGENT);
 		document.addProvWasAttributedTo(model, GlobalArticleConfig.RDF4PMC_AGENT);
-		document.addInDataset(model, GlobalArticleConfig.BIOTEA_PMC_DATASET);
+		document.addInDataset(model, this.bioteaDataset);
 		Resource resPMC = new URIImpl(GlobalArticleConfig.pmcURI + pmcID, true);	
 		document.addSeeAlso(resPMC);	
 		
@@ -249,12 +264,13 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		    //Relations between PMC-RDF and identifiers.org/bio2rdf.org sameAS
 		    if (ResourceConfig.withBio()) {
 		    	document.addSameAs(model, ResourceConfig.IDENTIFIERS_ORG_PUBMED + pubmedID);
+		    	document.addSameAs(model, ResourceConfig.LINKED_LIFE_DATA + pubmedID);
 		    	Resource resIdOrgPubMed = new URIImpl(ResourceConfig.IDENTIFIERS_ORG_PAGE_PUBMED + pubmedID, true);
 		    	document.addSeeAlso(resIdOrgPubMed);
 			    document.addSameAs(model, ResourceConfig.BIO2RDF_PUBMED + pubmedID);
 		    }		    
 		    if (!global.getUriStyle().equals(ResourceConfig.bio2rdf)) {
-		    	document.addSameAs(model, GlobalArticleConfig.PUBMED_DOCUMENT + pubmedID);
+		    	document.addSameAs(model, this.global.PUBMED_DOCUMENT + pubmedID);
 		    }		    		
 		    //relations between PMC-RDF and PubMed
 		    Resource resPubMed = new URIImpl(GlobalArticleConfig.pubMedURI + pubmedID, true);	
@@ -270,7 +286,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 //		    document.addSeeAlso(resDOI);
 		    document.addSameAs(model, GlobalArticleConfig.doiURI + doi);
 		    if (!global.getUriStyle().equals(ResourceConfig.bio2rdf)) {
-		    	document.addSameAs(model, GlobalArticleConfig.DOI_DOCUMENT + doi);
+		    	document.addSameAs(model, this.global.DOI_DOCUMENT + doi);
 		    }
 		}
 		
@@ -306,7 +322,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			journalTitleInURI = journalISSN.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
 			//journal creation
 			if ((journalISSN != null)  && (journalISSN.length() != 0)) {//journal by issn
-				journal = new JournalE(model, GlobalArticleConfig.BASE_URL_JOURNAL_ISSN + journalTitleInURI, true); //model.createBlankNode(pmcID + "_journal_" + journalTitleInURI)
+				journal = new JournalE(model, this.global.BASE_URL_JOURNAL_ISSN + journalTitleInURI, true); //model.createBlankNode(pmcID + "_journal_" + journalTitleInURI)
 				if ((journalTitle != null) && (journalTitle.length() != 0)) {
 					journal.addTitle(model, journalTitle);
 				}
@@ -317,7 +333,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 				journal.addSeeAlso(resISSN); //link to NLM catalog
 			} else if ((journalTitle != null) && (journalTitle.length() != 0)) { //journal by name
 				journalTitleInURI = journalTitle.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
-				journal = new JournalE(model, GlobalArticleConfig.BASE_URL_JOURNAL_NAME + journalTitleInURI, true); //model.createBlankNode(pmcID + "_journal_" + journalTitleInURI)
+				journal = new JournalE(model, this.global.BASE_URL_JOURNAL_NAME + journalTitleInURI, true); //model.createBlankNode(pmcID + "_journal_" + journalTitleInURI)
 			    journal.addTitle(model, journalTitle);	
 			} else {// no journal
 				logger.error(paper + ": Journal title or ISSN both empty.");
@@ -335,12 +351,12 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
     			if ((issueNumberInURI != null)  && (issueNumberInURI.length() != 0)) {    			        			
         			if ((journalISSN != null)  && (journalISSN.length() != 0)) {//journal by issn then issn:<id>/<issue_id>
         				String[] params = {"issn", journalTitleInURI};
-        				String issueURI = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_ISSUE, params);
+        				String issueURI = Conversion.replaceParameter(this.global.BASE_URL_ISSUE, params);
             			issue = new ws.biotea.ld2rdf.rdf.model.bibo.Issue(model, issueURI + issueNumberInURI, true);    		
                 		issue.addbiboIssue(issueNumber);
             		} else { //name:<journal_name>/<issue_id>
             			String[] params = {"name", journalTitleInURI};
-        				String issueURI = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_ISSUE, params);
+        				String issueURI = Conversion.replaceParameter(this.global.BASE_URL_ISSUE, params);
             			issue = new ws.biotea.ld2rdf.rdf.model.bibo.Issue(model, issueURI + issueNumberInURI, true);    		
         			}
         			journal.addIssue(model, issue);
@@ -367,12 +383,12 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			} catch (Exception eId) {}
 			OrganizationE publisher;
 			if (publisherPMCId != null) {//we create the publisher with the id
-				publisher = new OrganizationE(model, GlobalArticleConfig.BASE_URL_PUBLISHER_ID + publisherPMCId, true ); 
+				publisher = new OrganizationE(model, this.global.BASE_URL_PUBLISHER_ID + publisherPMCId, true ); 
 				publisher.addName(model, publisherName);
 				PlainLiteral id = model.createPlainLiteral(publisherPMCId);					    
 			    model.addStatement(publisher.asResource(), Document.DCTERMS_IDENTIFIER, id); //id
 			} else {//we create the publisher with the name
-				publisher = new OrganizationE(model, GlobalArticleConfig.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true ); 
+				publisher = new OrganizationE(model, this.global.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true ); 
 				publisher.addName(model, publisherName);							
 			}
 			journal.addbiboPublisher(publisher);
@@ -660,7 +676,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 					//docReference.addSeeAlso(new URIImpl(global.doiURI + doiReference)); //seeAlso for webpages
 					docReference.addSameAs(model, GlobalArticleConfig.doiURI + doiReference);
 					if (!global.getUriStyle().equals(ResourceConfig.bio2rdf)) {
-						docReference.addSameAs(model, GlobalArticleConfig.DOI_DOCUMENT + doiReference); //same as from pubmed to doi entity
+						docReference.addSameAs(model, this.global.DOI_DOCUMENT + doiReference); //same as from pubmed to doi entity
 					}
 				} catch (Exception e) {	}
 			}	
@@ -672,7 +688,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			//docReference.addSeeAlso(new URIImpl(global.doiURI + doiReference)); //seeAlso for webpages
 			docReference.addSameAs(model, GlobalArticleConfig.doiURI + doiReference);
 			if (!global.getUriStyle().equals(ResourceConfig.bio2rdf)) {
-				docReference.addSameAs(model, GlobalArticleConfig.DOI_DOCUMENT + doiReference); //same as from pubmed to doi entity
+				docReference.addSameAs(model, this.global.DOI_DOCUMENT + doiReference); //same as from pubmed to doi entity
 			}
 		}
 		
@@ -696,14 +712,14 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		return (listOfAuthorsRef);
 	}
 	protected void processReferenceAllTypeCitation(Model model, Thing document, Ref ref, List<Object> content, ReferenceType type, Class<?> clazz, boolean withMetadata) {
-		
+		processReferenceDocAllTypeCitation(model, (Document)document, ref, content, type, clazz, withMetadata);
 	}
 	/**
 	 * Creates the reference to a journal article, its journal, and list of authors.
 	 * @param ref
 	 * @param content
 	 */	
-	protected void processReferenceAllTypeCitation(Model model, Document document, Ref ref, List<Object> content, ReferenceType type, Class<?> clazz, boolean withMetadata) {
+	private void processReferenceDocAllTypeCitation(Model model, Document document, Ref ref, List<Object> content, ReferenceType type, Class<?> clazz, boolean withMetadata) {
 		String pubmedReference = null;
 		String doiReference = null;
     	String pubIdOther = null;
@@ -729,19 +745,19 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		String proceedingsBaseURL = null;
 		String conferenceBaseURL = null;
 		if (pubmedReference != null) {
-			publicationLink = GlobalArticleConfig.PUBMED_DOCUMENT + pubmedReference;
+			publicationLink = this.global.PUBMED_DOCUMENT + pubmedReference;
 			String[] params = {pubmedReference};
-			personBaseURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_PERSON_PUBMED, params);
-			organizationBaseURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_ORGANIZATION_PUBMED, params);
-			proceedingsBaseURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_PROCEEDINGS_PUBMED, params);
-			conferenceBaseURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_CONFERENCE_PUBMED, params);
+			personBaseURL = Conversion.replaceParameter(this.global.BASE_URL_PERSON_PUBMED, params);
+			organizationBaseURL = Conversion.replaceParameter(this.global.BASE_URL_ORGANIZATION_PUBMED, params);
+			proceedingsBaseURL = Conversion.replaceParameter(this.global.BASE_URL_PROCEEDINGS_PUBMED, params);
+			conferenceBaseURL = Conversion.replaceParameter(this.global.BASE_URL_CONFERENCE_PUBMED, params);
 		} else if (doiReference != null) {
-			publicationLink = GlobalArticleConfig.DOI_DOCUMENT + doiReference;
+			publicationLink = this.global.DOI_DOCUMENT + doiReference;
 			String[] params = {doiReference};
-			personBaseURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_PERSON_DOI, params);
-			organizationBaseURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_ORGANIZATION_DOI, params);
-			proceedingsBaseURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_PROCEEDINGS_DOI, params);
-			conferenceBaseURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_CONFERENCE_DOI, params);
+			personBaseURL = Conversion.replaceParameter(this.global.BASE_URL_PERSON_DOI, params);
+			organizationBaseURL = Conversion.replaceParameter(this.global.BASE_URL_ORGANIZATION_DOI, params);
+			proceedingsBaseURL = Conversion.replaceParameter(this.global.BASE_URL_PROCEEDINGS_DOI, params);
+			conferenceBaseURL = Conversion.replaceParameter(this.global.BASE_URL_CONFERENCE_DOI, params);
 		} else {
 			publicationLink = global.BASE_URL_REF + this.getRefId(ref);
 			personBaseURL = global.BASE_URL_PERSON_PMC;
@@ -767,8 +783,8 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		
 		//common
 		Collection<org.ontoware.rdfreactor.schema.rdfs.Class> listOfAuthorsRef = new ArrayList<org.ontoware.rdfreactor.schema.rdfs.Class>();
-		List<Agent> listOfEditorsRef = new ArrayList<Agent>();
-		List<Agent> listOfTranslatorsRef = new ArrayList<Agent>();		
+		//List<Agent> listOfEditorsRef = new ArrayList<Agent>();
+		//List<Agent> listOfTranslatorsRef = new ArrayList<Agent>();		
 		String sourceTitle = null;
     	String sourceId =  null;
     	String year = null;
@@ -802,7 +818,6 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
     	String dateInCitation = null;
     	String accessDate = null;
     	String otherTitle = "";  	
-		
     			
 		//process other information
 		for (Object obj: content) {
@@ -950,7 +965,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
         		//Journal
         		if (sourceId != null) {
         			String journalTitleInURI = sourceId.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
-        			JournalE journal = new JournalE(model, GlobalArticleConfig.BASE_URL_JOURNAL_NAME + journalTitleInURI, true); //model.createBlankNode(pmcID + "_journal_" + sourceId.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"))
+        			JournalE journal = new JournalE(model, this.global.BASE_URL_JOURNAL_NAME + journalTitleInURI, true); //model.createBlankNode(pmcID + "_journal_" + sourceId.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"))
         		    journal.addTitle(model, sourceTitle);
         		    //Journal, issue-date, volume, pages, and document        		    
             		if (articleTitle != null) {
@@ -960,7 +975,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
         		    	docReference.addbiboVolume(volume);
         		    }
         		    if (publisherName != null) {
-        		    	OrganizationE publisherOrg = new OrganizationE(model, GlobalArticleConfig.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true ); 
+        		    	OrganizationE publisherOrg = new OrganizationE(model, this.global.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true ); 
             		    publisherOrg.addName(model, publisherName);	
             		    journal.addbiboPublisher(publisherOrg);
             		    docReference.addbiboPublisher(publisherOrg);
@@ -969,7 +984,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
         		    if (journal != null) {
         		    	if (issueNumber != null) { //name:<journal_name>/<issue_id>
         		    		String[] params = {"name", journalTitleInURI};
-            				String issueURI = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_ISSUE, params);
+            				String issueURI = Conversion.replaceParameter(this.global.BASE_URL_ISSUE, params);
                     		ws.biotea.ld2rdf.rdf.model.bibo.Issue issue = 
                     			new ws.biotea.ld2rdf.rdf.model.bibo.Issue(model, issueURI + issueNumber.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true);    		
                     		docReference.addIssue(model, issue);
@@ -1026,7 +1041,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
     		    	proc.addbiboEdition(edition);
     		    }
     		    if (publisherName != null) {
-    		    	OrganizationE publisherOrg = new OrganizationE(model, GlobalArticleConfig.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true ); 
+    		    	OrganizationE publisherOrg = new OrganizationE(model, this.global.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true ); 
         		    publisherOrg.addName(model, publisherName);	
         		    proc.addbiboPublisher(publisherOrg);
     		    }
@@ -1051,18 +1066,18 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
         		String[] params2 = {GlobalArticleConfig.listOfTranslators, ""};
         		if (pubmedReference != null) {
     				params[1] = pubmedReference;
-    				refListURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_PUBMED, params);
+    				refListURL = Conversion.replaceParameter(this.global.BASE_URL_LIST_PUBMED, params);
     				params1[1] = pubmedReference;
-    				refEditorsURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_PUBMED, params1);
+    				refEditorsURL = Conversion.replaceParameter(this.global.BASE_URL_LIST_PUBMED, params1);
     				params2[1] = pubmedReference;
-    				refTranslatorsURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_PUBMED, params2);
+    				refTranslatorsURL = Conversion.replaceParameter(this.global.BASE_URL_LIST_PUBMED, params2);
         		} else if (doiReference != null) {
         			params[1] = doiReference;
-    				refListURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_DOI, params);
+    				refListURL = Conversion.replaceParameter(this.global.BASE_URL_LIST_DOI, params);
     				params1[1] = doiReference;
-    				refEditorsURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_DOI, params1);
+    				refEditorsURL = Conversion.replaceParameter(this.global.BASE_URL_LIST_DOI, params1);
     				params2[1] = doiReference;
-    				refTranslatorsURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_DOI, params2);
+    				refTranslatorsURL = Conversion.replaceParameter(this.global.BASE_URL_LIST_DOI, params2);
         		} else {
         			params[1] = this.getRefId(ref);
     				refListURL = Conversion.replaceParameter(global.BASE_URL_REF_LIST, params);
@@ -1207,7 +1222,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		    	docReference.addbiboEdition(edition);
 		    }
 		    if (publisherName != null) {
-		    	OrganizationE publisherOrg = new OrganizationE(model, GlobalArticleConfig.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true ); 
+		    	OrganizationE publisherOrg = new OrganizationE(model, this.global.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true ); 
     		    publisherOrg.addName(model, publisherName);	
     		    docReference.addbiboPublisher(publisherOrg);
 		    	//Node publisherNode = new PlainLiteralImpl(publisherName);
@@ -1256,22 +1271,22 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		    String[] params3 = {GlobalArticleConfig.listOfAuthors, ""};
     		if (pubmedReference != null) {
 				params[1] = pubmedReference;
-				refListURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_PUBMED, params);
+				refListURL = Conversion.replaceParameter(this.global.BASE_URL_LIST_PUBMED, params);
 				params1[1] = pubmedReference;
-				refEditorsURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_PUBMED, params1);
+				refEditorsURL = Conversion.replaceParameter(this.global.BASE_URL_LIST_PUBMED, params1);
 				params2[1] = pubmedReference;
-				refTranslatorsURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_PUBMED, params2);
+				refTranslatorsURL = Conversion.replaceParameter(this.global.BASE_URL_LIST_PUBMED, params2);
 				params3[1] = pubmedReference;
-				refAuthorsURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_PUBMED, params3);
+				refAuthorsURL = Conversion.replaceParameter(this.global.BASE_URL_LIST_PUBMED, params3);
     		} else if (doiReference != null) {
     			params[1] = doiReference;
-				refListURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_DOI, params);
+				refListURL = Conversion.replaceParameter(this.global.BASE_URL_LIST_DOI, params);
 				params1[1] = doiReference;
-				refEditorsURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_DOI, params1);
+				refEditorsURL = Conversion.replaceParameter(this.global.BASE_URL_LIST_DOI, params1);
 				params2[1] = doiReference;
-				refTranslatorsURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_DOI, params2);
+				refTranslatorsURL = Conversion.replaceParameter(this.global.BASE_URL_LIST_DOI, params2);
 				params3[1] = doiReference;
-				refAuthorsURL = Conversion.replaceParameter(GlobalArticleConfig.BASE_URL_LIST_DOI, params3);
+				refAuthorsURL = Conversion.replaceParameter(this.global.BASE_URL_LIST_DOI, params3);
     		} else {
     			params[1] = this.getRefId(ref);
 				refListURL = Conversion.replaceParameter(global.BASE_URL_REF_LIST, params);

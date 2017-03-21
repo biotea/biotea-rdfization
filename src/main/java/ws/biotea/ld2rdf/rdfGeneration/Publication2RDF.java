@@ -16,5 +16,5 @@ public interface Publication2RDF {
 	 * @throws UnsupportedEncodingException 
 	 * @throws FileNotFoundException 
 	 */
-	public File paper2rdf(String outputDir, File paper, boolean sections, boolean references) throws JAXBException, FileNotFoundException, UnsupportedEncodingException;	
+	public File paper2rdf(String outputDir, File paper) throws JAXBException, FileNotFoundException, UnsupportedEncodingException;	
 }

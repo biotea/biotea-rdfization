@@ -13,6 +13,7 @@ import ws.biotea.ld2rdf.rdfGeneration.exception.ArticleTypeException;
 import ws.biotea.ld2rdf.rdfGeneration.exception.DTDException;
 import ws.biotea.ld2rdf.rdfGeneration.exception.PMCIdException;
 import ws.biotea.ld2rdf.rdfGeneration.pmcoa.PmcOpenAccessHelper;
+import ws.biotea.ld2rdf.util.ResourceConfig;
 
 /**
  * @author Leyla Garcia
@@ -130,7 +131,24 @@ public class PMCOABatchApplication {
 		System.out.println("sections: " + sections);		
 		
 		PMCOABatchApplication handler = new PMCOABatchApplication(initPool, maxPool, keepAlive);
-		handler.rdfizeDirectory(inputDir, outputDir, sections, references,  limit);
+		
+		String[] configOptions = ResourceConfig.getConfigSuffixes();
+		if (configOptions == null) {			
+			String bioteaBase = ResourceConfig.getBioteaBase(null);
+			String bioteaDataset = ResourceConfig.getBioteaDatasetURL(null, null); 
+			boolean useBio2RDF = ResourceConfig.getUseBio2RDF(null);
+			handler.rdfizeDirectory(inputDir, outputDir, bioteaBase, bioteaDataset, sections, references, "", useBio2RDF, limit);
+		} else {
+			for (String suffix: configOptions) {
+				String bioteaBase = ResourceConfig.getConfigBase(suffix);
+				String bioteaDataset = ResourceConfig.getConfigDataset(suffix);
+				boolean useBio2RDF = ResourceConfig.getUseBio2RDF(bioteaBase);								
+				handler.rdfizeDirectory(inputDir, outputDir, bioteaBase, bioteaDataset, 
+					ResourceConfig.getConfigSections(suffix), ResourceConfig.getConfigReferences(suffix), 
+					suffix, useBio2RDF, limit
+				);
+			}
+		}
 		
 		handler.shutDown();
 		while (!handler.isTerminated()); //waiting
@@ -145,7 +163,8 @@ public class PMCOABatchApplication {
 	 * @param sections
 	 * @param limit
 	 */
-	public void rdfizeDirectory(String inputDir, final String outputDir, final boolean sections, final boolean references, Integer limit) {
+	public void rdfizeDirectory(String inputDir, final String outputDir, final String bioteaBase, final String bioteaDataset, 
+			final boolean sections, final boolean references, String suffix, boolean useBio2RDF, Integer limit) {
 		File dir = new File(inputDir);
 		int count = 1;
 		for (final File subdir:dir.listFiles()) {			
@@ -153,22 +172,7 @@ public class PMCOABatchApplication {
 				//this.processDirectory(pipeline, subdir.getAbsolutePath(), outputDir, sections, limit, i);
 			} else {	
 				if (subdir.getName().endsWith(".nxml")) {
-					this.runTask(new Runnable() {
-		                public void run() {
-		                	try {
-		                		PmcOpenAccessHelper helper = new PmcOpenAccessHelper();
-								helper.rdfizeFile(subdir, outputDir, sections, references);
-								helper = null;
-							} catch (Exception e) {
-								logger.error(subdir.getName() + " could not be processed: " + e.getMessage());
-								if ((e instanceof DTDException) || (e instanceof ArticleTypeException) || (e instanceof PMCIdException)) {
-									
-								} else {
-									e.printStackTrace();
-								}																
-							}
-		                }
-		            });						
+					this.runRDFization(subdir, outputDir, bioteaBase, bioteaDataset, sections, references, suffix, useBio2RDF);
 				}
 				count++;
 			}
@@ -179,5 +183,25 @@ public class PMCOABatchApplication {
 //		while (!queue.isEmpty() ) {
 //			handler.logger.info("Waiting for " + queue.size() + " jobs");
 //        }
+	}
+	
+	private void runRDFization(final File subdir, final String outputDir, final String bioteaBase, final String bioteaDataset, 
+			final boolean sections, final boolean references, final String suffix, final boolean useBio2RDF) {		
+		this.runTask(new Runnable() {
+            public void run() {
+            	try {
+            		PmcOpenAccessHelper helper = new PmcOpenAccessHelper(bioteaBase, bioteaDataset);
+					helper.rdfizeFile(subdir, outputDir, bioteaBase, bioteaDataset, sections, references, suffix, useBio2RDF);
+					helper = null;
+				} catch (Exception e) {
+					logger.error(subdir.getName() + " could not be processed: " + e.getMessage());
+					if ((e instanceof DTDException) || (e instanceof ArticleTypeException) || (e instanceof PMCIdException)) {
+						
+					} else {
+						e.printStackTrace();
+					}																
+				}
+            }
+        });
 	}
 }
