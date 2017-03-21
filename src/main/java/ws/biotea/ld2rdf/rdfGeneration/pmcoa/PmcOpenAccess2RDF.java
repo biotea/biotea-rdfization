@@ -237,12 +237,9 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			document.addIdentifier(model, "pmid:" + pubmedID);	
 			document.addProvWasDerivedFrom(model, GlobalArticleConfig.pubMedURI + pubmedID);
 		}
-		System.out.println("FLAG 0 ");
 		String[] sameAsLinks = ResourceConfig.getConfigSameAs(this.suffix);
-		System.out.println("FLAG 1 " + sameAsLinks);
 		if (sameAsLinks != null) {
 			for (String sameAsLink:sameAsLinks) {
-				System.out.println("FLAG 2 " + sameAsLink);
 				String[] params = {articleId};
 				document.addSameAs(model, Conversion.replaceParameter(sameAsLink, params));
 			}
