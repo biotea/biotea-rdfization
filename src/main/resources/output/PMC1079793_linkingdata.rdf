@@ -260,7 +260,6 @@
                 <dcterms:identifier>pmid:15762997</dcterms:identifier>
                 <bibo:pageStart>6</bibo:pageStart>
                 <sio:SIO_001278 rdf:resource="http://linkingdata.io/linkingdata_dataset/linkingdata-pmc-March2017"/>
-                <prov:generatedAtTime>21-03-2017 21:27:13</prov:generatedAtTime>
                 <dcterms:isPartOf>
                   <bibo:Journal rdf:about="http://linkingdata.io/journal/issn/1472-6882">
                     <dcterms:publisher>
@@ -276,6 +275,7 @@
                   </bibo:Journal>
                 </dcterms:isPartOf>
                 <owl:sameAs rdf:resource="http://dx.doi.org/10.1186/1472-6882-5-6"/>
+                <dcterms:title>Screening of crude extracts of six medicinal plants used in South-West Nigerian unorthodox medicine for anti-methicillin resistant Staphylococcus aureus activity</dcterms:title>
                 <bibo:cites>
                   <bibo:AcademicArticle rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B19">
                     <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
@@ -340,7 +340,6 @@
                 <owl:sameAs rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/15762997"/>
                 <dcterms:identifier>pmc:1079793</dcterms:identifier>
                 <dcterms:publisher rdf:resource="http://linkingdata.io/publisher/pmc_internal_id/1472-6882-5-6"/>
-                <dcterms:created>21-03-2017 21:27:13</dcterms:created>
                 <owl:sameAs rdf:resource="http://linkedlifedata.com/resource/pubmed/id/15762997"/>
                 <bibo:cites>
                   <bibo:AcademicArticle rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B8">
@@ -671,6 +670,7 @@
                     <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
                   </bibo:AcademicArticle>
                 </bibo:cites>
+                <dcterms:created>25-03-2017 20:18:09</dcterms:created>
                 <prov:wasDerivedFrom rdf:resource="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1079793"/>
                 <bibo:cites>
                   <bibo:AcademicArticle rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B6">
@@ -1113,6 +1113,7 @@
                     <dcterms:title>Medicinal Plants and Traditional Medicines in Africa</dcterms:title>
                   </bibo:Book>
                 </bibo:cites>
+                <prov:generatedAtTime>25-03-2017 20:18:09</prov:generatedAtTime>
                 <bibo:doi>10.1186/1472-6882-5-6</bibo:doi>
                 <bibo:volume>5</bibo:volume>
                 <bibo:cites>
@@ -1233,7 +1234,6 @@
                     <dcterms:title>Technical report series</dcterms:title>
                   </bibo:Document>
                 </bibo:cites>
-                <dcterms:title>Screening of crude extracts of six medicinal plants used in South-West Nigerian unorthodox medicine for anti-methicillin resistant activity</dcterms:title>
                 <bibo:cites>
                   <bibo:BookSection rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B1">
                     <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>

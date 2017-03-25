@@ -217,7 +217,6 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		//doi
 		if (doi != null) {
 			this.addDatatypeLiteral(model, document, "bibo", "doi", this.doi);
-		    //relations between PMC-RDF and DOI
 		    document.addSameAs(model, GlobalArticleConfig.doiURI + doi);
 		    if (!global.getUriStyle().equals(ResourceConfig.bio2rdf)) {
 		    	document.addSameAs(model, this.global.DOI_DOCUMENT + doi);
@@ -244,9 +243,8 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 					for (Object ser: article.getFront().getJournalMeta().getJournalTitleGroups().get(0).getJournalTitles().get(0).getContent()) {
 						if (ser instanceof String) {
 							journalTitle += ser.toString();
-						} else if (ser instanceof JAXBElement<?>) {
-							JAXBElement<?> elem = (JAXBElement<?>)ser;
-							journalTitle += processElement(model, document, elem, null,null);
+						} else {
+							journalTitle += processElement(model, document, ser, null,null);
 						}			
 					}
 				} catch (Exception e1) {}
@@ -478,9 +476,8 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 						String key = "";
 						if (cont instanceof String) {
 							key += cont.toString();
-						} else if (cont instanceof JAXBElement<?>) {
-							JAXBElement<?> elem = (JAXBElement<?>)cont;
-							key += processElement(model, document, elem, null, null);
+						} else {
+							key += processElement(model, document, cont, null, null);
 						}
 						this.addDatatypeLiteral(model, document, "bibo", "shortDescription", key);
 					}

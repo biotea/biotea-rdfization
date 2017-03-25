@@ -278,9 +278,6 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		if (doi != null) {
 		    document.addDOI(model, doi);
 		    document.addIdentifier(model, "doi:" + doi);
-		    //relations between PMC-RDF and DOI
-//		    Resource resDOI = new URIImpl(global.doiURI + doi, true);
-//		    document.addSeeAlso(resDOI);
 		    document.addSameAs(model, GlobalArticleConfig.doiURI + doi);
 		    if (!global.getUriStyle().equals(ResourceConfig.bio2rdf)) {
 		    	document.addSameAs(model, this.global.DOI_DOCUMENT + doi);
@@ -307,9 +304,8 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 					for (Object ser: article.getFront().getJournalMeta().getJournalTitleGroups().get(0).getJournalTitles().get(0).getContent()) {
 						if (ser instanceof String) {
 							journalTitle += ser.toString();
-						} else if (ser instanceof JAXBElement<?>) {
-							JAXBElement<?> elem = (JAXBElement<?>)ser;
-							journalTitle += processElement(model, document, elem, null,null);
+						} else {
+							journalTitle += processElement(model, document, ser, null,null);
 						}			
 					}
 				} catch (Exception e1) {}
@@ -444,9 +440,8 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
     		for (Object ser: article.getFront().getArticleMeta().getTitleGroup().getArticleTitle().getContent()) {
     			if (ser instanceof String) {
     				this.articleTitle += ser.toString();
-    			} else if (ser instanceof JAXBElement<?>) {
-    				JAXBElement<?> elem = (JAXBElement<?>)ser;
-    				this.articleTitle += processElement(model, document, elem, null, null);
+    			} else {
+    				this.articleTitle += processElement(model, document, ser, null, null);
     			}			
     		}
     	    document.addTitle(model, this.articleTitle);
@@ -559,9 +554,8 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 						String key = "";
 						if (cont instanceof String) {
 							key += cont.toString();
-						} else if (cont instanceof JAXBElement<?>) {
-							JAXBElement<?> elem = (JAXBElement<?>)cont;
-							key += processElement(model, document, elem, null, null);
+						} else {
+							key += processElement(model, document, cont, null, null);
 						}
 						document.addbiboShortDescription(key);
 					}

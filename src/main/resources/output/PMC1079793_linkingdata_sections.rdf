@@ -550,6 +550,8 @@
                                                             <dcterms:hasPart rdf:resource="http://linkingdata.io/section/pmcdoc_resource/1079793/Pre-publication-history"/>
                                                             <dcterms:hasPart rdf:resource="http://linkingdata.io/section/pmcdoc_resource/1079793/Methods_Phytochemical-screening-methods"/>
                                                             <dcterms:hasPart rdf:resource="http://linkingdata.io/section/pmcdoc_resource/1079793/Methods_Bacterial-culture"/>
+                                                            <dcterms:title
+                                                            >Screening of crude extracts of six medicinal plants used in South-West Nigerian unorthodox medicine for anti-methicillin resistant Staphylococcus aureus activity</dcterms:title>
                                                             <dcterms:hasPart rdf:resource="http://linkingdata.io/section/pmcdoc_resource/1079793/Authors--contributions"/>
                                                             <dcterms:hasPart rdf:resource="http://linkingdata.io/section/pmcdoc_resource/1079793/Methods_Determination-of-minimum-inhibitory-concentration--MIC--and-minimum-bactericidal-concentration--MBC-"/>
                                                             <dcterms:hasPart rdf:resource="http://linkingdata.io/section/pmcdoc_resource/1079793/Methods_Bacterial-susceptibility-testing"/>
@@ -557,8 +559,6 @@
                                                             <dcterms:hasPart rdf:resource="http://linkingdata.io/section/pmcdoc_resource/1079793/Background"/>
                                                             <dcterms:hasPart rdf:resource="http://linkingdata.io/section/pmcdoc_resource/1079793/Methods_Ethanol-extract"/>
                                                             <dcterms:hasPart rdf:resource="http://linkingdata.io/section/pmcdoc_resource/1079793/Competing-interests"/>
-                                                            <dcterms:title
-                                                            >Screening of crude extracts of six medicinal plants used in South-West Nigerian unorthodox medicine for anti-methicillin resistant activity</dcterms:title>
                                                             <dcterms:hasPart rdf:resource="http://linkingdata.io/section/pmcdoc_resource/1079793/Methods_Extraction"/>
                                                             <dcterms:hasPart rdf:resource="http://linkingdata.io/section/pmcdoc_resource/1079793/Abstract"/>
                                                             <dcterms:hasPart rdf:resource="http://linkingdata.io/section/pmcdoc_resource/1079793/Methods"/>
