@@ -60,7 +60,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		logger.info("=== INIT Rdfization of " + paper.getName());		
 		
 		if (pmcID == null) {
-			throw new NullPointerException("No pmc id was found, file cannot be processed");
+			throw new NullPointerException("No pmc id was found, file cannot be processed " + paper.getName());
 		}		
 		
 		// getting model
@@ -90,7 +90,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			this.processReferences(model, document, this.references);
 			logger.info("=== references processed");
 		} catch (Exception e) {//something went so wrong
-			logger.fatal("- FATAL ERROR - " + pmcID + " threw an uncaugth error: " + e.getMessage());
+			logger.fatal("- FATAL ERROR - " + pmcID + " threw an uncaugth error, file " + paper.getName() + ": " + e.getMessage());
 			fatalError = true;
 		} finally {
 			//close and write model
@@ -136,7 +136,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 				}
 				logger.info("=== sections processed");
 			} catch (Exception e) {//something went so wrong
-				logger.fatal("- FATAL ERROR SECTIONS - " + pmcID + " threw an uncaugth error: " + e.getMessage());
+				logger.fatal("- FATAL ERROR SECTIONS - " + pmcID + " threw an uncaugth error, file  " + paper.getName() + ":" + e.getMessage());
 				fatalErrorSections = true;
 			} finally {
 				if (fatalError || fatalErrorSections) {
