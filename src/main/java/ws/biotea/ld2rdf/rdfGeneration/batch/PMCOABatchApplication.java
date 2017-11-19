@@ -13,6 +13,7 @@ import ws.biotea.ld2rdf.rdfGeneration.exception.ArticleTypeException;
 import ws.biotea.ld2rdf.rdfGeneration.exception.DTDException;
 import ws.biotea.ld2rdf.rdfGeneration.exception.PMCIdException;
 import ws.biotea.ld2rdf.rdfGeneration.pmcoa.PmcOpenAccessHelper;
+import ws.biotea.ld2rdf.rdfGeneration.pmcoa.PmcOpenAccessText2PlainText;
 import ws.biotea.ld2rdf.util.ResourceConfig;
 
 /**
@@ -84,7 +85,8 @@ public class PMCOABatchApplication {
 		long startTime = System.currentTimeMillis();		
 		
 		String usage = ("Usage: -in <xml papers dir> -out <output dir> -sections -references" + 
-				"\n-sections (optional) If present, paper sections will be rdfized" + 
+				"\n-sections (optional) If present, paper sections will be rdfized" +
+				"\n-text (optional) If present, input will be transform to plain text" + 
 				"\n-references (optional) If present, metadata for references will be generated, otherwise only links");
 		
 		if (args == null) {
@@ -95,7 +97,7 @@ public class PMCOABatchApplication {
 		
 		int initPool = 10, maxPool = 10, keepAlive = 300;
 		String inputDir = null, outputDir = null;
-		boolean sections = false, references = false;
+		boolean sections = false, references = false, plainText = false;
 		Integer limit = null;
 		//boolean addIssuedDate = false;
 		for (int i = 0; i < args.length; i++) {
@@ -108,6 +110,8 @@ public class PMCOABatchApplication {
 				sections = true;
 			} else if (str.equalsIgnoreCase("-references")) {
 				references = true;
+			} else if (str.equalsIgnoreCase("-text")) {
+				plainText = true;
 			} else if (str.equalsIgnoreCase("-initPool")) {
 				initPool = Integer.parseInt(args[++i]);
 			} else if (str.equalsIgnoreCase("-maxPool")) {
@@ -132,23 +136,27 @@ public class PMCOABatchApplication {
 		
 		PMCOABatchApplication handler = new PMCOABatchApplication(initPool, maxPool, keepAlive);
 		
-		String[] configOptions = ResourceConfig.getConfigSuffixes();
-		if (configOptions == null) {			
-			String bioteaBase = ResourceConfig.getBioteaBase(null);
-			String bioteaDataset = ResourceConfig.getBioteaDatasetURL(null, null); 
-			boolean useBio2RDF = ResourceConfig.getUseBio2RDF(null);
-			handler.rdfizeDirectory(inputDir, outputDir, bioteaBase, bioteaDataset, sections, references, "", useBio2RDF, limit);
+		if (plainText) {
+			handler.flatDirectory(inputDir, outputDir, sections, limit);
 		} else {
-			for (String suffix: configOptions) {
-				String bioteaBase = ResourceConfig.getConfigBase(suffix);
-				String bioteaDataset = ResourceConfig.getConfigDataset(suffix);
-				boolean useBio2RDF = ResourceConfig.getUseBio2RDF(bioteaBase);								
-				handler.rdfizeDirectory(inputDir, outputDir, bioteaBase, bioteaDataset, 
-					ResourceConfig.getConfigSections(suffix), ResourceConfig.getConfigReferences(suffix), 
-					suffix, useBio2RDF, limit
-				);
+			String[] configOptions = ResourceConfig.getConfigSuffixes();
+			if (configOptions == null) {			
+				String bioteaBase = ResourceConfig.getBioteaBase(null);
+				String bioteaDataset = ResourceConfig.getBioteaDatasetURL(null, null); 
+				boolean useBio2RDF = ResourceConfig.getUseBio2RDF(null);
+				handler.rdfizeDirectory(inputDir, outputDir, bioteaBase, bioteaDataset, sections, references, "", useBio2RDF, limit);
+			} else {
+				for (String suffix: configOptions) {
+					String bioteaBase = ResourceConfig.getConfigBase(suffix);
+					String bioteaDataset = ResourceConfig.getConfigDataset(suffix);
+					boolean useBio2RDF = ResourceConfig.getUseBio2RDF(bioteaBase);								
+					handler.rdfizeDirectory(inputDir, outputDir, bioteaBase, bioteaDataset, 
+						ResourceConfig.getConfigSections(suffix), ResourceConfig.getConfigReferences(suffix), 
+						suffix, useBio2RDF, limit
+					);
+				}
 			}
-		}
+		}		
 		
 		handler.shutDown();
 		while (!handler.isTerminated()); //waiting
@@ -163,7 +171,7 @@ public class PMCOABatchApplication {
 	 * @param sections
 	 * @param limit
 	 */
-	public void rdfizeDirectory(String inputDir, final String outputDir, final String bioteaBase, final String bioteaDataset, 
+	private void rdfizeDirectory(String inputDir, final String outputDir, final String bioteaBase, final String bioteaDataset, 
 			final boolean sections, final boolean references, String suffix, boolean useBio2RDF, Integer limit) {
 		File dir = new File(inputDir);
 		int count = 1;
@@ -203,5 +211,38 @@ public class PMCOABatchApplication {
 				}
             }
         });
+	}
+	
+	/**
+	 * Process n number of xml files in a directory to the given limit, converts files to RDF.
+	 * @param inputDir
+	 * @param outputDir
+	 * @param sections
+	 * @param limit
+	 */
+	private void flatDirectory(String inputDir, final String outputDir, final boolean sections, Integer limit) {
+		File dir = new File(inputDir);
+		int count = 1;
+		for (final File subdir:dir.listFiles()) {			
+			if (subdir.isDirectory()) { //only one level
+				//this.processDirectory(pipeline, subdir.getAbsolutePath(), outputDir, sections, limit, i);
+			} else {	
+				if (subdir.getName().endsWith(".nxml")) {
+					try {
+						PmcOpenAccessText2PlainText flatten = new PmcOpenAccessText2PlainText(subdir, new StringBuilder(), "", "", "", sections, false);
+						flatten.paper2rdf(outputDir, subdir);
+					} catch (Exception e) {
+						e.printStackTrace();
+					} 
+				}
+				count++;
+			}
+			if (count % 1000 == 0) {
+				System.gc();
+			}
+		}
+//		while (!queue.isEmpty() ) {
+//			handler.logger.info("Waiting for " + queue.size() + " jobs");
+//        }
 	}
 }

@@ -198,7 +198,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		
 		//pubmedID
 		if (pubmedID != null) {
-			this.addDatatypeLiteral(model, document, "bibo", "pmid", this.pubmedID);
+			this.addDatatypeLiteral(model, document, "bibo", "pmid", "pmid:" + this.pubmedID);
 		    //Relations between PMC-RDF and identifiers.org/bio2rdf.org sameAS
 		    if (ResourceConfig.withBio()) {
 		    	document.addSameAs(model, ResourceConfig.IDENTIFIERS_ORG_PUBMED + pubmedID);
@@ -216,7 +216,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		
 		//doi
 		if (doi != null) {
-			this.addDatatypeLiteral(model, document, "bibo", "doi", this.doi);
+			this.addDatatypeLiteral(model, document, "bibo", "doi", "doi:" + this.doi);
 		    document.addSameAs(model, GlobalArticleConfig.doiURI + doi);
 		    if (!global.getUriStyle().equals(ResourceConfig.bio2rdf)) {
 		    	document.addSameAs(model, this.global.DOI_DOCUMENT + doi);
@@ -257,7 +257,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 				journal = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", "Journal"), this.global.BASE_URL_JOURNAL_ISSN + journalTitleInURI, true);				
 				this.addDatatypeLiteral(model, journal, "dcterms", "title", journalTitle);
 				for (Issn issn: article.getFront().getJournalMeta().getIssns()) {
-					this.addDatatypeLiteral(model, journal, "bibo", "issn", issn.getContent().get(0).toString());
+					this.addDatatypeLiteral(model, journal, "bibo", "issn", "issn:" + issn.getContent().get(0).toString());
 			    }
 				Resource resISSN = new URIImpl(GlobalArticleConfig.NLM_JOURNAL_CATALOG + journalISSN, true);
 				journal.addSeeAlso(resISSN); //link to NLM catalog
@@ -570,7 +570,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		if (pubmed != null) {			
 			if (withMetadata) {
 				this.addDatatypeLiteral(model, docReference, "dcterms", "identifier", "pmid:" + pubmed);
-				this.addDatatypeLiteral(model, docReference, "bibo", "pmid", pubmed);
+				this.addDatatypeLiteral(model, docReference, "bibo", "pmid", "pmid:" + pubmed);
 			}			
 			docReference.addSeeAlso(new URIImpl(GlobalArticleConfig.pubMedURI + pubmed)); //seeAlso for webpages
 			docReference.addSameAs(model, ResourceConfig.IDENTIFIERS_ORG_PUBMED + pubmed); //sameAs for entities
@@ -583,7 +583,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 				try {
 					if (withMetadata) {
 						this.addDatatypeLiteral(model, document, "dcterms", "identifier", "doi:" + doiReference);
-						this.addDatatypeLiteral(model, document, "bibo", "doi", doiReference);
+						this.addDatatypeLiteral(model, document, "bibo", "doi", "doi:" + doiReference);
 					}
 					//docReference.addSeeAlso(new URIImpl(global.doiURI + doiReference)); //seeAlso for webpages
 					docReference.addSameAs(model, GlobalArticleConfig.doiURI + doiReference);
@@ -595,7 +595,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		} else if (doiReference != null) {
 			if (withMetadata) {
 				this.addDatatypeLiteral(model, document, "dcterms", "identifier", "doi:" + doiReference);
-				this.addDatatypeLiteral(model, document, "bibo", "doi", doiReference);
+				this.addDatatypeLiteral(model, document, "bibo", "doi", "doi:" + doiReference);
 			}
 			//docReference.addSeeAlso(new URIImpl(global.doiURI + doiReference)); //seeAlso for webpages
 			docReference.addSameAs(model, GlobalArticleConfig.doiURI + doiReference);
@@ -954,7 +954,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 		    	this.addDatatypeLiteral(model, conf, "dcterms", "created", confDate);
     		    this.addObjectProperty(model, docReference, conf, "bibo", "presentedAt");
 	    	} else if (type == ReferenceType.CONFERENCE_PROCS) { //only proceedings (book)
-	    		this.addDatatypeLiteral(model, docReference, "dcterms", "titel", sourceTitle);
+	    		this.addDatatypeLiteral(model, docReference, "dcterms", "title", sourceTitle);
     		    //conference
     		    String confYear = confDate != null ? confDate.substring(0,4).replaceAll(" ", "") : "";
     		    String confNameId = confName != null ? confName.replaceAll(" ", "") : "";
