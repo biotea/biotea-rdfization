@@ -6,6 +6,7 @@ package ws.biotea.ld2rdf.rdfGeneration.pmcoa;
 import org.ontoware.rdf2go.RDF2Go;
 import org.ontoware.rdf2go.model.Model;
 import org.ontoware.rdf2go.model.Statement;
+import org.ontoware.rdf2go.model.Syntax;
 import org.ontoware.rdf2go.model.node.PlainLiteral;
 import org.ontoware.rdf2go.model.node.Resource;
 import org.ontoware.rdf2go.model.node.impl.URIImpl;
@@ -37,8 +38,8 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 	private ListOfElements mainListOfSections;	
 	
 	public PmcOpenAccess2MappedRDF(File paper, StringBuilder str, String suffix, String bioteaBase, String bioteaDataset, 
-			boolean sections, boolean references) throws JAXBException, DTDException, ArticleTypeException, PMCIdException {
-		super(paper, str, suffix, bioteaBase, bioteaDataset, sections, references);
+			boolean sections, boolean references, Syntax format) throws JAXBException, DTDException, ArticleTypeException, PMCIdException {
+		super(paper, str, suffix, bioteaBase, bioteaDataset, sections, references, format);
 	}
 	
 	/**
@@ -84,11 +85,10 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 			fatalError = true;
 		} finally {
 			//close and write model
-			if (fatalError) {
-				//outputFile = serializeAndCloseModel(model, outputDir + "/" + PREFIX + pmcID + suffix + ".rdf");		
+			if (fatalError) {		
 				logger.info("=== END of rdfization with a fatal error " + pmcID + " (pubmedID: " + pubmedID + "), (doi: " + doi + ")");
 			} else {
-				outputFile = serializeAndCloseModel(model, outputDir + "/" + PREFIX + pmcID + "_" + this.suffix + ".rdf");		
+				outputFile = serializeAndCloseModel(model, outputDir + "/" + PREFIX + pmcID + "_" + this.suffix + this.extension);		
 				logger.info("=== END of rdfization OK " + pmcID + " (pubmedID: " + pubmedID + "), (doi: " + doi + ")");
 			}
 			
@@ -132,7 +132,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 				if (fatalError || fatalErrorSections) {
 					logger.info("=== END of sections rdfization with a fatal error " + pmcID + " (pubmedID: " + pubmedID + "), (doi: " + doi + ")");
 				} else {
-					outputFileSections = serializeAndCloseModel(modelSections, outputDir + "/" + PREFIX + pmcID + "_" + this.suffix + "_sections.rdf");		
+					outputFileSections = serializeAndCloseModel(modelSections, outputDir + "/" + PREFIX + pmcID + "_" + this.suffix + "_sections" + this.extension);		
 					logger.info("=== END of sections rdfization OK " + pmcID + " (pubmedID: " + pubmedID + "), (doi: " + doi + ")");
 				}
 			}
@@ -148,7 +148,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 	protected Model createAndOpenModel() {
 		Model myModel = RDF2Go.getModelFactory().createModel();
 		myModel.open();	
-		for (Namespace namespace: MappingConfig.getAllNamespaces(this.bioteaBase)) {
+		for (Namespace namespace: MappingConfig.getAllNamespaces(this.bioteaBase, true)) {
 			myModel.setNamespace(namespace.getNamespace(), namespace.getUrl());
 		}
 		return (myModel);

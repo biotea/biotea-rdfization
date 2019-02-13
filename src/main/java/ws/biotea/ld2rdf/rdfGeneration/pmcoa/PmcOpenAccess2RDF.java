@@ -5,6 +5,7 @@ package ws.biotea.ld2rdf.rdfGeneration.pmcoa;
 
 import org.ontoware.rdf2go.RDF2Go;
 import org.ontoware.rdf2go.model.Model;
+import org.ontoware.rdf2go.model.Syntax;
 import org.ontoware.rdf2go.model.node.Node;
 import org.ontoware.rdf2go.model.node.PlainLiteral;
 import org.ontoware.rdf2go.model.node.Resource;
@@ -43,8 +44,8 @@ import java.util.List;
 
 public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 	public PmcOpenAccess2RDF(File paper, StringBuilder str, String suffix, String bioteaBase, String bioteaDataset, 
-			boolean sections, boolean references) throws JAXBException, DTDException, ArticleTypeException, PMCIdException {
-		super(paper, str, suffix, bioteaBase, bioteaDataset, sections, references);	
+			boolean sections, boolean references, Syntax format) throws JAXBException, DTDException, ArticleTypeException, PMCIdException {
+		super(paper, str, suffix, bioteaBase, bioteaDataset, sections, references, format);	
 	}
 	
 	/**
@@ -65,13 +66,13 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		
 		// getting model
 		Model model;			
-		Document document;		
+		Document document = null;		
 		File outputFile = null;
 		model = createAndOpenModel();
 		boolean fatalError = false;
 		//create document
 		try {
-			document = new Document(model, basePaper, true);
+			document = new Document(model, this.basePaper, true);
 			String type = this.articleType.replace('-', '_').toUpperCase();
 			if (ArticleType.valueOf(type).getBiboType() != null) {
 			    model.addStatement(document.asResource(), Thing.RDF_TYPE, ArticleType.valueOf(type).getBiboTypeURI()); //rdf:type
@@ -94,11 +95,13 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			fatalError = true;
 		} finally {
 			//close and write model
-			if (fatalError) {
-				//outputFile = serializeAndCloseModel(model, outputDir + "/" + PREFIX + pmcID + suffix + ".rdf");		
+			if (fatalError) {		
 				logger.info("=== END of rdfization with a fatal error " + pmcID + " (pubmedID: " + pubmedID + "), (doi: " + doi + ")");
 			} else {
-				outputFile = serializeAndCloseModel(model, outputDir + "/" + PREFIX + pmcID + "_" + this.suffix + ".rdf");		
+				Biotea2Mapping mapping = new Biotea2Mapping("schema", this.articleType, this.pmcID, this.pubmedID, this.doi);
+				Model mappingModel = mapping.mapArticle(document, model);
+				serializeAndCloseModel(mappingModel, outputDir + "/" + PREFIX + pmcID + "_schema" + this.extension);
+				outputFile = serializeAndCloseModel(model, outputDir + "/" + PREFIX + pmcID + "_" + this.suffix + this.extension);		
 				logger.info("=== END of rdfization OK " + pmcID + " (pubmedID: " + pubmedID + "), (doi: " + doi + ")");
 			}
 			
@@ -141,11 +144,10 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			} finally {
 				if (fatalError || fatalErrorSections) {
 					//close and write model
-					//outputFileSections = serializeAndCloseModel(modelSections, outputDir + "/" + PREFIX + pmcID + suffix + "_sections.rdf");		
 					logger.info("=== END of sections rdfization with a fatal error " + pmcID + " (pubmedID: " + pubmedID + "), (doi: " + doi + ")");
 				} else {
 					//close and write model
-					outputFileSections = serializeAndCloseModel(modelSections, outputDir + "/" + PREFIX + pmcID + "_" + this.suffix + "_sections.rdf");		
+					outputFileSections = serializeAndCloseModel(modelSections, outputDir + "/" + PREFIX + pmcID + "_" + this.suffix + "_sections" + this.extension);		
 					logger.info("=== END of sections rdfization OK " + pmcID + " (pubmedID: " + pubmedID + "), (doi: " + doi + ")");
 				}
 			}

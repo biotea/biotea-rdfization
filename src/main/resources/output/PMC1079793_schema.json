@@ -1,0 +1,19 @@
+{
+  "@id" : "http://dx.doi.org/10.1186/1472-6882-5-6",
+  "@type" : [ "schema:CreativeWork", "schema:ScholarlyArticle" ],
+  "alternateName" : [ "pmid:15762997", "doi:10.1186/1472-6882-5-6", "pmc:1079793" ],
+  "isBasedOn" : [ "http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1079793", "http://info.identifiers.org/pubmed/15762997" ],
+  "sameAs" : [ "http://bio2rdf.org/pubmed:15762997", "http://identifiers.org/pubmed/15762997" ],
+  "sdDatePublished" : "13-02-2019 16:56:35",
+  "@context" : {
+    "sameAs" : "http://schema.org/sameAs",
+    "alternateName" : "http://schema.org/alternateName",
+    "isBasedOn" : "http://schema.org/isBasedOn",
+    "sdDatePublished" : "http://schema.org/sdDatePublished",
+    "schema" : "http://schema.org/",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "foaf" : "http://xmlns.com/foaf/0.1/"
+  }
+}

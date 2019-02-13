@@ -1,6 +1,5 @@
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-    xmlns:wd="http://www.wikidata.org/entity/"
     xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
     xmlns:owl="http://www.w3.org/2002/07/owl#"
     xmlns:sio="http://semanticscience.org/resource/"
@@ -205,7 +204,7 @@ Cryptomeria japonica cp genome was sequenced using sucrose gradient method, foll
                         </sio:SIO_000008>
                         <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Introduction_para_1"/>
                         <sio:SIO_000008>
-                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node143_1511105979001">
+                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node143_1481923708784">
                             <sio:SIO_000300>Introduction</sio:SIO_000300>
                           </sio:SIO_000175>
                         </sio:SIO_000008>
@@ -259,7 +258,7 @@ Cryptomeria japonica cp genome was sequenced using sucrose gradient method, foll
                                     </sio:SIO_000008>
                                     <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion_Chloroplast-Isolation"/>
                                     <sio:SIO_000008>
-                                      <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node150_1511105979020">
+                                      <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node150_1481923708798">
                                         <sio:SIO_000300>Results and Discussion</sio:SIO_000300>
                                       </sio:SIO_000175>
                                     </sio:SIO_000008>
@@ -267,7 +266,7 @@ Cryptomeria japonica cp genome was sequenced using sucrose gradient method, foll
                                   </sio:SIO_000111>
                                 </sio:SIO_000068>
                                 <sio:SIO_000008>
-                                  <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node152_1511105979042">
+                                  <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node152_1481923708806">
                                     <sio:SIO_000300>cpDNA Isolation</sio:SIO_000300>
                                   </sio:SIO_000175>
                                 </sio:SIO_000008>
@@ -275,11 +274,6 @@ Cryptomeria japonica cp genome was sequenced using sucrose gradient method, foll
                               </sio:SIO_000111>
                             </sio:SIO_000028>
                             <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion"/>
-                            <sio:SIO_000008>
-                              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node141_1511105979000">
-                                <sio:SIO_000300>An Improved Protocol for Intact Chloroplasts and cpDNA Isolation in Conifers</sio:SIO_000300>
-                              </sio:SIO_000175>
-                            </sio:SIO_000008>
                             <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Protocols"/>
                             <sio:SIO_000028>
                               <sio:SIO_000111 rdf:about="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Plant-Material">
@@ -314,7 +308,7 @@ Cryptomeria japonica cp genome was sequenced using sucrose gradient method, foll
                                         <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Materials-and-Methods_Chloroplast-Genome-Sequencing_para_1"/>
                                         <sio:SIO_000068 rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods"/>
                                         <sio:SIO_000008>
-                                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node149_1511105979019">
+                                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node149_1481923708797">
                                             <sio:SIO_000300>Chloroplast Genome Sequencing</sio:SIO_000300>
                                           </sio:SIO_000175>
                                         </sio:SIO_000008>
@@ -342,7 +336,7 @@ Cryptomeria japonica cp genome was sequenced using sucrose gradient method, foll
                                         <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Materials-and-Methods_Microscopy-Analysis_para_1"/>
                                         <sio:SIO_000068 rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods"/>
                                         <sio:SIO_000008>
-                                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node148_1511105979019">
+                                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node148_1481923708797">
                                             <sio:SIO_000300>Microscopy Analysis</sio:SIO_000300>
                                           </sio:SIO_000175>
                                         </sio:SIO_000008>
@@ -365,7 +359,7 @@ Cryptomeria japonica cp genome was sequenced using sucrose gradient method, foll
                                         <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Materials-and-Methods_Chloroplast-DNA-Isolation_para_1"/>
                                         <sio:SIO_000068 rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods"/>
                                         <sio:SIO_000008>
-                                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node147_1511105979019">
+                                          <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node147_1481923708795">
                                             <sio:SIO_000300>Chloroplast DNA Isolation</sio:SIO_000300>
                                           </sio:SIO_000175>
                                         </sio:SIO_000008>
@@ -384,7 +378,7 @@ Cryptomeria japonica cp genome was sequenced using sucrose gradient method, foll
                                     </sio:SIO_000008>
                                     <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Plant-Material"/>
                                     <sio:SIO_000008>
-                                      <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node144_1511105979006">
+                                      <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node144_1481923708788">
                                         <sio:SIO_000300>Materials and Methods</sio:SIO_000300>
                                       </sio:SIO_000175>
                                     </sio:SIO_000008>
@@ -392,13 +386,18 @@ Cryptomeria japonica cp genome was sequenced using sucrose gradient method, foll
                                   </sio:SIO_000111>
                                 </sio:SIO_000068>
                                 <sio:SIO_000008>
-                                  <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node145_1511105979006">
+                                  <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node145_1481923708788">
                                     <sio:SIO_000300>Plant Material</sio:SIO_000300>
                                   </sio:SIO_000175>
                                 </sio:SIO_000008>
                                 <sio:SIO_000068 rdf:resource="http://bio2rdf.org/pmc:3879346"/>
                               </sio:SIO_000111>
                             </sio:SIO_000028>
+                            <sio:SIO_000008>
+                              <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node141_1481923708784">
+                                <sio:SIO_000300>An Improved Protocol for Intact Chloroplasts and cpDNA Isolation in Conifers</sio:SIO_000300>
+                              </sio:SIO_000175>
+                            </sio:SIO_000008>
                             <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Introduction"/>
                             <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods_Microscopy-Analysis"/>
                             <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion_Chloroplast-Genome-Sequencing"/>
@@ -419,7 +418,7 @@ Cryptomeria japonica cp genome was sequenced using sucrose gradient method, foll
                                     </sio:SIO_000008>
                                     <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Abstract_para_1"/>
                                     <sio:SIO_000008>
-                                      <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node142_1511105979000">
+                                      <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node142_1481923708784">
                                         <sio:SIO_000300>Abstract</sio:SIO_000300>
                                       </sio:SIO_000175>
                                     </sio:SIO_000008>
@@ -525,7 +524,7 @@ Cryptomeria japonica cp genome was sequenced using sucrose gradient method, foll
                                                     <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Materials-and-Methods_Protocols_para_1"/>
                                                     <sio:SIO_000068 rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Materials-and-Methods"/>
                                                     <sio:SIO_000008>
-                                                      <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node146_1511105979006">
+                                                      <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node146_1481923708791">
                                                         <sio:SIO_000300
                                                         >Protocols</sio:SIO_000300>
                                                       </sio:SIO_000175>
@@ -592,7 +591,7 @@ Cryptomeria japonica cp genome was sequenced using sucrose gradient method, foll
                                       </sio:SIO_000110>
                                     </sio:SIO_000028>
                                     <sio:SIO_000008>
-                                      <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node151_1511105979020">
+                                      <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node151_1481923708798">
                                         <sio:SIO_000300>Chloroplast Isolation</sio:SIO_000300>
                                       </sio:SIO_000175>
                                     </sio:SIO_000008>
@@ -647,7 +646,7 @@ Cryptomeria japonica cp genome was sequenced using sucrose gradient method, foll
                     <sio:SIO_000028 rdf:resource="http://bio2rdf.org/pmc_resource:3879346_paragraph_Results-and-Discussion_Chloroplast-Genome-Sequencing_para_1"/>
                     <sio:SIO_000068 rdf:resource="http://bio2rdf.org/pmc_resource:3879346_section_Results-and-Discussion"/>
                     <sio:SIO_000008>
-                      <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node153_1511105979044">
+                      <sio:SIO_000175 rdf:about="http://bio2rdf.org/pmc_resource:3879346_other_dcterms_title_node153_1481923708815">
                         <sio:SIO_000300>Chloroplast Genome Sequencing</sio:SIO_000300>
                       </sio:SIO_000175>
                     </sio:SIO_000008>

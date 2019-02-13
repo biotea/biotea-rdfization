@@ -13,1365 +13,316 @@
     xmlns:sio="http://semanticscience.org/resource/"
     xmlns:foaf="http://xmlns.com/foaf/0.1/"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
-  <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/3821140">
-    <dcterms:identifier>pmid:3821140</dcterms:identifier>
-    <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(86)90004-8"/>
-    <dcterms:identifier>doi:10.1016/0378-8741(86)90004-8</dcterms:identifier>
-    <dcterms:isPartOf>
-      <bibo:Journal rdf:about="http://linkingdata.io/journal/name/JEthnopharmacol">
-        <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/3821140"/>
-        <dcterms:hasPart>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/8824740">
-            <bibo:doi>10.1016/0378-8741(95)01315-6</bibo:doi>
-            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/8824740"/>
-            <owl:sameAs rdf:resource="http://linkingdata.io/doidoc/doi/10.1016/0378-8741(95)01315-6"/>
-            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8824740"/>
-            <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B13"/>
-            <bibo:pmid>8824740</bibo:pmid>
-            <dcterms:issued>1995</dcterms:issued>
-            <dcterms:identifier>pmid:8824740</dcterms:identifier>
-            <dcterms:title>Biological screening of traditional medicinal plants from Papua New Guinea</dcterms:title>
-            <bibo:pageStart>147</bibo:pageStart>
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pubmeddoc_resource/8824740/list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/8824740/name/ANick">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/8824740"/>
-                    <foaf:familyName>Nick</foaf:familyName>
-                    <foaf:givenName>A</foaf:givenName>
-                    <foaf:name>A Nick</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/8824740/name/TRali">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/8824740"/>
-                    <foaf:familyName>Rali</foaf:familyName>
-                    <foaf:givenName>T</foaf:givenName>
-                    <foaf:name>T Rali</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/8824740/name/OSticher">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/8824740"/>
-                    <foaf:familyName>Sticher</foaf:familyName>
-                    <foaf:givenName>O</foaf:givenName>
-                    <foaf:name>O Sticher</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <bibo:citedBy>
-              <bibo:AcademicArticle rdf:about="http://linkingdata.io/pmcdoc/pmc/1079793">
-                <dcterms:creator rdf:resource="http://biotea.github.io/agent/biotea_serializer"/>
-                <owl:sameAs rdf:resource="http://bio2rdf.org/pmc:1079793"/>
-                <dcterms:description>research-article</dcterms:description>
-                <bibo:cites>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/11353619">
-                    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/11353619"/>
-                    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:11353619"/>
-                    <dcterms:identifier>doi:10.1128/AAC.45.6.1737-1742.2001</dcterms:identifier>
-                    <owl:sameAs rdf:resource="http://dx.doi.org/10.1128/AAC.45.6.1737-1742.2001"/>
-                    <dcterms:title>Mechanism of synergy between Epigallo catechin Gallate and B-Lactams against MRSA</dcterms:title>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/doidoc/doi/10.1128/AAC.45.6.1737-1742.2001"/>
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <dcterms:issued>2001</dcterms:issued>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B5"/>
-                    <bibo:pageEnd>1742</bibo:pageEnd>
-                    <dcterms:isPartOf>
-                      <bibo:Journal rdf:about="http://linkingdata.io/journal/name/AntimicrobialAgentsandChemotherapy">
-                        <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/11353619"/>
-                        <dcterms:title>Antimicrobial Agents and Chemotherapy</dcterms:title>
-                      </bibo:Journal>
-                    </dcterms:isPartOf>
-                    <dcterms:identifier>pmid:11353619</dcterms:identifier>
-                    <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/11353619"/>
-                    <bibo:pmid>11353619</bibo:pmid>
-                    <bibo:doi>10.1128/AAC.45.6.1737-1742.2001</bibo:doi>
-                    <bibo:pageStart>1737</bibo:pageStart>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pubmeddoc_resource/11353619/list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/11353619/name/WZhao">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/11353619"/>
-                            <foaf:familyName>Zhao</foaf:familyName>
-                            <foaf:givenName>W</foaf:givenName>
-                            <foaf:name>W Zhao</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/11353619/name/HZhi-quin">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/11353619"/>
-                            <foaf:familyName>Zhi-quin</foaf:familyName>
-                            <foaf:givenName>H</foaf:givenName>
-                            <foaf:name>H Zhi-quin</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/11353619/name/SOkubo">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/11353619"/>
-                            <foaf:familyName>Okubo</foaf:familyName>
-                            <foaf:givenName>S</foaf:givenName>
-                            <foaf:name>S Okubo</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/11353619/name/YHara">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/11353619"/>
-                            <foaf:familyName>Hara</foaf:familyName>
-                            <foaf:givenName>Y</foaf:givenName>
-                            <foaf:name>Y Hara</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/11353619/name/TShinmamura">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/11353619"/>
-                            <foaf:familyName>Shinmamura</foaf:familyName>
-                            <foaf:givenName>T</foaf:givenName>
-                            <foaf:name>T Shinmamura</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <owl:sameAs rdf:resource="http://identifiers.org/pubmed/11353619"/>
-                  </bibo:AcademicArticle>
-                </bibo:cites>
-                <bibo:cites>
-                  <bibo:Book rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B26">
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pmcdoc_resource/1079793/B26:list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/GETrease">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B26"/>
-                            <foaf:familyName>Trease</foaf:familyName>
-                            <foaf:givenName>GE</foaf:givenName>
-                            <foaf:name>GE Trease</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/WCEvans">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B26"/>
-                            <foaf:familyName>Evans</foaf:familyName>
-                            <foaf:givenName>WC</foaf:givenName>
-                            <foaf:name>WC Evans</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:pageStart>53</bibo:pageStart>
-                    <dcterms:issued>1989</dcterms:issued>
-                    <dcterms:publisher>
-                      <foaf:Organization rdf:about="http://linkingdata.io/publisher/name/Bailliere-Tinall-Ltd--London">
-                        <foaf:name>Bailliere Tinall Ltd, London</foaf:name>
-                      </foaf:Organization>
-                    </dcterms:publisher>
-                    <dcterms:title>A Text-book of Parmacognosy</dcterms:title>
-                  </bibo:Book>
-                </bibo:cites>
-                <bibo:cites rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/3821140"/>
-                <bibo:cites>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/doidoc/doi/10.1093/jac/41.1.93">
-                    <bibo:pageEnd>101</bibo:pageEnd>
-                    <dcterms:issued>1995</dcterms:issued>
-                    <dcterms:identifier>doi:10.1093/jac/41.1.93</dcterms:identifier>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B7"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/doidoc_resource/10.1093/jac/41.1.93/list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/doidoc_resource/10.1093/jac/41.1.93/name/AJNeeling">
-                            <foaf:publications rdf:resource="http://linkingdata.io/doidoc/doi/10.1093/jac/41.1.93"/>
-                            <foaf:familyName>Neeling</foaf:familyName>
-                            <foaf:givenName>AJ</foaf:givenName>
-                            <foaf:name>AJ Neeling</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/doidoc_resource/10.1093/jac/41.1.93/name/WJLeeuwen">
-                            <foaf:publications rdf:resource="http://linkingdata.io/doidoc/doi/10.1093/jac/41.1.93"/>
-                            <foaf:familyName>Leeuwen</foaf:familyName>
-                            <foaf:givenName>WJ</foaf:givenName>
-                            <foaf:name>WJ Leeuwen</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/doidoc_resource/10.1093/jac/41.1.93/name/MSSchouls">
-                            <foaf:publications rdf:resource="http://linkingdata.io/doidoc/doi/10.1093/jac/41.1.93"/>
-                            <foaf:familyName>Schouls</foaf:familyName>
-                            <foaf:givenName>MS</foaf:givenName>
-                            <foaf:name>MS Schouls</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/doidoc_resource/10.1093/jac/41.1.93/name/AVeen-Rutgems">
-                            <foaf:publications rdf:resource="http://linkingdata.io/doidoc/doi/10.1093/jac/41.1.93"/>
-                            <foaf:familyName>Veen-Rutgems</foaf:familyName>
-                            <foaf:givenName>A</foaf:givenName>
-                            <foaf:name>A Veen-Rutgems</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/doidoc_resource/10.1093/jac/41.1.93/name/AJBeuders">
-                            <foaf:publications rdf:resource="http://linkingdata.io/doidoc/doi/10.1093/jac/41.1.93"/>
-                            <foaf:familyName>Beuders</foaf:familyName>
-                            <foaf:givenName>AJ</foaf:givenName>
-                            <foaf:name>AJ Beuders</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/doidoc_resource/10.1093/jac/41.1.93/name/MBuiting">
-                            <foaf:publications rdf:resource="http://linkingdata.io/doidoc/doi/10.1093/jac/41.1.93"/>
-                            <foaf:familyName>Buiting</foaf:familyName>
-                            <foaf:givenName>M</foaf:givenName>
-                            <foaf:name>M Buiting</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/doidoc_resource/10.1093/jac/41.1.93/name/CHol">
-                            <foaf:publications rdf:resource="http://linkingdata.io/doidoc/doi/10.1093/jac/41.1.93"/>
-                            <foaf:familyName>Hol</foaf:familyName>
-                            <foaf:givenName>C</foaf:givenName>
-                            <foaf:name>C Hol</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/doidoc_resource/10.1093/jac/41.1.93/name/JMSabbe">
-                            <foaf:publications rdf:resource="http://linkingdata.io/doidoc/doi/10.1093/jac/41.1.93"/>
-                            <foaf:familyName>Sabbe</foaf:familyName>
-                            <foaf:givenName>JM</foaf:givenName>
-                            <foaf:name>JM Sabbe</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <owl:sameAs rdf:resource="http://dx.doi.org/10.1093/jac/41.1.93"/>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/doidoc/doi/10.1093/jac/41.1.93"/>
-                    <dcterms:title>Resistance of Staphylococci in the Netherlands: Surveillance by an electronic network during 1989–1995</dcterms:title>
-                    <bibo:pageStart>93</bibo:pageStart>
-                    <bibo:doi>10.1093/jac/41.1.93</bibo:doi>
-                    <dcterms:isPartOf>
-                      <bibo:Journal rdf:about="http://linkingdata.io/journal/name/JournalofAntimicrobialChemistry">
-                        <dcterms:hasPart rdf:resource="http://linkingdata.io/doidoc/doi/10.1093/jac/41.1.93"/>
-                        <dcterms:title>Journal of Antimicrobial Chemistry</dcterms:title>
-                      </bibo:Journal>
-                    </dcterms:isPartOf>
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                  </bibo:AcademicArticle>
-                </bibo:cites>
-                <dcterms:identifier>pmid:15762997</dcterms:identifier>
-                <bibo:pageStart>6</bibo:pageStart>
-                <sio:SIO_001278 rdf:resource="http://linkingdata.io/linkingdata_dataset/linkingdata-pmc-March2017"/>
-                <dcterms:isPartOf>
-                  <bibo:Journal rdf:about="http://linkingdata.io/journal/issn/1472-6882">
-                    <dcterms:publisher>
-                      <foaf:Organization rdf:about="http://linkingdata.io/publisher/pmc_internal_id/1472-6882-5-6">
-                        <dcterms:identifier>1472-6882-5-6</dcterms:identifier>
-                        <foaf:name>BioMed Central</foaf:name>
-                      </foaf:Organization>
-                    </dcterms:publisher>
-                    <dcterms:hasPart rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/nlmcatalog?term=1472-6882"/>
-                    <bibo:issn>1472-6882</bibo:issn>
-                    <dcterms:title>BMC Complementary and Alternative Medicine</dcterms:title>
-                  </bibo:Journal>
-                </dcterms:isPartOf>
-                <owl:sameAs rdf:resource="http://dx.doi.org/10.1186/1472-6882-5-6"/>
-                <dcterms:title>Screening of crude extracts of six medicinal plants used in South-West Nigerian unorthodox medicine for anti-methicillin resistant Staphylococcus aureus activity</dcterms:title>
-                <bibo:cites>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B19">
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pmcdoc_resource/1079793/B19:list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/JOOlowokudejo">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B19"/>
-                            <foaf:familyName>Olowokudejo</foaf:familyName>
-                            <foaf:givenName>JO</foaf:givenName>
-                            <foaf:name>JO Olowokudejo</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/OPereira-Sheteolu">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B19"/>
-                            <foaf:familyName>Pereira-Sheteolu</foaf:familyName>
-                            <foaf:givenName>O</foaf:givenName>
-                            <foaf:name>O Pereira-Sheteolu</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:pageEnd>158</bibo:pageEnd>
-                    <bibo:pageStart>147</bibo:pageStart>
-                    <dcterms:issued>1988</dcterms:issued>
-                    <dcterms:isPartOf>
-                      <bibo:Journal rdf:about="http://linkingdata.io/journal/name/Phytomorphology">
-                        <dcterms:hasPart rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B19"/>
-                        <dcterms:title>Phytomorphology</dcterms:title>
-                      </bibo:Journal>
-                    </dcterms:isPartOf>
-                    <dcterms:title>The taxonomic value of epidermal characters in the genus Ocimum (Lamiaceae)</dcterms:title>
-                  </bibo:AcademicArticle>
-                </bibo:cites>
-                <dcterms:identifier>doi:10.1186/1472-6882-5-6</dcterms:identifier>
-                <bibo:cites>
-                  <bibo:BookSection rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B30">
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pmcdoc_resource/1079793/B30:list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/BOBever">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B30"/>
-                            <foaf:familyName>Bever</foaf:familyName>
-                            <foaf:givenName>BO</foaf:givenName>
-                            <foaf:name>BO Bever</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:pageStart>68</bibo:pageStart>
-                    <dcterms:issued>1986</dcterms:issued>
-                    <dcterms:publisher>
-                      <foaf:Organization rdf:about="http://linkingdata.io/publisher/name/Cambridge-University-Press">
-                        <foaf:name>Cambridge University Press</foaf:name>
-                      </foaf:Organization>
-                    </dcterms:publisher>
-                  </bibo:BookSection>
-                </bibo:cites>
-                <bibo:abstract>Background: Six Nigerian medicinal plants Terminalia avicennioides, Phylantus discoideus, Bridella ferruginea, Ageratum conyzoides, Ocimum gratissimum and Acalypha wilkesiana used by traditional medical practitioners for the treatment of several ailments of microbial and non-microbial origins were investigated for in vitro anti-methicillin Resistant Staphylococcus aureus (MRSA) activity. Methods: Fresh plant materials were collected from the users. Water and ethanol extracts of the shredded plants were obtained by standard methods. The Bacterial cultures used were strains of MRSA isolated from patients. MRSA was determined by the reference broth microdilution methods using the established National Committee for Clinical Laboratory Standards break points. Staphylococcus aureus NCIB 8588 was used as a standard strain. Susceptibility testing and phytochemical screening of the plant extracts were performed by standard procedures. Controls were maintained for each test batch. Results: Both water and ethanol extracts of T. avicennioides, P. discoideus, O. gratissimum, and A. wilkesiana were effective on MRSA. The Minimum Inhibition Concentration (MIC) and Minimum Bactericidal Concentration (MBC) of the ethanol extracts of these plants range from 18.2 to 24.0 mcg/ml and 30.4 to 37.0 mcg/ml respectively. In contrast, MIC range of 30.6 to 43.0 mcg/ml and 55.4 to 71.0 mcg/ml were recorded for ethanol and water extracts of B. ferruginea, and A. conyzoides respectively. Higher MBC values were obtained for the two plants. These concentrations were too high to be considered active in this study. All the four active plants contained at least trace amount of anthraquinones. Conclusion: Our results offer a scientific basis for the traditional use of water and ethanol extracts of A. wilkesiana, O. gratissimum, T. avicennioides and P. discoideus against MRSA-associated diseases. However, B. ferruginea and A. conyzoides were ineffective in vitro in this study; we therefore suggest the immediate stoppage of their traditional use against MRSA-associated diseases in Lagos, Nigeria. </bibo:abstract>
-                <owl:sameAs rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/15762997"/>
-                <dcterms:identifier>pmc:1079793</dcterms:identifier>
-                <dcterms:publisher rdf:resource="http://linkingdata.io/publisher/pmc_internal_id/1472-6882-5-6"/>
-                <owl:sameAs rdf:resource="http://linkedlifedata.com/resource/pubmed/id/15762997"/>
-                <bibo:cites>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B8">
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pmcdoc_resource/1079793/B8:list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/CCSanders">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B8"/>
-                            <foaf:familyName>Sanders</foaf:familyName>
-                            <foaf:givenName>CC</foaf:givenName>
-                            <foaf:name>CC Sanders</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/CSanders">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B8"/>
-                            <foaf:familyName>Sanders</foaf:familyName>
-                            <foaf:givenName>C</foaf:givenName>
-                            <foaf:name>C Sanders</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/KSThomson">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B8"/>
-                            <foaf:familyName>Thomson</foaf:familyName>
-                            <foaf:givenName>KS</foaf:givenName>
-                            <foaf:name>KS Thomson</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:pageEnd>S11</bibo:pageEnd>
-                    <bibo:pageStart>S6</bibo:pageStart>
-                    <dcterms:issued>1995</dcterms:issued>
-                    <dcterms:isPartOf>
-                      <bibo:Journal rdf:about="http://linkingdata.io/journal/name/EuropeanJournalofClinicalMicrobiologyandInfectiousDiseases">
-                        <dcterms:hasPart rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B8"/>
-                        <dcterms:title>European Journal of Clinical Microbiology and Infectious Diseases</dcterms:title>
-                      </bibo:Journal>
-                    </dcterms:isPartOf>
-                    <dcterms:title>Fluoroquinolones resistance in Staphylococci: New Challenges</dcterms:title>
-                  </bibo:AcademicArticle>
-                </bibo:cites>
-                <bibo:cites>
-                  <bibo:Document rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B22">
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <bibo:pageEnd>A3</bibo:pageEnd>
-                    <bibo:pageStart>M7</bibo:pageStart>
-                    <dcterms:issued>1993</dcterms:issued>
-                    <dcterms:title>Approved Standard: NCCLS document</dcterms:title>
-                  </bibo:Document>
-                </bibo:cites>
-                <bibo:cites>
-                  <bibo:BookSection rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B31">
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pmcdoc_resource/1079793/B31:list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/RTschesche">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B31"/>
-                            <foaf:familyName>Tschesche</foaf:familyName>
-                            <foaf:givenName>R</foaf:givenName>
-                            <foaf:name>R Tschesche</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:pageEnd>289</bibo:pageEnd>
-                    <bibo:pageStart>274</bibo:pageStart>
-                    <dcterms:issued>1971</dcterms:issued>
-                    <dcterms:publisher>
-                      <foaf:Organization rdf:about="http://linkingdata.io/publisher/name/Springer-Verlag--Berlin-Heidelberg--New-York">
-                        <foaf:name>Springer-Verlag, Berlin Heidelberg, New York</foaf:name>
-                      </foaf:Organization>
-                    </dcterms:publisher>
-                  </bibo:BookSection>
-                </bibo:cites>
-                <rdf:type rdf:resource="http://purl.org/ontology/bibo/Document"/>
-                <bibo:cites>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/8412245">
-                    <owl:sameAs rdf:resource="http://identifiers.org/pubmed/8412245"/>
-                    <bibo:pageStart>119</bibo:pageStart>
-                    <dcterms:isPartOf rdf:resource="http://linkingdata.io/journal/name/JEthnopharmacol"/>
-                    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:8412245"/>
-                    <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/8412245"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pubmeddoc_resource/8412245/list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/8412245/name/CAnesini">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/8412245"/>
-                            <foaf:familyName>Anesini</foaf:familyName>
-                            <foaf:givenName>C</foaf:givenName>
-                            <foaf:name>C Anesini</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/8412245/name/CPerez">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/8412245"/>
-                            <foaf:familyName>Perez</foaf:familyName>
-                            <foaf:givenName>C</foaf:givenName>
-                            <foaf:name>C Perez</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:pageEnd>128</bibo:pageEnd>
-                    <dcterms:title>Screening of plants used in Argentine folk medicine for antimicrobial activity</dcterms:title>
-                    <dcterms:identifier>doi:10.1016/0378-8741(93)90027-3</dcterms:identifier>
-                    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8412245"/>
-                    <dcterms:identifier>pmid:8412245</dcterms:identifier>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B12"/>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/doidoc/doi/10.1016/0378-8741(93)90027-3"/>
-                    <bibo:pmid>8412245</bibo:pmid>
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <dcterms:issued>1993</dcterms:issued>
-                    <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(93)90027-3"/>
-                    <bibo:doi>10.1016/0378-8741(93)90027-3</bibo:doi>
-                  </bibo:AcademicArticle>
-                </bibo:cites>
-                <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1079793"/>
-                <bibo:cites>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B23">
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pmcdoc_resource/1079793/B23:list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/SASardari">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B23"/>
-                            <foaf:familyName>Sardari</foaf:familyName>
-                            <foaf:givenName>SA</foaf:givenName>
-                            <foaf:name>SA Sardari</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/RGholamreza">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B23"/>
-                            <foaf:familyName>Gholamreza</foaf:familyName>
-                            <foaf:givenName>R</foaf:givenName>
-                            <foaf:name>R Gholamreza</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/GMcrtich">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B23"/>
-                            <foaf:familyName>Mcrtich</foaf:familyName>
-                            <foaf:givenName>G</foaf:givenName>
-                            <foaf:name>G Mcrtich</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/MDaneshtalab">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B23"/>
-                            <foaf:familyName>Daneshtalab</foaf:familyName>
-                            <foaf:givenName>M</foaf:givenName>
-                            <foaf:name>M Daneshtalab</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:pageEnd>188</bibo:pageEnd>
-                    <bibo:pageStart>180</bibo:pageStart>
-                    <dcterms:issued>1998</dcterms:issued>
-                    <dcterms:isPartOf>
-                      <bibo:Journal rdf:about="http://linkingdata.io/journal/name/PharmBiol">
-                        <dcterms:hasPart rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B23"/>
-                        <dcterms:title>Pharm Biol</dcterms:title>
-                      </bibo:Journal>
-                    </dcterms:isPartOf>
-                    <dcterms:title>Phytopharmaceuticals. Part 1: Antifungal Activity of Selected Iranian and Canadian Plants</dcterms:title>
-                  </bibo:AcademicArticle>
-                </bibo:cites>
-                <bibo:cites>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/doidoc/doi/10.1021/ac60068a018">
-                    <owl:sameAs rdf:resource="http://dx.doi.org/10.1021/ac60068a018"/>
-                    <bibo:pageEnd>1342</bibo:pageEnd>
-                    <bibo:pageStart>1337</bibo:pageStart>
-                    <bibo:doi>10.1021/ac60068a018</bibo:doi>
-                    <dcterms:isPartOf>
-                      <bibo:Journal rdf:about="http://linkingdata.io/journal/name/AnalyticalChemistry">
-                        <dcterms:hasPart rdf:resource="http://linkingdata.io/doidoc/doi/10.1021/ac60068a018"/>
-                        <dcterms:title>Analytical Chemistry</dcterms:title>
-                      </bibo:Journal>
-                    </dcterms:isPartOf>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/doidoc/doi/10.1021/ac60068a018"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/doidoc_resource/10.1021/ac60068a018/list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/doidoc_resource/10.1021/ac60068a018/name/MEWall">
-                            <foaf:publications rdf:resource="http://linkingdata.io/doidoc/doi/10.1021/ac60068a018"/>
-                            <foaf:familyName>Wall</foaf:familyName>
-                            <foaf:givenName>ME</foaf:givenName>
-                            <foaf:name>ME Wall</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/doidoc_resource/10.1021/ac60068a018/name/CREddy">
-                            <foaf:publications rdf:resource="http://linkingdata.io/doidoc/doi/10.1021/ac60068a018"/>
-                            <foaf:familyName>Eddy</foaf:familyName>
-                            <foaf:givenName>CR</foaf:givenName>
-                            <foaf:name>CR Eddy</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/doidoc_resource/10.1021/ac60068a018/name/MLMcClenna">
-                            <foaf:publications rdf:resource="http://linkingdata.io/doidoc/doi/10.1021/ac60068a018"/>
-                            <foaf:familyName>McClenna</foaf:familyName>
-                            <foaf:givenName>ML</foaf:givenName>
-                            <foaf:name>ML McClenna</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/doidoc_resource/10.1021/ac60068a018/name/MEKlump">
-                            <foaf:publications rdf:resource="http://linkingdata.io/doidoc/doi/10.1021/ac60068a018"/>
-                            <foaf:familyName>Klump</foaf:familyName>
-                            <foaf:givenName>ME</foaf:givenName>
-                            <foaf:name>ME Klump</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B24"/>
-                    <dcterms:identifier>doi:10.1021/ac60068a018</dcterms:identifier>
-                    <dcterms:issued>1952</dcterms:issued>
-                    <dcterms:title>Detection and estimation of steroid and sapogenins in plant tissue</dcterms:title>
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                  </bibo:AcademicArticle>
-                </bibo:cites>
-                <bibo:cites>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/10021469">
-                    <bibo:doi>10.1056/NEJM199902183400701</bibo:doi>
-                    <dcterms:title>Emergence of Vancomycin Resistance in Staphylococcus aureus</dcterms:title>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/doidoc/doi/10.1056/NEJM199902183400701"/>
-                    <bibo:pageStart>493</bibo:pageStart>
-                    <dcterms:isPartOf>
-                      <bibo:Journal rdf:about="http://linkingdata.io/journal/name/NewEnglandJournalofMedicine">
-                        <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/10021469"/>
-                        <dcterms:title>New England Journal of Medicine</dcterms:title>
-                      </bibo:Journal>
-                    </dcterms:isPartOf>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pubmeddoc_resource/10021469/list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/10021469/name/TLSmith">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/10021469"/>
-                            <foaf:familyName>Smith</foaf:familyName>
-                            <foaf:givenName>TL</foaf:givenName>
-                            <foaf:name>TL Smith</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/10021469/name/MLPearson">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/10021469"/>
-                            <foaf:familyName>Pearson</foaf:familyName>
-                            <foaf:givenName>ML</foaf:givenName>
-                            <foaf:name>ML Pearson</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/10021469/name/CWilcox">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/10021469"/>
-                            <foaf:familyName>Wilcox</foaf:familyName>
-                            <foaf:givenName>C</foaf:givenName>
-                            <foaf:name>C Wilcox</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/10021469/name/MVCruz">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/10021469"/>
-                            <foaf:familyName>Cruz</foaf:familyName>
-                            <foaf:givenName>MV</foaf:givenName>
-                            <foaf:name>MV Cruz</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/10021469/name/BLancaster">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/10021469"/>
-                            <foaf:familyName>Lancaster</foaf:familyName>
-                            <foaf:givenName>B</foaf:givenName>
-                            <foaf:name>B Lancaster</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/10021469/name/BRobinson">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/10021469"/>
-                            <foaf:familyName>Robinson</foaf:familyName>
-                            <foaf:givenName>B</foaf:givenName>
-                            <foaf:name>B Robinson</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/10021469/name/FCTenoner">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/10021469"/>
-                            <foaf:familyName>Tenoner</foaf:familyName>
-                            <foaf:givenName>FC</foaf:givenName>
-                            <foaf:name>FC Tenoner</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/10021469/name/MJBZervos">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/10021469"/>
-                            <foaf:familyName>Zervos</foaf:familyName>
-                            <foaf:givenName>MJB</foaf:givenName>
-                            <foaf:name>MJB Zervos</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/10021469/name/DJWhite">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/10021469"/>
-                            <foaf:familyName>White</foaf:familyName>
-                            <foaf:givenName>DJ</foaf:givenName>
-                            <foaf:name>DJ White</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <owl:sameAs rdf:resource="http://dx.doi.org/10.1056/NEJM199902183400701"/>
-                    <dcterms:issued>1999</dcterms:issued>
-                    <bibo:pmid>10021469</bibo:pmid>
-                    <dcterms:identifier>doi:10.1056/NEJM199902183400701</dcterms:identifier>
-                    <owl:sameAs rdf:resource="http://identifiers.org/pubmed/10021469"/>
-                    <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/10021469"/>
-                    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:10021469"/>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B9"/>
-                    <dcterms:identifier>pmid:10021469</dcterms:identifier>
-                    <bibo:pageEnd>501</bibo:pageEnd>
-                    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/10021469"/>
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                  </bibo:AcademicArticle>
-                </bibo:cites>
-                <dcterms:created>25-03-2017 20:18:09</dcterms:created>
-                <prov:wasDerivedFrom rdf:resource="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1079793"/>
-                <bibo:cites>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B6">
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pmcdoc_resource/1079793/B6:list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/AVoss">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B6"/>
-                            <foaf:familyName>Voss</foaf:familyName>
-                            <foaf:givenName>A</foaf:givenName>
-                            <foaf:name>A Voss</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/DMilatoric">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B6"/>
-                            <foaf:familyName>Milatoric</foaf:familyName>
-                            <foaf:givenName>D</foaf:givenName>
-                            <foaf:name>D Milatoric</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/CWSchwarz">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B6"/>
-                            <foaf:familyName>Schwarz</foaf:familyName>
-                            <foaf:givenName>CW</foaf:givenName>
-                            <foaf:name>CW Schwarz</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/VTRosdahl">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B6"/>
-                            <foaf:familyName>Rosdahl</foaf:familyName>
-                            <foaf:givenName>VT</foaf:givenName>
-                            <foaf:name>VT Rosdahl</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/LBrarenny">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B6"/>
-                            <foaf:familyName>Brarenny</foaf:familyName>
-                            <foaf:givenName>L</foaf:givenName>
-                            <foaf:name>L Brarenny</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:pageEnd>55</bibo:pageEnd>
-                    <bibo:pageStart>50</bibo:pageStart>
-                    <dcterms:issued>1994</dcterms:issued>
-                    <dcterms:isPartOf>
-                      <bibo:Journal rdf:about="http://linkingdata.io/journal/name/EuropeanJournalofCliniclMicrobiologyandInfectiousDisease">
-                        <dcterms:hasPart rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B6"/>
-                        <dcterms:title>European Journal of Clinicl Microbiology and Infectious Disease</dcterms:title>
-                      </bibo:Journal>
-                    </dcterms:isPartOf>
-                    <dcterms:title>Methicillin Resistant Staphylococcus aureus in Europe</dcterms:title>
-                  </bibo:AcademicArticle>
-                </bibo:cites>
-                <bibo:cites>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/9336672">
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pubmeddoc_resource/9336672/list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/9336672/name/HFChambers">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/9336672"/>
-                            <foaf:familyName>Chambers</foaf:familyName>
-                            <foaf:givenName>HF</foaf:givenName>
-                            <foaf:name>HF Chambers</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <dcterms:isPartOf>
-                      <bibo:Journal rdf:about="http://linkingdata.io/journal/name/ClinicalMicrobiologyReviews">
-                        <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/9336672"/>
-                        <dcterms:title>Clinical Microbiology Reviews</dcterms:title>
-                      </bibo:Journal>
-                    </dcterms:isPartOf>
-                    <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/9336672"/>
-                    <dcterms:title>Methicillin Resistance in Staphylococci: Molecular and Biochemical basis and Clinical implications</dcterms:title>
-                    <bibo:pmid>9336672</bibo:pmid>
-                    <bibo:pageEnd>791</bibo:pageEnd>
-                    <bibo:pageStart>781</bibo:pageStart>
-                    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/9336672"/>
-                    <dcterms:identifier>pmid:9336672</dcterms:identifier>
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B2"/>
-                    <dcterms:issued>1997</dcterms:issued>
-                    <owl:sameAs rdf:resource="http://identifiers.org/pubmed/9336672"/>
-                    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:9336672"/>
-                  </bibo:AcademicArticle>
-                </bibo:cites>
-                <bibo:authorList>
-                  <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pmcdoc_resource/1079793/list1">
-                    <rdf:li>
-                      <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/KOAkinyemi">
-                        <foaf:publications>
-                          <bibo:AcademicArticle rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B16">
-                            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                            <bibo:authorList>
-                              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pmcdoc_resource/1079793/B16:list1">
-                                <rdf:li rdf:resource="http://linkingdata.io/person/pmcdoc_resource/1079793/name/KOAkinyemi"/>
-                                <rdf:li>
-                                  <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/CBayagbon">
-                                    <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B16"/>
-                                    <foaf:familyName>Bayagbon</foaf:familyName>
-                                    <foaf:givenName>C</foaf:givenName>
-                                    <foaf:name>C Bayagbon</foaf:name>
-                                  </foaf:Person>
-                                </rdf:li>
-                                <rdf:li>
-                                  <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/AOBOyefolu">
-                                    <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B16"/>
-                                    <foaf:familyName>Oyefolu</foaf:familyName>
-                                    <foaf:givenName>AOB</foaf:givenName>
-                                    <foaf:name>AOB Oyefolu</foaf:name>
-                                  </foaf:Person>
-                                </rdf:li>
-                                <rdf:li>
-                                  <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/KAAkinside">
-                                    <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B16"/>
-                                    <foaf:publications>
-                                      <bibo:AcademicArticle rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B15">
-                                        <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                                        <bibo:authorList>
-                                          <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pmcdoc_resource/1079793/B15:list1">
-                                            <rdf:li rdf:resource="http://linkingdata.io/person/pmcdoc_resource/1079793/name/KAAkinside"/>
-                                            <rdf:li>
-                                              <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/DKOlukoya">
-                                                <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B15"/>
-                                                <foaf:familyName
-                                                >Olukoya</foaf:familyName>
-                                                <foaf:givenName
-                                                >DK</foaf:givenName>
-                                                <foaf:name>DK Olukoya</foaf:name>
-                                              </foaf:Person>
-                                            </rdf:li>
-                                          </rdf:Seq>
-                                        </bibo:authorList>
-                                        <bibo:pageEnd>129</bibo:pageEnd>
-                                        <bibo:pageStart>127</bibo:pageStart>
-                                        <dcterms:issued>1995</dcterms:issued>
-                                        <dcterms:isPartOf>
-                                          <bibo:Journal rdf:about="http://linkingdata.io/journal/name/JDiarhoealDisRes">
-                                            <dcterms:hasPart rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B15"/>
-                                            <dcterms:title>J Diarhoeal Dis Res</dcterms:title>
-                                          </bibo:Journal>
-                                        </dcterms:isPartOf>
-                                        <dcterms:title>Vibrocidal activities of some local herbs</dcterms:title>
-                                      </bibo:AcademicArticle>
-                                    </foaf:publications>
-                                    <foaf:familyName>Akinside</foaf:familyName>
-                                    <foaf:givenName>KA</foaf:givenName>
-                                    <foaf:name>KA Akinside</foaf:name>
-                                  </foaf:Person>
-                                </rdf:li>
-                                <rdf:li>
-                                  <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/EAOmonigbeyin">
-                                    <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B16"/>
-                                    <foaf:familyName>Omonigbeyin</foaf:familyName>
-                                    <foaf:givenName>EA</foaf:givenName>
-                                    <foaf:name>EA Omonigbeyin</foaf:name>
-                                  </foaf:Person>
-                                </rdf:li>
-                                <rdf:li>
-                                  <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/AOCoker">
-                                    <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B16"/>
-                                    <foaf:familyName>Coker</foaf:familyName>
-                                    <foaf:givenName>AO</foaf:givenName>
-                                    <foaf:name>AO Coker</foaf:name>
-                                  </foaf:Person>
-                                </rdf:li>
-                              </rdf:Seq>
-                            </bibo:authorList>
-                            <bibo:pageEnd>33</bibo:pageEnd>
-                            <bibo:pageStart>30</bibo:pageStart>
-                            <dcterms:issued>2000</dcterms:issued>
-                            <dcterms:isPartOf>
-                              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/JournalofNigerianinfectioncontrolassociation">
-                                <dcterms:hasPart rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B16"/>
-                                <dcterms:title>Journal of Nigerian infection control association</dcterms:title>
-                              </bibo:Journal>
-                            </dcterms:isPartOf>
-                            <dcterms:title>Antibacterial screening of five indigenous Nigerian medicinal plants against S. typhi and S. paratyphi</dcterms:title>
-                          </bibo:AcademicArticle>
-                        </foaf:publications>
-                        <foaf:givenName>KO</foaf:givenName>
-                        <foaf:name>KO Akinyemi</foaf:name>
-                        <foaf:publications rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                        <foaf:familyName>Akinyemi</foaf:familyName>
-                        <foaf:givenName>Kabir O</foaf:givenName>
-                        <foaf:name>Kabir O Akinyemi</foaf:name>
-                      </foaf:Person>
-                    </rdf:li>
-                    <rdf:li>
-                      <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/OOladapo">
-                        <foaf:publications rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                        <foaf:familyName>Oladapo</foaf:familyName>
-                        <foaf:givenName>Olukayode</foaf:givenName>
-                        <foaf:name>Olukayode Oladapo</foaf:name>
-                      </foaf:Person>
-                    </rdf:li>
-                    <rdf:li>
-                      <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/CEOkwara">
-                        <foaf:publications rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                        <foaf:familyName>Okwara</foaf:familyName>
-                        <foaf:givenName>Chidi E</foaf:givenName>
-                        <foaf:name>Chidi E Okwara</foaf:name>
-                      </foaf:Person>
-                    </rdf:li>
-                    <rdf:li>
-                      <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/CCIbe">
-                        <foaf:publications rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                        <foaf:familyName>Ibe</foaf:familyName>
-                        <foaf:givenName>Christopher C</foaf:givenName>
-                        <foaf:name>Christopher C Ibe</foaf:name>
-                      </foaf:Person>
-                    </rdf:li>
-                    <rdf:li>
-                      <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/KAFasure">
-                        <foaf:publications rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                        <foaf:familyName>Fasure</foaf:familyName>
-                        <foaf:givenName>Kehinde A</foaf:givenName>
-                        <foaf:name>Kehinde A Fasure</foaf:name>
-                      </foaf:Person>
-                    </rdf:li>
-                  </rdf:Seq>
-                </bibo:authorList>
-                <bibo:pmid>15762997</bibo:pmid>
-                <bibo:cites>
-                  <bibo:BookSection rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B4">
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pmcdoc_resource/1079793/B4:list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/WEKloos">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B4"/>
-                            <foaf:familyName>Kloos</foaf:familyName>
-                            <foaf:givenName>WE</foaf:givenName>
-                            <foaf:name>WE Kloos</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/TLBannerman">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B4"/>
-                            <foaf:familyName>Bannerman</foaf:familyName>
-                            <foaf:givenName>TL</foaf:givenName>
-                            <foaf:name>TL Bannerman</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:pageEnd>298</bibo:pageEnd>
-                    <bibo:pageStart>282</bibo:pageStart>
-                    <dcterms:issued>1995</dcterms:issued>
-                    <dcterms:publisher>
-                      <foaf:Organization rdf:about="http://linkingdata.io/publisher/name/ASM-Press--Washington--D--C">
-                        <foaf:name>ASM Press, Washington, D. C</foaf:name>
-                      </foaf:Organization>
-                    </dcterms:publisher>
-                  </bibo:BookSection>
-                </bibo:cites>
-                <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/15762997"/>
-                <bibo:cites>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/5356032">
-                    <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/5356032"/>
-                    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/5356032"/>
-                    <dcterms:isPartOf>
-                      <bibo:Journal rdf:about="http://linkingdata.io/journal/name/Lloydia">
-                        <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/5356032"/>
-                        <dcterms:title>Lloydia</dcterms:title>
-                      </bibo:Journal>
-                    </dcterms:isPartOf>
-                    <owl:sameAs rdf:resource="http://identifiers.org/pubmed/5356032"/>
-                    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:5356032"/>
-                    <bibo:pageEnd>302</bibo:pageEnd>
-                    <dcterms:identifier>pmid:5356032</dcterms:identifier>
-                    <bibo:pageStart>297</bibo:pageStart>
-                    <bibo:pmid>5356032</bibo:pmid>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B28"/>
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <dcterms:title>Survey of Indian Medicinal Plants for Saponins. Alkaloids and Flavonoids</dcterms:title>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pubmeddoc_resource/5356032/list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/5356032/name/LDKapoor">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/5356032"/>
-                            <foaf:familyName>Kapoor</foaf:familyName>
-                            <foaf:givenName>LD</foaf:givenName>
-                            <foaf:name>LD Kapoor</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/5356032/name/ASingh">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/5356032"/>
-                            <foaf:familyName>Singh</foaf:familyName>
-                            <foaf:givenName>A</foaf:givenName>
-                            <foaf:name>A Singh</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/5356032/name/SLKapoort">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/5356032"/>
-                            <foaf:familyName>Kapoort</foaf:familyName>
-                            <foaf:givenName>SL</foaf:givenName>
-                            <foaf:name>SL Kapoort</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/5356032/name/SNStrivastava">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/5356032"/>
-                            <foaf:familyName>Strivastava</foaf:familyName>
-                            <foaf:givenName>SN</foaf:givenName>
-                            <foaf:name>SN Strivastava</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <dcterms:issued>1969</dcterms:issued>
-                  </bibo:AcademicArticle>
-                </bibo:cites>
-                <dcterms:license rdf:resource="http://creativecommons.org/licenses/by/2.0"/>
-                <bibo:cites rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B16"/>
-                <bibo:cites>
-                  <bibo:Book rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B27">
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pmcdoc_resource/1079793/B27:list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/JBHarborne">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B27"/>
-                            <foaf:familyName>Harborne</foaf:familyName>
-                            <foaf:givenName>JB</foaf:givenName>
-                            <foaf:name>JB Harborne</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:pageStart>279</bibo:pageStart>
-                    <dcterms:issued>1973</dcterms:issued>
-                    <dcterms:publisher>
-                      <foaf:Organization rdf:about="http://linkingdata.io/publisher/name/Chapman-A---Hall--London">
-                        <foaf:name>Chapman A &amp; Hall. London</foaf:name>
-                      </foaf:Organization>
-                    </dcterms:publisher>
-                    <dcterms:title>Photochemical Methods: A Guide to Modern Techniques of Plant Analysis</dcterms:title>
-                  </bibo:Book>
-                </bibo:cites>
-                <bibo:cites>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/8412246">
-                    <dcterms:identifier>doi:10.1016/0378-8741(93)90028-4</dcterms:identifier>
-                    <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/8412246"/>
-                    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:8412246"/>
-                    <dcterms:issued>1993</dcterms:issued>
-                    <bibo:pageStart>129</bibo:pageStart>
-                    <owl:sameAs rdf:resource="http://identifiers.org/pubmed/8412246"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pubmeddoc_resource/8412246/list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/8412246/name/BDesta">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/8412246"/>
-                            <foaf:familyName>Desta</foaf:familyName>
-                            <foaf:givenName>B</foaf:givenName>
-                            <foaf:name>B Desta</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:doi>10.1016/0378-8741(93)90028-4</bibo:doi>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B11"/>
-                    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8412246"/>
-                    <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(93)90028-4"/>
-                    <bibo:pageEnd>139</bibo:pageEnd>
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <dcterms:identifier>pmid:8412246</dcterms:identifier>
-                    <bibo:pmid>8412246</bibo:pmid>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/doidoc/doi/10.1016/0378-8741(93)90028-4"/>
-                    <dcterms:isPartOf rdf:resource="http://linkingdata.io/journal/name/JEthnopharmacol"/>
-                    <dcterms:title>Ethiopia traditional herbal drugs part II: antimicrobial activity of 63 medicinal plants</dcterms:title>
-                  </bibo:AcademicArticle>
-                </bibo:cites>
-                <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/15762997"/>
-                <bibo:cites>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/doidoc/doi/10.1016/0378-8741(87)90035-3">
-                    <dcterms:issued>1987</dcterms:issued>
-                    <dcterms:title>Development of Chinese medicine based on pharmacology and therapeutics</dcterms:title>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/doidoc/doi/10.1016/0378-8741(87)90035-3"/>
-                    <bibo:pageEnd>123</bibo:pageEnd>
-                    <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(87)90035-3"/>
-                    <bibo:pageStart>119</bibo:pageStart>
-                    <bibo:doi>10.1016/0378-8741(87)90035-3</bibo:doi>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B10"/>
-                    <dcterms:identifier>doi:10.1016/0378-8741(87)90035-3</dcterms:identifier>
-                    <dcterms:isPartOf>
-                      <bibo:Journal rdf:about="http://linkingdata.io/journal/name/JEthanopharmacol">
-                        <dcterms:hasPart rdf:resource="http://linkingdata.io/doidoc/doi/10.1016/0378-8741(87)90035-3"/>
-                        <dcterms:title>J Ethanopharmacol</dcterms:title>
-                      </bibo:Journal>
-                    </dcterms:isPartOf>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/doidoc_resource/10.1016/0378-8741(87)90035-3/list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/doidoc_resource/10.1016/0378-8741(87)90035-3/name/CXLiu">
-                            <foaf:publications rdf:resource="http://linkingdata.io/doidoc/doi/10.1016/0378-8741(87)90035-3"/>
-                            <foaf:familyName>Liu</foaf:familyName>
-                            <foaf:givenName>CX</foaf:givenName>
-                            <foaf:name>CX Liu</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                  </bibo:AcademicArticle>
-                </bibo:cites>
-                <owl:sameAs rdf:resource="http://linkingdata.io/doidoc/doi/10.1186/1472-6882-5-6"/>
-                <bibo:cites>
-                  <bibo:Book rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B25">
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pmcdoc_resource/1079793/B25:list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/ASofowora">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B25"/>
-                            <foaf:familyName>Sofowora</foaf:familyName>
-                            <foaf:givenName>A</foaf:givenName>
-                            <foaf:name>A Sofowora</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:pageStart>256</bibo:pageStart>
-                    <dcterms:issued>1993</dcterms:issued>
-                    <dcterms:publisher>
-                      <foaf:Organization rdf:about="http://linkingdata.io/publisher/name/Chichester-John--Willey---Sons-New-York">
-                        <foaf:name>Chichester John, Willey &amp; Sons New York</foaf:name>
-                      </foaf:Organization>
-                    </dcterms:publisher>
-                    <dcterms:title>Medicinal Plants and Traditional Medicines in Africa</dcterms:title>
-                  </bibo:Book>
-                </bibo:cites>
-                <prov:generatedAtTime>25-03-2017 20:18:09</prov:generatedAtTime>
-                <bibo:doi>10.1186/1472-6882-5-6</bibo:doi>
-                <bibo:volume>5</bibo:volume>
-                <bibo:cites>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/6643661">
-                    <dcterms:identifier>pmid:6643661</dcterms:identifier>
-                    <bibo:pageStart>1084</bibo:pageStart>
-                    <dcterms:title>Successful use of broth micro-dilution in susceptibility of tests for methicillin resistance (heteroresistant) Staphylococci</dcterms:title>
-                    <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/6643661"/>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B3"/>
-                    <bibo:pmid>6643661</bibo:pmid>
-                    <dcterms:issued>1983</dcterms:issued>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pubmeddoc_resource/6643661/list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/6643661/name/CThomsberry">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/6643661"/>
-                            <foaf:familyName>Thomsberry</foaf:familyName>
-                            <foaf:givenName>C</foaf:givenName>
-                            <foaf:name>C Thomsberry</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/6643661/name/LKMcDougal">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/6643661"/>
-                            <foaf:familyName>McDougal</foaf:familyName>
-                            <foaf:givenName>LK</foaf:givenName>
-                            <foaf:name>LK McDougal</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:6643661"/>
-                    <bibo:pageEnd>1091</bibo:pageEnd>
-                    <owl:sameAs rdf:resource="http://identifiers.org/pubmed/6643661"/>
-                    <dcterms:isPartOf>
-                      <bibo:Journal rdf:about="http://linkingdata.io/journal/name/JournalofClinicalMicrobiology">
-                        <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/6643661"/>
-                        <dcterms:title>Journal of Clinical Microbiology</dcterms:title>
-                      </bibo:Journal>
-                    </dcterms:isPartOf>
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/6643661"/>
-                  </bibo:AcademicArticle>
-                </bibo:cites>
-                <owl:sameAs rdf:resource="http://identifiers.org/pubmed/15762997"/>
-                <prov:wasAttributedTo rdf:resource="http://biotea.github.io/agent/biotea_serializer"/>
-                <dcterms:issued>2005</dcterms:issued>
-                <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:15762997"/>
-                <bibo:cites>
-                  <bibo:Document rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B18">
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pmcdoc_resource/1079793/B18:list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/AOluyemi">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B18"/>
-                            <foaf:familyName>Oluyemi</foaf:familyName>
-                            <foaf:givenName>A</foaf:givenName>
-                            <foaf:name>A Oluyemi</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:pageStart>101</bibo:pageStart>
-                    <dcterms:issued>1998</dcterms:issued>
-                    <dcterms:title>Medicinal Plants and their therapeutic uses in the South West Zone of Nigeria Technical report Nigeria</dcterms:title>
-                  </bibo:Document>
-                </bibo:cites>
-                <bibo:cites>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B17">
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pmcdoc_resource/1079793/B17:list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/AKOgbeche">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B17"/>
-                            <foaf:familyName>Ogbeche</foaf:familyName>
-                            <foaf:givenName>AK</foaf:givenName>
-                            <foaf:name>AK Ogbeche</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/GOAjayi">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B17"/>
-                            <foaf:familyName>Ajayi</foaf:familyName>
-                            <foaf:givenName>GO</foaf:givenName>
-                            <foaf:name>GO Ajayi</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/POnyeneta">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B17"/>
-                            <foaf:familyName>Onyeneta</foaf:familyName>
-                            <foaf:givenName>P</foaf:givenName>
-                            <foaf:name>P Onyeneta</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:pageEnd>399</bibo:pageEnd>
-                    <bibo:pageStart>397</bibo:pageStart>
-                    <dcterms:issued>1997</dcterms:issued>
-                    <dcterms:isPartOf>
-                      <bibo:Journal rdf:about="http://linkingdata.io/journal/name/NigQtJHospMed">
-                        <dcterms:hasPart rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B17"/>
-                        <dcterms:title>Nig Qt J Hosp Med</dcterms:title>
-                      </bibo:Journal>
-                    </dcterms:isPartOf>
-                    <dcterms:title>Antibacterial activities of the leaf extract of Ageratum conyzoides</dcterms:title>
-                  </bibo:AcademicArticle>
-                </bibo:cites>
-                <bibo:pageEnd>6</bibo:pageEnd>
-                <bibo:cites>
-                  <bibo:Document rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B29">
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <bibo:pageStart>622</bibo:pageStart>
-                    <dcterms:issued>1978</dcterms:issued>
-                    <dcterms:title>Technical report series</dcterms:title>
-                  </bibo:Document>
-                </bibo:cites>
-                <bibo:cites>
-                  <bibo:BookSection rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B1">
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pmcdoc_resource/1079793/B1:list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/FAWaldyogel">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B1"/>
-                            <foaf:familyName>Waldyogel</foaf:familyName>
-                            <foaf:givenName>FA</foaf:givenName>
-                            <foaf:name>FA Waldyogel</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:pageEnd>1777</bibo:pageEnd>
-                    <bibo:pageStart>1754</bibo:pageStart>
-                    <dcterms:issued>1995</dcterms:issued>
-                    <dcterms:publisher>
-                      <foaf:Organization rdf:about="http://linkingdata.io/publisher/name/Churchill-Livingstone--New-York">
-                        <foaf:name>Churchill Livingstone, New York</foaf:name>
-                      </foaf:Organization>
-                    </dcterms:publisher>
-                  </bibo:BookSection>
-                </bibo:cites>
-                <bibo:cites rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B15"/>
-                <bibo:cites>
-                  <bibo:Book rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B21">
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pmcdoc_resource/1079793/B21:list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/STCowan">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B21"/>
-                            <foaf:familyName>Cowan</foaf:familyName>
-                            <foaf:givenName>ST</foaf:givenName>
-                            <foaf:name>ST Cowan</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/SSteel">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B21"/>
-                            <foaf:familyName>Steel</foaf:familyName>
-                            <foaf:givenName>S</foaf:givenName>
-                            <foaf:name>S Steel</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:pageStart>32</bibo:pageStart>
-                    <dcterms:issued>1993</dcterms:issued>
-                    <dcterms:publisher rdf:resource="http://linkingdata.io/publisher/name/Cambridge-University-Press"/>
-                    <dcterms:title>Manual for the Identification of Medica Bacteria</dcterms:title>
-                  </bibo:Book>
-                </bibo:cites>
-                <bibo:cites rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/8824740"/>
-                <bibo:cites>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/reference/pmcdoc_resource/1079793/B20">
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pmcdoc_resource/1079793/B20:list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/BEAkinde">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B20"/>
-                            <foaf:familyName>Akinde</foaf:familyName>
-                            <foaf:givenName>BE</foaf:givenName>
-                            <foaf:name>BE Akinde</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/1079793/name/OOOdeyemi">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B20"/>
-                            <foaf:familyName>Odeyemi</foaf:familyName>
-                            <foaf:givenName>OO</foaf:givenName>
-                            <foaf:name>OO Odeyemi</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:pageEnd>165</bibo:pageEnd>
-                    <bibo:pageStart>163</bibo:pageStart>
-                    <dcterms:issued>1987</dcterms:issued>
-                    <dcterms:isPartOf>
-                      <bibo:Journal rdf:about="http://linkingdata.io/journal/name/NigMedJ">
-                        <dcterms:hasPart rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B20"/>
-                        <dcterms:title>Nig Med J</dcterms:title>
-                      </bibo:Journal>
-                    </dcterms:isPartOf>
-                    <dcterms:title>Extraction and Microbiological Evaluation of the Oils from the leaves of Acalypha wilkesiana</dcterms:title>
-                  </bibo:AcademicArticle>
-                </bibo:cites>
-              </bibo:AcademicArticle>
-            </bibo:citedBy>
-            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:8824740"/>
-            <dcterms:isPartOf rdf:resource="http://linkingdata.io/journal/name/JEthnopharmacol"/>
+  <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/doidoc/doi/10.1016/0378-8741(87)90035-3">
+    <bibo:citedBy>
+      <bibo:Document rdf:about="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793">
+        <bibo:cites>
+          <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/8824740">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+            <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B13"/>
+            <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/doidoc/doi/10.1016/0378-8741(95)01315-6"/>
             <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(95)01315-6"/>
-            <dcterms:identifier>doi:10.1016/0378-8741(95)01315-6</dcterms:identifier>
-            <bibo:pageEnd>156</bibo:pageEnd>
+            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:8824740"/>
             <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/8824740"/>
+            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/8824740"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8824740"/>
           </bibo:AcademicArticle>
-        </dcterms:hasPart>
-        <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/8412245"/>
-        <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/8412246"/>
-        <dcterms:title>J Ethnopharmacol</dcterms:title>
-      </bibo:Journal>
-    </dcterms:isPartOf>
-    <bibo:doi>10.1016/0378-8741(86)90004-8</bibo:doi>
-    <bibo:pageStart>257</bibo:pageStart>
-    <bibo:pmid>3821140</bibo:pmid>
-    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/3821140"/>
-    <owl:sameAs rdf:resource="http://identifiers.org/pubmed/3821140"/>
-    <dcterms:title>Nigerian Medicine Practice and Beliefs of the Ondo People</dcterms:title>
-    <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/3821140"/>
-    <dcterms:issued>1986</dcterms:issued>
-    <bibo:authorList>
-      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pubmeddoc_resource/3821140/list1">
-        <rdf:li>
-          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/3821140/name/LSGill">
-            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/3821140"/>
-            <foaf:familyName>Gill</foaf:familyName>
-            <foaf:givenName>LS</foaf:givenName>
-            <foaf:name>LS Gill</foaf:name>
-          </foaf:Person>
-        </rdf:li>
-        <rdf:li>
-          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/3821140/name/CAkinwunmi">
-            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/3821140"/>
-            <foaf:familyName>Akinwunmi</foaf:familyName>
-            <foaf:givenName>C</foaf:givenName>
-            <foaf:name>C Akinwunmi</foaf:name>
-          </foaf:Person>
-        </rdf:li>
-      </rdf:Seq>
-    </bibo:authorList>
-    <owl:sameAs rdf:resource="http://linkingdata.io/doidoc/doi/10.1016/0378-8741(86)90004-8"/>
-    <bibo:pageEnd>266</bibo:pageEnd>
-    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/1079793"/>
-    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:3821140"/>
-    <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/1079793/B14"/>
+        </bibo:cites>
+        <bibo:cites>
+          <bibo:Book rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B4">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+          </bibo:Book>
+        </bibo:cites>
+        <bibo:cites>
+          <bibo:Book rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B1">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+          </bibo:Book>
+        </bibo:cites>
+        <bibo:cites>
+          <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/doidoc/doi/10.1021/ac60068a018">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+            <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B24"/>
+            <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/doidoc/doi/10.1021/ac60068a018"/>
+            <owl:sameAs rdf:resource="http://dx.doi.org/10.1021/ac60068a018"/>
+          </bibo:AcademicArticle>
+        </bibo:cites>
+        <bibo:cites>
+          <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B20">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+          </bibo:AcademicArticle>
+        </bibo:cites>
+        <bibo:cites>
+          <bibo:Book rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B31">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+          </bibo:Book>
+        </bibo:cites>
+        <dcterms:license rdf:resource="http://creativecommons.org/licenses/by/2.0"/>
+        <owl:sameAs rdf:resource="http://linkedlifedata.com/resource/pubmed/id/15762997"/>
+        <bibo:cites>
+          <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/6643661">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+            <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B3"/>
+            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:6643661"/>
+            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/6643661"/>
+            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/6643661"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/6643661"/>
+          </bibo:AcademicArticle>
+        </bibo:cites>
+        <bibo:volume>5</bibo:volume>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/15762997"/>
+        <bibo:cites>
+          <bibo:Book rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B30">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+          </bibo:Book>
+        </bibo:cites>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc:1079793"/>
+        <bibo:cites>
+          <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B23">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+          </bibo:AcademicArticle>
+        </bibo:cites>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:15762997"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1079793"/>
+        <bibo:cites>
+          <bibo:Book rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B21">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+          </bibo:Book>
+        </bibo:cites>
+        <bibo:cites>
+          <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B15">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+          </bibo:AcademicArticle>
+        </bibo:cites>
+        <sio:SIO_001278 rdf:resource="http://purl.org/io/linkingdata/linkingdata_dataset/linkingdata-pmc-March2017"/>
+        <bibo:pageStart>6</bibo:pageStart>
+        <bibo:cites>
+          <bibo:Document rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B18">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+          </bibo:Document>
+        </bibo:cites>
+        <bibo:cites>
+          <bibo:Document rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B29">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+          </bibo:Document>
+        </bibo:cites>
+        <dcterms:identifier>doi:10.1186/1472-6882-5-6</dcterms:identifier>
+        <bibo:cites>
+          <bibo:Book rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B26">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+          </bibo:Book>
+        </bibo:cites>
+        <bibo:cites>
+          <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/8412246">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+            <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B11"/>
+            <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/doidoc/doi/10.1016/0378-8741(93)90028-4"/>
+            <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(93)90028-4"/>
+            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:8412246"/>
+            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/8412246"/>
+            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/8412246"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8412246"/>
+          </bibo:AcademicArticle>
+        </bibo:cites>
+        <prov:generatedAtTime>13-02-2019 07:50:08</prov:generatedAtTime>
+        <bibo:cites>
+          <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/8412245">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+            <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B12"/>
+            <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/doidoc/doi/10.1016/0378-8741(93)90027-3"/>
+            <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(93)90027-3"/>
+            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:8412245"/>
+            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/8412245"/>
+            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/8412245"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8412245"/>
+          </bibo:AcademicArticle>
+        </bibo:cites>
+        <bibo:abstract>Background: Six Nigerian medicinal plants Terminalia avicennioides, Phylantus discoideus, Bridella ferruginea, Ageratum conyzoides, Ocimum gratissimum and Acalypha wilkesiana used by traditional medical practitioners for the treatment of several ailments of microbial and non-microbial origins were investigated for in vitro anti-methicillin Resistant Staphylococcus aureus (MRSA) activity. Methods: Fresh plant materials were collected from the users. Water and ethanol extracts of the shredded plants were obtained by standard methods. The Bacterial cultures used were strains of MRSA isolated from patients. MRSA was determined by the reference broth microdilution methods using the established National Committee for Clinical Laboratory Standards break points. Staphylococcus aureus NCIB 8588 was used as a standard strain. Susceptibility testing and phytochemical screening of the plant extracts were performed by standard procedures. Controls were maintained for each test batch. Results: Both water and ethanol extracts of T. avicennioides, P. discoideus, O. gratissimum, and A. wilkesiana were effective on MRSA. The Minimum Inhibition Concentration (MIC) and Minimum Bactericidal Concentration (MBC) of the ethanol extracts of these plants range from 18.2 to 24.0 mcg/ml and 30.4 to 37.0 mcg/ml respectively. In contrast, MIC range of 30.6 to 43.0 mcg/ml and 55.4 to 71.0 mcg/ml were recorded for ethanol and water extracts of B. ferruginea, and A. conyzoides respectively. Higher MBC values were obtained for the two plants. These concentrations were too high to be considered active in this study. All the four active plants contained at least trace amount of anthraquinones. Conclusion: Our results offer a scientific basis for the traditional use of water and ethanol extracts of A. wilkesiana, O. gratissimum, T. avicennioides and P. discoideus against MRSA-associated diseases. However, B. ferruginea and A. conyzoides were ineffective in vitro in this study; we therefore suggest the immediate stoppage of their traditional use against MRSA-associated diseases in Lagos, Nigeria. </bibo:abstract>
+        <dcterms:identifier>pmc:1079793</dcterms:identifier>
+        <prov:wasDerivedFrom rdf:resource="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1079793"/>
+        <bibo:cites>
+          <bibo:Book rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B25">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+          </bibo:Book>
+        </bibo:cites>
+        <dcterms:created>13-02-2019 07:50:08</dcterms:created>
+        <bibo:cites>
+          <bibo:Book rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B27">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+          </bibo:Book>
+        </bibo:cites>
+        <bibo:cites>
+          <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B16">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+          </bibo:AcademicArticle>
+        </bibo:cites>
+        <bibo:cites>
+          <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/3821140">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+            <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B14"/>
+            <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/doidoc/doi/10.1016/0378-8741(86)90004-8"/>
+            <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(86)90004-8"/>
+            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:3821140"/>
+            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/3821140"/>
+            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/3821140"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/3821140"/>
+          </bibo:AcademicArticle>
+        </bibo:cites>
+        <dcterms:issued>2005</dcterms:issued>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/doidoc/doi/10.1186/1472-6882-5-6"/>
+        <dcterms:identifier>pmid:15762997</dcterms:identifier>
+        <bibo:cites rdf:resource="http://purl.org/io/linkingdata/doidoc/doi/10.1016/0378-8741(87)90035-3"/>
+        <bibo:cites>
+          <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/9336672">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+            <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B2"/>
+            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:9336672"/>
+            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/9336672"/>
+            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/9336672"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/9336672"/>
+          </bibo:AcademicArticle>
+        </bibo:cites>
+        <dcterms:publisher>
+          <foaf:Organization rdf:about="http://purl.org/io/linkingdata/publisher/pmc_internal_id/1472-6882-5-6">
+            <dcterms:identifier>1472-6882-5-6</dcterms:identifier>
+            <foaf:name>BioMed Central</foaf:name>
+          </foaf:Organization>
+        </dcterms:publisher>
+        <dcterms:creator rdf:resource="http://biotea.github.io/agent/biotea_serializer"/>
+        <bibo:cites>
+          <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B6">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+          </bibo:AcademicArticle>
+        </bibo:cites>
+        <owl:sameAs rdf:resource="http://dx.doi.org/10.1186/1472-6882-5-6"/>
+        <bibo:cites>
+          <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/11353619">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+            <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B5"/>
+            <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/doidoc/doi/10.1128/AAC.45.6.1737-1742.2001"/>
+            <owl:sameAs rdf:resource="http://dx.doi.org/10.1128/AAC.45.6.1737-1742.2001"/>
+            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:11353619"/>
+            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/11353619"/>
+            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/11353619"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/11353619"/>
+          </bibo:AcademicArticle>
+        </bibo:cites>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/15762997"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/15762997"/>
+        <bibo:pmid>15762997</bibo:pmid>
+        <rdf:type rdf:resource="http://purl.org/ontology/bibo/AcademicArticle"/>
+        <bibo:cites>
+          <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/10021469">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+            <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B9"/>
+            <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/doidoc/doi/10.1056/NEJM199902183400701"/>
+            <owl:sameAs rdf:resource="http://dx.doi.org/10.1056/NEJM199902183400701"/>
+            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:10021469"/>
+            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/10021469"/>
+            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/10021469"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/10021469"/>
+          </bibo:AcademicArticle>
+        </bibo:cites>
+        <prov:wasAttributedTo rdf:resource="http://biotea.github.io/agent/biotea_serializer"/>
+        <bibo:cites>
+          <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/doidoc/doi/10.1093/jac/41.1.93">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+            <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B7"/>
+            <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/doidoc/doi/10.1093/jac/41.1.93"/>
+            <owl:sameAs rdf:resource="http://dx.doi.org/10.1093/jac/41.1.93"/>
+          </bibo:AcademicArticle>
+        </bibo:cites>
+        <bibo:cites>
+          <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B19">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+          </bibo:AcademicArticle>
+        </bibo:cites>
+        <dcterms:description>research-article</dcterms:description>
+        <bibo:cites>
+          <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/5356032">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+            <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B28"/>
+            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:5356032"/>
+            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/5356032"/>
+            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/5356032"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/5356032"/>
+          </bibo:AcademicArticle>
+        </bibo:cites>
+        <bibo:authorList>
+          <rdf:Seq rdf:about="http://purl.org/io/linkingdata/listOfAuthors/pmcdoc_resource/1079793/list1">
+            <rdf:li>
+              <foaf:Person rdf:about="http://purl.org/io/linkingdata/person/pmcdoc_resource/1079793/name/KOAkinyemi">
+                <foaf:publications rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+                <foaf:familyName>Akinyemi</foaf:familyName>
+                <foaf:givenName>Kabir O</foaf:givenName>
+                <foaf:name>Kabir O Akinyemi</foaf:name>
+              </foaf:Person>
+            </rdf:li>
+            <rdf:li>
+              <foaf:Person rdf:about="http://purl.org/io/linkingdata/person/pmcdoc_resource/1079793/name/OOladapo">
+                <foaf:publications rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+                <foaf:familyName>Oladapo</foaf:familyName>
+                <foaf:givenName>Olukayode</foaf:givenName>
+                <foaf:name>Olukayode Oladapo</foaf:name>
+              </foaf:Person>
+            </rdf:li>
+            <rdf:li>
+              <foaf:Person rdf:about="http://purl.org/io/linkingdata/person/pmcdoc_resource/1079793/name/CEOkwara">
+                <foaf:publications rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+                <foaf:familyName>Okwara</foaf:familyName>
+                <foaf:givenName>Chidi E</foaf:givenName>
+                <foaf:name>Chidi E Okwara</foaf:name>
+              </foaf:Person>
+            </rdf:li>
+            <rdf:li>
+              <foaf:Person rdf:about="http://purl.org/io/linkingdata/person/pmcdoc_resource/1079793/name/CCIbe">
+                <foaf:publications rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+                <foaf:familyName>Ibe</foaf:familyName>
+                <foaf:givenName>Christopher C</foaf:givenName>
+                <foaf:name>Christopher C Ibe</foaf:name>
+              </foaf:Person>
+            </rdf:li>
+            <rdf:li>
+              <foaf:Person rdf:about="http://purl.org/io/linkingdata/person/pmcdoc_resource/1079793/name/KAFasure">
+                <foaf:publications rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+                <foaf:familyName>Fasure</foaf:familyName>
+                <foaf:givenName>Kehinde A</foaf:givenName>
+                <foaf:name>Kehinde A Fasure</foaf:name>
+              </foaf:Person>
+            </rdf:li>
+          </rdf:Seq>
+        </bibo:authorList>
+        <dcterms:isPartOf>
+          <bibo:Journal rdf:about="http://purl.org/io/linkingdata/journal/issn/1472-6882">
+            <dcterms:publisher rdf:resource="http://purl.org/io/linkingdata/publisher/pmc_internal_id/1472-6882-5-6"/>
+            <dcterms:hasPart rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/nlmcatalog?term=1472-6882"/>
+            <bibo:issn>1472-6882</bibo:issn>
+            <dcterms:title>BMC Complementary and Alternative Medicine</dcterms:title>
+          </bibo:Journal>
+        </dcterms:isPartOf>
+        <bibo:cites>
+          <bibo:Document rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B22">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+          </bibo:Document>
+        </bibo:cites>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/pubmeddoc/pubmed/15762997"/>
+        <bibo:pageEnd>6</bibo:pageEnd>
+        <bibo:cites>
+          <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B17">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+          </bibo:AcademicArticle>
+        </bibo:cites>
+        <dcterms:title>Screening of crude extracts of six medicinal plants used in South-West Nigerian unorthodox medicine for anti-methicillin resistant Staphylococcus aureus activity</dcterms:title>
+        <bibo:cites>
+          <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B8">
+            <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/1079793"/>
+          </bibo:AcademicArticle>
+        </bibo:cites>
+        <bibo:doi>10.1186/1472-6882-5-6</bibo:doi>
+      </bibo:Document>
+    </bibo:citedBy>
+    <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/1079793/B10"/>
+    <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/doidoc/doi/10.1016/0378-8741(87)90035-3"/>
+    <owl:sameAs rdf:resource="http://dx.doi.org/10.1016/0378-8741(87)90035-3"/>
   </bibo:AcademicArticle>
 </rdf:RDF>

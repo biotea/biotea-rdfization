@@ -8,6 +8,7 @@ import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.apache.log4j.Logger;
+import org.ontoware.rdf2go.model.Syntax;
 import org.xml.sax.SAXException;
 
 import ws.biotea.ld2rdf.rdfGeneration.RDFBasicHandler;
@@ -40,18 +41,18 @@ public class PmcOpenAccessHelper {
 	 * @throws DTDException 
 	 */
 	public File rdfizeFile(File subdir, String outputDir, String bioteaBase, String bioteaDataset, boolean sections, 
-		boolean references, String suffix, boolean useBio2RDF) 
+		boolean references, String suffix, boolean useBio2RDF, Syntax format) 
 		throws JAXBException, FileNotFoundException, UnsupportedEncodingException, SAXException, ParserConfigurationException, DTDException, ArticleTypeException, PMCIdException {
-		logger.info("===RDFize " + subdir.getName() + "===");
+		logger.info("===RDFize " + subdir.getName() + "=== ");
 		File outRDF = null; 
 		//1. Create RDF used as a mechanism for improving information retrieval over tagged resources as well as to facilitate the discovery of shared conceptualizations[2,3].
 		this.handler.setStrPmcId(new StringBuilder());
 		if (useBio2RDF) {
-			this.handler.setPaper2rdf(new PmcOpenAccess2MappedRDF(subdir, this.handler.getStrPmcId(), suffix, bioteaBase, bioteaDataset, sections, references));
-		} else if (ResourceConfig.getMappingFile().length() != 0) {
-			this.handler.setPaper2rdf(new PmcOpenAccess2MappedRDF(subdir, this.handler.getStrPmcId(), suffix, bioteaBase, bioteaDataset, sections, references));
+			this.handler.setPaper2rdf(new PmcOpenAccess2MappedRDF(subdir, this.handler.getStrPmcId(), suffix, bioteaBase, bioteaDataset, sections, references, format));
+		} else if (ResourceConfig.getMappingFile("").length() != 0) {
+			this.handler.setPaper2rdf(new PmcOpenAccess2MappedRDF(subdir, this.handler.getStrPmcId(), suffix, bioteaBase, bioteaDataset, sections, references, format));
 		} else {
-			this.handler.setPaper2rdf(new PmcOpenAccess2RDF(subdir, this.handler.getStrPmcId(), suffix, bioteaBase, bioteaDataset, sections, references));
+			this.handler.setPaper2rdf(new PmcOpenAccess2RDF(subdir, this.handler.getStrPmcId(), suffix, bioteaBase, bioteaDataset, sections, references, format));
 		}
 		String pmc = this.handler.getStrPmcId().toString();
 		this.handler.setPaperURLId(GlobalArticleConfig.getArticleRdfUri(bioteaBase, pmc));

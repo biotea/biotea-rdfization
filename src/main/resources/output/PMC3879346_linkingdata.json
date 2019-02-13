@@ -1,0 +1,458 @@
+{
+  "@graph" : [ {
+    "@id" : "http://purl.org/io/linkingdata/issue/journal_resource/issn:1932-6203/issue_1",
+    "@type" : "bibo:Issue",
+    "hasPart" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "isPartOf" : "http://purl.org/io/linkingdata/journal/issn/1932-6203",
+    "issue" : "1"
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/journal/issn/1932-6203",
+    "@type" : "bibo:Journal",
+    "hasPart" : "http://purl.org/io/linkingdata/issue/journal_resource/issn:1932-6203/issue_1",
+    "publisher" : "http://purl.org/io/linkingdata/publisher/pmc_internal_id/PONE-D-13-38424",
+    "title" : "PLoS ONE",
+    "issn" : "1932-6203",
+    "seeAlso" : "http://www.ncbi.nlm.nih.gov/nlmcatalog?term=1932-6203"
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/listOfAuthors/pmcdoc_resource/3879346/list1",
+    "@type" : "rdf:Seq",
+    "_1" : "http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/LNVieira",
+    "_2" : "http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/HFaoro",
+    "_3" : "http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/HPFFraga",
+    "_4" : "http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/MRogalski",
+    "_5" : "http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/EMde-Souza",
+    "_6" : "http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/Fde-Oliveira-Pedrosa",
+    "_7" : "http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/RONodari",
+    "_8" : "http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/MPGuerra"
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/EMde-Souza",
+    "@type" : "foaf:Person",
+    "familyName" : "de Souza",
+    "givenName" : "Emanuel Maltempi",
+    "name" : "Emanuel Maltempi de Souza",
+    "publications" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/Fde-Oliveira-Pedrosa",
+    "@type" : "foaf:Person",
+    "familyName" : "de Oliveira Pedrosa",
+    "givenName" : "Fabio",
+    "name" : "Fabio de Oliveira Pedrosa",
+    "publications" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/HFaoro",
+    "@type" : "foaf:Person",
+    "familyName" : "Faoro",
+    "givenName" : "Helisson",
+    "name" : "Helisson Faoro",
+    "publications" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/HPFFraga",
+    "@type" : "foaf:Person",
+    "familyName" : "Fraga",
+    "givenName" : "Hugo Pacheco de Freitas",
+    "name" : "Hugo Pacheco de Freitas Fraga",
+    "publications" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/LNVieira",
+    "@type" : "foaf:Person",
+    "familyName" : "Vieira",
+    "givenName" : "Leila do Nascimento",
+    "name" : "Leila do Nascimento Vieira",
+    "publications" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/MPGuerra",
+    "@type" : "foaf:Person",
+    "familyName" : "Guerra",
+    "givenName" : "Miguel Pedro",
+    "name" : "Miguel Pedro Guerra",
+    "publications" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/MRogalski",
+    "@type" : "foaf:Person",
+    "familyName" : "Rogalski",
+    "givenName" : "Marcelo",
+    "name" : "Marcelo Rogalski",
+    "publications" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/RONodari",
+    "@type" : "foaf:Person",
+    "familyName" : "Nodari",
+    "givenName" : "Rubens Onofre",
+    "name" : "Rubens Onofre Nodari",
+    "publications" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "@type" : [ "bibo:Document", "bibo:AcademicArticle" ],
+    "created" : "13-02-2019 16:56:35",
+    "creator" : "http://biotea.github.io/agent/biotea_serializer",
+    "description" : "research-article",
+    "identifier" : [ "doi:10.1371/journal.pone.0084792", "pmid:24392157", "pmc:3879346" ],
+    "isPartOf" : "http://purl.org/io/linkingdata/issue/journal_resource/issn:1932-6203/issue_1",
+    "issued" : "2014",
+    "license" : "http://creativecommons.org/licenses/by/4.0/",
+    "publisher" : "http://purl.org/io/linkingdata/publisher/pmc_internal_id/PONE-D-13-38424",
+    "title" : "An Improved Protocol for Intact Chloroplasts and cpDNA Isolation in Conifers",
+    "abstract" : "Background: Performing chloroplast DNA (cpDNA) isolation is considered a major challenge among different plant groups, especially conifers. Isolating chloroplasts in conifers by such conventional methods as sucrose gradient and high salt has not been successful. So far, plastid genome sequencing protocols for conifer species have been based mainly on long-range PCR, which is known to be time-consuming and difficult to implement. Methodology/Principal Findings: We developed a protocol for cpDNA isolation using three different conifer families: Araucaria angustifolia and Araucaria bidwilli (Araucariaceae), Podocarpus lambertii (Podocarpaceae) and Pinus patula (Pinaceae). The present protocol is based on high salt isolation buffer followed by saline Percoll gradient. Combining these two strategies allowed enhanced chloroplast isolation, along with decreased contamination caused by polysaccharides, polyphenols, proteins, and nuclear DNA in cpDNA. Microscopy images confirmed the presence of intact chloroplasts in high abundance. This method was applied to cpDNA isolation and subsequent sequencing by Illumina MiSeq (2X250 bp), using only 50 ng of cpDNA. Reference-guided chloroplast genome mapping showed that high average coverage was achieved for all evaluated species: 24.63 for A. angustifolia, 135.97 for A. bidwilli, 1196.10 for P. lambertii, and 64.68 for P. patula. Conclusion: Results show that this improved protocol is suitable for enhanced quality and yield of chloroplasts and cpDNA isolation from conifers, providing a useful tool for studies that require isolated chloroplasts and/or whole cpDNA sequences. ",
+    "authorList" : "http://purl.org/io/linkingdata/listOfAuthors/pmcdoc_resource/3879346/list1",
+    "cites" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Alkatib1", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/23225155", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/24197309", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/18757552", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/6496932", "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Keeling1", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/1332054", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/14735123", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/18922764", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/21239622", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/23361615", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/17383970", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/20920211", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/20924422", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/18048334", "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Mastroberti1", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/15532064", "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Clarke1", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/15865976", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/9615455", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/21933779", "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-He1", "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Walker1", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/18048330", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/20176954", "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Palmer1", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/7937893", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/23538991", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/18753151", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/22384027", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/20651328", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/21535359", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/20957085", "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Werner1", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/16151190", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/18570682", "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Bock1", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/22034627", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/8905231", "http://purl.org/io/linkingdata/pubmeddoc/pubmed/18665252", "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Kubis1" ],
+    "doi" : "10.1371/journal.pone.0084792",
+    "pmid" : "24392157",
+    "volume" : "9",
+    "SIO_001278" : "http://purl.org/io/linkingdata/biotea_dataset:biotea.pmc.201902",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/24392157", "http://www.ncbi.nlm.nih.gov/pubmed/24392157", "http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3879346" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/pubmeddoc/pubmed/24392157", "http://bio2rdf.org/pubmed:24392157", "http://dx.doi.org/10.1371/journal.pone.0084792", "http://linkedlifedata.com/resource/pubmed/id/24392157", "http://purl.org/io/linkingdata/doidoc/doi/10.1371/journal.pone.0084792", "http://identifiers.org/pubmed/24392157", "http://bio2rdf.org/pmc:3879346" ],
+    "generatedAtTime" : "13-02-2019 16:56:35",
+    "wasAttributedTo" : "http://biotea.github.io/agent/biotea_serializer",
+    "wasDerivedFrom" : "http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3879346"
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/publisher/pmc_internal_id/PONE-D-13-38424",
+    "@type" : "foaf:Organization",
+    "identifier" : "PONE-D-13-38424",
+    "name" : "Public Library of Science"
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/1332054",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/1332054", "http://www.ncbi.nlm.nih.gov/pubmed/1332054" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Wolfe1", "http://bio2rdf.org/pubmed:1332054", "http://identifiers.org/pubmed/1332054" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/14735123",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/14735123", "http://www.ncbi.nlm.nih.gov/pubmed/14735123" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Timmis1", "http://bio2rdf.org/pubmed:14735123", "http://identifiers.org/pubmed/14735123" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/15532064",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/15532064", "http://www.ncbi.nlm.nih.gov/pubmed/15532064" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Yamamoto1", "http://bio2rdf.org/pubmed:15532064", "http://identifiers.org/pubmed/15532064" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/15865976",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/15865976", "http://www.ncbi.nlm.nih.gov/pubmed/15865976" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Jansen2", "http://bio2rdf.org/pubmed:15865976", "http://identifiers.org/pubmed/15865976" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/16151190",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/16151190", "http://www.ncbi.nlm.nih.gov/pubmed/16151190" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Chumley1", "http://bio2rdf.org/pubmed:16151190", "http://identifiers.org/pubmed/16151190" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/17383970",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/17383970", "http://www.ncbi.nlm.nih.gov/pubmed/17383970" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Wu2", "http://bio2rdf.org/pubmed:17383970", "http://identifiers.org/pubmed/17383970" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/18048330",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/18048330", "http://www.ncbi.nlm.nih.gov/pubmed/18048330" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Jansen1", "http://bio2rdf.org/pubmed:18048330", "http://identifiers.org/pubmed/18048330" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/18048334",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/18048334", "http://www.ncbi.nlm.nih.gov/pubmed/18048334" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Moore1", "http://bio2rdf.org/pubmed:18048334", "http://identifiers.org/pubmed/18048334" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/18570682",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/18570682", "http://www.ncbi.nlm.nih.gov/pubmed/18570682" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Hirao1", "http://bio2rdf.org/pubmed:18570682", "http://identifiers.org/pubmed/18570682" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/18665252",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/18665252", "http://www.ncbi.nlm.nih.gov/pubmed/18665252" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Diekmann1", "http://bio2rdf.org/pubmed:18665252", "http://identifiers.org/pubmed/18665252" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/18753151",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/18753151", "http://www.ncbi.nlm.nih.gov/pubmed/18753151" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Cronn1", "http://bio2rdf.org/pubmed:18753151", "http://identifiers.org/pubmed/18753151" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/18757552",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/18757552", "http://www.ncbi.nlm.nih.gov/pubmed/18757552" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Rogalski1", "http://bio2rdf.org/pubmed:18757552", "http://identifiers.org/pubmed/18757552" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/18922764",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/18922764", "http://www.ncbi.nlm.nih.gov/pubmed/18922764" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Goremykin1", "http://bio2rdf.org/pubmed:18922764", "http://identifiers.org/pubmed/18922764" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/20176954",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/20176954", "http://www.ncbi.nlm.nih.gov/pubmed/20176954" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Moore2", "http://bio2rdf.org/pubmed:20176954", "http://identifiers.org/pubmed/20176954" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/20651328",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/20651328", "http://www.ncbi.nlm.nih.gov/pubmed/20651328" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Lin1", "http://bio2rdf.org/pubmed:20651328", "http://identifiers.org/pubmed/20651328" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/20920211",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/20920211", "http://www.ncbi.nlm.nih.gov/pubmed/20920211" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Atherton1", "http://bio2rdf.org/pubmed:20920211", "http://identifiers.org/pubmed/20920211" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/20924422",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/20924422", "http://www.ncbi.nlm.nih.gov/pubmed/20924422" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Wolf1", "http://bio2rdf.org/pubmed:20924422", "http://identifiers.org/pubmed/20924422" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/20957085",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/20957085", "http://www.ncbi.nlm.nih.gov/pubmed/20957085" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Arif1", "http://bio2rdf.org/pubmed:20957085", "http://identifiers.org/pubmed/20957085" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/21239622",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/21239622", "http://www.ncbi.nlm.nih.gov/pubmed/21239622" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Maliga1", "http://bio2rdf.org/pubmed:21239622", "http://identifiers.org/pubmed/21239622" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/21535359",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/21535359", "http://www.ncbi.nlm.nih.gov/pubmed/21535359" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Rogalski2", "http://bio2rdf.org/pubmed:21535359", "http://identifiers.org/pubmed/21535359" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/21933779",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/21933779", "http://www.ncbi.nlm.nih.gov/pubmed/21933779" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Wu1", "http://bio2rdf.org/pubmed:21933779", "http://identifiers.org/pubmed/21933779" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/22034627",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/22034627", "http://www.ncbi.nlm.nih.gov/pubmed/22034627" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-RousseauGueutin1", "http://bio2rdf.org/pubmed:22034627", "http://identifiers.org/pubmed/22034627" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/22384027",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/22384027", "http://www.ncbi.nlm.nih.gov/pubmed/22384027" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Shi1", "http://bio2rdf.org/pubmed:22384027", "http://identifiers.org/pubmed/22384027" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/23225155",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/23225155", "http://www.ncbi.nlm.nih.gov/pubmed/23225155" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Gargano1", "http://bio2rdf.org/pubmed:23225155", "http://identifiers.org/pubmed/23225155" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/23361615",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/23361615", "http://www.ncbi.nlm.nih.gov/pubmed/23361615" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Greiner1", "http://bio2rdf.org/pubmed:23361615", "http://identifiers.org/pubmed/23361615" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/23538991",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/23538991", "http://www.ncbi.nlm.nih.gov/pubmed/23538991" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Yi1", "http://bio2rdf.org/pubmed:23538991", "http://identifiers.org/pubmed/23538991" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/24197309",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/24197309", "http://www.ncbi.nlm.nih.gov/pubmed/24197309" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Ayliffe1", "http://bio2rdf.org/pubmed:24197309", "http://identifiers.org/pubmed/24197309" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/6496932",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/6496932", "http://www.ncbi.nlm.nih.gov/pubmed/6496932" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Bookjans1", "http://bio2rdf.org/pubmed:6496932", "http://identifiers.org/pubmed/6496932" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/7937893",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/7937893", "http://www.ncbi.nlm.nih.gov/pubmed/7937893" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Wakasugi1", "http://bio2rdf.org/pubmed:7937893", "http://identifiers.org/pubmed/7937893" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/8905231",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/8905231", "http://www.ncbi.nlm.nih.gov/pubmed/8905231" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Kaneko1", "http://bio2rdf.org/pubmed:8905231", "http://identifiers.org/pubmed/8905231" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/pubmeddoc/pubmed/9615455",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346",
+    "seeAlso" : [ "http://info.identifiers.org/pubmed/9615455", "http://www.ncbi.nlm.nih.gov/pubmed/9615455" ],
+    "sameAs" : [ "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Ayliffe2", "http://bio2rdf.org/pubmed:9615455", "http://identifiers.org/pubmed/9615455" ]
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Alkatib1",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Bock1",
+    "@type" : "bibo:Document",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Clarke1",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-He1",
+    "@type" : "bibo:Document",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Keeling1",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Kubis1",
+    "@type" : "bibo:Book",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Mastroberti1",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Palmer1",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Walker1",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"
+  }, {
+    "@id" : "http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Werner1",
+    "@type" : "bibo:AcademicArticle",
+    "citedBy" : "http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"
+  } ],
+  "@context" : {
+    "citedBy" : {
+      "@id" : "http://purl.org/ontology/bibo/citedBy",
+      "@type" : "@id"
+    },
+    "sameAs" : {
+      "@id" : "http://www.w3.org/2002/07/owl#sameAs",
+      "@type" : "@id"
+    },
+    "seeAlso" : {
+      "@id" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+      "@type" : "@id"
+    },
+    "publisher" : {
+      "@id" : "http://purl.org/dc/terms/publisher",
+      "@type" : "@id"
+    },
+    "hasPart" : {
+      "@id" : "http://purl.org/dc/terms/hasPart",
+      "@type" : "@id"
+    },
+    "issn" : "http://purl.org/ontology/bibo/issn",
+    "title" : "http://purl.org/dc/terms/title",
+    "publications" : {
+      "@id" : "http://xmlns.com/foaf/0.1/publications",
+      "@type" : "@id"
+    },
+    "familyName" : "http://xmlns.com/foaf/0.1/familyName",
+    "givenName" : "http://xmlns.com/foaf/0.1/givenName",
+    "name" : "http://xmlns.com/foaf/0.1/name",
+    "identifier" : "http://purl.org/dc/terms/identifier",
+    "_8" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#_8",
+      "@type" : "@id"
+    },
+    "_7" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#_7",
+      "@type" : "@id"
+    },
+    "_6" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#_6",
+      "@type" : "@id"
+    },
+    "_5" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#_5",
+      "@type" : "@id"
+    },
+    "_4" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#_4",
+      "@type" : "@id"
+    },
+    "_3" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#_3",
+      "@type" : "@id"
+    },
+    "_2" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#_2",
+      "@type" : "@id"
+    },
+    "_1" : {
+      "@id" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#_1",
+      "@type" : "@id"
+    },
+    "cites" : {
+      "@id" : "http://purl.org/ontology/bibo/cites",
+      "@type" : "@id"
+    },
+    "volume" : "http://purl.org/ontology/bibo/volume",
+    "abstract" : "http://purl.org/ontology/bibo/abstract",
+    "issued" : "http://purl.org/dc/terms/issued",
+    "SIO_001278" : {
+      "@id" : "http://semanticscience.org/resource/SIO_001278",
+      "@type" : "@id"
+    },
+    "description" : "http://purl.org/dc/terms/description",
+    "pmid" : "http://purl.org/ontology/bibo/pmid",
+    "isPartOf" : {
+      "@id" : "http://purl.org/dc/terms/isPartOf",
+      "@type" : "@id"
+    },
+    "authorList" : {
+      "@id" : "http://purl.org/ontology/bibo/authorList",
+      "@type" : "@id"
+    },
+    "wasAttributedTo" : {
+      "@id" : "http://www.w3.org/ns/prov#wasAttributedTo",
+      "@type" : "@id"
+    },
+    "doi" : "http://purl.org/ontology/bibo/doi",
+    "generatedAtTime" : "http://www.w3.org/ns/prov#generatedAtTime",
+    "wasDerivedFrom" : {
+      "@id" : "http://www.w3.org/ns/prov#wasDerivedFrom",
+      "@type" : "@id"
+    },
+    "created" : "http://purl.org/dc/terms/created",
+    "creator" : {
+      "@id" : "http://purl.org/dc/terms/creator",
+      "@type" : "@id"
+    },
+    "license" : {
+      "@id" : "http://purl.org/dc/terms/license",
+      "@type" : "@id"
+    },
+    "issue" : "http://purl.org/ontology/bibo/issue",
+    "void" : "http://rdfs.org/ns/void#",
+    "owl" : "http://www.w3.org/2002/07/owl#",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "wd" : "http://www.wikidata.org/entity/",
+    "xsp" : "http://www.owl-ontologies.com/2005/08/07/xsp.owl#",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "doco" : "http://purl.org/spar/doco/",
+    "sio" : "http://semanticscience.org/resource/",
+    "dcterms" : "http://purl.org/dc/terms/",
+    "bibo" : "http://purl.org/ontology/bibo/",
+    "prov" : "http://www.w3.org/ns/prov#",
+    "biotea" : "https://biotea.github.io/biotea-ontololgy#",
+    "foaf" : "http://xmlns.com/foaf/0.1/"
+  }
+}

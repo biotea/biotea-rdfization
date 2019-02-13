@@ -13,2226 +13,483 @@
     xmlns:sio="http://semanticscience.org/resource/"
     xmlns:foaf="http://xmlns.com/foaf/0.1/"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
-  <bibo:AcademicArticle rdf:about="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Keeling1">
-    <bibo:citedBy>
-      <bibo:Document rdf:about="http://linkingdata.io/pmcdoc/pmc/3879346">
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/23538991">
-            <bibo:pageStart>688</bibo:pageStart>
-            <bibo:volume>5</bibo:volume>
-            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:23538991"/>
-            <bibo:pmid>23538991</bibo:pmid>
-            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/23538991"/>
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/23538991/list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/23538991/name/XYi">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/23538991"/>
-                    <foaf:familyName>Yi</foaf:familyName>
-                    <foaf:givenName>X</foaf:givenName>
-                    <foaf:name>X Yi</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/23538991/name/LGao">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/23538991"/>
-                    <foaf:familyName>Gao</foaf:familyName>
-                    <foaf:givenName>L</foaf:givenName>
-                    <foaf:name>L Gao</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/23538991/name/BWang">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/23538991"/>
-                    <foaf:familyName>Wang</foaf:familyName>
-                    <foaf:givenName>B</foaf:givenName>
-                    <foaf:name>B Wang</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/23538991/name/YJSu">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/23538991"/>
-                    <foaf:familyName>Su</foaf:familyName>
-                    <foaf:givenName>YJ</foaf:givenName>
-                    <foaf:name>YJ Su</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/23538991/name/TWang">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/23538991"/>
-                    <foaf:familyName>Wang</foaf:familyName>
-                    <foaf:givenName>T</foaf:givenName>
-                    <foaf:name>T Wang</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <bibo:pageEnd>698</bibo:pageEnd>
-            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/23538991"/>
-            <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Yi1"/>
-            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/23538991"/>
-            <dcterms:identifier>pmid:23538991</dcterms:identifier>
-            <dcterms:issued>2013</dcterms:issued>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/GenomeBiolEvol">
-                <dcterms:hasPart>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/20651328">
-                    <dcterms:issued>2010</dcterms:issued>
-                    <bibo:pageStart>504</bibo:pageStart>
-                    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/20651328"/>
-                    <dcterms:identifier>pmid:20651328</dcterms:identifier>
-                    <dcterms:isPartOf rdf:resource="http://linkingdata.io/journal/name/GenomeBiolEvol"/>
-                    <bibo:pageEnd>517</bibo:pageEnd>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/20651328/list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20651328/name/CPLin">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20651328"/>
-                            <foaf:familyName>Lin</foaf:familyName>
-                            <foaf:givenName>CP</foaf:givenName>
-                            <foaf:name>CP Lin</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20651328/name/JPHuang">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20651328"/>
-                            <foaf:familyName>Huang</foaf:familyName>
-                            <foaf:givenName>JP</foaf:givenName>
-                            <foaf:name>JP Huang</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20651328/name/CSWu">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20651328"/>
-                            <foaf:familyName>Wu</foaf:familyName>
-                            <foaf:givenName>CS</foaf:givenName>
-                            <foaf:name>CS Wu</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20651328/name/CYHsu">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20651328"/>
-                            <foaf:familyName>Hsu</foaf:familyName>
-                            <foaf:givenName>CY</foaf:givenName>
-                            <foaf:name>CY Hsu</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20651328/name/SMChaw">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20651328"/>
-                            <foaf:familyName>Chaw</foaf:familyName>
-                            <foaf:givenName>SM</foaf:givenName>
-                            <foaf:name>SM Chaw</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:pmid>20651328</bibo:pmid>
-                    <dcterms:title>Comparative chloroplast genomics reveals the evolution of Pinaceae genera and subfamilies</dcterms:title>
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-                    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:20651328"/>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Lin1"/>
-                    <bibo:volume>2</bibo:volume>
-                    <owl:sameAs rdf:resource="http://identifiers.org/pubmed/20651328"/>
-                    <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/20651328"/>
-                  </bibo:AcademicArticle>
-                </dcterms:hasPart>
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/23538991"/>
-                <dcterms:hasPart>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/21933779">
-                    <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/21933779"/>
-                    <owl:sameAs rdf:resource="http://identifiers.org/pubmed/21933779"/>
-                    <dcterms:isPartOf rdf:resource="http://linkingdata.io/journal/name/GenomeBiolEvol"/>
-                    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21933779"/>
-                    <bibo:pageStart>1284</bibo:pageStart>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Wu1"/>
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-                    <dcterms:title>Loss of different inverted repeat copies from the chloroplast genomes of Pinaceae and Cupressophytes and influence of heterotachy on the evaluation of gymnosperm phylogeny</dcterms:title>
-                    <dcterms:identifier>pmid:21933779</dcterms:identifier>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/21933779/list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/21933779/name/CSWu">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/21933779"/>
-                            <foaf:familyName>Wu</foaf:familyName>
-                            <foaf:givenName>CS</foaf:givenName>
-                            <foaf:name>CS Wu</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/21933779/name/YNWang">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/21933779"/>
-                            <foaf:familyName>Wang</foaf:familyName>
-                            <foaf:givenName>YN</foaf:givenName>
-                            <foaf:name>YN Wang</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/21933779/name/CYHsu">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/21933779"/>
-                            <foaf:familyName>Hsu</foaf:familyName>
-                            <foaf:givenName>CY</foaf:givenName>
-                            <foaf:name>CY Hsu</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/21933779/name/CPLin">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/21933779"/>
-                            <foaf:familyName>Lin</foaf:familyName>
-                            <foaf:givenName>CP</foaf:givenName>
-                            <foaf:name>CP Lin</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/21933779/name/SMChaw">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/21933779"/>
-                            <foaf:familyName>Chaw</foaf:familyName>
-                            <foaf:givenName>SM</foaf:givenName>
-                            <foaf:name>SM Chaw</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:pmid>21933779</bibo:pmid>
-                    <bibo:pageEnd>1295</bibo:pageEnd>
-                    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:21933779"/>
-                    <bibo:volume>3</bibo:volume>
-                    <dcterms:issued>2011</dcterms:issued>
-                  </bibo:AcademicArticle>
-                </dcterms:hasPart>
-                <dcterms:title>Genome Biol Evol</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <dcterms:title>The complete chloroplast genome sequence of Cephalotaxus oliveri (Cephalotaxaceae): evolutionary comparison of Cephalotaxus chloroplast DNAs and insights into the loss of inverted repeat copies in Gymnosperms</dcterms:title>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/24392157"/>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/21535359">
-            <dcterms:title>Engineering plastid fatty acid biosynthesis to improve food quality and biofuel production in higher plants</dcterms:title>
-            <bibo:pmid>21535359</bibo:pmid>
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <dcterms:issued>2011</dcterms:issued>
-            <bibo:pageEnd>564</bibo:pageEnd>
-            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21535359"/>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/PlantBiotechnolJ">
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/21535359"/>
-                <dcterms:title>Plant Biotechnol J</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <bibo:pageStart>554</bibo:pageStart>
-            <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Rogalski2"/>
-            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/21535359"/>
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/21535359/list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/21535359/name/MRogalski">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/21535359"/>
-                    <foaf:familyName>Rogalski</foaf:familyName>
-                    <foaf:givenName>M</foaf:givenName>
-                    <foaf:name>M Rogalski</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/21535359/name/HCarrer">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/21535359"/>
-                    <foaf:familyName>Carrer</foaf:familyName>
-                    <foaf:givenName>H</foaf:givenName>
-                    <foaf:name>H Carrer</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:21535359"/>
-            <bibo:volume>9</bibo:volume>
-            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/21535359"/>
-            <dcterms:identifier>pmid:21535359</dcterms:identifier>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <dcterms:title>An Improved Protocol for Intact Chloroplasts and cpDNA Isolation in Conifers</dcterms:title>
-        <dcterms:identifier>pmid:24392157</dcterms:identifier>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/15532064">
-            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/15532064"/>
-            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/15532064"/>
-            <bibo:pageStart>1337</bibo:pageStart>
-            <bibo:pmid>15532064</bibo:pmid>
-            <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Yamamoto1"/>
-            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:15532064"/>
-            <dcterms:title>Lignans and resin of Araucaria angustifolia by gas chromatography/mass spectrometry</dcterms:title>
-            <dcterms:identifier>pmid:15532064</dcterms:identifier>
-            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/15532064"/>
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <bibo:pageEnd>1347</bibo:pageEnd>
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/15532064/list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/15532064/name/ESYamamoto">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/15532064"/>
-                    <foaf:familyName>Yamamoto</foaf:familyName>
-                    <foaf:givenName>ES</foaf:givenName>
-                    <foaf:name>ES Yamamoto</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/15532064/name/AOtto">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/15532064"/>
-                    <foaf:familyName>Otto</foaf:familyName>
-                    <foaf:givenName>A</foaf:givenName>
-                    <foaf:name>A Otto</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/15532064/name/BRTSimoneit">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/15532064"/>
-                    <foaf:familyName>Simoneit</foaf:familyName>
-                    <foaf:givenName>BRT</foaf:givenName>
-                    <foaf:name>BRT Simoneit</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <dcterms:issued>2004</dcterms:issued>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/JMassSpectrom">
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/15532064"/>
-                <dcterms:title>J Mass Spectrom</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <bibo:volume>39</bibo:volume>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/15865976">
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/15865976/list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/15865976/name/RKJansen">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/15865976"/>
-                    <foaf:familyName>Jansen</foaf:familyName>
-                    <foaf:givenName>RK</foaf:givenName>
-                    <foaf:name>RK Jansen</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/15865976/name/LARaubeson">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/15865976"/>
-                    <foaf:familyName>Raubeson</foaf:familyName>
-                    <foaf:givenName>LA</foaf:givenName>
-                    <foaf:name>LA Raubeson</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/15865976/name/JLBoore">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/15865976"/>
-                    <foaf:familyName>Boore</foaf:familyName>
-                    <foaf:givenName>JL</foaf:givenName>
-                    <foaf:name>JL Boore</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/15865976/name/CWdePamphilis">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/15865976"/>
-                    <foaf:familyName>dePamphilis</foaf:familyName>
-                    <foaf:givenName>CW</foaf:givenName>
-                    <foaf:name>CW dePamphilis</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/15865976/name/TWChumley">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/15865976"/>
-                    <foaf:familyName>Chumley</foaf:familyName>
-                    <foaf:givenName>TW</foaf:givenName>
-                    <foaf:name>TW Chumley</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <dcterms:title>Methods for obtaining and analyzing whole chloroplast genome sequences</dcterms:title>
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <bibo:pmid>15865976</bibo:pmid>
-            <bibo:volume>395</bibo:volume>
-            <dcterms:identifier>pmid:15865976</dcterms:identifier>
-            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/15865976"/>
-            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/15865976"/>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/MethodsEnzymol">
-                <dcterms:hasPart>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Walker1">
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pmcdoc_resource/3879346/pone.0084792-Walker1:list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/DAWalker">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Walker1"/>
-                            <foaf:familyName>Walker</foaf:familyName>
-                            <foaf:givenName>DA</foaf:givenName>
-                            <foaf:name>DA Walker</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/ZEGCerovic">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Walker1"/>
-                            <foaf:familyName>Cerovic</foaf:familyName>
-                            <foaf:givenName>ZEG</foaf:givenName>
-                            <foaf:name>ZEG Cerovic</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/SPRobinson">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Walker1"/>
-                            <foaf:familyName>Robinson</foaf:familyName>
-                            <foaf:givenName>SP</foaf:givenName>
-                            <foaf:name>SP Robinson</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:pageEnd>157</bibo:pageEnd>
-                    <bibo:pageStart>145</bibo:pageStart>
-                    <dcterms:issued>1987</dcterms:issued>
-                    <dcterms:isPartOf rdf:resource="http://linkingdata.io/journal/name/MethodsEnzymol"/>
-                    <bibo:volume>148</bibo:volume>
-                    <dcterms:title>Isolation of intact chloroplasts: general principles and criteria of integrity</dcterms:title>
-                  </bibo:AcademicArticle>
-                </dcterms:hasPart>
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/15865976"/>
-                <dcterms:title>Methods Enzymol</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Jansen2"/>
-            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:15865976"/>
-            <bibo:pageStart>348</bibo:pageStart>
-            <dcterms:issued>2005</dcterms:issued>
-            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/15865976"/>
-            <bibo:pageEnd>384</bibo:pageEnd>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/18753151">
-            <bibo:pageStart>e122</bibo:pageStart>
-            <dcterms:issued>2008</dcterms:issued>
-            <dcterms:title>Multiplex sequencing of plant chloroplast genomes using Solexa sequencing-by-synthesis technology</dcterms:title>
-            <bibo:pmid>18753151</bibo:pmid>
-            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/18753151"/>
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/18753151"/>
-            <dcterms:identifier>pmid:18753151</dcterms:identifier>
-            <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Cronn1"/>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/NucleicAcidsRes">
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18753151"/>
-                <dcterms:title>Nucleic Acids Res</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <bibo:volume>36</bibo:volume>
-            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:18753151"/>
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/18753151/list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18753151/name/RCronn">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18753151"/>
-                    <foaf:familyName>Cronn</foaf:familyName>
-                    <foaf:givenName>R</foaf:givenName>
-                    <foaf:name>R Cronn</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18753151/name/AListon">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18753151"/>
-                    <foaf:familyName>Liston</foaf:familyName>
-                    <foaf:givenName>A</foaf:givenName>
-                    <foaf:name>A Liston</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18753151/name/MParks">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18753151"/>
-                    <foaf:familyName>Parks</foaf:familyName>
-                    <foaf:givenName>M</foaf:givenName>
-                    <foaf:name>M Parks</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18753151/name/GSGernandt">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18753151"/>
-                    <foaf:familyName>Gernandt</foaf:familyName>
-                    <foaf:givenName>GS</foaf:givenName>
-                    <foaf:name>GS Gernandt</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18753151/name/RShen">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18753151"/>
-                    <foaf:familyName>Shen</foaf:familyName>
-                    <foaf:givenName>R</foaf:givenName>
-                    <foaf:name>R Shen</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18753151"/>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <owl:sameAs rdf:resource="http://dx.doi.org/10.1371/journal.pone.0084792"/>
-        <bibo:cites rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Walker1"/>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/20957085">
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Arif1"/>
-            <bibo:pmid>20957085</bibo:pmid>
-            <dcterms:issued>2010</dcterms:issued>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/IntJMolSci">
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20957085"/>
-                <dcterms:title>Int J Mol Sci</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <dcterms:identifier>pmid:20957085</dcterms:identifier>
-            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:20957085"/>
-            <dcterms:title>A simple method for DNA extraction from mature date palm leaves: impact of sand grinding and composition of lysis buffer</dcterms:title>
-            <bibo:pageEnd>3157</bibo:pageEnd>
-            <bibo:volume>11</bibo:volume>
-            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/20957085"/>
-            <bibo:pageStart>3149</bibo:pageStart>
-            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/20957085"/>
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/20957085/list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20957085/name/IAArif">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20957085"/>
-                    <foaf:familyName>Arif</foaf:familyName>
-                    <foaf:givenName>IA</foaf:givenName>
-                    <foaf:name>IA Arif</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20957085/name/MABakir">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20957085"/>
-                    <foaf:familyName>Bakir</foaf:familyName>
-                    <foaf:givenName>MA</foaf:givenName>
-                    <foaf:name>MA Bakir</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20957085/name/HAKhan">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20957085"/>
-                    <foaf:familyName>Khan</foaf:familyName>
-                    <foaf:givenName>HA</foaf:givenName>
-                    <foaf:name>HA Khan</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20957085/name/AAhamed">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20957085"/>
-                    <foaf:familyName>Ahamed</foaf:familyName>
-                    <foaf:givenName>A</foaf:givenName>
-                    <foaf:name>A Ahamed</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20957085/name/AHFarhan">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20957085"/>
-                    <foaf:familyName>Farhan</foaf:familyName>
-                    <foaf:givenName>AH</foaf:givenName>
-                    <foaf:name>AH Farhan</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/20957085"/>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <prov:generatedAtTime>19-11-2017 15:39:37</prov:generatedAtTime>
-        <bibo:cites>
-          <bibo:Book rdf:about="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Kubis1">
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-          </bibo:Book>
-        </bibo:cites>
-        <bibo:authorList>
-          <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthors/pmcdoc_resource/3879346/list1">
-            <rdf:li>
-              <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/LNVieira">
-                <foaf:publications rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-                <foaf:familyName>Vieira</foaf:familyName>
-                <foaf:givenName>Leila do Nascimento</foaf:givenName>
-                <foaf:name>Leila do Nascimento Vieira</foaf:name>
-              </foaf:Person>
-            </rdf:li>
-            <rdf:li>
-              <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/HFaoro">
-                <foaf:publications rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-                <foaf:familyName>Faoro</foaf:familyName>
-                <foaf:givenName>Helisson</foaf:givenName>
-                <foaf:name>Helisson Faoro</foaf:name>
-              </foaf:Person>
-            </rdf:li>
-            <rdf:li>
-              <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/HPFFraga">
-                <foaf:publications rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-                <foaf:familyName>Fraga</foaf:familyName>
-                <foaf:givenName>Hugo Pacheco de Freitas</foaf:givenName>
-                <foaf:name>Hugo Pacheco de Freitas Fraga</foaf:name>
-              </foaf:Person>
-            </rdf:li>
-            <rdf:li>
-              <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/MRogalski">
-                <foaf:publications>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Alkatib1">
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pmcdoc_resource/3879346/pone.0084792-Alkatib1:list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/SAlkatib">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Alkatib1"/>
-                            <foaf:familyName>Alkatib</foaf:familyName>
-                            <foaf:givenName>S</foaf:givenName>
-                            <foaf:name>S Alkatib</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/LBScharff">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Alkatib1"/>
-                            <foaf:familyName>Scharff</foaf:familyName>
-                            <foaf:givenName>LB</foaf:givenName>
-                            <foaf:name>LB Scharff</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li rdf:resource="http://linkingdata.io/person/pmcdoc_resource/3879346/name/MRogalski"/>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/TTFleischmann">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Alkatib1"/>
-                            <foaf:familyName>Fleischmann</foaf:familyName>
-                            <foaf:givenName>TT</foaf:givenName>
-                            <foaf:name>TT Fleischmann</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/AMatthes">
-                            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Alkatib1"/>
-                            <foaf:familyName>Matthes</foaf:familyName>
-                            <foaf:givenName>A</foaf:givenName>
-                            <foaf:name>A Matthes</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:pageStart>e1003076</bibo:pageStart>
-                    <dcterms:issued>2012</dcterms:issued>
-                  </bibo:AcademicArticle>
-                </foaf:publications>
-                <foaf:givenName>M</foaf:givenName>
-                <foaf:name>M Rogalski</foaf:name>
-                <foaf:publications rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-                <foaf:familyName>Rogalski</foaf:familyName>
-                <foaf:givenName>Marcelo</foaf:givenName>
-                <foaf:name>Marcelo Rogalski</foaf:name>
-              </foaf:Person>
-            </rdf:li>
-            <rdf:li>
-              <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/EMde-Souza">
-                <foaf:publications rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-                <foaf:familyName>de Souza</foaf:familyName>
-                <foaf:givenName>Emanuel Maltempi</foaf:givenName>
-                <foaf:name>Emanuel Maltempi de Souza</foaf:name>
-              </foaf:Person>
-            </rdf:li>
-            <rdf:li>
-              <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/Fde-Oliveira-Pedrosa">
-                <foaf:publications rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-                <foaf:familyName>de Oliveira Pedrosa</foaf:familyName>
-                <foaf:givenName>Fabio</foaf:givenName>
-                <foaf:name>Fabio de Oliveira Pedrosa</foaf:name>
-              </foaf:Person>
-            </rdf:li>
-            <rdf:li>
-              <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/RONodari">
-                <foaf:publications rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-                <foaf:familyName>Nodari</foaf:familyName>
-                <foaf:givenName>Rubens Onofre</foaf:givenName>
-                <foaf:name>Rubens Onofre Nodari</foaf:name>
-              </foaf:Person>
-            </rdf:li>
-            <rdf:li>
-              <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/MPGuerra">
-                <foaf:publications rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-                <foaf:familyName>Guerra</foaf:familyName>
-                <foaf:givenName>Miguel Pedro</foaf:givenName>
-                <foaf:name>Miguel Pedro Guerra</foaf:name>
-              </foaf:Person>
-            </rdf:li>
-          </rdf:Seq>
-        </bibo:authorList>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/17383970">
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <bibo:pageStart>1366</bibo:pageStart>
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/17383970/list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/17383970/name/CSWu">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/17383970"/>
-                    <foaf:familyName>Wu</foaf:familyName>
-                    <foaf:givenName>CS</foaf:givenName>
-                    <foaf:name>CS Wu</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/17383970/name/YNWang">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/17383970"/>
-                    <foaf:familyName>Wang</foaf:familyName>
-                    <foaf:givenName>YN</foaf:givenName>
-                    <foaf:name>YN Wang</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/17383970/name/SMLiu">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/17383970"/>
-                    <foaf:familyName>Liu</foaf:familyName>
-                    <foaf:givenName>SM</foaf:givenName>
-                    <foaf:name>SM Liu</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/17383970/name/SMChaw">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/17383970"/>
-                    <foaf:familyName>Chaw</foaf:familyName>
-                    <foaf:givenName>SM</foaf:givenName>
-                    <foaf:name>SM Chaw</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/17383970"/>
-            <bibo:volume>24</bibo:volume>
-            <dcterms:issued>2007</dcterms:issued>
-            <bibo:pageEnd>1379</bibo:pageEnd>
-            <dcterms:title>Chloroplast genome (cpDNA) of Cycas taitungensis and 56 cp protein-coding genes of Gnetum parvifolium: insights into cpDNA evolution and phylogeny of extant seed plants</dcterms:title>
-            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/17383970"/>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/MolBiolEvol">
-                <dcterms:hasPart>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/18922764">
-                    <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Goremykin1"/>
-                    <dcterms:identifier>pmid:18922764</dcterms:identifier>
-                    <bibo:pageStart>99</bibo:pageStart>
-                    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:18922764"/>
-                    <dcterms:issued>2009</dcterms:issued>
-                    <bibo:volume>26</bibo:volume>
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-                    <owl:sameAs rdf:resource="http://identifiers.org/pubmed/18922764"/>
-                    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18922764"/>
-                    <dcterms:isPartOf rdf:resource="http://linkingdata.io/journal/name/MolBiolEvol"/>
-                    <bibo:pageEnd>110</bibo:pageEnd>
-                    <bibo:pmid>18922764</bibo:pmid>
-                    <dcterms:title>Mitochondrial DNA of Vitis vinifera and the issue of rampant horizontal gene transfer</dcterms:title>
-                    <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/18922764"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/18922764/list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18922764/name/VVGoremykin">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18922764"/>
-                            <foaf:familyName>Goremykin</foaf:familyName>
-                            <foaf:givenName>VV</foaf:givenName>
-                            <foaf:name>VV Goremykin</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18922764/name/FSalamini">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18922764"/>
-                            <foaf:familyName>Salamini</foaf:familyName>
-                            <foaf:givenName>F</foaf:givenName>
-                            <foaf:name>F Salamini</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18922764/name/RVelasco">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18922764"/>
-                            <foaf:familyName>Velasco</foaf:familyName>
-                            <foaf:givenName>R</foaf:givenName>
-                            <foaf:name>R Velasco</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18922764/name/RViola">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18922764"/>
-                            <foaf:familyName>Viola</foaf:familyName>
-                            <foaf:givenName>R</foaf:givenName>
-                            <foaf:name>R Viola</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                  </bibo:AcademicArticle>
-                </dcterms:hasPart>
-                <dcterms:hasPart>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/9615455">
-                    <bibo:pageEnd>745</bibo:pageEnd>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Ayliffe2"/>
-                    <bibo:pageStart>738</bibo:pageStart>
-                    <dcterms:isPartOf rdf:resource="http://linkingdata.io/journal/name/MolBiolEvol"/>
-                    <dcterms:identifier>pmid:9615455</dcterms:identifier>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/9615455/list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/9615455/name/MAAyliffe">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/9615455"/>
-                            <foaf:familyName>Ayliffe</foaf:familyName>
-                            <foaf:givenName>MA</foaf:givenName>
-                            <foaf:name>MA Ayliffe</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/9615455/name/NSScott">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/9615455"/>
-                            <foaf:familyName>Scott</foaf:familyName>
-                            <foaf:givenName>NS</foaf:givenName>
-                            <foaf:name>NS Scott</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/9615455/name/JNTimmis">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/9615455"/>
-                            <foaf:familyName>Timmis</foaf:familyName>
-                            <foaf:givenName>JN</foaf:givenName>
-                            <foaf:name>JN Timmis</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:volume>15</bibo:volume>
-                    <owl:sameAs rdf:resource="http://identifiers.org/pubmed/9615455"/>
-                    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:9615455"/>
-                    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/9615455"/>
-                    <dcterms:issued>1998</dcterms:issued>
-                    <bibo:pmid>9615455</bibo:pmid>
-                    <dcterms:title>Analysis of plastid DNA like sequences within the nuclear genomes of higher plants</dcterms:title>
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-                    <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/9615455"/>
-                  </bibo:AcademicArticle>
-                </dcterms:hasPart>
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/17383970"/>
-                <dcterms:hasPart>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/16151190">
-                    <dcterms:issued>2006</dcterms:issued>
-                    <dcterms:title>The complete chloroplast genome sequence of PelargoniumXhortorum: organization and evolution of the largest and most highly rearranged chloroplast genome of land plants</dcterms:title>
-                    <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/16151190"/>
-                    <bibo:volume>23</bibo:volume>
-                    <owl:sameAs rdf:resource="http://identifiers.org/pubmed/16151190"/>
-                    <dcterms:isPartOf rdf:resource="http://linkingdata.io/journal/name/MolBiolEvol"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/16151190/list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/16151190/name/TWChumley">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/16151190"/>
-                            <foaf:familyName>Chumley</foaf:familyName>
-                            <foaf:givenName>TW</foaf:givenName>
-                            <foaf:name>TW Chumley</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/16151190/name/JDPalmer">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/16151190"/>
-                            <foaf:familyName>Palmer</foaf:familyName>
-                            <foaf:givenName>JD</foaf:givenName>
-                            <foaf:name>JD Palmer</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/16151190/name/JPMower">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/16151190"/>
-                            <foaf:familyName>Mower</foaf:familyName>
-                            <foaf:givenName>JP</foaf:givenName>
-                            <foaf:name>JP Mower</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/16151190/name/JLBoore">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/16151190"/>
-                            <foaf:familyName>Boore</foaf:familyName>
-                            <foaf:givenName>JL</foaf:givenName>
-                            <foaf:name>JL Boore</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/16151190/name/HMFourcade">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/16151190"/>
-                            <foaf:familyName>Fourcade</foaf:familyName>
-                            <foaf:givenName>HM</foaf:givenName>
-                            <foaf:name>HM Fourcade</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16151190"/>
-                    <bibo:pageStart>1</bibo:pageStart>
-                    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:16151190"/>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Chumley1"/>
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-                    <bibo:pageEnd>16</bibo:pageEnd>
-                    <bibo:pmid>16151190</bibo:pmid>
-                    <dcterms:identifier>pmid:16151190</dcterms:identifier>
-                  </bibo:AcademicArticle>
-                </dcterms:hasPart>
-                <dcterms:title>Mol Biol Evol</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Wu2"/>
-            <bibo:pmid>17383970</bibo:pmid>
-            <dcterms:identifier>pmid:17383970</dcterms:identifier>
-            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/17383970"/>
-            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:17383970"/>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/24392157"/>
-        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/24392157"/>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/18048334">
-            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:18048334"/>
-            <dcterms:issued>2007</dcterms:issued>
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/18048334/list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18048334/name/MJMoore">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18048334"/>
-                    <foaf:familyName>Moore</foaf:familyName>
-                    <foaf:givenName>MJ</foaf:givenName>
-                    <foaf:name>MJ Moore</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18048334/name/CDBell">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18048334"/>
-                    <foaf:familyName>Bell</foaf:familyName>
-                    <foaf:givenName>CD</foaf:givenName>
-                    <foaf:name>CD Bell</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18048334/name/PSSoltis">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18048334"/>
-                    <foaf:familyName>Soltis</foaf:familyName>
-                    <foaf:givenName>PS</foaf:givenName>
-                    <foaf:name>PS Soltis</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18048334/name/DESoltis">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18048334"/>
-                    <foaf:familyName>Soltis</foaf:familyName>
-                    <foaf:givenName>DE</foaf:givenName>
-                    <foaf:name>DE Soltis</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/18048334"/>
-            <dcterms:title>Using plastid genomic-scale data to resolve enigmatic relationships among basal angiosperms</dcterms:title>
-            <bibo:volume>104</bibo:volume>
-            <bibo:pageEnd>19368</bibo:pageEnd>
-            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18048334"/>
-            <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Moore1"/>
-            <dcterms:identifier>pmid:18048334</dcterms:identifier>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/ProcNatlAcadSciUSA">
-                <dcterms:hasPart>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/7937893">
-                    <bibo:pmid>7937893</bibo:pmid>
-                    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:7937893"/>
-                    <dcterms:isPartOf rdf:resource="http://linkingdata.io/journal/name/ProcNatlAcadSciUSA"/>
-                    <bibo:pageStart>9794</bibo:pageStart>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Wakasugi1"/>
-                    <owl:sameAs rdf:resource="http://identifiers.org/pubmed/7937893"/>
-                    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/7937893"/>
-                    <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/7937893"/>
-                    <bibo:pageEnd>9798</bibo:pageEnd>
-                    <dcterms:title>Loss of all ndh genes as determined by sequencing the entire chloroplast genome of the black pine Pinus thunbergii</dcterms:title>
-                    <dcterms:issued>1994</dcterms:issued>
-                    <dcterms:identifier>pmid:7937893</dcterms:identifier>
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/7937893/list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/7937893/name/TWakasugi">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/7937893"/>
-                            <foaf:familyName>Wakasugi</foaf:familyName>
-                            <foaf:givenName>T</foaf:givenName>
-                            <foaf:name>T Wakasugi</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/7937893/name/JTsudzuki">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/7937893"/>
-                            <foaf:familyName>Tsudzuki</foaf:familyName>
-                            <foaf:givenName>J</foaf:givenName>
-                            <foaf:name>J Tsudzuki</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/7937893/name/SIto">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/7937893"/>
-                            <foaf:familyName>Ito</foaf:familyName>
-                            <foaf:givenName>S</foaf:givenName>
-                            <foaf:name>S Ito</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/7937893/name/KNakashima">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/7937893"/>
-                            <foaf:familyName>Nakashima</foaf:familyName>
-                            <foaf:givenName>K</foaf:givenName>
-                            <foaf:name>K Nakashima</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/7937893/name/TTsudzuki">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/7937893"/>
-                            <foaf:familyName>Tsudzuki</foaf:familyName>
-                            <foaf:givenName>T</foaf:givenName>
-                            <foaf:name>T Tsudzuki</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:volume>91</bibo:volume>
-                  </bibo:AcademicArticle>
-                </dcterms:hasPart>
-                <dcterms:hasPart>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/20176954">
-                    <bibo:pmid>20176954</bibo:pmid>
-                    <dcterms:identifier>pmid:20176954</dcterms:identifier>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/20176954/list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20176954/name/MJMoore">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20176954"/>
-                            <foaf:familyName>Moore</foaf:familyName>
-                            <foaf:givenName>MJ</foaf:givenName>
-                            <foaf:name>MJ Moore</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20176954/name/PSSoltis">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20176954"/>
-                            <foaf:familyName>Soltis</foaf:familyName>
-                            <foaf:givenName>PS</foaf:givenName>
-                            <foaf:name>PS Soltis</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20176954/name/CDBell">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20176954"/>
-                            <foaf:familyName>Bell</foaf:familyName>
-                            <foaf:givenName>CD</foaf:givenName>
-                            <foaf:name>CD Bell</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20176954/name/JGBurleigh">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20176954"/>
-                            <foaf:familyName>Burleigh</foaf:familyName>
-                            <foaf:givenName>JG</foaf:givenName>
-                            <foaf:name>JG Burleigh</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20176954/name/DESoltis">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20176954"/>
-                            <foaf:familyName>Soltis</foaf:familyName>
-                            <foaf:givenName>DE</foaf:givenName>
-                            <foaf:name>DE Soltis</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Moore2"/>
-                    <bibo:volume>107</bibo:volume>
-                    <dcterms:title>Phylogenetic analysis of 83 plastid genes further resolves the early diversification of eudicots</dcterms:title>
-                    <dcterms:isPartOf rdf:resource="http://linkingdata.io/journal/name/ProcNatlAcadSciUSA"/>
-                    <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/20176954"/>
-                    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/20176954"/>
-                    <bibo:pageEnd>4628</bibo:pageEnd>
-                    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:20176954"/>
-                    <dcterms:issued>2010</dcterms:issued>
-                    <owl:sameAs rdf:resource="http://identifiers.org/pubmed/20176954"/>
-                    <bibo:pageStart>4623</bibo:pageStart>
-                  </bibo:AcademicArticle>
-                </dcterms:hasPart>
-                <dcterms:hasPart>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/18048330">
-                    <dcterms:title>Analysis of 81 genes from 64 plastid genomes resolves relationships in angiosperms and identifies genome-scale evolutionary patterns</dcterms:title>
-                    <dcterms:identifier>pmid:18048330</dcterms:identifier>
-                    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18048330"/>
-                    <bibo:volume>104</bibo:volume>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/18048330/list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18048330/name/RKJansen">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18048330"/>
-                            <foaf:familyName>Jansen</foaf:familyName>
-                            <foaf:givenName>RK</foaf:givenName>
-                            <foaf:name>RK Jansen</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18048330/name/ZCai">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18048330"/>
-                            <foaf:familyName>Cai</foaf:familyName>
-                            <foaf:givenName>Z</foaf:givenName>
-                            <foaf:name>Z Cai</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18048330/name/LARaubeson">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18048330"/>
-                            <foaf:familyName>Raubeson</foaf:familyName>
-                            <foaf:givenName>LA</foaf:givenName>
-                            <foaf:name>LA Raubeson</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18048330/name/HDaniell">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18048330"/>
-                            <foaf:familyName>Daniell</foaf:familyName>
-                            <foaf:givenName>H</foaf:givenName>
-                            <foaf:name>H Daniell</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18048330/name/CWdePamphilis">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18048330"/>
-                            <foaf:familyName>dePamphilis</foaf:familyName>
-                            <foaf:givenName>CW</foaf:givenName>
-                            <foaf:name>CW dePamphilis</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/18048330"/>
-                    <bibo:pmid>18048330</bibo:pmid>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Jansen1"/>
-                    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:18048330"/>
-                    <owl:sameAs rdf:resource="http://identifiers.org/pubmed/18048330"/>
-                    <dcterms:issued>2007</dcterms:issued>
-                    <bibo:pageEnd>19374</bibo:pageEnd>
-                    <dcterms:isPartOf rdf:resource="http://linkingdata.io/journal/name/ProcNatlAcadSciUSA"/>
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-                    <bibo:pageStart>19369</bibo:pageStart>
-                  </bibo:AcademicArticle>
-                </dcterms:hasPart>
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18048334"/>
-                <dcterms:hasPart>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/1332054">
-                    <bibo:volume>89</bibo:volume>
-                    <dcterms:isPartOf rdf:resource="http://linkingdata.io/journal/name/ProcNatlAcadSciUSA"/>
-                    <owl:sameAs rdf:resource="http://identifiers.org/pubmed/1332054"/>
-                    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:1332054"/>
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-                    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/1332054"/>
-                    <dcterms:issued>1992</dcterms:issued>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Wolfe1"/>
-                    <bibo:pageStart>10648</bibo:pageStart>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/1332054/list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/1332054/name/KHWolfe">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/1332054"/>
-                            <foaf:familyName>Wolfe</foaf:familyName>
-                            <foaf:givenName>KH</foaf:givenName>
-                            <foaf:name>KH Wolfe</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/1332054/name/CWMorden">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/1332054"/>
-                            <foaf:familyName>Morden</foaf:familyName>
-                            <foaf:givenName>CW</foaf:givenName>
-                            <foaf:name>CW Morden</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/1332054/name/JDPalmer">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/1332054"/>
-                            <foaf:familyName>Palmer</foaf:familyName>
-                            <foaf:givenName>JD</foaf:givenName>
-                            <foaf:name>JD Palmer</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/1332054"/>
-                    <dcterms:title>Function and evolution of a minimal plastid genome from a non-photosynthetic parasitic plant</dcterms:title>
-                    <bibo:pmid>1332054</bibo:pmid>
-                    <dcterms:identifier>pmid:1332054</dcterms:identifier>
-                    <bibo:pageEnd>10652</bibo:pageEnd>
-                  </bibo:AcademicArticle>
-                </dcterms:hasPart>
-                <dcterms:title>Proc Natl Acad Sci USA</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <bibo:pageStart>19363</bibo:pageStart>
-            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/18048334"/>
-            <bibo:pmid>18048334</bibo:pmid>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <bibo:cites rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18048330"/>
-        <bibo:volume>9</bibo:volume>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Palmer1">
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pmcdoc_resource/3879346/pone.0084792-Palmer1:list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/JDPalmer">
-                    <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Palmer1"/>
-                    <foaf:familyName>Palmer</foaf:familyName>
-                    <foaf:givenName>JD</foaf:givenName>
-                    <foaf:name>JD Palmer</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/DBSein">
-                    <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Palmer1"/>
-                    <foaf:familyName>Sein</foaf:familyName>
-                    <foaf:givenName>DB</foaf:givenName>
-                    <foaf:name>DB Sein</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <bibo:pageEnd>834</bibo:pageEnd>
-            <bibo:pageStart>823</bibo:pageStart>
-            <dcterms:issued>1986</dcterms:issued>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/CurrGenet">
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Palmer1"/>
-                <dcterms:title>Curr Genet</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <bibo:volume>11</bibo:volume>
-            <dcterms:title>Conservation of chloroplast genome structure among vascular plants</dcterms:title>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/21239622">
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/21239622/list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/21239622/name/PMaliga">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/21239622"/>
-                    <foaf:familyName>Maliga</foaf:familyName>
-                    <foaf:givenName>P</foaf:givenName>
-                    <foaf:name>P Maliga</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/21239622/name/RBock">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/21239622"/>
-                    <foaf:familyName>Bock</foaf:familyName>
-                    <foaf:givenName>R</foaf:givenName>
-                    <foaf:name>R Bock</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <dcterms:identifier>pmid:21239622</dcterms:identifier>
-            <bibo:volume>155</bibo:volume>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/PlantPhysiol">
-                <dcterms:hasPart>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/22034627">
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-                    <bibo:pageStart>2181</bibo:pageStart>
-                    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:22034627"/>
-                    <dcterms:issued>2011</dcterms:issued>
-                    <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/22034627"/>
-                    <dcterms:isPartOf rdf:resource="http://linkingdata.io/journal/name/PlantPhysiol"/>
-                    <dcterms:identifier>pmid:22034627</dcterms:identifier>
-                    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/22034627"/>
-                    <owl:sameAs rdf:resource="http://identifiers.org/pubmed/22034627"/>
-                    <bibo:volume>157</bibo:volume>
-                    <bibo:pageEnd>2193</bibo:pageEnd>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-RousseauGueutin1"/>
-                    <dcterms:title>Conservation of plastid sequences in the plant nuclear genome for millions of years facilitates endosymbiotic evolution</dcterms:title>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/22034627/list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/22034627/name/MRousseau-Gueutin">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/22034627"/>
-                            <foaf:familyName>Rousseau-Gueutin</foaf:familyName>
-                            <foaf:givenName>M</foaf:givenName>
-                            <foaf:name>M Rousseau-Gueutin</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/22034627/name/MAAyliffe">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/22034627"/>
-                            <foaf:familyName>Ayliffe</foaf:familyName>
-                            <foaf:givenName>MA</foaf:givenName>
-                            <foaf:name>MA Ayliffe</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/22034627/name/JNTimmis">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/22034627"/>
-                            <foaf:familyName>Timmis</foaf:familyName>
-                            <foaf:givenName>JN</foaf:givenName>
-                            <foaf:name>JN Timmis</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:pmid>22034627</bibo:pmid>
-                  </bibo:AcademicArticle>
-                </dcterms:hasPart>
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/21239622"/>
-                <dcterms:title>Plant Physiol</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Maliga1"/>
-            <bibo:pageEnd>1510</bibo:pageEnd>
-            <dcterms:issued>2011</dcterms:issued>
-            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/21239622"/>
-            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21239622"/>
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <bibo:pageStart>1501</bibo:pageStart>
-            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/21239622"/>
-            <bibo:pmid>21239622</bibo:pmid>
-            <dcterms:title>Plastid biotechnology: food, fuel and medicine for the 21st century</dcterms:title>
-            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:21239622"/>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Werner1">
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pmcdoc_resource/3879346/pone.0084792-Werner1:list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/OWerner">
-                    <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Werner1"/>
-                    <foaf:familyName>Werner</foaf:familyName>
-                    <foaf:givenName>O</foaf:givenName>
-                    <foaf:name>O Werner</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/JPatino">
-                    <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Werner1"/>
-                    <foaf:familyName>Patino</foaf:familyName>
-                    <foaf:givenName>J</foaf:givenName>
-                    <foaf:name>J Patino</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/JMGonzales-Mancebo">
-                    <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Werner1"/>
-                    <foaf:familyName>Gonzales-Mancebo</foaf:familyName>
-                    <foaf:givenName>JM</foaf:givenName>
-                    <foaf:name>JM Gonzales-Mancebo</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/RMDGabriel">
-                    <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Werner1"/>
-                    <foaf:familyName>Gabriel</foaf:familyName>
-                    <foaf:givenName>RMD</foaf:givenName>
-                    <foaf:name>RMD Gabriel</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/RMRos">
-                    <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Werner1"/>
-                    <foaf:familyName>Ros</foaf:familyName>
-                    <foaf:givenName>RM</foaf:givenName>
-                    <foaf:name>RM Ros</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <bibo:pageEnd>324</bibo:pageEnd>
-            <bibo:pageStart>315</bibo:pageStart>
-            <dcterms:issued>2009</dcterms:issued>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/Bryologist">
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Werner1"/>
-                <dcterms:title>Bryologist</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <bibo:volume>112</bibo:volume>
-            <dcterms:title>The taxonomic status and the geographical relationships of the Macaronesian endemic moss Fissidens luisieri (Fissidentaceae) based on DNA sequence data</dcterms:title>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <bibo:cites>
-          <bibo:Document rdf:about="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Bock1">
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-          </bibo:Document>
-        </bibo:cites>
-        <dcterms:publisher>
-          <foaf:Organization rdf:about="http://linkingdata.io/publisher/pmc_internal_id/PONE-D-13-38424">
-            <dcterms:identifier>PONE-D-13-38424</dcterms:identifier>
-            <foaf:name>Public Library of Science</foaf:name>
-          </foaf:Organization>
-        </dcterms:publisher>
-        <owl:sameAs rdf:resource="http://linkingdata.io/doidoc/doi/10.1371/journal.pone.0084792"/>
-        <dcterms:identifier>doi:10.1371/journal.pone.0084792</dcterms:identifier>
-        <bibo:cites rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20651328"/>
-        <bibo:cites rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/1332054"/>
-        <dcterms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
-        <bibo:cites rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/9615455"/>
-        <prov:wasAttributedTo rdf:resource="http://biotea.github.io/agent/biotea_serializer"/>
-        <bibo:cites rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18922764"/>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/6496932">
-            <dcterms:identifier>pmid:6496932</dcterms:identifier>
-            <bibo:volume>141</bibo:volume>
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/6496932/list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/6496932/name/GBookjans">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/6496932"/>
-                    <foaf:familyName>Bookjans</foaf:familyName>
-                    <foaf:givenName>G</foaf:givenName>
-                    <foaf:name>G Bookjans</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/6496932/name/BMStummann">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/6496932"/>
-                    <foaf:familyName>Stummann</foaf:familyName>
-                    <foaf:givenName>BM</foaf:givenName>
-                    <foaf:name>BM Stummann</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/6496932/name/KWHenningsen">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/6496932"/>
-                    <foaf:familyName>Henningsen</foaf:familyName>
-                    <foaf:givenName>KW</foaf:givenName>
-                    <foaf:name>KW Henningsen</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <dcterms:title>Preparation of chloroplast DNA from pea plastids isolated in a medium of high ionic strength</dcterms:title>
-            <bibo:pmid>6496932</bibo:pmid>
-            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/6496932"/>
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <bibo:pageEnd>247</bibo:pageEnd>
-            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:6496932"/>
-            <dcterms:issued>1984</dcterms:issued>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/AnalBiochem">
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/6496932"/>
-                <dcterms:title>Anal Biochem</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <bibo:pageStart>244</bibo:pageStart>
-            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/6496932"/>
-            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/6496932"/>
-            <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Bookjans1"/>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/24197309">
-            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/24197309"/>
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/24197309/list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/24197309/name/MAAyliffe">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/24197309"/>
-                    <foaf:familyName>Ayliffe</foaf:familyName>
-                    <foaf:givenName>MA</foaf:givenName>
-                    <foaf:name>MA Ayliffe</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/24197309/name/JNTimmis">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/24197309"/>
-                    <foaf:familyName>Timmis</foaf:familyName>
-                    <foaf:givenName>JN</foaf:givenName>
-                    <foaf:name>JN Timmis</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <bibo:pageEnd>238</bibo:pageEnd>
-            <bibo:volume>85</bibo:volume>
-            <bibo:pageStart>229</bibo:pageStart>
-            <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Ayliffe1"/>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/TheorApplGenet">
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/24197309"/>
-                <dcterms:title>Theor Appl Genet</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <bibo:pmid>24197309</bibo:pmid>
-            <dcterms:issued>1992</dcterms:issued>
-            <dcterms:title>Tobacco nuclear DNA contains long tracts of homology to chloroplast DNA</dcterms:title>
-            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/24197309"/>
-            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:24197309"/>
-            <dcterms:identifier>pmid:24197309</dcterms:identifier>
-            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/24197309"/>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/18570682">
-            <bibo:volume>8</bibo:volume>
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18570682"/>
-            <dcterms:issued>2008</dcterms:issued>
-            <dcterms:title>Complete nucleotide sequence of the Cryptomeria japonica D. Don. chloroplast genome and comparative chloroplast genomics: diversified genomic structure of coniferous species</dcterms:title>
-            <bibo:pageEnd>78</bibo:pageEnd>
-            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/18570682"/>
-            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:18570682"/>
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/18570682/list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18570682/name/THirao">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18570682"/>
-                    <foaf:familyName>Hirao</foaf:familyName>
-                    <foaf:givenName>T</foaf:givenName>
-                    <foaf:name>T Hirao</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18570682/name/AWatanabe">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18570682"/>
-                    <foaf:familyName>Watanabe</foaf:familyName>
-                    <foaf:givenName>A</foaf:givenName>
-                    <foaf:name>A Watanabe</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18570682/name/MKurita">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18570682"/>
-                    <foaf:familyName>Kurita</foaf:familyName>
-                    <foaf:givenName>M</foaf:givenName>
-                    <foaf:name>M Kurita</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18570682/name/TKondo">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18570682"/>
-                    <foaf:familyName>Kondo</foaf:familyName>
-                    <foaf:givenName>T</foaf:givenName>
-                    <foaf:name>T Kondo</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18570682/name/KTakata">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18570682"/>
-                    <foaf:familyName>Takata</foaf:familyName>
-                    <foaf:givenName>K</foaf:givenName>
-                    <foaf:name>K Takata</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <bibo:pageStart>70</bibo:pageStart>
-            <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Hirao1"/>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/BMCPlantBiol">
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18570682"/>
-                <dcterms:title>BMC Plant Biol</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <dcterms:identifier>pmid:18570682</dcterms:identifier>
-            <bibo:pmid>18570682</bibo:pmid>
-            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/18570682"/>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:24392157"/>
-        <dcterms:created>19-11-2017 15:39:37</dcterms:created>
-        <bibo:doi>10.1371/journal.pone.0084792</bibo:doi>
-        <owl:sameAs rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/24392157"/>
-        <bibo:cites rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/22034627"/>
-        <dcterms:creator rdf:resource="http://biotea.github.io/agent/biotea_serializer"/>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/20924422">
-            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/20924422"/>
-            <bibo:pageEnd>738</bibo:pageEnd>
-            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/20924422"/>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/Genome">
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20924422"/>
-                <dcterms:title>Genome</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <dcterms:title>The evolution of chloroplast genome structure in ferns</dcterms:title>
-            <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Wolf1"/>
-            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:20924422"/>
-            <bibo:volume>53</bibo:volume>
-            <bibo:pmid>20924422</bibo:pmid>
-            <dcterms:identifier>pmid:20924422</dcterms:identifier>
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/20924422"/>
-            <bibo:pageStart>731</bibo:pageStart>
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/20924422/list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20924422/name/PGWolf">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20924422"/>
-                    <foaf:familyName>Wolf</foaf:familyName>
-                    <foaf:givenName>PG</foaf:givenName>
-                    <foaf:name>PG Wolf</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20924422/name/JMRoper">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20924422"/>
-                    <foaf:familyName>Roper</foaf:familyName>
-                    <foaf:givenName>JM</foaf:givenName>
-                    <foaf:name>JM Roper</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20924422/name/AMDuffy">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20924422"/>
-                    <foaf:familyName>Duffy</foaf:familyName>
-                    <foaf:givenName>AM</foaf:givenName>
-                    <foaf:name>AM Duffy</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <dcterms:issued>2010</dcterms:issued>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/8905231">
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/8905231/list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/8905231/name/TKaneko">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/8905231"/>
-                    <foaf:familyName>Kaneko</foaf:familyName>
-                    <foaf:givenName>T</foaf:givenName>
-                    <foaf:name>T Kaneko</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/8905231/name/SSato">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/8905231"/>
-                    <foaf:familyName>Sato</foaf:familyName>
-                    <foaf:givenName>S</foaf:givenName>
-                    <foaf:name>S Sato</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/8905231/name/HKotani">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/8905231"/>
-                    <foaf:familyName>Kotani</foaf:familyName>
-                    <foaf:givenName>H</foaf:givenName>
-                    <foaf:name>H Kotani</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/8905231/name/ATanaka">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/8905231"/>
-                    <foaf:familyName>Tanaka</foaf:familyName>
-                    <foaf:givenName>A</foaf:givenName>
-                    <foaf:name>A Tanaka</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/8905231/name/EAsamizu">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/8905231"/>
-                    <foaf:familyName>Asamizu</foaf:familyName>
-                    <foaf:givenName>E</foaf:givenName>
-                    <foaf:name>E Asamizu</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/8905231"/>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/DNARes">
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/8905231"/>
-                <dcterms:title>DNA Res</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <bibo:pageEnd>136</bibo:pageEnd>
-            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8905231"/>
-            <bibo:pageStart>109</bibo:pageStart>
-            <bibo:volume>3</bibo:volume>
-            <dcterms:issued>1996</dcterms:issued>
-            <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Kaneko1"/>
-            <dcterms:title>Sequence analysis of the genome of the unicellular cyanobacterium Synechocystis sp. strain PCC6803: II. Sequence determination of the entire genome and assignment of potential protein-coding regions</dcterms:title>
-            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/8905231"/>
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <dcterms:identifier>pmid:8905231</dcterms:identifier>
-            <bibo:pmid>8905231</bibo:pmid>
-            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:8905231"/>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <dcterms:issued>2014</dcterms:issued>
-        <bibo:cites rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Alkatib1"/>
-        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc:3879346"/>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Clarke1">
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pmcdoc_resource/3879346/pone.0084792-Clarke1:list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/JLClarke">
-                    <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Clarke1"/>
-                    <foaf:familyName>Clarke</foaf:familyName>
-                    <foaf:givenName>JL</foaf:givenName>
-                    <foaf:name>JL Clarke</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/HDaniell">
-                    <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Clarke1"/>
-                    <foaf:familyName>Daniell</foaf:familyName>
-                    <foaf:givenName>H</foaf:givenName>
-                    <foaf:name>H Daniell</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/JMNugent">
-                    <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Clarke1"/>
-                    <foaf:familyName>Nugent</foaf:familyName>
-                    <foaf:givenName>JM</foaf:givenName>
-                    <foaf:name>JM Nugent</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <bibo:pageEnd>209</bibo:pageEnd>
-            <bibo:pageStart>207</bibo:pageStart>
-            <dcterms:issued>2011</dcterms:issued>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/23225155">
-            <bibo:pageEnd>244</bibo:pageEnd>
-            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/23225155"/>
-            <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Gargano1"/>
-            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/23225155"/>
-            <dcterms:title>Analysis of the chloroplast proteome in arc mutants and identification of novel protein components associated with FtsZ2</dcterms:title>
-            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:23225155"/>
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/23225155/list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/23225155/name/DGargano">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/23225155"/>
-                    <foaf:familyName>Gargano</foaf:familyName>
-                    <foaf:givenName>D</foaf:givenName>
-                    <foaf:name>D Gargano</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/23225155/name/JMaple-Groedem">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/23225155"/>
-                    <foaf:familyName>Maple-Groedem</foaf:familyName>
-                    <foaf:givenName>J</foaf:givenName>
-                    <foaf:name>J Maple-Groedem</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/23225155/name/VReisinger">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/23225155"/>
-                    <foaf:familyName>Reisinger</foaf:familyName>
-                    <foaf:givenName>V</foaf:givenName>
-                    <foaf:name>V Reisinger</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/23225155/name/LAEichacker">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/23225155"/>
-                    <foaf:familyName>Eichacker</foaf:familyName>
-                    <foaf:givenName>LA</foaf:givenName>
-                    <foaf:name>LA Eichacker</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/23225155/name/SGMoelle">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/23225155"/>
-                    <foaf:familyName>Moelle</foaf:familyName>
-                    <foaf:givenName>SG</foaf:givenName>
-                    <foaf:name>SG Moelle</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <dcterms:issued>2013</dcterms:issued>
-            <bibo:volume>81</bibo:volume>
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/PlantMolBiol">
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/23225155"/>
-                <dcterms:title>Plant Mol Biol</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <bibo:pageStart>235</bibo:pageStart>
-            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/23225155"/>
-            <bibo:pmid>23225155</bibo:pmid>
-            <dcterms:identifier>pmid:23225155</dcterms:identifier>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3879346"/>
-        <bibo:cites rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/21933779"/>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/22384027">
-            <dcterms:identifier>pmid:22384027</dcterms:identifier>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/PLoSONE">
-                <dcterms:hasPart>
-                  <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/18665252">
-                    <bibo:volume>3</bibo:volume>
-                    <dcterms:issued>2008</dcterms:issued>
-                    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18665252"/>
-                    <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/18665252"/>
-                    <dcterms:title>An optimized chloroplast DNA extraction protocol for grasses (Poaceae) prove suitable for whole plastid genome sequencing and SNP detection</dcterms:title>
-                    <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Diekmann1"/>
-                    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:18665252"/>
-                    <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-                    <dcterms:isPartOf rdf:resource="http://linkingdata.io/journal/name/PLoSONE"/>
-                    <owl:sameAs rdf:resource="http://identifiers.org/pubmed/18665252"/>
-                    <bibo:pageStart>e2813</bibo:pageStart>
-                    <bibo:authorList>
-                      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/18665252/list1">
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18665252/name/KDiekmann">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18665252"/>
-                            <foaf:familyName>Diekmann</foaf:familyName>
-                            <foaf:givenName>K</foaf:givenName>
-                            <foaf:name>K Diekmann</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18665252/name/TRHodkinson">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18665252"/>
-                            <foaf:familyName>Hodkinson</foaf:familyName>
-                            <foaf:givenName>TR</foaf:givenName>
-                            <foaf:name>TR Hodkinson</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18665252/name/EFricke">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18665252"/>
-                            <foaf:familyName>Fricke</foaf:familyName>
-                            <foaf:givenName>E</foaf:givenName>
-                            <foaf:name>E Fricke</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                        <rdf:li>
-                          <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18665252/name/SBarth">
-                            <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18665252"/>
-                            <foaf:familyName>Barth</foaf:familyName>
-                            <foaf:givenName>S</foaf:givenName>
-                            <foaf:name>S Barth</foaf:name>
-                          </foaf:Person>
-                        </rdf:li>
-                      </rdf:Seq>
-                    </bibo:authorList>
-                    <bibo:pmid>18665252</bibo:pmid>
-                    <dcterms:identifier>pmid:18665252</dcterms:identifier>
-                  </bibo:AcademicArticle>
-                </dcterms:hasPart>
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/22384027"/>
-                <dcterms:title>PLoS ONE</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/22384027"/>
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <bibo:pageStart>e31468</bibo:pageStart>
-            <bibo:volume>7</bibo:volume>
-            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/22384027"/>
-            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/22384027"/>
-            <dcterms:title>An improved chloroplast DNA extraction procedure for whole plastid genome sequencing</dcterms:title>
-            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:22384027"/>
-            <bibo:pmid>22384027</bibo:pmid>
-            <dcterms:issued>2012</dcterms:issued>
-            <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Shi1"/>
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/22384027/list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/22384027/name/CShi">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/22384027"/>
-                    <foaf:familyName>Shi</foaf:familyName>
-                    <foaf:givenName>C</foaf:givenName>
-                    <foaf:name>C Shi</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/22384027/name/NHu">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/22384027"/>
-                    <foaf:familyName>Hu</foaf:familyName>
-                    <foaf:givenName>N</foaf:givenName>
-                    <foaf:name>N Hu</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/22384027/name/HHuang">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/22384027"/>
-                    <foaf:familyName>Huang</foaf:familyName>
-                    <foaf:givenName>H</foaf:givenName>
-                    <foaf:name>H Huang</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/22384027/name/JGao">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/22384027"/>
-                    <foaf:familyName>Gao</foaf:familyName>
-                    <foaf:givenName>J</foaf:givenName>
-                    <foaf:name>J Gao</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/22384027/name/YZhao">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/22384027"/>
-                    <foaf:familyName>Zhao</foaf:familyName>
-                    <foaf:givenName>Y</foaf:givenName>
-                    <foaf:name>Y Zhao</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/18757552">
-            <dcterms:title>Rpl33, a nonessential plastid encoded ribosomal protein in tobacco, is required under cold stress conditions</dcterms:title>
-            <bibo:pmid>18757552</bibo:pmid>
-            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/18757552"/>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/PlantCell">
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18757552"/>
-                <dcterms:title>Plant Cell</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <dcterms:issued>2008</dcterms:issued>
-            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18757552"/>
-            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/18757552"/>
-            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:18757552"/>
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/18757552/list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18757552/name/MRogalski">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18757552"/>
-                    <foaf:familyName>Rogalski</foaf:familyName>
-                    <foaf:givenName>M</foaf:givenName>
-                    <foaf:name>M Rogalski</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18757552/name/MASchoettler">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18757552"/>
-                    <foaf:familyName>Schoettler</foaf:familyName>
-                    <foaf:givenName>MA</foaf:givenName>
-                    <foaf:name>MA Schoettler</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18757552/name/WThiele">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18757552"/>
-                    <foaf:familyName>Thiele</foaf:familyName>
-                    <foaf:givenName>W</foaf:givenName>
-                    <foaf:name>W Thiele</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18757552/name/WXSchulze">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18757552"/>
-                    <foaf:familyName>Schulze</foaf:familyName>
-                    <foaf:givenName>WX</foaf:givenName>
-                    <foaf:name>WX Schulze</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/18757552/name/RBock">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18757552"/>
-                    <foaf:familyName>Bock</foaf:familyName>
-                    <foaf:givenName>R</foaf:givenName>
-                    <foaf:name>R Bock</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <bibo:volume>20</bibo:volume>
-            <bibo:pageEnd>2237</bibo:pageEnd>
-            <dcterms:identifier>pmid:18757552</dcterms:identifier>
-            <bibo:pageStart>2221</bibo:pageStart>
-            <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Rogalski1"/>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <bibo:pmid>24392157</bibo:pmid>
-        <bibo:cites rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/16151190"/>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/14735123">
-            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/14735123"/>
-            <bibo:volume>5</bibo:volume>
-            <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Timmis1"/>
-            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/14735123"/>
-            <bibo:pageStart>123</bibo:pageStart>
-            <bibo:pmid>14735123</bibo:pmid>
-            <dcterms:issued>2004</dcterms:issued>
-            <dcterms:identifier>pmid:14735123</dcterms:identifier>
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/14735123/list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/14735123/name/JNTimmis">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/14735123"/>
-                    <foaf:familyName>Timmis</foaf:familyName>
-                    <foaf:givenName>JN</foaf:givenName>
-                    <foaf:name>JN Timmis</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/14735123/name/MAAyliffe">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/14735123"/>
-                    <foaf:familyName>Ayliffe</foaf:familyName>
-                    <foaf:givenName>MA</foaf:givenName>
-                    <foaf:name>MA Ayliffe</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/14735123/name/CYHuang">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/14735123"/>
-                    <foaf:familyName>Huang</foaf:familyName>
-                    <foaf:givenName>CY</foaf:givenName>
-                    <foaf:name>CY Huang</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/14735123/name/WMartin">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/14735123"/>
-                    <foaf:familyName>Martin</foaf:familyName>
-                    <foaf:givenName>W</foaf:givenName>
-                    <foaf:name>W Martin</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:14735123"/>
-            <bibo:pageEnd>135</bibo:pageEnd>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/NatRevGenet">
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/14735123"/>
-                <dcterms:title>Nat Rev Genet</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/14735123"/>
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <dcterms:title>Endosymbiotic gene transfer: organelle genomes forge eukaryotic chromosomes</dcterms:title>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/23361615">
-            <bibo:pmid>23361615</bibo:pmid>
-            <bibo:pageStart>354</bibo:pageStart>
-            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/23361615"/>
-            <dcterms:issued>2013</dcterms:issued>
-            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:23361615"/>
-            <bibo:volume>35</bibo:volume>
-            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/23361615"/>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/Bioessays">
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/23361615"/>
-                <dcterms:title>Bioessays</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <dcterms:identifier>pmid:23361615</dcterms:identifier>
-            <bibo:pageEnd>365</bibo:pageEnd>
-            <dcterms:title>Tuning a menage a trois: Co-evolution and co-adaptation of nuclear and organellar genomes in plants</dcterms:title>
-            <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Greiner1"/>
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/23361615/list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/23361615/name/SGreiner">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/23361615"/>
-                    <foaf:familyName>Greiner</foaf:familyName>
-                    <foaf:givenName>S</foaf:givenName>
-                    <foaf:name>S Greiner</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/23361615/name/RBock">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/23361615"/>
-                    <foaf:familyName>Bock</foaf:familyName>
-                    <foaf:givenName>R</foaf:givenName>
-                    <foaf:name>R Bock</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/23361615"/>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <bibo:cites rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20176954"/>
-        <rdf:type rdf:resource="http://purl.org/ontology/bibo/AcademicArticle"/>
-        <bibo:abstract>Background: Performing chloroplast DNA (cpDNA) isolation is considered a major challenge among different plant groups, especially conifers. Isolating chloroplasts in conifers by such conventional methods as sucrose gradient and high salt has not been successful. So far, plastid genome sequencing protocols for conifer species have been based mainly on long-range PCR, which is known to be time-consuming and difficult to implement. Methodology/Principal Findings: We developed a protocol for cpDNA isolation using three different conifer families: Araucaria angustifolia and Araucaria bidwilli (Araucariaceae), Podocarpus lambertii (Podocarpaceae) and Pinus patula (Pinaceae). The present protocol is based on high salt isolation buffer followed by saline Percoll gradient. Combining these two strategies allowed enhanced chloroplast isolation, along with decreased contamination caused by polysaccharides, polyphenols, proteins, and nuclear DNA in cpDNA. Microscopy images confirmed the presence of intact chloroplasts in high abundance. This method was applied to cpDNA isolation and subsequent sequencing by Illumina MiSeq (2X250 bp), using only 50 ng of cpDNA. Reference-guided chloroplast genome mapping showed that high average coverage was achieved for all evaluated species: 24.63 for A. angustifolia, 135.97 for A. bidwilli, 1196.10 for P. lambertii, and 64.68 for P. patula. Conclusion: Results show that this improved protocol is suitable for enhanced quality and yield of chloroplasts and cpDNA isolation from conifers, providing a useful tool for studies that require isolated chloroplasts and/or whole cpDNA sequences. </bibo:abstract>
-        <prov:wasDerivedFrom rdf:resource="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3879346"/>
-        <bibo:cites rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/7937893"/>
-        <dcterms:isPartOf>
-          <bibo:Issue rdf:about="http://linkingdata.io/issue/journal_resource/issn:1932-6203/issue_1">
-            <dcterms:hasPart rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/issn/1932-6203">
-                <dcterms:publisher rdf:resource="http://linkingdata.io/publisher/pmc_internal_id/PONE-D-13-38424"/>
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/issue/journal_resource/issn:1932-6203/issue_1"/>
-                <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/nlmcatalog?term=1932-6203"/>
-                <bibo:issn>1932-6203</bibo:issn>
-                <dcterms:title>PLoS ONE</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <bibo:issue>1</bibo:issue>
-          </bibo:Issue>
-        </dcterms:isPartOf>
-        <bibo:cites>
-          <bibo:Document rdf:about="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-He1">
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-          </bibo:Document>
-        </bibo:cites>
-        <sio:SIO_001278 rdf:resource="http://linkingdata.io/linkingdata_dataset/linkingdata-pmc-March2017"/>
-        <owl:sameAs rdf:resource="http://linkedlifedata.com/resource/pubmed/id/24392157"/>
-        <dcterms:identifier>pmc:3879346</dcterms:identifier>
-        <bibo:cites rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/18665252"/>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Mastroberti1">
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pmcdoc_resource/3879346/pone.0084792-Mastroberti1:list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/AAMastroberti">
-                    <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Mastroberti1"/>
-                    <foaf:familyName>Mastroberti</foaf:familyName>
-                    <foaf:givenName>AA</foaf:givenName>
-                    <foaf:name>AA Mastroberti</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/JEAMariath">
-                    <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Mastroberti1"/>
-                    <foaf:familyName>Mariath</foaf:familyName>
-                    <foaf:givenName>JEA</foaf:givenName>
-                    <foaf:name>JEA Mariath</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <bibo:pageEnd>353</bibo:pageEnd>
-            <bibo:pageStart>343</bibo:pageStart>
-            <dcterms:issued>2003</dcterms:issued>
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/RevBrasBot">
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Mastroberti1"/>
-                <dcterms:title>Rev Bras Bot</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <bibo:volume>26</bibo:volume>
-            <dcterms:title>Leaf anatomy of Araucaria angustifolia (Bertol.) Kuntze (Araucariacea)</dcterms:title>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <bibo:cites rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Keeling1"/>
-        <bibo:cites>
-          <bibo:AcademicArticle rdf:about="http://linkingdata.io/pubmeddoc/pubmed/20920211">
-            <dcterms:isPartOf>
-              <bibo:Journal rdf:about="http://linkingdata.io/journal/name/PlantMethods">
-                <dcterms:hasPart rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20920211"/>
-                <dcterms:title>Plant Methods</dcterms:title>
-              </bibo:Journal>
-            </dcterms:isPartOf>
-            <bibo:citedBy rdf:resource="http://linkingdata.io/pmcdoc/pmc/3879346"/>
-            <dcterms:identifier>pmid:20920211</dcterms:identifier>
-            <bibo:authorList>
-              <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pubmeddoc_resource/20920211/list1">
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20920211/name/RAAtherton">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20920211"/>
-                    <foaf:familyName>Atherton</foaf:familyName>
-                    <foaf:givenName>RA</foaf:givenName>
-                    <foaf:name>RA Atherton</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20920211/name/BJMcComish">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20920211"/>
-                    <foaf:familyName>McComish</foaf:familyName>
-                    <foaf:givenName>BJ</foaf:givenName>
-                    <foaf:name>BJ McComish</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20920211/name/LDShepherd">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20920211"/>
-                    <foaf:familyName>Shepherd</foaf:familyName>
-                    <foaf:givenName>LD</foaf:givenName>
-                    <foaf:name>LD Shepherd</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20920211/name/LABerry">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20920211"/>
-                    <foaf:familyName>Berry</foaf:familyName>
-                    <foaf:givenName>LA</foaf:givenName>
-                    <foaf:name>LA Berry</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-                <rdf:li>
-                  <foaf:Person rdf:about="http://linkingdata.io/person/pubmeddoc_resource/20920211/name/NWAlbert">
-                    <foaf:publications rdf:resource="http://linkingdata.io/pubmeddoc/pubmed/20920211"/>
-                    <foaf:familyName>Albert</foaf:familyName>
-                    <foaf:givenName>NW</foaf:givenName>
-                    <foaf:name>NW Albert</foaf:name>
-                  </foaf:Person>
-                </rdf:li>
-              </rdf:Seq>
-            </bibo:authorList>
-            <owl:sameAs rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Atherton1"/>
-            <dcterms:issued>2010</dcterms:issued>
-            <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:20920211"/>
-            <bibo:pageStart>22</bibo:pageStart>
-            <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/20920211"/>
-            <dcterms:title>Whole genome sequencing of enriched chloroplast DNA using the Illumina GAII platform</dcterms:title>
-            <bibo:volume>6</bibo:volume>
-            <owl:sameAs rdf:resource="http://identifiers.org/pubmed/20920211"/>
-            <bibo:pmid>20920211</bibo:pmid>
-            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/20920211"/>
-          </bibo:AcademicArticle>
-        </bibo:cites>
-        <dcterms:description>research-article</dcterms:description>
+  <bibo:Document rdf:about="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346">
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Alkatib1">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/23225155">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Gargano1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:23225155"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/23225155"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/23225155"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/23225155"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/24197309">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Ayliffe1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:24197309"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/24197309"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/24197309"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/24197309"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/18757552">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Rogalski1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:18757552"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/18757552"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/18757552"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18757552"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/6496932">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Bookjans1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:6496932"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/6496932"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/6496932"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/6496932"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:volume>9</bibo:volume>
+    <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/24392157"/>
+    <bibo:abstract>Background: Performing chloroplast DNA (cpDNA) isolation is considered a major challenge among different plant groups, especially conifers. Isolating chloroplasts in conifers by such conventional methods as sucrose gradient and high salt has not been successful. So far, plastid genome sequencing protocols for conifer species have been based mainly on long-range PCR, which is known to be time-consuming and difficult to implement. Methodology/Principal Findings: We developed a protocol for cpDNA isolation using three different conifer families: Araucaria angustifolia and Araucaria bidwilli (Araucariaceae), Podocarpus lambertii (Podocarpaceae) and Pinus patula (Pinaceae). The present protocol is based on high salt isolation buffer followed by saline Percoll gradient. Combining these two strategies allowed enhanced chloroplast isolation, along with decreased contamination caused by polysaccharides, polyphenols, proteins, and nuclear DNA in cpDNA. Microscopy images confirmed the presence of intact chloroplasts in high abundance. This method was applied to cpDNA isolation and subsequent sequencing by Illumina MiSeq (2X250 bp), using only 50 ng of cpDNA. Reference-guided chloroplast genome mapping showed that high average coverage was achieved for all evaluated species: 24.63 for A. angustifolia, 135.97 for A. bidwilli, 1196.10 for P. lambertii, and 64.68 for P. patula. Conclusion: Results show that this improved protocol is suitable for enhanced quality and yield of chloroplasts and cpDNA isolation from conifers, providing a useful tool for studies that require isolated chloroplasts and/or whole cpDNA sequences. </bibo:abstract>
+    <dcterms:title>An Improved Protocol for Intact Chloroplasts and cpDNA Isolation in Conifers</dcterms:title>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Keeling1">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/1332054">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Wolfe1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:1332054"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/1332054"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/1332054"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/1332054"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/14735123">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Timmis1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:14735123"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/14735123"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/14735123"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/14735123"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/18922764">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Goremykin1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:18922764"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/18922764"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/18922764"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18922764"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/pubmeddoc/pubmed/24392157"/>
+    <dcterms:identifier>doi:10.1371/journal.pone.0084792</dcterms:identifier>
+    <dcterms:identifier>pmid:24392157</dcterms:identifier>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/21239622">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Maliga1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:21239622"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/21239622"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/21239622"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21239622"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <dcterms:publisher>
+      <foaf:Organization rdf:about="http://purl.org/io/linkingdata/publisher/pmc_internal_id/PONE-D-13-38424">
+        <dcterms:identifier>PONE-D-13-38424</dcterms:identifier>
+        <foaf:name>Public Library of Science</foaf:name>
+      </foaf:Organization>
+    </dcterms:publisher>
+    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/24392157"/>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/23361615">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Greiner1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:23361615"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/23361615"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/23361615"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/23361615"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/17383970">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Wu2"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:17383970"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/17383970"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/17383970"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/17383970"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <dcterms:issued>2014</dcterms:issued>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/20920211">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Atherton1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:20920211"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/20920211"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/20920211"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/20920211"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/20924422">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Wolf1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:20924422"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/20924422"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/20924422"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/20924422"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <dcterms:description>research-article</dcterms:description>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/18048334">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Moore1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:18048334"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/18048334"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/18048334"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18048334"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Mastroberti1">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/15532064">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Yamamoto1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:15532064"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/15532064"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/15532064"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/15532064"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Clarke1">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/15865976">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Jansen2"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:15865976"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/15865976"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/15865976"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/15865976"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/9615455">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Ayliffe2"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:9615455"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/9615455"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/9615455"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/9615455"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:24392157"/>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/21933779">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Wu1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:21933779"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/21933779"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/21933779"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21933779"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <owl:sameAs rdf:resource="http://dx.doi.org/10.1371/journal.pone.0084792"/>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-He1">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
       </bibo:Document>
-    </bibo:citedBy>
+    </bibo:cites>
+    <owl:sameAs rdf:resource="http://linkedlifedata.com/resource/pubmed/id/24392157"/>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Walker1">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/18048330">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Jansen1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:18048330"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/18048330"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/18048330"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18048330"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/20176954">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Moore2"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:20176954"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/20176954"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/20176954"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/20176954"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:pmid>24392157</bibo:pmid>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Palmer1">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/7937893">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Wakasugi1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:7937893"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/7937893"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/7937893"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/7937893"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <dcterms:isPartOf>
+      <bibo:Issue rdf:about="http://purl.org/io/linkingdata/issue/journal_resource/issn:1932-6203/issue_1">
+        <dcterms:hasPart rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <dcterms:isPartOf>
+          <bibo:Journal rdf:about="http://purl.org/io/linkingdata/journal/issn/1932-6203">
+            <dcterms:publisher rdf:resource="http://purl.org/io/linkingdata/publisher/pmc_internal_id/PONE-D-13-38424"/>
+            <dcterms:hasPart rdf:resource="http://purl.org/io/linkingdata/issue/journal_resource/issn:1932-6203/issue_1"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/nlmcatalog?term=1932-6203"/>
+            <bibo:issn>1932-6203</bibo:issn>
+            <dcterms:title>PLoS ONE</dcterms:title>
+          </bibo:Journal>
+        </dcterms:isPartOf>
+        <bibo:issue>1</bibo:issue>
+      </bibo:Issue>
+    </dcterms:isPartOf>
     <bibo:authorList>
-      <rdf:Seq rdf:about="http://linkingdata.io/listOfAuthorsEditorsAndTranslators/pmcdoc_resource/3879346/pone.0084792-Keeling1:list1">
+      <rdf:Seq rdf:about="http://purl.org/io/linkingdata/listOfAuthors/pmcdoc_resource/3879346/list1">
         <rdf:li>
-          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/CIKeeling">
-            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Keeling1"/>
-            <foaf:familyName>Keeling</foaf:familyName>
-            <foaf:givenName>CI</foaf:givenName>
-            <foaf:name>CI Keeling</foaf:name>
+          <foaf:Person rdf:about="http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/LNVieira">
+            <foaf:publications rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+            <foaf:familyName>Vieira</foaf:familyName>
+            <foaf:givenName>Leila do Nascimento</foaf:givenName>
+            <foaf:name>Leila do Nascimento Vieira</foaf:name>
           </foaf:Person>
         </rdf:li>
         <rdf:li>
-          <foaf:Person rdf:about="http://linkingdata.io/person/pmcdoc_resource/3879346/name/JBohlmann">
-            <foaf:publications rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Keeling1"/>
-            <foaf:familyName>Bohlmann</foaf:familyName>
-            <foaf:givenName>J</foaf:givenName>
-            <foaf:name>J Bohlmann</foaf:name>
+          <foaf:Person rdf:about="http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/HFaoro">
+            <foaf:publications rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+            <foaf:familyName>Faoro</foaf:familyName>
+            <foaf:givenName>Helisson</foaf:givenName>
+            <foaf:name>Helisson Faoro</foaf:name>
+          </foaf:Person>
+        </rdf:li>
+        <rdf:li>
+          <foaf:Person rdf:about="http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/HPFFraga">
+            <foaf:publications rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+            <foaf:familyName>Fraga</foaf:familyName>
+            <foaf:givenName>Hugo Pacheco de Freitas</foaf:givenName>
+            <foaf:name>Hugo Pacheco de Freitas Fraga</foaf:name>
+          </foaf:Person>
+        </rdf:li>
+        <rdf:li>
+          <foaf:Person rdf:about="http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/MRogalski">
+            <foaf:publications rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+            <foaf:familyName>Rogalski</foaf:familyName>
+            <foaf:givenName>Marcelo</foaf:givenName>
+            <foaf:name>Marcelo Rogalski</foaf:name>
+          </foaf:Person>
+        </rdf:li>
+        <rdf:li>
+          <foaf:Person rdf:about="http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/EMde-Souza">
+            <foaf:publications rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+            <foaf:familyName>de Souza</foaf:familyName>
+            <foaf:givenName>Emanuel Maltempi</foaf:givenName>
+            <foaf:name>Emanuel Maltempi de Souza</foaf:name>
+          </foaf:Person>
+        </rdf:li>
+        <rdf:li>
+          <foaf:Person rdf:about="http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/Fde-Oliveira-Pedrosa">
+            <foaf:publications rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+            <foaf:familyName>de Oliveira Pedrosa</foaf:familyName>
+            <foaf:givenName>Fabio</foaf:givenName>
+            <foaf:name>Fabio de Oliveira Pedrosa</foaf:name>
+          </foaf:Person>
+        </rdf:li>
+        <rdf:li>
+          <foaf:Person rdf:about="http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/RONodari">
+            <foaf:publications rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+            <foaf:familyName>Nodari</foaf:familyName>
+            <foaf:givenName>Rubens Onofre</foaf:givenName>
+            <foaf:name>Rubens Onofre Nodari</foaf:name>
+          </foaf:Person>
+        </rdf:li>
+        <rdf:li>
+          <foaf:Person rdf:about="http://purl.org/io/linkingdata/person/pmcdoc_resource/3879346/name/MPGuerra">
+            <foaf:publications rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+            <foaf:familyName>Guerra</foaf:familyName>
+            <foaf:givenName>Miguel Pedro</foaf:givenName>
+            <foaf:name>Miguel Pedro Guerra</foaf:name>
           </foaf:Person>
         </rdf:li>
       </rdf:Seq>
     </bibo:authorList>
-    <bibo:pageEnd>2423</bibo:pageEnd>
-    <bibo:pageStart>2415</bibo:pageStart>
-    <dcterms:issued>2006</dcterms:issued>
-    <dcterms:isPartOf>
-      <bibo:Journal rdf:about="http://linkingdata.io/journal/name/Phytochem">
-        <dcterms:hasPart rdf:resource="http://linkingdata.io/reference/pmcdoc_resource/3879346/pone.0084792-Keeling1"/>
-        <dcterms:title>Phytochem</dcterms:title>
-      </bibo:Journal>
-    </dcterms:isPartOf>
-    <bibo:volume>67</bibo:volume>
-    <dcterms:title>Diterpene resin acids in conifers</dcterms:title>
-  </bibo:AcademicArticle>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/23538991">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Yi1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:23538991"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/23538991"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/23538991"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/23538991"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/18753151">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Cronn1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:18753151"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/18753151"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/18753151"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18753151"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <sio:SIO_001278 rdf:resource="http://purl.org/io/linkingdata/linkingdata_dataset/linkingdata-pmc-March2017"/>
+    <prov:wasAttributedTo rdf:resource="http://biotea.github.io/agent/biotea_serializer"/>
+    <bibo:doi>10.1371/journal.pone.0084792</bibo:doi>
+    <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/doidoc/doi/10.1371/journal.pone.0084792"/>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/22384027">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Shi1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:22384027"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/22384027"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/22384027"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/22384027"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <rdf:type rdf:resource="http://purl.org/ontology/bibo/AcademicArticle"/>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/20651328">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Lin1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:20651328"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/20651328"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/20651328"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/20651328"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/21535359">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Rogalski2"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:21535359"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/21535359"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/21535359"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21535359"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <dcterms:identifier>pmc:3879346</dcterms:identifier>
+    <prov:wasDerivedFrom rdf:resource="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3879346"/>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/20957085">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Arif1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:20957085"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/20957085"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/20957085"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/20957085"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <owl:sameAs rdf:resource="http://identifiers.org/pubmed/24392157"/>
+    <dcterms:created>13-02-2019 07:50:08</dcterms:created>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Werner1">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/16151190">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Chumley1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:16151190"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/16151190"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/16151190"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16151190"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/18570682">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Hirao1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:18570682"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/18570682"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/18570682"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18570682"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Bock1">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+      </bibo:Document>
+    </bibo:cites>
+    <prov:generatedAtTime>13-02-2019 07:50:08</prov:generatedAtTime>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/22034627">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-RousseauGueutin1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:22034627"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/22034627"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/22034627"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/22034627"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/8905231">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Kaneko1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:8905231"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/8905231"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/8905231"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8905231"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <dcterms:creator rdf:resource="http://biotea.github.io/agent/biotea_serializer"/>
+    <dcterms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://purl.org/io/linkingdata/pubmeddoc/pubmed/18665252">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+        <owl:sameAs rdf:resource="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Diekmann1"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:18665252"/>
+        <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/18665252"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/18665252"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18665252"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3879346"/>
+    <owl:sameAs rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+    <bibo:cites>
+      <bibo:Book rdf:about="http://purl.org/io/linkingdata/reference/pmcdoc_resource/3879346/pone.0084792-Kubis1">
+        <bibo:citedBy rdf:resource="http://purl.org/io/linkingdata/pmcdoc/pmc/3879346"/>
+      </bibo:Book>
+    </bibo:cites>
+  </bibo:Document>
 </rdf:RDF>

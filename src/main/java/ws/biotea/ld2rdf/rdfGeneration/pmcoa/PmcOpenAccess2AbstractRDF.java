@@ -7,6 +7,7 @@ import org.apache.log4j.Logger;
 import org.ontoware.rdf2go.exception.ModelRuntimeException;
 import org.ontoware.rdf2go.model.Model;
 import org.ontoware.rdf2go.model.Statement;
+import org.ontoware.rdf2go.model.Syntax;
 import org.ontoware.rdf2go.model.node.Node;
 import org.ontoware.rdf2go.model.node.PlainLiteral;
 import org.ontoware.rdf2go.model.node.URI;
@@ -44,6 +45,7 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 	protected int elementCount;
 	//Basic paper
 	protected Article article;
+	protected String articleID;
 	protected String basePaper;
 	protected String pubmedID;
 	protected String pmcID;
@@ -52,6 +54,7 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 	protected String articleTitle;
 	protected GlobalArticleConfig global;
 	protected final String PREFIX = ResourceConfig.getDatasetPrefix().toUpperCase();
+	
 	//Sections
 	protected int sectionCounter = 1;
 	protected int paragraphCounter = 1;
@@ -62,9 +65,11 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 	protected String bioteaDataset;
 	protected boolean sections;
 	protected boolean references;
+	protected Syntax format;
+	protected String extension;
 	
 	protected PmcOpenAccess2AbstractRDF(File paper, StringBuilder str, String suffix, String bioteaBase, String bioteaDataset, 
-			boolean sections, boolean references) throws JAXBException, DTDException, ArticleTypeException, PMCIdException {
+			boolean sections, boolean references, Syntax format) throws JAXBException, DTDException, ArticleTypeException, PMCIdException {
 		this.logger = Logger.getLogger(this.getClass());
 		this.nodeCounter = 0;
 		this.elementCount = 1;
@@ -73,6 +78,12 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 		this.bioteaDataset = bioteaDataset;
 		this.sections = sections;
 		this.references = references;
+		this.format = format;
+		if (this.format.equals(Syntax.JsonLd)) {
+			this.extension = ".json";
+		} else {
+			this.extension = ".rdf";
+		}
 		
 		JAXBContext jc = JAXBContext.newInstance("pubmed.openAccess.jaxb.generated");
 		Unmarshaller unmarshaller = jc.createUnmarshaller(); 	
@@ -97,8 +108,8 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 			if (id.getPubIdType().equals("pmid")) {
 				this.pubmedID = id.getContent();
 			} else if (id.getPubIdType().equals("doi")) {
-				this.doi = id.getContent();
-			} else if (id.getPubIdType().equals("pmc")) {
+				this.doi = id.getContent();						
+			} else if (id.getPubIdType().equals("pmc") || id.getPubIdType().equals("pmcid")) {
 				this.pmcID = id.getContent();
 			}				
 		}
@@ -143,7 +154,7 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 		File file = new File(outputFile);
 	    PrintWriter pw = new PrintWriter(file, ResourceConfig.UTF_ENCODING);
 	    try {
-			myModel.writeTo(pw);
+			myModel.writeTo(pw, this.format);
 		} catch (ModelRuntimeException e) {
 			logger.error("===ERROR=== model serialization (ModelRuntimeException): " + e.getMessage());
 			throw new FileNotFoundException("ModelRuntimeException " + e.getMessage());

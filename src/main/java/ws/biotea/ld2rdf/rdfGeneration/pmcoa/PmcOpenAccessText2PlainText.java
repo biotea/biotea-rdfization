@@ -17,6 +17,7 @@ import javax.xml.bind.JAXBException;
 
 import org.ontoware.rdf2go.RDF2Go;
 import org.ontoware.rdf2go.model.Model;
+import org.ontoware.rdf2go.model.Syntax;
 import org.ontoware.rdf2go.model.node.Node;
 import org.ontoware.rdf2go.model.node.impl.PlainLiteralImpl;
 
@@ -59,8 +60,8 @@ import ws.biotea.ld2rdf.util.ResourceConfig;
 public class PmcOpenAccessText2PlainText extends PmcOpenAccess2AbstractRDF {
 	private PrintWriter outPlainTextPW;
 	public PmcOpenAccessText2PlainText(File paper, StringBuilder str, String suffix, String bioteaBase, String bioteaDataset, 
-			boolean sections, boolean references) throws JAXBException, DTDException, ArticleTypeException, PMCIdException {
-		super(paper, str, suffix, bioteaBase, bioteaDataset, sections, references);	
+			boolean sections, boolean references, Syntax format) throws JAXBException, DTDException, ArticleTypeException, PMCIdException {
+		super(paper, str, suffix, bioteaBase, bioteaDataset, sections, references, format);	
 	}
 	
 	/**

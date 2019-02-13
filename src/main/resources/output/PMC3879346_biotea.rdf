@@ -1,0 +1,133 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:wd="http://www.wikidata.org/entity/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:prov="http://www.w3.org/ns/prov#"
+    xmlns:biotea="https://biotea.github.io/biotea-ontololgy#"
+    xmlns:doco="http://purl.org/spar/doco/"
+    xmlns:bibo="http://purl.org/ontology/bibo/"
+    xmlns:sio="http://semanticscience.org/resource/"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <bibo:Document rdf:about="http://biotea.org/pmcdoc/pmc/3879346">
+    <bibo:abstract>Background: Performing chloroplast DNA (cpDNA) isolation is considered a major challenge among different plant groups, especially conifers. Isolating chloroplasts in conifers by such conventional methods as sucrose gradient and high salt has not been successful. So far, plastid genome sequencing protocols for conifer species have been based mainly on long-range PCR, which is known to be time-consuming and difficult to implement. Methodology/Principal Findings: We developed a protocol for cpDNA isolation using three different conifer families: Araucaria angustifolia and Araucaria bidwilli (Araucariaceae), Podocarpus lambertii (Podocarpaceae) and Pinus patula (Pinaceae). The present protocol is based on high salt isolation buffer followed by saline Percoll gradient. Combining these two strategies allowed enhanced chloroplast isolation, along with decreased contamination caused by polysaccharides, polyphenols, proteins, and nuclear DNA in cpDNA. Microscopy images confirmed the presence of intact chloroplasts in high abundance. This method was applied to cpDNA isolation and subsequent sequencing by Illumina MiSeq (2X250 bp), using only 50 ng of cpDNA. Reference-guided chloroplast genome mapping showed that high average coverage was achieved for all evaluated species: 24.63 for A. angustifolia, 135.97 for A. bidwilli, 1196.10 for P. lambertii, and 64.68 for P. patula. Conclusion: Results show that this improved protocol is suitable for enhanced quality and yield of chloroplasts and cpDNA isolation from conifers, providing a useful tool for studies that require isolated chloroplasts and/or whole cpDNA sequences. </bibo:abstract>
+    <dcterms:issued>2014</dcterms:issued>
+    <bibo:doi>10.1371/journal.pone.0084792</bibo:doi>
+    <dcterms:identifier>pmid:24392157</dcterms:identifier>
+    <owl:sameAs rdf:resource="http://identifiers.org/pubmed/24392157"/>
+    <sio:SIO_001278 rdf:resource="http://biotea.org/"/>
+    <dcterms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+    <prov:wasAttributedTo rdf:resource="http://biotea.github.io/agent/biotea_serializer"/>
+    <dcterms:created>19-03-2017 18:39:47</dcterms:created>
+    <dcterms:title>An Improved Protocol for Intact Chloroplasts and cpDNA Isolation in Conifers</dcterms:title>
+    <dcterms:publisher>
+      <foaf:Organization rdf:about="http://biotea.org/publisher/pmc_internal_id/PONE-D-13-38424">
+        <dcterms:identifier>PONE-D-13-38424</dcterms:identifier>
+        <foaf:name>Public Library of Science</foaf:name>
+      </foaf:Organization>
+    </dcterms:publisher>
+    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3879346"/>
+    <dcterms:description>research-article</dcterms:description>
+    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/24392157"/>
+    <owl:sameAs rdf:resource="http://dx.doi.org/10.1371/journal.pone.0084792"/>
+    <rdf:type rdf:resource="http://purl.org/ontology/bibo/AcademicArticle"/>
+    <prov:generatedAtTime>19-03-2017 18:39:47</prov:generatedAtTime>
+    <bibo:pmid>24392157</bibo:pmid>
+    <prov:wasDerivedFrom rdf:resource="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3879346"/>
+    <dcterms:identifier>pmc:3879346</dcterms:identifier>
+    <owl:sameAs rdf:resource="http://biotea.org/doidoc/doi/10.1371/journal.pone.0084792"/>
+    <rdfs:seeAlso rdf:resource="http://info.identifiers.org/pubmed/24392157"/>
+    <dcterms:creator rdf:resource="http://biotea.github.io/agent/biotea_serializer"/>
+    <dcterms:identifier>doi:10.1371/journal.pone.0084792</dcterms:identifier>
+    <owl:sameAs rdf:resource="http://biotea.org/pubmeddoc/pubmed/24392157"/>
+    <dcterms:isPartOf>
+      <bibo:Issue rdf:about="http://biotea.org/issue/journal_resource/issn:1932-6203/issue_1">
+        <dcterms:hasPart rdf:resource="http://biotea.org/pmcdoc/pmc/3879346"/>
+        <dcterms:isPartOf>
+          <bibo:Journal rdf:about="http://biotea.org/journal/issn/1932-6203">
+            <dcterms:publisher rdf:resource="http://biotea.org/publisher/pmc_internal_id/PONE-D-13-38424"/>
+            <dcterms:hasPart rdf:resource="http://biotea.org/issue/journal_resource/issn:1932-6203/issue_1"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/nlmcatalog?term=1932-6203"/>
+            <bibo:issn>1932-6203</bibo:issn>
+            <dcterms:title>PLoS ONE</dcterms:title>
+          </bibo:Journal>
+        </dcterms:isPartOf>
+        <bibo:issue>1</bibo:issue>
+      </bibo:Issue>
+    </dcterms:isPartOf>
+    <bibo:volume>9</bibo:volume>
+    <owl:sameAs rdf:resource="http://bio2rdf.org/pubmed:24392157"/>
+    <bibo:authorList>
+      <rdf:Seq rdf:about="http://biotea.org/listOfAuthors/pmcdoc_resource/3879346/list1">
+        <rdf:li>
+          <foaf:Person rdf:about="http://biotea.org/person/pmcdoc_resource/3879346/name/LNVieira">
+            <foaf:publications rdf:resource="http://biotea.org/pmcdoc/pmc/3879346"/>
+            <foaf:familyName>Vieira</foaf:familyName>
+            <foaf:givenName>Leila do Nascimento</foaf:givenName>
+            <foaf:name>Leila do Nascimento Vieira</foaf:name>
+          </foaf:Person>
+        </rdf:li>
+        <rdf:li>
+          <foaf:Person rdf:about="http://biotea.org/person/pmcdoc_resource/3879346/name/HFaoro">
+            <foaf:publications rdf:resource="http://biotea.org/pmcdoc/pmc/3879346"/>
+            <foaf:familyName>Faoro</foaf:familyName>
+            <foaf:givenName>Helisson</foaf:givenName>
+            <foaf:name>Helisson Faoro</foaf:name>
+          </foaf:Person>
+        </rdf:li>
+        <rdf:li>
+          <foaf:Person rdf:about="http://biotea.org/person/pmcdoc_resource/3879346/name/HPFFraga">
+            <foaf:publications rdf:resource="http://biotea.org/pmcdoc/pmc/3879346"/>
+            <foaf:familyName>Fraga</foaf:familyName>
+            <foaf:givenName>Hugo Pacheco de Freitas</foaf:givenName>
+            <foaf:name>Hugo Pacheco de Freitas Fraga</foaf:name>
+          </foaf:Person>
+        </rdf:li>
+        <rdf:li>
+          <foaf:Person rdf:about="http://biotea.org/person/pmcdoc_resource/3879346/name/MRogalski">
+            <foaf:publications rdf:resource="http://biotea.org/pmcdoc/pmc/3879346"/>
+            <foaf:familyName>Rogalski</foaf:familyName>
+            <foaf:givenName>Marcelo</foaf:givenName>
+            <foaf:name>Marcelo Rogalski</foaf:name>
+          </foaf:Person>
+        </rdf:li>
+        <rdf:li>
+          <foaf:Person rdf:about="http://biotea.org/person/pmcdoc_resource/3879346/name/EMde-Souza">
+            <foaf:publications rdf:resource="http://biotea.org/pmcdoc/pmc/3879346"/>
+            <foaf:familyName>de Souza</foaf:familyName>
+            <foaf:givenName>Emanuel Maltempi</foaf:givenName>
+            <foaf:name>Emanuel Maltempi de Souza</foaf:name>
+          </foaf:Person>
+        </rdf:li>
+        <rdf:li>
+          <foaf:Person rdf:about="http://biotea.org/person/pmcdoc_resource/3879346/name/Fde-Oliveira-Pedrosa">
+            <foaf:publications rdf:resource="http://biotea.org/pmcdoc/pmc/3879346"/>
+            <foaf:familyName>de Oliveira Pedrosa</foaf:familyName>
+            <foaf:givenName>Fabio</foaf:givenName>
+            <foaf:name>Fabio de Oliveira Pedrosa</foaf:name>
+          </foaf:Person>
+        </rdf:li>
+        <rdf:li>
+          <foaf:Person rdf:about="http://biotea.org/person/pmcdoc_resource/3879346/name/RONodari">
+            <foaf:publications rdf:resource="http://biotea.org/pmcdoc/pmc/3879346"/>
+            <foaf:familyName>Nodari</foaf:familyName>
+            <foaf:givenName>Rubens Onofre</foaf:givenName>
+            <foaf:name>Rubens Onofre Nodari</foaf:name>
+          </foaf:Person>
+        </rdf:li>
+        <rdf:li>
+          <foaf:Person rdf:about="http://biotea.org/person/pmcdoc_resource/3879346/name/MPGuerra">
+            <foaf:publications rdf:resource="http://biotea.org/pmcdoc/pmc/3879346"/>
+            <foaf:familyName>Guerra</foaf:familyName>
+            <foaf:givenName>Miguel Pedro</foaf:givenName>
+            <foaf:name>Miguel Pedro Guerra</foaf:name>
+          </foaf:Person>
+        </rdf:li>
+      </rdf:Seq>
+    </bibo:authorList>
+  </bibo:Document>
+</rdf:RDF>

@@ -1,0 +1,1233 @@
+<!DOCTYPE article PUBLIC "-//NLM//DTD Journal Archiving and Interchange DTD v2.3 20070202//EN" "archivearticle.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/Mathml" xmlns:xlink="http://www.w3.org/1999/xlink"  article-type="research-article">
+  <front>
+    <journal-meta>
+      <journal-id journal-id-type="nlm-journal-id">0410462</journal-id>
+      <journal-id journal-id-type="pubmed-jr-id">6011</journal-id>
+      <journal-id journal-id-type="nlm-ta">Nature</journal-id>
+      <journal-id journal-id-type="iso-abbrev">Nature</journal-id>
+      <journal-title-group>
+        <journal-title>Nature</journal-title>
+      </journal-title-group>
+      <issn pub-type="ppub">0028-0836</issn>
+      <issn pub-type="epub">1476-4687</issn>
+    </journal-meta>
+    <article-meta>
+      <article-id pub-id-type="accession">PMC6223129</article-id>
+      <article-id pub-id-type="pmcid">PMC6223129</article-id>
+      <article-id pub-id-type="pmc-uid">6223129</article-id>
+      <article-id pub-id-type="pmid">29695869</article-id>
+      <article-id pub-id-type="pmid">29695869</article-id>
+      <article-id pub-id-type="doi">10.1038/s41586-018-0062-x</article-id>
+      <article-id pub-id-type="manuscript">nihpa955740</article-id>
+      <article-categories>
+        <subj-group subj-group-type="heading">
+          <subject>Article</subject>
+        </subj-group>
+      </article-categories>
+      <title-group>
+        <article-title>Cryo-EM structure of substrate-bound human telomerase holoenzyme</article-title>
+      </title-group>
+      <contrib-group>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Nguyen</surname>
+            <given-names>Thi Hoang Duong</given-names>
+          </name>
+          <xref ref-type="aff" rid="A1">1</xref>
+          <xref ref-type="aff" rid="A2">2</xref>
+          <xref ref-type="aff" rid="A3">3</xref>
+          <xref ref-type="aff" rid="A4">4</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Tam</surname>
+            <given-names>Jane</given-names>
+          </name>
+          <xref ref-type="aff" rid="A1">1</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Wu</surname>
+            <given-names>Robert A.</given-names>
+          </name>
+          <xref ref-type="aff" rid="A1">1</xref>
+          <xref rid="FN1" ref-type="author-notes">#</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Greber</surname>
+            <given-names>Basil J.</given-names>
+          </name>
+          <xref ref-type="aff" rid="A2">2</xref>
+          <xref ref-type="aff" rid="A3">3</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Toso</surname>
+            <given-names>Daniel</given-names>
+          </name>
+          <xref ref-type="aff" rid="A2">2</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Nogales</surname>
+            <given-names>Eva</given-names>
+          </name>
+          <xref ref-type="aff" rid="A1">1</xref>
+          <xref ref-type="aff" rid="A2">2</xref>
+          <xref ref-type="aff" rid="A3">3</xref>
+          <xref ref-type="aff" rid="A5">5</xref>
+          <xref rid="CR1" ref-type="corresp">*</xref>
+        </contrib>
+        <contrib contrib-type="author">
+          <name>
+            <surname>Collins</surname>
+            <given-names>Kathleen</given-names>
+          </name>
+          <xref ref-type="aff" rid="A1">1</xref>
+          <xref ref-type="aff" rid="A2">2</xref>
+          <xref rid="CR1" ref-type="corresp">*</xref>
+        </contrib>
+      </contrib-group>
+      <aff id="A1"><label>1</label>Department of Molecular and Cell Biology, University of California, Berkeley, California 94720, USA</aff>
+      <aff id="A2"><label>2</label>California Institute for Quantitative Biology (QB3), University of California, Berkeley, California 94720, USA</aff>
+      <aff id="A3"><label>3</label>Molecular Biophysics and Integrative Bio-Imaging Division, Lawrence Berkeley National Laboratory, Berkeley, California 94720, USA</aff>
+      <aff id="A4"><label>4</label>Miller Institute for Basic Research in Science, University of California, Berkeley, California 94720, USA</aff>
+      <aff id="A5"><label>5</label>Howard Hughes Medical Institute, University of California, Berkeley, California 94720, USA</aff>
+      <author-notes>
+        <fn fn-type="con" id="FN1">
+          <p id="P1">Author contributions</p>
+          <p id="P2">K.C. and E.N. directed the study. T.H.D.N. developed telomerase purification procedure and performed <italic>in vitro</italic> biochemical assays, negative-stain and cryo-EM specimen preparation, data collection, data processing and model fitting. J.T. performed <italic>in vivo</italic> experiments and assisted T.H.D.N with cell culture and biochemistry. R.A.W guided T.H.D.N with telomerase biochemistry and purification at the initial stage of the project. B.J.G. and D.T. helped T.H.D.N with data collection. T.H.D.N, K.C. and E.N. wrote the paper with contributions from all other authors.</p>
+        </fn>
+        <fn fn-type="other" id="FN2">
+          <p id="P3">Author information</p>
+          <p id="P4">Reprints and permissions information is available at <ext-link ext-link-type="uri" xlink:href="http://www.nature.com/reprints">www.nature.com/reprints</ext-link>. The authors declare no competing financial interests. Readers are welcome to comment on the online version of the paper. Cryo-EM maps of the catalytic core, H/ACA lobe and overall human telomerase holoenzyme have been deposited with the Electron Microscopy Database under accession number EMD-7518, EMD-7519 and EMD-7521, respectively. PDB coordinates are included in a Pymol session as <xref rid="SD1" ref-type="supplementary-material">Supplementary Information</xref>. Correspondence and requests for materials should be addressed to K.C. (<email>kcollins@berkeley.edu</email> ) and E.N. (<email>enogales@lbl.gov</email> ).</p>
+        </fn>
+        <fn fn-type="present-address" id="FN3">
+          <label>#</label>
+          <p id="P5">Current address: Harvard Medical School, Boston, Massachusetts 02115, USA</p>
+        </fn>
+        <corresp id="CR1"><label>*</label>Correspondence should be addressed to K.C. (<email>kcollins@berkeley.edu</email> ) and E.N. (<email>ENogales@lbl.gov</email> ).</corresp>
+      </author-notes>
+      <pub-date pub-type="nihms-submitted">
+        <day>31</day>
+        <month>3</month>
+        <year>2018</year>
+      </pub-date>
+      <pub-date pub-type="epub">
+        <day>25</day>
+        <month>4</month>
+        <year>2018</year>
+      </pub-date>
+      <pub-date pub-type="ppub">
+        <month>5</month>
+        <year>2018</year>
+      </pub-date>
+      <pub-date pub-type="pmc-release">
+        <day>08</day>
+        <month>11</month>
+        <year>2018</year>
+      </pub-date>
+      <volume>557</volume>
+      <issue>7704</issue>
+      <fpage>190</fpage>
+      <lpage>195</lpage>
+      <!--elocation-id from pubmed: 10.1038/s41586-018-0062-x-->
+      <permissions>
+        <license>
+          <license-p>Users may view, print, copy, and download text and data-mine the content in such documents, for the purposes of academic research, subject always to the full Conditions of use:<uri xlink:type="simple" xlink:href="http://www.nature.com/authors/editorial_policies/license.html#terms">http://www.nature.com/authors/editorial_policies/license.html#terms</uri></license-p>
+        </license>
+      </permissions>
+      <abstract id="ABS1">
+        <title>Summary</title>
+        <p id="P6">Telomerase adds telomeric repeats to chromosome ends to balance incomplete replication. Telomerase regulation is implicated in cancer, aging and other human diseases, but progress towards telomerase clinical manipulation is hampered by the lack of structural data. Here we present the cryo-electron microscopy structure of substrate-bound human telomerase holoenzyme at subnanometer resolution, describing two flexibly RNA-tethered lobes: the catalytic core with telomerase reverse transcriptase (TERT) and conserved motifs of telomerase RNA (hTR), and an H/ACA ribonucleoprotein (RNP). In the catalytic core, RNA encircles TERT, adopting a well-ordered tertiary structure with surprisingly limited protein-RNA interactions. The H/ACA RNP lobe comprises two sets of heterotetrameric H/ACA proteins and one Cajal body protein, TCAB1, representing a pioneering structure of a large eukaryotic family of ribosome and spliceosome biogenesis factors. Our findings provide a structural framework for understanding human telomerase disease mutations and represent an important step towards telomerase-related clinical therapeutics.</p>
+      </abstract>
+    </article-meta>
+  </front>
+  <body>
+    <p id="P7">Linear eukaryotic chromosomes are capped by telomeric repeat tracts that recruit the telomere-binding proteins essential to distinguish telomeres from DNA breaks and thus avoid telomere end-resection and interchromosomal fusions<sup><xref rid="R1" ref-type="bibr">1</xref>,<xref rid="R2" ref-type="bibr">2</xref></sup>. Due to inherently incomplete genome replication, telomeres are progressively shortened in each cell cycle<sup><xref rid="R3" ref-type="bibr">3</xref></sup>. Critically short telomeres result in genome instability and cell death<sup><xref rid="R2" ref-type="bibr">2</xref>,<xref rid="R4" ref-type="bibr">4</xref>,<xref rid="R5" ref-type="bibr">5</xref></sup>. To compensate for this sequence loss, a specialized reverse transcriptase, telomerase, adds telomeric repeats to the chromosome 3â end, using the telomerase reverse transcriptase (TERT), and an integral telomerase RNA subunit (TER) with an internal template for repeat synthesis<sup><xref rid="R6" ref-type="bibr">6</xref></sup>. Human telomerase activation in embryogenesis and its repression in somatic tissues govern cellular renewal capacity, with telomerase deficiency imposing hematopoietic and epithelial failures and aberrant telomerase activation enabling tumorigenesis<sup><xref rid="R7" ref-type="bibr">7</xref></sup>.</p>
+    <p id="P8">Despite its medical relevance, efforts to design drugs targeting telomerase are hampered by limited structural information. Endogenous human telomerase holoenzyme is scarce. Most studies of human telomerase use cellular overexpression of limiting TER (hTR in human) and TERT<sup><xref rid="R8" ref-type="bibr">8</xref></sup>. Two hTR domains are critical for activity<sup><xref rid="R9" ref-type="bibr">9</xref>,<xref rid="R10" ref-type="bibr">10</xref></sup>: a domain with the template and adjacent pseudoknot (PK, together t/PK) and the conserved regions 4 and 5 (CR4/5) consisting of a branched junction of stems P5, P6, and the activity-critical stem-loop P6.1 (<xref rid="F1" ref-type="fig">Fig. 1a</xref>). Together with TERT, they are sufficient to reconstitute telomerase activity with the repeat addition processivity characteristic of cellular holoenzyme<sup><xref rid="R11" ref-type="bibr">11</xref></sup>. TERT is composed of four domains: the N-terminal (TEN) domain, the high-affinity RNA binding domain (TRBD), the reverse transcriptase domain (RT), and a C-terminal extension (CTE) analogous to a polymerase thumb<sup><xref rid="R11" ref-type="bibr">11</xref></sup> (<xref rid="F1" ref-type="fig">Fig. 1a</xref>). The high-resolution structure of a streamlined TERT from the flour beetle <italic>Tribolium castaneum</italic>, which lacks the TEN domain, established that the latter three domains form a ring, referred to as the TERT ring<sup><xref rid="R12" ref-type="bibr">12</xref></sup>. The TERT ring alone can bind a template-primer duplex<sup><xref rid="R13" ref-type="bibr">13</xref></sup>, and, accordingly, the human TERT ring has been shown to support single-repeat synthesis<sup><xref rid="R14" ref-type="bibr">14</xref></sup>. Purified or overexpressed hTR and TERT form heterogeneous complexes, only some of which are catalytically active<sup><xref rid="R15" ref-type="bibr">15</xref></sup>. It remains controversial whether active enzyme requires an hTR and TERT dimer<sup><xref rid="R16" ref-type="bibr">16</xref>,<xref rid="R17" ref-type="bibr">17</xref></sup> or only a monomer of each subunit<sup><xref rid="R18" ref-type="bibr">18</xref>,<xref rid="R15" ref-type="bibr">15</xref></sup>. The landmark 9 Ã cryo-electron microscopy (cryo-EM) structure of the ciliate <italic>Tetrahymena thermophila</italic> telomerase holoenzyme revealed its overall architecture, including a monomeric TERT-TER catalytic core<sup><xref rid="R19" ref-type="bibr">19</xref></sup>. However, the subunit composition of <italic>Tetrahymena</italic> telomerase holoenzyme is distinct from its human counterpart, and available structural information on human telomerase holoenzyme is limited to a 30 Ã negative-stain EM reconstruction<sup><xref rid="R17" ref-type="bibr">17</xref></sup>. Therefore, both structure and composition of human telomerase holoenzyme remain poorly characterized.</p>
+    <p id="P9">Telomerase assembly initiates in human cells with nascent hTR binding to H/ACA proteins and their chaperones<sup><xref rid="R20" ref-type="bibr">20</xref></sup>. Human H/ACA proteins are shared by telomerase and the small nucleolar (sno) and small Cajal body (sca) RNP families that catalyze ribosomal and spliceosomal RNA modifications<sup><xref rid="R21" ref-type="bibr">21</xref>,<xref rid="R22" ref-type="bibr">22</xref></sup>. Eukaryotic H/ACA snoRNPs contain the pseudouridine synthase dyskerin (Cbf5), NOP10, NHP2, and GAR1, assembled on each of two hairpin stems; and sca RNPs also contain TCAB1/WDR79 bound to loop CAB-box motifs. The hTR H/ACA 3â hairpin loop has a CAB box but the 5â hairpin instead extends into CR4/5 (<xref rid="F1" ref-type="fig">Fig. 1a</xref>). All eukaryotic H/ACA RNPs, including telomerase, require both hairpins of the H/ACA motif for RNP biogenesis in cells<sup><xref rid="R22" ref-type="bibr">22</xref></sup>, unlike their single-hairpin archaeal counterparts<sup><xref rid="R21" ref-type="bibr">21</xref></sup>, but it remains controversial whether active human telomerase holoenzyme has one or two sets of H/ACA proteins<sup><xref rid="R18" ref-type="bibr">18</xref></sup>, only dyskerin<sup><xref rid="R23" ref-type="bibr">23</xref></sup>, or only dyskerin and NOP10 (ref. 17). Syndromes of human telomerase deficiency have been traced to mutations in dyskerin, NOP10, NHP2 and their chaperone NAF1<sup><xref rid="R5" ref-type="bibr">5</xref></sup>. While structure of the related single-hairpin archaeal RNP is known<sup><xref rid="R24" ref-type="bibr">24</xref></sup>, there is no high-resolution structure of any complete eukaryotic H/ACA RNP.</p>
+    <p id="P10">Here, to address the structure and composition of human telomerase holoenzyme, we optimized active telomerase purification and used cryo-EM to determine its structure at subnanometer resolution, which allowed us to fit available high-resolution structures and homology models of all components. Our structure reveals in detail the organization of 10 protein subunits and hTR, illuminating the structural basis of hTR motif functions and human disease mutation causes of telomerase deficiency.</p>
+    <sec disp-level="2" id="S2">
+      <title>Different activities for distinct structural states of purified human telomerase</title>
+      <p id="P11">We reconstituted human telomerase holoenzyme by transient transfection of HEK 293T cells with vectors expressing TERT and hTR<sup><xref rid="R8" ref-type="bibr">8</xref></sup>. After affinity purification steps to enrich for hTR and TERT, the predominant additional proteins in the sample were TCAB1 and the H/ACA proteins (dyskerin, NOP10, NHP2 and GAR1), each of which was assigned by immunoblotting and, excepting glycine-arginine rich GAR1, also confirmed by mass spectrometry (<xref rid="F1" ref-type="fig">Fig. 1b</xref>, <xref ref-type="fig" rid="F6">Extended Data Fig. 1a</xref>, <xref rid="T1" ref-type="table">Extended Data Table 1</xref>). Furthermore, protein identities were confirmed by subunit drop-out purifications (see below). Direct primer-extension assays of eluted fractions showed that the amount of TERT did not fully correlate with the amount of telomerase activity; also, dilution of the less active fraction E1 increased rather than decreased activity, (<xref rid="F1" ref-type="fig">Fig. 1c</xref>). Visualization by negative-stain EM of E1 and E2, which we refer to as inactive and active fractions, respectively, revealed morphologically distinct populations of particles. Particles from the inactive fraction were more elongated (typically 400 Ã or more in length) and more heterogeneous than those in the active fraction (<xref rid="F1" ref-type="fig">Fig. 1d and e</xref>). Particles from the active fraction consisted of two asymmetric lobes, nearly 300 Ã in length (<xref rid="F1" ref-type="fig">Fig. 1e</xref>). Previous studies have shown that cellular human telomerase reconstitution yields complexes both monomeric and dimeric for TERT<sup><xref rid="R15" ref-type="bibr">15</xref>,<xref rid="R17" ref-type="bibr">17</xref></sup>, explaining the observed particle heterogeneity. For cryo-EM studies, we modified our purification protocol to recover only active fractions (<xref ref-type="fig" rid="F6">Extended Data Fig. 1b and c</xref>), added a DNA substrate (T<sub>14</sub>AG<sub>3</sub>) during purification, and confirmed the presence of the bound substrate in the purified RNP (<xref ref-type="fig" rid="F6">Extended Data Fig. 1c</xref>). We also demonstrated that our tagged TERT was active <italic>in vivo</italic> (<xref ref-type="fig" rid="F7">Extended Data Fig. 2a-e</xref>).</p>
+    </sec>
+    <sec disp-level="2" id="S3">
+      <title>Overall architecture and flexibility of human telomerase</title>
+      <p id="P12">We prepared ÎTCAB1 telomerase with a hTR CAB box mutant that disrupted TCAB1 binding<sup><xref rid="R25" ref-type="bibr">25</xref>,<xref rid="R26" ref-type="bibr">26</xref></sup> and TERT-hTRmin<sup><xref rid="R27" ref-type="bibr">27</xref>,<xref rid="R28" ref-type="bibr">28</xref></sup>, in which hTRmin only contains the activity-essential t/PK and CR4/5 domains of hTR. By comparing their negative-stain 2D class averages to those of intact holoenzyme, we established the particle regions corresponding to TCAB1, the H/ACA RNA motif and proteins, and TERT with the two activity-essential domains of hTR (<xref ref-type="fig" rid="F6">Extended Data Fig. 1d-h</xref>). This revealed that one lobe of the holoenzyme contained TERT and its associated hTR motifs (henceforth the catalytic core) and the other contained H/ACA RNP components and TCAB1 (henceforth the H/ACA lobe). We next collected cryo-EM data to determine the structure of the substrate-bound human telomerase holoenzyme (<xref ref-type="fig" rid="F8">Extended Data Fig. 3a and b</xref>, <xref rid="T2" ref-type="table">Extended Data Table 2a</xref>). Initial image processing revealed extensive conformational flexibility between the two lobes, as well as within each lobe, which limited the quality of the overall reconstruction (<xref ref-type="fig" rid="F8">Extended Data Fig. 3c</xref> and <xref ref-type="fig" rid="F9">4a</xref>). We performed focused classification with signal subtraction<sup><xref rid="R29" ref-type="bibr">29</xref></sup> to obtain more homogeneous subsets of particles for each lobe separately. This procedure yielded reconstructions at 7.7 Ã and 8.2 Ã resolution for the catalytic core and H/ACA lobes, respectively (<xref ref-type="fig" rid="F8">Extended Data Fig. 3c</xref>, <xref ref-type="fig" rid="F8">4b-e</xref>). At these resolutions, densities for protein Î±-helices, Î²-barrels, and double-stranded RNA are discernible, allowing us to unambiguously fit available protein and RNA structures or homology models, and ultimately account for the majority of the density, except for flexible regions of single-stranded RNA and protein extensions (<xref rid="F2" ref-type="fig">Fig. 2a</xref>, <xref rid="F2" ref-type="fig">2b</xref> and <xref ref-type="fig" rid="F9">Extended Data Fig. 4f</xref>). We also obtained a reconstruction of the entire holoenzyme at 10.2 Ã resolution (<xref ref-type="fig" rid="F8">Extended Data Fig. 3c</xref>).</p>
+    </sec>
+    <sec disp-level="2" id="S4">
+      <title>Subunit distribution across the two lobes of human telomerase</title>
+      <p id="P13">The bilobal human telomerase includes one TERT molecule and one hTR (<xref rid="F2" ref-type="fig">Fig. 2a and b</xref>), in agreement with suggestions of an evolutionarily conserved single-TERT catalytic core for telomerases from ciliate and yeast model systems<sup><xref rid="R30" ref-type="bibr">30</xref>,<xref rid="R31" ref-type="bibr">31</xref></sup> to human<sup><xref rid="R15" ref-type="bibr">15</xref>,<xref rid="R18" ref-type="bibr">18</xref>,<xref rid="R32" ref-type="bibr">32</xref></sup>. The complex also contains one TCAB1 and two sets of the four mature H/ACA RNP proteins. The previous human telomerase negative-stain EM reconstruction also had a bilobal architecture, interpreted as dimeric TERT, although gold-labeling experiments indicated the presence of a mixture of RNPs containing both one (50%) and two (36.5%) TERT molecules<sup><xref rid="R17" ref-type="bibr">17</xref></sup>. Incomplete separation of active from inactive TERT assemblies may account for the previous study mixture of complexes. Our finding of separate lobes for the catalytic core and the H/ACA RNP gives a structural explanation for why telomerase holoenzyme RNP biogenesis strategies have such plasticity across eukaryotes<sup><xref rid="R11" ref-type="bibr">11</xref></sup>.</p>
+      <p id="P14">The extended architecture of hTR scaffolds the overall subunit organization across both lobes (<xref rid="F3" ref-type="fig">Fig. 3a and b</xref>). The catalytic core and H/ACA lobes are bridged by stems P1a and P4.2 (<xref rid="F2" ref-type="fig">Fig. 2a, 2b</xref> and <xref rid="F3" ref-type="fig">3b</xref>). The crystal structure of <italic>Tribolium</italic> TERT in complex with an RNA-DNA duplex<sup><xref rid="R13" ref-type="bibr">13</xref></sup> could be readily fitted within the catalytic core density (<xref rid="F4" ref-type="fig">Fig. 4a</xref>; <xref ref-type="fig" rid="F10">Extended Data Fig. 5c, 5d</xref> and <xref ref-type="fig" rid="F11">6b</xref>). As the <italic>Oryzias latipes</italic> (medaka) TRBD structure<sup><xref rid="R33" ref-type="bibr">33</xref></sup> includes vertebrate TERT motifs not present in the streamlined <italic>Tribolium</italic> TERT (<xref ref-type="fig" rid="F11">Extended Data Fig. 7e</xref>), we removed extensions from the medaka TRBD structure that did not fit our density and used this model to replace the <italic>Tribolium</italic> TRBD (<xref ref-type="fig" rid="F10">Extended Data Fig. 5b</xref>). Adjacent to the TERT ring, there is globular density with approximately the dimensions of the <italic>Tetrahymena</italic> TEN domain crystal structure<sup><xref rid="R34" ref-type="bibr">34</xref></sup> (<xref rid="F4" ref-type="fig">Fig. 4b</xref>, <xref ref-type="fig" rid="F10">Extended Data Fig. 5a</xref>). The <italic>Tetrahymena</italic> and human TEN domains share only 20% sequence identity and have differences in predicted secondary structure<sup><xref rid="R35" ref-type="bibr">35</xref></sup> (<xref ref-type="fig" rid="F11">Extended Data Fig. 6a</xref>); thus we removed regions of the former that are likely to be less structurally congruent with the human structure for tentative fitting into our map. The NMR structure for the human PK<sup><xref rid="R36" ref-type="bibr">36</xref></sup> and the crystal structure of the medaka CR4/5 in the conformation bound to TRBD<sup><xref rid="R33" ref-type="bibr">33</xref></sup> were fitted in one side of the catalytic core (<xref rid="F2" ref-type="fig">Fig. 2b</xref>, <xref rid="F3" ref-type="fig">3a</xref>, <xref rid="F3" ref-type="fig">3b</xref>, <xref rid="F4" ref-type="fig">4a</xref>, and <xref ref-type="fig" rid="F10">Extended Data Fig. 5h</xref>). The PK (P3+P2b) is connected to the template region located in the TERT active site by a bent helical RNA density that we attributed to J2a/b-P2a-J2a/a.1-P2a.1 (ref. 10, 37, 38) (<xref rid="F4" ref-type="fig">Fig. 4a</xref>).</p>
+      <p id="P15">We docked two copies of the crystal structure of an archaeal H/ACA RNP<sup><xref rid="R24" ref-type="bibr">24</xref></sup>, each consisting of Cbf5 (orthologous to dyskerin), GAR1, NOP10 and L7Ae (structurally related to NHP2) and a single-hairpin RNA, into the H/ACA lobe (<xref rid="F2" ref-type="fig">Fig. 2a-c</xref>, <xref rid="F5" ref-type="fig">5a</xref>, <xref rid="F5" ref-type="fig">5b</xref> and <xref ref-type="fig" rid="F10">Extended Data Fig. 5e and 5f</xref>, <xref ref-type="fig" rid="F12">7f</xref>, <xref ref-type="fig" rid="F13">8a-d</xref>). The single-hairpin RNA was truncated to a 9 bp stem flanked by the ACA motif to mimic P4 and P7 stems flanked by box H and ACA, respectively, in hTR. The hTR segments bound by each archaeal RNP equivalent can be unambiguously assigned based on their connectivity with the rest of the RNA densities. The P4-P4.1 stem is connected to the CR4/5 domain in the catalytic core via the P4.2 stem, while P7 is connected to the P8 stem-loop (<xref rid="F3" ref-type="fig">Fig. 3a</xref>, <xref rid="F3" ref-type="fig">3b</xref>, <xref rid="F5" ref-type="fig">5a and 5b</xref> and <xref ref-type="fig" rid="F10">Extended Data Fig. 5i</xref>). Density in the regions of P1, P4.1 and P4.2 was fitted with A-form RNA duplexes. TCAB1 harbors a WD40 domain, and its homology model fit uniquely at the top of the H/ACA lobe (<xref rid="F2" ref-type="fig">Fig. 2b</xref>, <xref rid="F5" ref-type="fig">5a and 5b</xref> and <xref ref-type="fig" rid="F10">Extended Data Fig. 5g</xref> and <xref ref-type="fig" rid="F8">7g</xref>), consistent with the missing density from hTR CAB-box mutation (<xref ref-type="fig" rid="F6">Extended Data Fig. 1h</xref>). This assignment of TCAB1 places it adjacent to an RNA-hairpin-like density that was fitted with the NMR structure of the P8 stem-loop<sup><xref rid="R39" ref-type="bibr">39</xref></sup>.</p>
+    </sec>
+    <sec disp-level="2" id="S5">
+      <title>The catalytic core</title>
+      <p id="P16">The t/PK and CR4/5 domains of hTR wrap around TERT to form the catalytic core (<xref rid="F4" ref-type="fig">Fig. 4a</xref>). In turn, the human TERT ring encircles the fitted <italic>Tribolium</italic> TERT RNA-DNA bound to the TERT active site (<xref rid="F4" ref-type="fig">Fig. 4a and 4c</xref>), which shifts the template position compared to that in the substrate-free <italic>Tetrahymena</italic> telomerase holoenzyme (<xref ref-type="fig" rid="F12">Extended Data Fig. 7i</xref>). The majority of the TERT RNA binding surface is contributed by the TRBD and CTE, which are sandwiched between the PK (P2b-P3) and CR4/5 (<xref rid="F4" ref-type="fig">Fig. 4d</xref>). The human PK (P2b-P3) is connected to P2a by the J2a/b bulge, and P2a connects to the less conserved helical extension P2a.1 before the transition to the single-stranded 3â-template-flanking region (<xref rid="F1" ref-type="fig">Fig. 1a</xref>, <xref rid="F3" ref-type="fig">3a</xref> and <xref rid="F4" ref-type="fig">4a</xref>). The t/PK forms a rigid, arc-like structure (<xref rid="F1" ref-type="fig">Fig. 1a</xref> and <xref rid="F4" ref-type="fig">4a</xref>), as predicted by modeling using NMR structures of its subdomains<sup><xref rid="R10" ref-type="bibr">10</xref>,<xref rid="R36" ref-type="bibr">36</xref>,<xref rid="R38" ref-type="bibr">38</xref></sup>. The less conserved end of the PK P3 stem approaches the TRBD close to its interface with the CTE and co-axially stacks with P2b (<xref rid="F4" ref-type="fig">Fig. 4d</xref>). The unexpectedly limited interaction between the hTR PK and TERT favors a model for indirect PK function in the co-folding of TERT and hTR<sup><xref rid="R30" ref-type="bibr">30</xref>,<xref rid="R40" ref-type="bibr">40</xref></sup>. The location of P2a.1 positions the immediately 5â single-stranded 3â-template-flanking RNA such that it could thread between the TEN domain and the TERT ring (<xref rid="F4" ref-type="fig">Fig. 4b</xref> and <xref ref-type="fig" rid="F12">Extended Data Fig. 7c</xref>), similar to the path of the 3â-template-flanking TER in the <italic>Tetrahymena</italic> telomerase holoenzyme <sup><xref rid="R9" ref-type="bibr">9</xref>,<xref rid="R10" ref-type="bibr">10</xref>,<xref rid="R19" ref-type="bibr">19</xref></sup> (<xref rid="F4" ref-type="fig">Fig. 4e</xref>), despite major changes in the remainder of t/PK secondary and tertiary structure (<xref rid="F1" ref-type="fig">Fig. 1a</xref> and <xref rid="F4" ref-type="fig">4f</xref> and <xref ref-type="fig" rid="F12">Extended Data Fig. 7j</xref>). The TEN domain proximity to the template 3â end further reinforces its proposed role in stabilization of RNA-DNA duplex at the template 3â end<sup><xref rid="R14" ref-type="bibr">14</xref>,<xref rid="R27" ref-type="bibr">27</xref></sup>. The position of the <italic>Tetrahymena</italic> 5â template-boundary element, stem-loop 2 (SL2), relative to the TRBD, is roughly similar to that of human P1b (<xref rid="F4" ref-type="fig">Fig. 4d and g</xref>), consistent with their common function in 5â template boundary determination<sup><xref rid="R41" ref-type="bibr">41</xref></sup>.</p>
+      <p id="P17">The CR4/5 domain, which consists of P5, P6 and P6.1 stems connected as a three-way junction, adopts a similar conformation to that in the medaka CR4/5-TRBD crystal structure<sup><xref rid="R33" ref-type="bibr">33</xref></sup> (<xref rid="F4" ref-type="fig">Fig. 4d</xref> and <xref ref-type="fig" rid="F12">Extended Data Fig. 7d</xref>), except that human P6 is longer and composed of two stems, P6a and P6b. The P6a stem binds along TRBD (<xref rid="F4" ref-type="fig">Fig. 4d</xref>), while the P6.1 hairpin emanates from the three-way junction almost perpendicularly to P6a, inserting into the interface between the TRBD and CTE. Clear helical density is observed for P6b, which makes no RNA-RNA or RNA-protein interactions. P5 co-axially stacks with P6a, but like P6b, it does not interact with TERT (<xref rid="F4" ref-type="fig">Fig. 4d</xref> and <xref ref-type="fig" rid="F12">Extended Data Fig. 7d</xref>). The P6.1-TERT interaction is critical for TERT association with hTR and telomerase catalytic activity<sup><xref rid="R42" ref-type="bibr">42</xref>,<xref rid="R43" ref-type="bibr">43</xref></sup>. The P6.1 apical loop was disordered in the TRBD-CR4/5 crystal structure<sup><xref rid="R33" ref-type="bibr">33</xref></sup> and, although our resolution is insufficient for <italic>de novo</italic> building, its density is visible in our cryo-EM map, appearing packed against the CTE (<xref ref-type="fig" rid="F12">Extended Data Fig. 7d</xref>). Our structure suggests that interaction with the CTE stabilizes this loop, agreeing with previous crosslinking studies<sup><xref rid="R44" ref-type="bibr">44</xref></sup>. In the <italic>Tetrahymena</italic> telomerase cryo-EM structure, the stem-terminus element (SL4) is bound at the interface between the TRBD and CTE of TERT<sup><xref rid="R19" ref-type="bibr">19</xref></sup>, similar to P6.1 in our human telomerase structure (<xref rid="F4" ref-type="fig">Fig. 4d and 4g</xref>). Whether or not they are related evolutionarily, P6.1 and SL4 serve a similar structural role in telomerase catalytic core architecture. Finally, the catalytic core has extra density that likely corresponds to TERT and hTR regions that were not possible to model (<xref ref-type="fig" rid="F8">Extended Data Fig. 4f</xref>), such as the âinsertion in fingersâ (IFD) subdomain of the RT domain (residues 734-802) that is missing in <italic>Tribolium</italic> TERT (<xref ref-type="fig" rid="F7">Extended Data Fig. 6b</xref>, <xref ref-type="fig" rid="F8">7a and 7b</xref>), and the non-conserved flexible linker between the TEN domain and the TERT ring (<xref rid="F4" ref-type="fig">Fig. 4c</xref>).</p>
+    </sec>
+    <sec disp-level="2" id="S6">
+      <title>The H/ACA RNP and human disease mutations</title>
+      <p id="P18">Our structure offers the first glimpse of the subunit architecture of an intact eukaryotic H/ACA RNP, with two sets of H/ACA heterotetramers that bind two RNA hairpins (<xref rid="F5" ref-type="fig">Fig. 5a and b</xref>). As expected, the 3â hairpin loop associates with the single holoenzyme TCAB1 subunit (<xref rid="F5" ref-type="fig">Fig. 5a-c</xref>). We observe an interaction between the two H/ACA protein heterotetramers, predominantly mediated by the two dyskerin molecules (<xref rid="F5" ref-type="fig">Fig. 5d</xref> and <xref ref-type="fig" rid="F8">Extended data Fig. 7h</xref>). The first set of H/ACA proteins contacts the 5â hairpin P4 stem exclusively via dyskerin (<xref rid="F5" ref-type="fig">Fig. 5a and b</xref>, <xref ref-type="fig" rid="F6">Extended Data Fig. 5e</xref>). In contrast, the second set forms more extensive interactions with the 3â hairpin P7 stem and P8 stem-loop. The P7 stem is bound by dyskerin, similarly to the 5â hairpin P4, and continues to P8, which interacts with NOP10, NHP2 and additionally TCAB1 (<xref rid="F5" ref-type="fig">Fig. 5a and b</xref>, <xref ref-type="fig" rid="F6">Extended Data Fig. 5f and 5i</xref>). That binding of dyskerin at the base of the 5â hairpin is sufficient for anchoring the entire core heterotetramer, and accounts for the evolutionary divergence of the vertebrate TER 5â H/ACA hairpin<sup><xref rid="R45" ref-type="bibr">45</xref></sup> and for the hTR 5â hairpin tolerance of changes in stem and pocket structure<sup><xref rid="R46" ref-type="bibr">46</xref></sup>. Loss of hTR 5â hairpin contacts to H/ACA proteins is compensated by an hTR-specific increase in protein binding to the 3â hairpin<sup><xref rid="R18" ref-type="bibr">18</xref></sup>. The position of dyskerin defined by our structure explains why H/ACA RNP subunit exchange occurs in cell extracts for GAR1, NOP10 and NHP2, but not dyskerin<sup><xref rid="R47" ref-type="bibr">47</xref></sup>. The surprisingly limited protein-RNA interaction of the hTR 5â hairpin implies that a wider breadth of RNA structures can assemble H/ACA proteins than has been predicted from the snoRNAs and scaRNAs, which conserve not only H/ACA protein binding but also requirements for dyskerin catalytic function<sup><xref rid="R21" ref-type="bibr">21</xref></sup>.</p>
+      <p id="P19">The single subunit of TCAB1 in human telomerase contacts both the 3â hairpin CAB box and dyskerin in the second set of H/ACA proteins (<xref rid="F5" ref-type="fig">Fig. 5c</xref>; <xref ref-type="fig" rid="F8">Extended Data Fig. 7g</xref>), giving a unifying explanation for its simultaneous identification as an RNA-independent dyskerin binding protein and a sequence-specific, direct RNA binding protein<sup><xref rid="R48" ref-type="bibr">48</xref>,<xref rid="R49" ref-type="bibr">49</xref></sup>. Unexpectedly, TCAB1 also contacts GAR1 (<xref rid="F5" ref-type="fig">Fig. 5c</xref>; <xref ref-type="fig" rid="F8">Extended Data Fig. 7g</xref>). Protein-protein interactions by TCAB1 account for why such a limited amount of CAB-box sequence can stabilize its association with H/ACA RNPs. Structure fitting of the archaeal H/ACA RNP, combined with sequence homology between the archaeal and human proteins, allowed mapping of human dyskeratosis congenita and Hoyerall-Hreidarsson disease mutations in our structure<sup><xref rid="R50" ref-type="bibr">50</xref></sup> (<xref ref-type="fig" rid="F9">Extended Data Fig. 8a-d</xref>). Interestingly, a large number of dyskerin mutations cluster at the dyskerin-dyskerin interface, which is also close to its RNA binding surface (<xref rid="F5" ref-type="fig">Fig. 5d</xref>; <xref ref-type="fig" rid="F8">Extended Data Fig. 7f and 7h</xref>). Additionally, dyskerin R158 is near TCAB1 and NOP10 R34 and NHP2 V126 are located near the P8 stem (<xref rid="F5" ref-type="fig">Fig. 5c</xref>). Mutations at any of these newly evident interfaces would be expected to have more severe impact on hTR than snoRNAs or scaRNAs because (a) crippled protein-RNA interaction of the hTR 5â hairpin makes 5â hairpin assembly more dependent on cross-hairpin dyskerin-dyskerin interactions, (b) hTR is uniquely reliant on enhanced H/ACA-protein affinity for the 3â-hairpin P8 stem-loop, and (c) hTR has one rather than two CAB box locations for TCAB1 association<sup><xref rid="R18" ref-type="bibr">18</xref>,<xref rid="R46" ref-type="bibr">46</xref></sup>. Our ability to map disease mutations to H/ACA RNP structure expands the scope of telomerase deficiency mechanisms beyond decreased assembly of core heterotrimer (dyskerin, NOP10, NHP2) (ref. 22) to include decreased dyskerin interaction with itself and with TCAB1 as well as with hTR.</p>
+    </sec>
+    <sec id="S7">
+      <title>Conclusions</title>
+      <p id="P20">The structure presented here provides the first architectural characterization of a telomerase holoenzyme from a multicellular species, addressing the longstanding question of vertebrate telomerase holoenzyme subunit content and arrangement. Our structure opens new opportunities for the design and screening of inhibitors targeting hTR folding and TERT interaction that will hold promise as general anti-cancer therapeutics<sup><xref rid="R7" ref-type="bibr">7</xref></sup>.</p>
+    </sec>
+    <sec id="S8">
+      <title>Methods</title>
+      <sec id="S9">
+        <title>Telomerase reconstitution</title>
+        <p id="P21">Human telomerase was reconstituted in cells with the TERT expression plasmid pcDNA3.1-ZZ-Tev-TwinStrep-TERT and the hTR expression plasmid pcDNA3.1-U3-hTR-HDV. HDV is the Hepatitis Delta Virus ribozyme, which was previously shown to increase hTR accumulation<sup><xref rid="R46" ref-type="bibr">46</xref>,<xref rid="R28" ref-type="bibr">28</xref></sup>. Initially we used suspension HEK 293 cells lacking N-acetylglucosaminyltransferase I (GnTI)<sup><xref rid="R51" ref-type="bibr">51</xref></sup> and transfected the cells using polyethylenimine (PEI)<sup><xref rid="R52" ref-type="bibr">52</xref></sup>. These cells were cultured in FreeStyle 293 Expression medium (ThermoFisher). After 48 hours of transfection, whole cell-extract was prepared by CHAPS lysis<sup><xref rid="R53" ref-type="bibr">53</xref></sup>. We obtained populations of inactive and active telomerase RNP purified from these extracts. To enrich for the active telomerase RNP, we used adherent HEK 293T cultured in DMEM with GlutaMAX (ThermoFisher) supplemented with 10% FBS, 100 units/mL penicillin and 100 Î¼g/ml Streptomycin. The cells were transfected with TERT and hTR expression plasmids by calcium phosphate. After 48 hours, the cells were harvested and resuspended in hypotonic lysis buffer (HLB) (20 mM HEPES NaOH pH 8, 2 mM MgCl<sub>2</sub>, 0.2 mM EGTA, 10% glycerol, 0.1% NP40, 1 mM DTT and 0.1 mM PMSF). Whole-cell extract was prepared by three freeze-thaw cycles and adjusted to 300 mM before being cleared by centrifugation. The clarified extract was adjusted to 150 mM NaCl. For ÎTCAB1 telomerase and TERT-hTRmin, we used a previously characterized CAB-box mutant hTR (G414C)<sup><xref rid="R25" ref-type="bibr">25</xref></sup> and LhTRmin<sup><xref rid="R28" ref-type="bibr">28</xref></sup>. HEK 293 cell lines are long-term lab stocks and had the expected morphology and growth. They have not been authenticated or tested for mycoplasma recently.</p>
+      </sec>
+      <sec id="S10">
+        <title>Telomerase purification</title>
+        <p id="P22">The prepared whole-cell extract (from 120 plates of adherent cells or 6L of suspension cells) was incubated with streptavidin agarose resin (Sigma-Aldrich) pre-bound to a 5â-biotinylated oligonucleotide<sup><xref rid="R15" ref-type="bibr">15</xref></sup> at room temperature for 3 hours. The resin was washed with wash buffer (20 mM HEPES NaOH pH 8.0, 150 mM NaCl, 2 mM MgCl<sub>2</sub>, 0.2 mM EGTA, 10% glycerol, 0.1% Igepal CA-630, 1 mM DTT) and eluted with a competitor oligonucleotide<sup><xref rid="R15" ref-type="bibr">15</xref></sup>. The eluate was subsequently incubated with MagStrep XT resin (IBA LifeSciences) for 2 hours at 4Â°C. The resin was washed with wash buffer and eluted in batch with biotin elution buffer (100 mM Tris HCl pH 8.0, 150 mM NaCl, 1 mM EDTA, 5-10 mM biotin, 2 mM MgCl<sub>2</sub>, 0.1% Igepal CA-630, 10% glycerol, 1 mM DTT). We collected three sequential batch elution fractions for which the elution buffer was incubated with the resin for 30 minutes each time. For mass spectrometry, the eluate was combined and precipitated using trichloroacetic acid (TCA). The pellet was washed extensively with acetone and resuspended in water. The sample was subjected by MudPIT to identify the protein components present in the sample<sup><xref rid="R54" ref-type="bibr">54</xref></sup>. For cryo-EM studies, the final eluate was concentrated and buffer-exchanged with cryo-EM buffer (20 mM HEPES NaOH pH 8.0, 150 mM NaCl, 2 mM MgCl<sub>2</sub>, 0.05% Igepal CA-630, 1% trehalose, 1 mM DTT). To prepare DNA-substrate bound telomerase, oligonucleotide T<sub>14</sub>AG<sub>3</sub> (1 Î¼M) was added in the MagStrep binding step, and excess DNA substrate was washed away. Substrate-bound telomerase was eluted as described above.</p>
+      </sec>
+      <sec id="S11">
+        <title>Immunoblotting</title>
+        <p id="P23">The purified telomerase samples (E1 and E2) from the CHAPS lysis protocol were resolved by bis-Tris SDS-PAGE. Proteins were transferred to a nitrocellulose membrane and blocked with 4% nonfat milk (Carnation) in TBS buffer (50 mM Tris pH 7.5, 150 mM NaCl) for 1 hour at room-temperature. The membranes were incubated with primary antibodies overnight at 4Â°C and washed with TBS before being probed with secondary antibodies (Invitrogen) in 4% nonfat milk in TBS for 1 hour at room-temperature. We blotted for TERT, TCAB1, dyskerin and GAR1 on the same membrane, and NHP2 and NOP10 on a different membrane. The small sizes of NHP2 and NOP10 required a shorter protein transfer time than the other proteins. The membranes were washed extensively with TBS and visualized on a LI-COR Odyssey imager. The primary antibodies used were rabbit anti-dyskerin (Santa Cruz Biotechnology), mouse anti-TCAB1 (Sigma), rabbit anti-GAR1 (Novus), rabbit anti-NHP2 (Proteintech), rabbit anti-NOP10 (Abcam), mouse anti-Strep (Abcam), mouse anti-tubulin (Abcam) and rabbit IgG (Sigma-Aldrich).</p>
+      </sec>
+      <sec id="S12">
+        <title>Direct telomerase activity assays</title>
+        <p id="P24">Direct primer extension assays were performed using 1 Î¼l of sample in a 20 Î¼l reaction volume containing 50 mM Tris-acetate pH 8.0, 4 mM MgCl<sub>2</sub>, 5 mM DTT, 250 Î¼M dTTP, 250 Î¼M dATP, 5 Î¼M unlabeled dGTP, 0.1 Î¼M Î±â<sup>32</sup>P dGTP (3000 Ci/mmole, 10 mCi/ml, Perkin-Elmer), 500 nM 5â-(T<sub>2</sub>AG<sub>3</sub>)<sub>3</sub>-3â primer unless primer was pre-bound. Reactions were incubated at 30Â°C for 40 min and stopped with TES buffer (50 mM Tris HCl pH 7.5, 20 mM EDTA, 0.2% SDS). The products were extracted and precipitated together with a 12-nt <sup>32</sup>P-end-labeled oligonucleotide as a recovery control and resolved on a denaturing polyacrylamide gel. The dried gels were exposed to a phosphorimager screen and imaged on a Typhoon Trio system (GE Healthcare).</p>
+      </sec>
+      <sec id="S13">
+        <title>HCT116 cell culture and genome editing</title>
+        <p id="P25">HCT116 cells were cultured in DMEM with GlutaMax (ThermoFisher) supplemented with 10% FBS and 100 Î¼g/ml Primocin (Invivogen). Clonal cell lines with homozygous TERT disruption were generated previously<sup><xref rid="R28" ref-type="bibr">28</xref></sup>. Transgene integration at the <italic>AAVS1</italic> safe harbor locus was conducted as previously described<sup><xref rid="R55" ref-type="bibr">55</xref></sup> using CAGGS promoter for TERT expression and a neomycin resistance cassette for selection. Genome engineering in HCT116 cells was performed using the manufacturerâs transfection protocol (Lipofectamine 3000, Thermo) with media exchange at 24 hours into selection with 200 Î¼g/ml of G418 and 100 Î¼g/ml of hygromycin. Cells were passaged continuously with selection media for &gt;3 months after selection for cells with the integrated TERT transgenes. HCT116 cells were obtained from Molecular and Cell Biology Department Tissue Culture Facility (UC Berkeley) and were tested for mycoplasma.</p>
+      </sec>
+      <sec id="S14">
+        <title>Telomeric repeat amplification assays</title>
+        <p id="P26">Cell extract was prepared using the HLB method as described above and normalized to 2 mg/ml, which was quantified by the Bio-Rad Bradford protein assay. Dilutions were made of the whole cell extract, which were used for the PCR-based telomeric repeat amplification protocol (TRAP) as previously described<sup><xref rid="R55" ref-type="bibr">55</xref></sup>. Two Î¼l with 400 ng total protein was used per 20 Î¼l QTRAP reaction, consisting of 0.1 Î¼g/Î¼l TS primer (5â-AATCCGTCGAGCAGAGTT-3â), 0.1 Î¼g/Î¼l ACX primer (5â-GCGCGGCTTACCCTTACCCTTACCCTAACC-3â), and iTaq Universal Green Supermix (BioRad). Samples were incubated on a CFX96 Touch Real-Time PCR Detection System (Bio-Rad, Hercules, CA) at 30Â°C for 30 min, followed by a hot start of 95Â°C for 2 min. The samples were then cycled 35 times between 95Â°C for 20 seconds and 61Â°C for 90 seconds. Relative telomerase activity was calculated by a ÎCt normalized to the parental sample. Serial dilutions of 10, 30, and 100 ng were used for the hotTRAP protocol. The TS and ACX primers were used to amplify telomeric repeats labeled by incorporation of Î±â<sup>32</sup>P-dGTP. TSNT (5â-AATCCGTCGAGCAGAGTTAAAAGGCCGAGAAGCGAT-3â) was used as the internal control (IC) for all samples, and NT (5â- ATCGCTTCTCGGCCTTTT-3â) was the dedicated TSNT reverse primer. Samples were resolved on a native gel. The gel was dried, exposed on a phosphorimager screen and imaged on a Typhoon scanner (GE Healthcare).</p>
+      </sec>
+      <sec id="S15">
+        <title>Southern blotting</title>
+        <p id="P27">Genomic DNA preparation was conducted as previously described<sup><xref rid="R28" ref-type="bibr">28</xref></sup>. Four-8 ug of DNA was digested 8 hours to overnight with AluI and MboI at 37Â°C before electrophoresis on a 0.7% agarose gel (Seakem ME agarose). The gel was dried and denatured in 1.5 M NaCl and 0.5 M NaOH for 1 hour at 50Â°C. The gel was then washed twice with 4X SSC + 0.1% SDS before prehybridization with Churchâs buffer (1% BSA, 1 mM EDTA, 0.5 M Na<sub>3</sub>PO<sub>4</sub> pH 7.2, 7% SDS) for 30 minutes at 50Â°C. <sup>32</sup>P-end-labeled probes were made of the telomeric repeat (T<sub>2</sub>AG<sub>3</sub>)<sub>3</sub> as well as the OâGeneruler 1 kb plus ladder (Thermo). These probes were both added and hybridized overnight at 50Â°C. The gel was washed with 4X SSC + 0.1% SDS at 40Â°C before exposing on a phosphorimager screen and imaging on a Typhoon scanner (GE Healthcare).</p>
+      </sec>
+      <sec id="S16">
+        <title>Negative-stain electron microscopy and data processing</title>
+        <p id="P28">For negative-stain grid preparation, 4 Î¼L of telomerase sample was incubated on glow-discharged 400-mesh copper grids, which had been previously coated with a homemade carbon film on nitrocellulose, for 90 s and stained with 2% w/v uranyl formate. Micrographs for the inactive and active fractions of telomerase were collected on an FEI Tecnai 12 transmission electron microscope operated at 120 kV and equipped with a TVIPS TemCam F416. Data was collected using the Leginon package<sup><xref rid="R56" ref-type="bibr">56</xref></sup> and data processing was done in RELION 1.4 (ref. 57) unless otherwise indicated. Initial particle picking of ~1,500 particles was performed manually, particles were extracted with a 220<sup>2</sup> pixel box at a pixel size of 2.18 Ã/pixel and subjected to reference-free 2D classification to obtain 2D initial references for auto-picking within RELION<sup><xref rid="R58" ref-type="bibr">58</xref></sup>. A total of 51,423 and 26,350 particles were picked for the inactive and active fractions, respectively. We performed two rounds of reference-free 2D classification for each dataset.</p>
+        <p id="P29">Micrographs for the enriched active fraction of intact holoenzyme, ÎTCAB1 telomerase, and TERT-hTRmin samples were collected on an FEI Tecnai F20 transmission electron microscope operated at 120 kV and equipped with a Gatan US4000 CCD camera. Data collection was done using the Leginon software package<sup><xref rid="R56" ref-type="bibr">56</xref></sup>. Initial particle picking for intact telomerase holoenzyme was done using DOG PICKER<sup><xref rid="R59" ref-type="bibr">59</xref></sup> within the APPION pipeline<sup><xref rid="R60" ref-type="bibr">60</xref></sup>. This yielded approximately 16,000 particles, which were extracted using a 400<sup>2</sup> pixel box at a pixel size of 1.5 Ã/pixel and subjected to reference-free 2D classification to obtain initial 2D class averages. These 2D class averages were subsequently used as references for automatic picking within RELION<sup><xref rid="R58" ref-type="bibr">58</xref></sup> to yield 15,293 and 23,922 particles for intact telomerase holoenzyme and ÎTCAB1 mutant, respectively. Reference-free 2D classification was again performed on these particles. For TERT-hTRmin complex, which is a much smaller RNP than telomerase holoenzyme, DOG PICKER was initially used to pick approximately 48,000 particles, which were extracted using a 180<sup>2</sup> pixel box at a pixel size of 1.5 Ã/pixel. 2D class averages resulting from reference-free 2D classification of these particles were used as references for automatic picking in RELION to give 50,720 particles, which were subjected to another round of reference-free 2D classification. A comparison of the 2D class averages of intact telomerase holoenzyme, ÎTCAB1 mutant and TERT-hTRmin is shown in <xref ref-type="fig" rid="F6">Extended Data Fig. 1e-h</xref>.</p>
+      </sec>
+      <sec id="S17">
+        <title>Cryo-EM electron microscopy</title>
+        <p id="P30">For cryo-EM analysis, 3 Î¼l of the purified telomerase was applied to C-flat CF 4/2 grids (Protochips) that had been previously coated with a 6-nm-thick layer of homemade continuous carbon film and glow-discharged in amylamine<sup><xref rid="R61" ref-type="bibr">61</xref></sup> to overcome the preferred orientation of the telomerase holoenzyme on untreated carbon film. The grids were blotted for 4-5 s at 100% humidity and 4Â°C and plunged into a mixture of liquid ethane and propane cooled by liquid nitrogen<sup><xref rid="R62" ref-type="bibr">62</xref></sup> using an FEI Vitrobot MK IV. The grids were loaded onto an FEI Titan Krios transmission electron microscope operated at 300 kV and equipped with a Gatan K2 Summit direct electron detector camera mounted behind a GIF Quantum energy filter. Images were collected automatically using the Serial-EM package<sup><xref rid="R63" ref-type="bibr">63</xref></sup> in super-resolution counting mode at a calibrated magnification of 43477x (physical pixel size of 1.15 Ã/pixel), with a total electron dose of 42 electrons per Ã<sup>2</sup> during a total exposure time of 7 s, dose-fractionated into 28 movie frames. We used a slit width of 25 eV on the energy filter and a defocus range of 1.5-3.5 Î¼m. A total of 11,654 micrographs were collected from two separate data collection sessions.</p>
+      </sec>
+      <sec id="S18">
+        <title>Image processing</title>
+        <p id="P31">Most steps of data processing were done in RELION 2.0 (ref. 64) unless otherwise stated (<xref ref-type="fig" rid="F8">Extended Data Fig. 3c</xref>). The movie stacks for each micrograph were corrected for drift and dose-weighted using MOTIONCOR2 (ref. 65) running within Focus<sup><xref rid="R66" ref-type="bibr">66</xref></sup> during data collection. Contrast transfer function (CTF) parameters were estimated for the drift-corrected micrographs using GCTF<sup><xref rid="R67" ref-type="bibr">67</xref></sup>. Initial particle picking was performed on a subset of 350 micrographs using Gautomatch (obtained from Kai Zhang, MRC-LMB, Cambridge) and templates from a previous dataset collected on substrate-free telomerase at a different magnification (data not used and not shown in this study), resulting in approximately 32,000 particles. These particles were extracted with a 400<sup>2</sup> pixel box for reference-free 2D classification to obtain 2D references for automatic picking of all micrographs by Gautomatch. A total of 1,091,177 particles from 11,450 micrographs were picked, binned by 2 and extracted with a box size of 200<sup>2</sup> pixel. The data were initially processed in two batches, one for each data collection session. 3D classification into five classes was run for 30 iterations with an angular sampling of 7.5Â°, a regularization parameter <italic>T</italic> of 4 and a 60 Ã-low-pass filtered initial model obtained from the previous dataset of substrate-free telomerase (data not used and not shown in this study). The initial model used for the substrate-free telomerase was that of the published 30 Ã negative stain reconstruction of human telomerase<sup><xref rid="R17" ref-type="bibr">17</xref></sup>. For dataset 1, a subset of 121,116 particles from one class with the best features was selected and un-binned. For dataset 2, we selected two 3D classes and subjected them to one round of reference-free 2D classification to remove more particle images showing contaminants or damaged telomerase complexes. A subset of 214,157 particles from this dataset was unbinned and combined with the subset of particles selected from dataset 1. The combined subset of 335,283 particles was refined and yielded a reconstruction that was hard to interpret due to the conformational heterogeneity between the two lobes and within each lobe. The angular assignments resulting from this refinement were used for focused 3D classification with signal subtraction for each lobe to resolve the conformational heterogeneity within each lobe<sup><xref rid="R29" ref-type="bibr">29</xref></sup>. The two lobes are henceforth referred to as the H/ACA lobe and the catalytic core, according to our subunit assignments using negative-stain EM (<xref ref-type="fig" rid="F6">Extended Data Fig. 1e-h</xref>). The best class consisting of 103,363 particles for the catalytic lobe was refined to 7.8 Ã resolution while that for the H/ACA lobe was refined to 8.8 Ã resolution from 104,330 particles. These reconstructions show clear secondary structure features as expected for this resolution range. To further reduce conformational heterogeneity, we performed another round of alignment-free 3D classification, using the alignment parameters from the refinement run for each lobe, and refined the resulting best class. We obtained a 7.7 Ã resolution reconstruction from 39,860 particles for the catalytic core and 8.2 Ã resolution reconstruction from 36,210 particles for the H/ACA lobe. These reconstructions were used for model fitting (see below).</p>
+        <p id="P32">We also performed alignment-free 2D classification on the original (unsubtracted) particles using the orientations determined by the 3D refinement of each lobe to assess the relative orientation of the other lobe (<xref ref-type="fig" rid="F9">Extended Data Fig. 4a</xref>). For both cases, the other lobe adopts a wide range of conformations relative to the lobe that is aligned, clearly showing that the quality of any reconstruction for the whole structure is limited by both the continuous movements between the two lobes relative to each other and the conformational heterogeneity within each lobe. To obtain a better reconstruction encompassing both lobes, we performed global 3D classification for the subset of 335,283 particles before signal subtraction (25 iterations, <italic>T</italic>=8, angular sampling of 7.5Â°) (<xref ref-type="fig" rid="F8">Extended Data Fig. 3c</xref>). As expected for a particle population exhibiting continuous motion, it resulted in four classes with nearly equal distribution and the two lobes adopting different conformations relative to each other. We refined each of these classes and obtained 10.2 Ã resolution for the best class.</p>
+        <p id="P33">All refinements were performed using fully independent data half-sets (gold-standard refinement) and resolutions are reported based on the Fourier shell correlation (FSC) = 0.143 criterion<sup><xref rid="R68" ref-type="bibr">68</xref>,<xref rid="R69" ref-type="bibr">69</xref></sup> (<xref ref-type="fig" rid="F9">Extended Data Fig. 4b</xref>). FSC curves were calculated with a soft mask. For visualization, maps were corrected for the modulation transfer function of the detector and sharpened by applying a negative B-factor as determined by the post-processing function of RELION. Local resolution (<xref ref-type="fig" rid="F9">Extended Data Fig. 4d and 4e</xref>) was calculated within RELION 2.0. For model versus map FSC curves calculations, we converted the catalytic core and H/ACA RNP models into density using EMAN<sup><xref rid="R70" ref-type="bibr">70</xref></sup>. Due to small regions of unmodelled density in our maps (<xref ref-type="fig" rid="F9">Extended Data Fig. 4f</xref>), we prepared a soft mask (6-pixel soft edge) from the model and extracted the cryo-EM maps of each model using this mask. FSC model versus map was calculated using Xmipp<sup><xref rid="R71" ref-type="bibr">71</xref></sup> (<xref ref-type="fig" rid="F9">Extended Data Fig. 4c</xref>).</p>
+      </sec>
+      <sec id="S19">
+        <title>Model fitting</title>
+        <p id="P34">Initial fitting of all X-ray structures, NMR ensembles and homology models was performed manually by visual inspection of the best maps of the individual two lobes, followed by fit optimization in Chimera<sup><xref rid="R72" ref-type="bibr">72</xref></sup> (<xref rid="T2" ref-type="table">Extended Data Table 2b</xref>, <xref rid="SD1" ref-type="supplementary-material">Supplementary Data 1</xref> and <xref rid="SD1" ref-type="supplementary-material">Supplementary Video 1</xref>). The fitted structure for each lobe was subsequently rigid-body fitted into the overall map resulting from refinement of the best 3D class from global 3D classification. A homology model for TCAB1 WD40 domain was obtained using Phyre<sup><xref rid="R73" ref-type="bibr">73</xref></sup> based on the structure of coatomer subunit alpha in the COPI coat linkage structure<sup><xref rid="R74" ref-type="bibr">74</xref></sup> (PDB 5A1V) and fitted into the density located by comparisons of the 2D class averages for WT and ÎTCAB1 telomerase (<xref ref-type="fig" rid="F6">Extended Data Fig. 1e-h</xref>). The <italic>Tetrahymena</italic> TEN domain and the TRBD, RT and CTE domains of the <italic>Tribolium</italic> TERT<sup><xref rid="R13" ref-type="bibr">13</xref></sup> (PDB 3KYL) were fitted by rigid-body fitting into the map separately. We compared the fittings of the <italic>Tribolium</italic> TRBD and the medaka TRBD (PDB 4O26) (<xref ref-type="fig" rid="F12">Extended Data Fig. 7e</xref>). The former has a truncated TRBD, while the latter is closely related to the human TRBD in sequence. Some of the medaka TRBD extensions close to the RNA binding surface fit our map, while those in the periphery of the domain (including residues 403-425 and residues 545-572) did not. We removed extensions that did not fit from the medaka TRBD and replace the <italic>Tribolium</italic> TRBD with this truncated version. Our substrate can form a 6bp duplex with hTR template region. Thus we truncated the DNA/RNA duplex model in the duplex-bound <italic>Tribolium</italic> TERT (PDB 3KYL) to 6 bp. Overall, the relative orientations of the domains and the DNA/RNA duplex are very similar to that of the crystal structure. For the H/ACA RNP, the RNA used in the single-hairpin archaeal crystal structure (PDB 2HVY) was truncated to a 9 bp hairpin flanked by the 3â ACA motif. We used this model to fit both H/ACA copies because no structure of H/ACA proteins bound to the H box is available. Fitted structures of available hTR domains include the human P2b-P3 pseudoknot<sup><xref rid="R36" ref-type="bibr">36</xref></sup> (PDB 2K95), P2a-J2a/b-P2b<sup><xref rid="R37" ref-type="bibr">37</xref></sup> (PDB 2L3E), P2a.1 (ref. 38), P8 stem (or CR7) (ref. 39) (PDB 2QH2), and the medaka TRBD-bound CR4/5 (ref. 33) (PDB 4O26). The P4 and P7 stems bound by the H/ACA proteins were adapted from the truncated archaeal hairpin RNA model, as mentioned above. We used COOT<sup><xref rid="R75" ref-type="bibr">75</xref></sup> to place idealized A-form RNA helices in the map regions assigned to P1, P4.2, P4.2 and P6b stems.</p>
+      </sec>
+      <sec id="S20">
+        <title>Map and model visualization</title>
+        <p id="P35">Maps were visualized in Chimera<sup><xref rid="R72" ref-type="bibr">72</xref></sup> and all model illustrations were prepared using either Pymol (<ext-link ext-link-type="uri" xlink:href="http://www.pymol.org/">www.pymol.org</ext-link>) or Chimera.</p>
+      </sec>
+    </sec>
+    <sec sec-type="extended-data" id="S21">
+      <title>Extended Data</title>
+      <fig id="F6" orientation="portrait" position="anchor">
+        <label>Extended Data Figure 1 |</label>
+        <caption>
+          <title>Protein identification by immunoblotting, enriching active telomerase, substrate pre-binding, and comparison of wild-type (WT), ÎTCAB1, and TERT-hTRmin RNPs.</title>
+          <p id="P36"><bold>a</bold>, Immunoblotting of TERT, TCAB1, dyskerin, GAR1, NHP2 and NOP10 in telomerase purified after CHAPS lysis protocol as shown in <xref rid="F1" ref-type="fig">Fig. 1b</xref>. We used primary antibodies against each protein, except ZZ-SS-TERT, for which we used rabbit IgG. Due to the wide range of the molecular weights of the proteins in our sample, TERT, TCAB1, dyskerin and GAR1 were detected in one blot, while NHP2 and NOP10 were detected in a separate blot. The use of the same sample to probe all proteins was performed only once, but TERT, dyskerin and TCAB1 were also probed individually twice. <bold>b</bold>, Silver-stained SDS-PAGE gel of purified telomerase fractions obtained from adherent cells lysed using the hypotonic lysis method that enriches active telomerase. This experiment was repeated over five times with similar results. <bold>c</bold>, Direct primer-extension assays of the purified telomerase fractions shown in <bold>b</bold>, confirming that E1 is no longer inactive (left panel), and of the substrate-bound purified telomerase fractions with additional DNA substrate omitted from the assays (right panel). The activity observed confirmed that purified telomerase contains the DNA substrate. The activity assays with substrate added were repeated over five times and the activity assays with substrate pre-bound were repeated twice. All repeats showed similar results. <bold>d</bold>, Silver-stained SDS-PAGE gel of purified intact and ÎTCAB1 telomerase and TERT-hTRmin telomerase prepared for subunit assignments. This experiment was done only once to provide a direct comparison between these different purified telomerase complexes. <bold>e</bold>, <bold>f</bold>, <bold>g</bold>, Negative-stained 2D class averages of intact and ÎTCAB1 telomerase and TERT-hTRmin, respectively. <bold>h</bold>, Comparison of representative 2D class averages intact and ÎTCAB1 and TERT-hTRmin showing the inferred localization of TCAB1 and TERT. For gel source data, see <xref rid="SD4" ref-type="supplementary-material">Supplementary Figure 1</xref>.</p>
+        </caption>
+        <graphic xlink:href="nihms-955740-f0006"/>
+      </fig>
+      <fig id="F7" orientation="portrait" position="anchor">
+        <label>Extended Data Figure 2 |</label>
+        <caption>
+          <title>Cellular function of the tagged TERT used for structural analysis.</title>
+          <p id="P37"><bold>a</bold>, Western blot detection of ZZ-SS-TERT in TERT knock-out (KO) cells rescued by untagged TERT or ZZ-SS-TERT expression. Whole-cell extracts were probed using Strep antibody. HCT116 is the parental cell line. Lysate prepared from HEK 293T cells transiently transfected with ZZ-SS-TERT and hTR was used as a positive control (Ctrl). Tubulin was detected as a loading control. This experiment was performed only once to confirm the success of ZZ-SS-TERT incorporation into the HCT116 TERT KO cells. <bold>b</bold>, Telomeric restriction fragment analysis of HCT116 parental cells, TERT KO cells (before senescence), and TERT KO cells rescued with untagged or ZZ-SS-TERT transgene. Transgene-expressing cells were sampled at 31, 62 and 98 days post-transfection with transgene vectors. This experiment was performed twice with similar results. <bold>c</bold>, TRAP assay detection of telomerase activity in HCT116 parental cells, TERT KO cells, and TERT KO cells rescued with untagged TERT or ZZ-SS-TERT transgene. Whole-cell extracts were normalized by total protein concentration and assayed at 100, 30 or 10 ng of total protein per reaction. IC is an internal control. This experiment was repeated four times with similar results. <bold>d</bold>, Quantification of Q-TRAP assay detection of telomerase activity in HCT parental cells, TERT KO cells and TERT KO cells rescued with untagged TERT or ZZ-SS-TERT transgene. Error bars were calculated by taking the standard deviation of the average ÎCt from four different time points. Data points were shown as overlays. <bold>e</bold>, Direct primer-extension assay of telomerase after template-complementary oligonucleotide purification from extracts of TERT KO cells rescued by untagged TERT or ZZ-SS-TERT transgene. Assays were performed on clarified cell lysate (crude), flow-through (O-FT) and elution (OE) using equivalent amounts of cell extract. This experiment was performed only once to re-confirm the results in <bold>c</bold>. For gel source data, see <xref rid="SD4" ref-type="supplementary-material">Supplementary Figure 1</xref>.</p>
+        </caption>
+        <graphic xlink:href="nihms-955740-f0007"/>
+      </fig>
+      <fig id="F8" orientation="portrait" position="anchor">
+        <label>Extended Data Figure 3 |</label>
+        <caption>
+          <title>Image processing procedures.</title>
+          <p id="P38"><bold>a</bold>, Representative raw micrograph. We collected a total of 11,654 micrographs for this study. <bold>b</bold>, Representative 2D class averages obtained from reference-free 2D classification. <bold>c</bold>, Data processing strategy used in this study.</p>
+        </caption>
+        <graphic xlink:href="nihms-955740-f0008"/>
+      </fig>
+      <fig id="F9" orientation="portrait" position="anchor">
+        <label>Extended Data Figure 4 |</label>
+        <caption>
+          <title>Resolution estimation and analysis of the flexibility of the complex.</title>
+          <p id="P39"><bold>a</bold>, Representative 2D class averages obtained from 2D classification without alignment of particles that were aligned on either the catalytic core or the H/ACA lobe. For both cases, the other lobe adopts a wide range of conformations, as illustrated by the blurriness of the density. <bold>b</bold>, FSC curves for the overall map and the maps of the catalytic core and H/ACA lobe resulting from focused classification with signal subtraction and gold-standard refinement. <bold>c</bold>, Model versus map FSC curves for the catalytic core and the H/ACA RNP. We fitted only homology models as rigid bodies into the map and did not perform model coordinate refinement due to the limited resolutions of the maps. Therefore, we used a lower FSC threshold of 0.25 for resolution estimates. <bold>d</bold>, <bold>e</bold>, Local resolution for the catalytic lobe (<bold>d</bold>) and the H/ACA lobe (<bold>e</bold>) estimated by RELION 2.0 (ref. 64). Most of the catalytic core is resolved at 6-8 Ã while most of the H/ACA lobe is resolved at 7-9 Ã. <bold>f</bold>, Front (left panel) and back (right panel) views of the reconstruction showing modeled (grey) and unmodelled (gold) density. Most of the unmodelled density corresponds to single stranded RNA regions or RNA bulges, and human protein extensions that cannot be built <italic>de novo</italic> at this resolution.</p>
+        </caption>
+        <graphic xlink:href="nihms-955740-f0009"/>
+      </fig>
+      <fig id="F10" orientation="portrait" position="anchor">
+        <label>Extended Data Figure 5 |</label>
+        <caption>
+          <title>Fittings of proteins and RNA into the cryo-EM map.</title>
+          <p id="P40"><bold>a-d</bold>, Domains of TERT. <bold>a</bold>, The TEN domain from <italic>Tetrahymena</italic><sup><xref rid="R34" ref-type="bibr">34</xref></sup> (PDB 2B2A). <bold>b</bold>, The truncated medaka TRBD domain<sup><xref rid="R33" ref-type="bibr">33</xref></sup> (PDB 4O26). <bold>c</bold>, <bold>d</bold>, The RT and CTE domains from <italic>Tribolium</italic><sup><xref rid="R13" ref-type="bibr">13</xref></sup> (PDB 3KYL). <bold>e</bold>, Front (top) and back (bottom) views of the 5â hairpin set of H/ACA proteins (dyskerin, red; GAR1, cyan; NOP10, wheat; NHP2, pink) bound to P4 stem (dark blue) fit by the archaeal H/ACA RNP<sup><xref rid="R24" ref-type="bibr">24</xref></sup> (PDB 2HVY). <bold>f</bold>, Front (top) and back (bottom) views of the 3â hairpin set of H/ACA proteins using the same model and color scheme as <bold>e</bold>. <bold>g</bold>, Homology model of TCAB1 WD40 domain. <bold>h</bold>, Front (top) and bottom (bottom) views of hTR in the catalytic core. <bold>i</bold>, hTR in the H/ACA lobe.</p>
+        </caption>
+        <graphic xlink:href="nihms-955740-f0010"/>
+      </fig>
+      <fig id="F11" orientation="portrait" position="anchor">
+        <label>Extended Data Figure 6 |</label>
+        <caption>
+          <title>Sequence alignment of TERT with secondary structure assignments based on known structures.</title>
+          <p id="P41"><bold>a</bold>, Sequence alignment of <italic>Tetrahymena</italic> and human TEN domains. The secondary structure assignments of the <italic>Tetrahymena</italic> TEN domain<sup><xref rid="R34" ref-type="bibr">34</xref></sup> (PDB 2B2A) are shown above the aligned sequences. Regions removed prior to fitting are indicated with dashed lines below the sequences. <bold>b</bold>, Sequence alignment of the <italic>Tribolium</italic>, human and <italic>Tetrahymena</italic> TERT, with the latter two N-terminally truncated to match <italic>Tribolium</italic>. Secondary structure assignments of the <italic>Tribolium</italic> TERT are shown on top, with conserved motifs labeled in blue. Throughout the figure, the Î· symbol refers to a 3<sub>10</sub>-helix. Strict Î²-turns and strict Î±-turns are displayed as TT and TTT. The three catalytic aspartic acids are indicated with black arrowheads. ESpript was used to generate this figure<sup><xref rid="R76" ref-type="bibr">76</xref></sup>.</p>
+        </caption>
+        <graphic xlink:href="nihms-955740-f0011"/>
+      </fig>
+      <fig id="F12" orientation="portrait" position="anchor">
+        <label>Extended Data Figure 7 |</label>
+        <caption>
+          <title>Selected protein-protein and protein-RNA interactions in telomerase holoenzyme and comparisons between human and <italic>Tetrahymena</italic> TERT.</title>
+          <p id="P42"><bold>a</bold>, Interactions between the RT and CTE domains of TERT and the substrate-template duplex. The RT domain is divided into two subdomains, the palm (green) and fingers (orange) that are commonly observed in retroviral reverse transcriptases. The CTE (cyan) is the putative thumb. The IFD insertion that is missing in the <italic>Tribolium</italic> TERT is indicated. <bold>b</bold>, Region of the cryo-EM reconstruction shown in <bold>a</bold>. Unassigned density close to the IFD insertion is highlighted in magenta. <bold>c</bold>, Cryo-EM density of the TEN domain in the same view as that in <xref rid="F4" ref-type="fig">Fig. 4b</xref>. Connecting density is observed between the template region and the P2a.1 stem. <bold>d</bold>, Map of the CR4/5 three-way junction (wheat) and the nearby TERT domains highlighting the position of the P6.1 loop near the interface of the CTE (cyan) and TRBD (blue) domains of TERT. This loop was not ordered in medaka CR4/5 bound to the TRBD alone<sup><xref rid="R33" ref-type="bibr">33</xref></sup>. <bold>e</bold>, Comparison of the <italic>Tribolium</italic> (left panel) and medaka TRBD (right panel) with the medaka CR4/5 domain of hTR<sup><xref rid="R13" ref-type="bibr">13</xref>,<xref rid="R33" ref-type="bibr">33</xref></sup>. Extensions of the medaka TRBD that did not fit the map were truncated for visualization. <bold>f</bold>, Cryo-EM map with H/ACA components fitted. Detailed views of regions boxed in <bold>f</bold> show TCAB1 interactions with dyskerin, GAR1 and the P8 stem-loop (<bold>g</bold>); and interactions between the two dyskerin molecules (<bold>h</bold>), where a cluster of DC mutations are found (<xref rid="F5" ref-type="fig">Fig. 5d</xref>). <bold>i</bold>, Comparison of the human and <italic>Tetrahymena</italic> TERT superposed on the RT domain. Domains of human TERT are colored as in <xref rid="F1" ref-type="fig">Fig. 1a</xref>, while <italic>Tetrahymena</italic> TERT is colored in grey. The bound human and <italic>Tetrahymena</italic> templates are colored in dark and light red, respectively. <bold>j</bold>, Comparison of human and <italic>Tetrahymena</italic><sup><xref rid="R19" ref-type="bibr">19</xref></sup> catalytic core fitted into the corresponding cryo-EM maps. Domains of TERT were colored as in <xref rid="F1" ref-type="fig">Fig. 1a</xref> and TER is colored as yellow. We used the catalytic core and H/ACA lobe densities resulting from our focused classification/refinement for the human telomerase and the overall 9.4 Ã <italic>Tetrahymena</italic> telomerase map (EMD-6442).</p>
+        </caption>
+        <graphic xlink:href="nihms-955740-f0012"/>
+      </fig>
+      <fig id="F13" orientation="portrait" position="anchor">
+        <label>Extended Data Figure 8 |</label>
+        <caption>
+          <title>Sequence alignments of H/ACA proteins with secondary structure assignments based on known structures.</title>
+          <p id="P43"><bold>a-d</bold>, Sequence alignments of <italic>Pyrococcus furiosus</italic> (archaeal) and human Cbf5/dyskerin (<bold>a</bold>), GAR1 (<bold>b</bold>), NOP10 (<bold>c</bold>), and L7Ae/NHP2 (<bold>d</bold>). Secondary structure assignments displayed on the top are from the archaeal H/ACA RNP structure<sup><xref rid="R24" ref-type="bibr">24</xref></sup> (PDB 2HVY). The Î· symbol refers to a 3<sub>10</sub>-helix. Strict Î²-turns and strict Î±-turns are displayed as TT and TTT. Known human dyskeratosis congenita and Hoyeraal-Hreidarsson disease mutations<sup><xref rid="R50" ref-type="bibr">50</xref></sup> in H/ACA proteins are indicated with arrowheads. Blue arrowheads indicate residues that can be mapped onto the archaeal structure and black arrowheads indicate residues that were not mapped. ESpript was used to generate this figure<sup><xref rid="R76" ref-type="bibr">76</xref></sup>.</p>
+        </caption>
+        <graphic xlink:href="nihms-955740-f0013"/>
+      </fig>
+      <table-wrap id="T1" position="anchor" orientation="portrait">
+        <label>Extended Data Table 1 |</label>
+        <caption>
+          <title>Mass spectrometry analysis of the purified telomerase sample.</title>
+          <p id="P44">Proteins are ranked according to their percentage of sequence coverage eliminating keratins, histones, and abundant cytoskeletal proteins. Only proteins with sequence coverages of above 5% or known telomerase-associated proteins (highlighted in red background) with any level of detection are shown.</p>
+        </caption>
+        <table frame="hsides" rules="groups">
+          <colgroup span="1">
+            <col align="left" valign="middle" span="1"/>
+            <col align="left" valign="middle" span="1"/>
+            <col align="left" valign="middle" span="1"/>
+            <col align="left" valign="middle" span="1"/>
+            <col align="left" valign="middle" span="1"/>
+          </colgroup>
+          <thead>
+            <tr>
+              <th align="center" valign="top" rowspan="1" colspan="1">Protein name</th>
+              <th align="right" valign="top" rowspan="1" colspan="1">Sequence count</th>
+              <th align="right" valign="top" rowspan="1" colspan="1">Sequence coverage (%)</th>
+              <th align="right" valign="top" rowspan="1" colspan="1">Length (aa)</th>
+              <th align="right" valign="top" rowspan="1" colspan="1">MW (KDa)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">NHP2 (H/ACA subunit 2)</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">2</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">19</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">153</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">17.2</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">NOP10 (H/ACA subunit 3)</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">1</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">17.2</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">64</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">7.7</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">Nuclease-sensitive element binding protein</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">4</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">13.6</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">324</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">35.9</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">Methylosome subunit pICIn</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">2</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">13.5</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">237</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">26.2</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">TERT</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">11</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">10.6</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">1132</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">127</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">Insulin-like growth factor 2</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">3</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">8.6</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">548</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">60.1</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">TCAB1/WDR79/WRAP53beta</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">3</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">8.6</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">548</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">59.3</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">squamous cell carcinoma antigen recognised by T-cells 3 (SART3)</td>
+              <td align="right" valign="top" rowspan="1" colspan="1">6</td>
+              <td align="right" valign="top" rowspan="1" colspan="1">8</td>
+              <td align="right" valign="top" rowspan="1" colspan="1">963</td>
+              <td align="right" valign="top" rowspan="1" colspan="1">110</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">Importin subunit a-1</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">3</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">7.8</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">529</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">57.9</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">Dyskerin (H/ACA subunit 4)</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">5</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">7.2</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">514</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">57.7</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">hnRNP A2/B1</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">2</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">7.7</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">313</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">33.9</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">hnRNP A3</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">1</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">5.8</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">378</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">39.6</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">Protein arginine N-methyltransferase 5</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">1</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">5.6</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">531</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">61.1</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">ATP-dependent RNA helicase DHX36</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">2</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">2.7</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">1008</td>
+              <td align="right" valign="middle" rowspan="1" colspan="1">114.8</td>
+            </tr>
+          </tbody>
+        </table>
+      </table-wrap>
+      <table-wrap id="T2" position="anchor" orientation="portrait">
+        <label>Extended Data Table 2 |</label>
+        <caption>
+          <title>Summary of cryo-EM data collection and modelling of protein and RNA subunits</title>
+        </caption>
+        <table frame="void" rules="none">
+          <colgroup span="1">
+            <col align="left" valign="middle" span="1"/>
+            <col align="left" valign="middle" span="1"/>
+            <col align="left" valign="middle" span="1"/>
+            <col align="left" valign="middle" span="1"/>
+            <col align="left" valign="middle" span="1"/>
+            <col align="left" valign="middle" span="1"/>
+          </colgroup>
+          <tbody>
+            <tr>
+              <td colspan="6" align="center" valign="middle" rowspan="1">
+                <bold>a. Cryo-EM data collection</bold>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table frame="hsides" rules="groups">
+          <colgroup span="1">
+            <col align="left" valign="middle" span="1"/>
+            <col align="left" valign="middle" span="1"/>
+            <col align="left" valign="middle" span="1"/>
+            <col align="left" valign="middle" span="1"/>
+          </colgroup>
+          <thead>
+            <tr>
+              <th align="left" valign="top" rowspan="1" colspan="1"/>
+              <th align="left" valign="top" rowspan="1" colspan="1">Catalytic Core <break/>(EMDB-7518)</th>
+              <th align="left" valign="top" rowspan="1" colspan="1">H/ACA lobe<break/> (EMDB-7519)</th>
+              <th align="left" valign="top" rowspan="1" colspan="1">Overall<break/> (EMDB-7521)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">
+                <bold>Data collection and processing</bold>
+              </td>
+              <td align="left" valign="middle" rowspan="1" colspan="1"/>
+              <td align="left" valign="middle" rowspan="1" colspan="1"/>
+              <td align="left" valign="middle" rowspan="1" colspan="1"/>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">Magnification</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">300</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">300</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">300</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">Voltage (kV)</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1"/>
+              <td align="left" valign="middle" rowspan="1" colspan="1"/>
+              <td align="left" valign="middle" rowspan="1" colspan="1"/>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">Electron exposure (eâ/Ã<sup>2</sup>)</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">42</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">42</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">42</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">Defocus range (Î¼m)</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">1.5-3.5</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">1.5-3.5</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">1.5-3.5</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">Pixel size (Ã)</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">1.15</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">1.15</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">1.15</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">Symmetry imposed</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">C1</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">Cl</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">Cl</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">Initial particle images (no.)</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">1,091,177</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">1,091,177</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">1,091,177</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">Final particle images (no.)</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">39,860</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">36,210</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">88,200</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">Map resolution (Ã)</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">7.7</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">8.2</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">10.2</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">FSC threshold</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">0.143</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">0.143</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">0.143</td>
+            </tr>
+            <tr>
+              <td align="left" valign="middle" rowspan="1" colspan="1">Map resolution range (Ã)</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">6-9</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1">7-9</td>
+              <td align="left" valign="middle" rowspan="1" colspan="1"/>
+            </tr>
+          </tbody>
+        </table>
+        <table frame="void" rules="none">
+          <colgroup span="1">
+            <col align="left" valign="middle" span="1"/>
+            <col align="left" valign="middle" span="1"/>
+            <col align="left" valign="middle" span="1"/>
+            <col align="left" valign="middle" span="1"/>
+            <col align="left" valign="middle" span="1"/>
+            <col align="left" valign="middle" span="1"/>
+          </colgroup>
+          <tbody>
+            <tr>
+              <td colspan="6" align="center" valign="middle" rowspan="1">
+                <bold>b. Modelling of protein and RNA subunits</bold>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table frame="hsides" rules="rows">
+          <colgroup span="1">
+            <col align="left" valign="middle" span="1"/>
+            <col align="left" valign="middle" span="1"/>
+            <col align="left" valign="middle" span="1"/>
+            <col align="left" valign="middle" span="1"/>
+            <col align="left" valign="middle" span="1"/>
+            <col align="left" valign="middle" span="1"/>
+          </colgroup>
+          <thead>
+            <tr>
+              <th align="center" valign="middle" rowspan="1" colspan="1">Protein/RNA</th>
+              <th align="center" valign="middle" rowspan="1" colspan="1">Total residues</th>
+              <th align="center" valign="middle" rowspan="1" colspan="1">M.W. (KDa)</th>
+              <th align="center" valign="middle" rowspan="1" colspan="1">Domain</th>
+              <th align="center" valign="middle" rowspan="1" colspan="1">PDB code or modelling</th>
+              <th align="center" valign="middle" rowspan="1" colspan="1">Reference</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td rowspan="4" align="center" valign="middle" colspan="1">TERT</td>
+              <td rowspan="4" align="center" valign="middle" colspan="1">1132</td>
+              <td rowspan="4" align="center" valign="middle" colspan="1">127</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">TEN</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">2B2A (<italic>Tetrahymena</italic> model)</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">
+                <xref rid="R34" ref-type="bibr">34</xref>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle" rowspan="1" colspan="1">TRBD</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">4026 (<italic>medaka</italic> model)</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">
+                <xref rid="R33" ref-type="bibr">33</xref>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle" rowspan="1" colspan="1">RT</td>
+              <td rowspan="2" align="center" valign="middle" colspan="1">3KYL (Tribolium model)</td>
+              <td rowspan="2" align="center" valign="middle" colspan="1">
+                <xref rid="R13" ref-type="bibr">13</xref>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle" rowspan="1" colspan="1">CTE</td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle" rowspan="1" colspan="1">TCAB1</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">548</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">59</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">Î²-propeller domain</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">homology model by Phyre</td>
+              <td align="right" valign="top" rowspan="1" colspan="1"/>
+            </tr>
+            <tr>
+              <td align="center" valign="middle" rowspan="1" colspan="1">Dyskerin</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">514</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">57</td>
+              <td rowspan="4" align="center" valign="middle" colspan="1"/>
+              <td rowspan="4" align="center" valign="middle" colspan="1">2HVY (archaeal model)</td>
+              <td rowspan="4" align="center" valign="middle" colspan="1">
+                <xref rid="R24" ref-type="bibr">24</xref>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle" rowspan="1" colspan="1">GAR1</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">217</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">21</td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle" rowspan="1" colspan="1">NOP10</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">64</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">8</td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle" rowspan="1" colspan="1">NHP2</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">153</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">17</td>
+            </tr>
+            <tr>
+              <td rowspan="12" align="center" valign="middle" colspan="1">hTR</td>
+              <td rowspan="12" align="center" valign="middle" colspan="1">451</td>
+              <td rowspan="12" align="center" valign="middle" colspan="1">138</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">P1</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">A-form double helix</td>
+              <td align="center" valign="top" rowspan="1" colspan="1"/>
+            </tr>
+            <tr>
+              <td align="center" valign="top" rowspan="1" colspan="1">P2a.1</td>
+              <td align="center" valign="top" rowspan="1" colspan="1">model from Chan et al, 2017</td>
+              <td align="center" valign="top" rowspan="1" colspan="1"><xref rid="R10" ref-type="bibr">10</xref>, <xref rid="R38" ref-type="bibr">38</xref></td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle" rowspan="1" colspan="1">P2a-J2a/b-P2b</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">2L3E</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">
+                <xref rid="R37" ref-type="bibr">37</xref>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle" rowspan="1" colspan="1">template</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">3KYL</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">
+                <xref rid="R13" ref-type="bibr">13</xref>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle" rowspan="1" colspan="1">P3</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">2K95</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">
+                <xref rid="R36" ref-type="bibr">36</xref>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle" rowspan="1" colspan="1">P4</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">2HVY as part of the H/ACA RNP</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">
+                <xref rid="R24" ref-type="bibr">24</xref>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle" rowspan="1" colspan="1">P4.1</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">A-form double helix</td>
+              <td align="center" valign="top" rowspan="1" colspan="1"/>
+            </tr>
+            <tr>
+              <td align="center" valign="middle" rowspan="1" colspan="1">P4.2</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">A-form double helix</td>
+              <td align="center" valign="top" rowspan="1" colspan="1"/>
+            </tr>
+            <tr>
+              <td align="center" valign="middle" rowspan="1" colspan="1">P5-P6.1-P6a</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">4026 (medaka model)</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">
+                <xref rid="R33" ref-type="bibr">33</xref>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle" rowspan="1" colspan="1">P6b</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">A-form double helix</td>
+              <td align="center" valign="top" rowspan="1" colspan="1"/>
+            </tr>
+            <tr>
+              <td align="center" valign="middle" rowspan="1" colspan="1">P7</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">2HVY as part of the H/ACA RNP</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">
+                <xref rid="R24" ref-type="bibr">24</xref>
+              </td>
+            </tr>
+            <tr>
+              <td align="center" valign="middle" rowspan="1" colspan="1">P8</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">2QH2</td>
+              <td align="center" valign="middle" rowspan="1" colspan="1">
+                <xref rid="R39" ref-type="bibr">39</xref>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </table-wrap>
+    </sec>
+    <sec sec-type="supplementary-material" id="SM1">
+      <title>Supplementary Material</title>
+      <supplementary-material content-type="local-data" id="SD1">
+        <label>1</label>
+        <media xlink:href="NIHMS955740-supplement-1.docx" orientation="portrait" xlink:type="simple" id="d36e2263" position="anchor"/>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="SD2">
+        <label>Cryo-EM structure of human telomerase holoenzyme</label>
+        <media xlink:href="NIHMS955740-supplement-Cryo-EM_structure_of_human_telomerase_holoenzyme.mp4" orientation="portrait" xlink:type="simple" id="d36e2267" position="anchor" mimetype="video"/>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="SD3">
+        <label>Models fitted into the cryo-EM map</label>
+        <media xlink:href="NIHMS955740-supplement-Models_fitted_into_the_cryo-EM_map.pse" orientation="portrait" xlink:type="simple" id="d36e2271" position="anchor"/>
+      </supplementary-material>
+      <supplementary-material content-type="local-data" id="SD4">
+        <label>Suppl Fig. 1</label>
+        <media xlink:href="NIHMS955740-supplement-Suppl_Fig__1.pdf" orientation="portrait" xlink:type="simple" id="d36e2275" position="anchor"/>
+      </supplementary-material>
+    </sec>
+  </body>
+  <back>
+    <ack id="S22">
+      <title>Acknowledgements</title>
+      <p id="P45">We thank P. Grob, J. Fang, A. Chintangal, P. Tobias and H. Upton for technical support; X. Zhang and J. Vogan for establishing the suspension cell transfection protocol used in early stages of this work and sharing cell lines for <italic>in vivo</italic> studies and CAB-box mutant hTR; L. Kohlstaedt and QB3 mass spectrometry facility for analysis of purified telomerase; Y. Wang, J. Jiang and J. Feigon for sharing the coordinates of the <italic>Tetrahymena</italic> catalytic core and the modeled human t/PK; E. Rodina for sharing the <italic>Hansenula polymorpha</italic> TEN coordinates prior to publication; and H. Upton and A. Deshpande for comments on the manuscript. We thank the National Energy Research Scientific Computing Center supported by the Office of Science of the US Department of Energy for providing computing resources under contract number DE-AC02-05CH11231. This work was funded by N.I.H. grant GM054198 to K.C. T.H.D.N. is a Fellow of the University of California, Berkeley Miller Institute for Basic Research in Science. B.J.G. was supported by fellowships from the Swiss National Science Foundation (projects P300PA_160983, P300PA_174355). E.N. is a Howard Hughes Medical Investigator.</p>
+    </ack>
+    <fn-group>
+      <fn id="FN4">
+        <p id="P46">Data availability</p>
+      </fn>
+      <fn id="FN5">
+        <p id="P47">Figure source data is provided in <xref rid="SD4" ref-type="supplementary-material">Supplementary Figure 1</xref>. Cryo-EM maps of the catalytic core, H/ACA lobe and overall human telomerase holoenzyme have been deposited with the Electron Microscopy Database under accession number EMD-7518, EMD-7519 and EMD-7521, respectively. PDB coordinates are included in a Pymol session provided as <xref rid="SD1" ref-type="supplementary-material">Supplementary Information</xref>.</p>
+      </fn>
+    </fn-group>
+    <ref-list>
+      <title>References</title>
+      <ref id="R1">
+        <label>1.</label>
+        <mixed-citation publication-type="journal"><name><surname>Arnoult</surname><given-names>N</given-names></name> &amp; <name><surname>Karlseder</surname><given-names>J</given-names></name>
+<article-title>Complex interactions between the DNA-damage response and mammalian telomeres</article-title>. <source>Nat. Struct. Mol. Biol</source>. <volume>22</volume>, <fpage>859</fpage>â<lpage>866</lpage> (<year>2015</year>).<pub-id pub-id-type="pmid">26581520</pub-id></mixed-citation>
+      </ref>
+      <ref id="R2">
+        <label>2.</label>
+        <mixed-citation publication-type="journal"><name><surname>Dosakni</surname><given-names>Y</given-names></name>, <name><surname>de Lange</surname><given-names>T</given-names></name>
+<article-title>The role of double-strand break repair pathways at functional and dysfunctional telomeres</article-title>. <source>Cold Spring Harb. Perspect. Biol</source>. <volume>6</volume>, <fpage>a016576</fpage>.</mixed-citation>
+      </ref>
+      <ref id="R3">
+        <label>3.</label>
+        <mixed-citation publication-type="journal"><name><surname>Levy</surname><given-names>MZ</given-names></name>, <name><surname>Allsopp</surname><given-names>RC</given-names></name>, <name><surname>Futcher</surname><given-names>AB</given-names></name>, <name><surname>Greider</surname><given-names>CW</given-names></name> &amp; <name><surname>Harley</surname><given-names>CB</given-names></name>
+<article-title>Telomere end-replication problem and cell aging</article-title>. <source>J. Mol. Biol</source>. <volume>225</volume>, <fpage>951</fpage>â<lpage>960</lpage> (<year>1992</year>).<pub-id pub-id-type="pmid">1613801</pub-id></mixed-citation>
+      </ref>
+      <ref id="R4">
+        <label>4.</label>
+        <mixed-citation publication-type="journal"><name><surname>Holohan</surname><given-names>B</given-names></name>, <name><surname>Wright</surname><given-names>WE</given-names></name> &amp; <name><surname>Shay</surname><given-names>JW</given-names></name>
+<article-title>Telomeropathies: an emerging spectrum of disorder</article-title>. <source>J. Cell Biol</source>. <volume>205</volume>, <fpage>289</fpage>â<lpage>299</lpage> (<year>2014</year>)<pub-id pub-id-type="pmid">24821837</pub-id></mixed-citation>
+      </ref>
+      <ref id="R5">
+        <label>5.</label>
+        <mixed-citation publication-type="journal"><name><surname>Wegman-Ostrosky</surname><given-names>T</given-names></name> &amp; <name><surname>Savage</surname><given-names>SA</given-names></name>
+<article-title>The genomics of inherited bone marrow failure: from mechanism to the clinic</article-title>. <source>Br. J. Haematol</source>. <volume>177</volume>, <fpage>526</fpage>â<lpage>542</lpage> (<year>2017</year>).<pub-id pub-id-type="pmid">28211564</pub-id></mixed-citation>
+      </ref>
+      <ref id="R6">
+        <label>6.</label>
+        <mixed-citation publication-type="journal"><name><surname>Blackburn</surname><given-names>EH</given-names></name> &amp; <name><surname>Collins</surname><given-names>K</given-names></name>
+<article-title>Telomerase: an RNP enzyme synthesizes DNA</article-title>. <source>Cold Spring Harb. Perspect. Biol</source>. <volume>3</volume>, <fpage>a003558</fpage> (<year>2011</year>).<pub-id pub-id-type="pmid">20660025</pub-id></mixed-citation>
+      </ref>
+      <ref id="R7">
+        <label>7.</label>
+        <mixed-citation publication-type="journal"><name><surname>Shay</surname><given-names>JW</given-names></name>
+<article-title>Role of Telomeres and Telomerase in Aging and Cancer</article-title>. <source>Cancer Discov</source>
+<volume>6</volume>, <fpage>584</fpage>â<lpage>593</lpage>, doi:<pub-id pub-id-type="doi">10.1158/2159-8290.CD-16-0062</pub-id> (<year>2016</year>).<pub-id pub-id-type="pmid">27029895</pub-id></mixed-citation>
+      </ref>
+      <ref id="R8">
+        <label>8.</label>
+        <mixed-citation publication-type="journal"><name><surname>Fu</surname><given-names>D</given-names></name> &amp; <name><surname>Collins</surname><given-names>K</given-names></name>
+<article-title>Distinct biogenesis pathways for human telomerase RNA and H/ACA small nucleolar RNAs</article-title>. <source>Mol. Cell</source>
+<volume>11</volume>, <fpage>1361</fpage>â<lpage>1372</lpage> (<year>2003</year>).<pub-id pub-id-type="pmid">12769858</pub-id></mixed-citation>
+      </ref>
+      <ref id="R9">
+        <label>9.</label>
+        <mixed-citation publication-type="journal"><name><surname>Podlevsky</surname><given-names>JD</given-names></name> &amp; <name><surname>Chen</surname><given-names>JJ</given-names></name>
+<article-title>Evolutionary perspectives of telomerase RNA structure and function</article-title>. <source>RNA Biol</source>, <fpage>1</fpage>â<lpage>13</lpage> (<year>2016</year>).</mixed-citation>
+      </ref>
+      <ref id="R10">
+        <label>10.</label>
+        <mixed-citation publication-type="journal"><name><surname>Chan</surname><given-names>H</given-names></name>, <name><surname>Wang</surname><given-names>Y</given-names></name> &amp; <name><surname>Feigon</surname><given-names>J</given-names></name>
+<article-title>Progress in Human and Tetrahymena Telomerase Structure Determination</article-title>. <source>Annu. Rev. Biophys</source>. <volume>46</volume>, <fpage>199</fpage>â<lpage>225</lpage> (<year>2017</year>).<pub-id pub-id-type="pmid">28301767</pub-id></mixed-citation>
+      </ref>
+      <ref id="R11">
+        <label>11.</label>
+        <mixed-citation publication-type="journal"><name><surname>Wu</surname><given-names>RA</given-names></name>, <name><surname>Upton</surname><given-names>HE</given-names></name>, <name><surname>Vogan</surname><given-names>JM</given-names></name> &amp; <name><surname>Collins</surname><given-names>K</given-names></name>
+<article-title>Telomerase Mechanism of Telomere Synthesis</article-title>. <source>Annu. Rev. Biochem</source>. <volume>86</volume>, <fpage>439</fpage>â<lpage>460</lpage>,(<year>2017</year>).<pub-id pub-id-type="pmid">28141967</pub-id></mixed-citation>
+      </ref>
+      <ref id="R12">
+        <label>12.</label>
+        <mixed-citation publication-type="journal"><name><surname>Gillis</surname><given-names>AJ</given-names></name>, <name><surname>Schuller</surname><given-names>AP</given-names></name> &amp; <name><surname>Skordalakes</surname><given-names>E</given-names></name>
+<article-title>Structure of the Tribolium castaneum telomerase catalytic subunit TERT</article-title>. <source>Nature</source>
+<volume>455</volume>, <fpage>633</fpage>â<lpage>637</lpage> (<year>2008</year>).<pub-id pub-id-type="pmid">18758444</pub-id></mixed-citation>
+      </ref>
+      <ref id="R13">
+        <label>13.</label>
+        <mixed-citation publication-type="journal"><name><surname>Mitchell</surname><given-names>M</given-names></name>, <name><surname>Gillis</surname><given-names>A</given-names></name>, <name><surname>Futahashi</surname><given-names>M</given-names></name>, <name><surname>Fujiwara</surname><given-names>H</given-names></name> &amp; <name><surname>Skordalakes</surname><given-names>E</given-names></name>
+<article-title>Structural basis for telomerase catalytic subunit TERT binding to RNA template and telomeric DNA</article-title>. <source>Nat. Struct. Mol. Biol</source>. <volume>17</volume>, <fpage>513</fpage>â<lpage>518</lpage> (<year>2010</year>).<pub-id pub-id-type="pmid">20357774</pub-id></mixed-citation>
+      </ref>
+      <ref id="R14">
+        <label>14.</label>
+        <mixed-citation publication-type="journal"><name><surname>Robart</surname><given-names>AR</given-names></name> &amp; <name><surname>Collins</surname><given-names>K</given-names></name>
+<article-title>Human telomerase domain interactions capture DNA for TEN domain-dependent processive elongation</article-title>. <source>Mol. Cell</source>
+<volume>42</volume>, <fpage>308</fpage>â<lpage>318</lpage> (<year>2011</year>).<pub-id pub-id-type="pmid">21514196</pub-id></mixed-citation>
+      </ref>
+      <ref id="R15">
+        <label>15.</label>
+        <mixed-citation publication-type="journal"><name><surname>Wu</surname><given-names>RA</given-names></name>, <name><surname>Dagdas</surname><given-names>YS</given-names></name>, <name><surname>Yilmaz</surname><given-names>ST</given-names></name>, <name><surname>Yildiz</surname><given-names>A</given-names></name> &amp; <name><surname>Collins</surname><given-names>K</given-names></name>
+<article-title>Single-molecule imaging of telomerase reverse transcriptase in human telomerase holoenzyme and minimal RNP complexes</article-title>. <source>eLife</source>
+<volume>4</volume>, <fpage>10.7554</fpage> (<year>2015</year>).</mixed-citation>
+      </ref>
+      <ref id="R16">
+        <label>16.</label>
+        <mixed-citation publication-type="journal"><name><surname>Wenz</surname><given-names>C</given-names></name>
+<etal/>
+<article-title>Human telomerase contains two cooperating telomerase RNA molecules</article-title>. <source>EMBO J</source>. <volume>20</volume>, <fpage>3526</fpage>â<lpage>3534</lpage> (<year>2001</year>).<pub-id pub-id-type="pmid">11432839</pub-id></mixed-citation>
+      </ref>
+      <ref id="R17">
+        <label>17.</label>
+        <mixed-citation publication-type="journal"><name><surname>Sauerwald</surname><given-names>A</given-names></name>
+<etal/>
+<article-title>Structure of active dimeric human telomerase</article-title>. <source>Nat. Struct. Mol. Biol</source>. <volume>20</volume>, <fpage>454</fpage>â<lpage>460</lpage> (<year>2013</year>).<pub-id pub-id-type="pmid">23474713</pub-id></mixed-citation>
+      </ref>
+      <ref id="R18">
+        <label>18.</label>
+        <mixed-citation publication-type="journal"><name><surname>Egan</surname><given-names>ED</given-names></name> &amp; <name><surname>Collins</surname><given-names>K</given-names></name>
+<article-title>Specificity and stoichiometry of subunit interactions in the human telomerase holoenzyme assembled in vivo</article-title>. <source>Mol. Cell. Biol</source>. <volume>30</volume>, <fpage>2775</fpage>â<lpage>2786</lpage> (<year>2010</year>).<pub-id pub-id-type="pmid">20351177</pub-id></mixed-citation>
+      </ref>
+      <ref id="R19">
+        <label>19.</label>
+        <mixed-citation publication-type="journal"><name><surname>Jiang</surname><given-names>J</given-names></name>
+<etal/>
+<article-title>Structure of Tetrahymena telomerase reveals previously unknown subunits, functions, and interactions</article-title>. <source>Science</source>
+<volume>350</volume>, <fpage>aab4070</fpage> (<year>2015</year>).<pub-id pub-id-type="pmid">26472759</pub-id></mixed-citation>
+      </ref>
+      <ref id="R20">
+        <label>20.</label>
+        <mixed-citation publication-type="journal"><name><surname>MacNeil</surname><given-names>DE</given-names></name>, <name><surname>Bensoussan</surname><given-names>HJ</given-names></name> &amp; <name><surname>Autexier</surname><given-names>C</given-names></name>
+<article-title>Telomerase regulation from beginning to the end</article-title>. <source>Genes</source>
+<volume>7</volume>, <fpage>64</fpage> (<year>2016</year>).</mixed-citation>
+      </ref>
+      <ref id="R21">
+        <label>21.</label>
+        <mixed-citation publication-type="journal"><name><surname>Hamma</surname><given-names>T</given-names></name> &amp; <name><surname>Ferre-DâAmare</surname><given-names>AR</given-names></name>
+<article-title>The box H/ACA ribonucleoprotein complex: interplay of RNA and protein structures in post-transcriptional RNA modification</article-title>. <source>J. Biol. Chem</source>. <volume>285</volume>, <fpage>805</fpage>â<lpage>809</lpage> (<year>2010</year>).<pub-id pub-id-type="pmid">19917616</pub-id></mixed-citation>
+      </ref>
+      <ref id="R22">
+        <label>22.</label>
+        <mixed-citation publication-type="journal"><name><surname>Yu</surname><given-names>Y-T</given-names></name> &amp; <name><surname>Meier</surname><given-names>UT</given-names></name>
+<article-title>RNA-guided isomerization of uridine to pseudouridine-pseudouridylation</article-title>. <source>RNA Biology</source>
+<volume>11</volume>, <fpage>1483</fpage>â<lpage>1494</lpage> (<year>2014</year>).<pub-id pub-id-type="pmid">25590339</pub-id></mixed-citation>
+      </ref>
+      <ref id="R23">
+        <label>23.</label>
+        <mixed-citation publication-type="journal"><name><surname>Cohen</surname><given-names>SB</given-names></name>
+<etal/>
+<article-title>Protein composition of catalytically active human telomerase from immortal cells</article-title>. <source>Science</source>
+<volume>315</volume>, <fpage>1850</fpage>â<lpage>1853</lpage> (<year>2007</year>).<pub-id pub-id-type="pmid">17395830</pub-id></mixed-citation>
+      </ref>
+      <ref id="R24">
+        <label>24.</label>
+        <mixed-citation publication-type="journal"><name><surname>Li</surname><given-names>L</given-names></name> &amp; <name><surname>Ye</surname><given-names>K</given-names></name>
+<article-title>Crystal structure of an H/ACA box ribonucleoprotein particle</article-title>. <source>Nature</source>
+<volume>443</volume>, <fpage>302</fpage>â<lpage>307</lpage> (<year>2006</year>).<pub-id pub-id-type="pmid">16943774</pub-id></mixed-citation>
+      </ref>
+      <ref id="R25">
+        <label>25.</label>
+        <mixed-citation publication-type="journal"><name><surname>Fu</surname><given-names>D</given-names></name> &amp; <name><surname>Collins</surname><given-names>K</given-names></name>
+<article-title>Purification of human telomerase complexes identifies factors involved in telomerase biogenesis and telomere length regulation</article-title>. <source>Mol. Cell</source>
+<volume>28</volume>, <fpage>773</fpage>â<lpage>785</lpage> (<year>2007</year>).<pub-id pub-id-type="pmid">18082603</pub-id></mixed-citation>
+      </ref>
+      <ref id="R26">
+        <label>26.</label>
+        <mixed-citation publication-type="journal"><name><surname>Cristofari</surname><given-names>G</given-names></name>
+<etal/>
+<article-title>Human telomerase RNA accumulation in Cajal bodies facilitates telomerase recruitment to telomeres and telomere elongation</article-title>. <source>Mol. Cell</source>
+<volume>27</volume>, <fpage>882</fpage>â<lpage>889</lpage> (<year>2007</year>).<pub-id pub-id-type="pmid">17889662</pub-id></mixed-citation>
+      </ref>
+      <ref id="R27">
+        <label>27.</label>
+        <mixed-citation publication-type="journal"><name><surname>Wu</surname><given-names>RA</given-names></name> &amp; <name><surname>Collins</surname><given-names>J</given-names></name>
+<article-title>Human telomerase specialization for repeat synthesis by unique handling of primer-template duplex</article-title>. <source>EMBO J</source>. <volume>33</volume>, <fpage>921</fpage>â<lpage>935</lpage> (<year>2014</year>).<pub-id pub-id-type="pmid">24619002</pub-id></mixed-citation>
+      </ref>
+      <ref id="R28">
+        <label>28.</label>
+        <mixed-citation publication-type="journal"><name><surname>Vogan</surname><given-names>JM</given-names></name>
+<etal/>
+<article-title>Minimized human telomerase maintains telomeres and resolves endogenous roles of H/ACA proteins, TCAB1, and Cajal bodies</article-title>. <source>eLife</source>
+<volume>5</volume>, <fpage>10.7554</fpage> (<year>2016</year>).</mixed-citation>
+      </ref>
+      <ref id="R29">
+        <label>29.</label>
+        <mixed-citation publication-type="journal"><name><surname>Bai</surname><given-names>X-C</given-names></name>, <name><surname>Rajendra</surname><given-names>E</given-names></name>, <name><surname>Yang</surname><given-names>G</given-names></name>, <name><surname>Shi</surname><given-names>Y</given-names></name> &amp; <name><surname>Scheres</surname><given-names>SHW</given-names></name>
+<article-title>Sampling the conformational space of the catalytic subunit of human Î³-secretase</article-title>. <source>eLife</source>
+<volume>4</volume>, <fpage>e11182</fpage> (<year>2015</year>).<pub-id pub-id-type="pmid">26623517</pub-id></mixed-citation>
+      </ref>
+      <ref id="R30">
+        <label>30.</label>
+        <mixed-citation publication-type="journal"><name><surname>Jiang</surname><given-names>J</given-names></name>
+<etal/>
+<article-title>The architecture of Tetrahymena telomerase holoenzyme</article-title>. <source>Nature</source>
+<volume>496</volume>, <fpage>187</fpage>â<lpage>192</lpage> (<year>2013</year>).<pub-id pub-id-type="pmid">23552895</pub-id></mixed-citation>
+      </ref>
+      <ref id="R31">
+        <label>31.</label>
+        <mixed-citation publication-type="journal"><name><surname>Bajon</surname><given-names>E</given-names></name>, <name><surname>Laterreur</surname><given-names>N</given-names></name> &amp; <name><surname>Wellinger</surname><given-names>RJ</given-names></name>
+<article-title>A single templating RNA in yeast telomerase</article-title>. <source>Cell Rep</source>. <volume>12</volume>, <fpage>441</fpage>â<lpage>448</lpage> (<year>2015</year>).<pub-id pub-id-type="pmid">26166570</pub-id></mixed-citation>
+      </ref>
+      <ref id="R32">
+        <label>32.</label>
+        <mixed-citation publication-type="journal"><name><surname>Alves</surname><given-names>D</given-names></name>
+<etal/>
+<article-title>Single-molecule analysis of human telomerase monomer</article-title>. <source>Nat. Chem. Biol</source>. <volume>4</volume>, <fpage>287</fpage>â<lpage>289</lpage> (<year>2008</year>).<pub-id pub-id-type="pmid">18391947</pub-id></mixed-citation>
+      </ref>
+      <ref id="R33">
+        <label>33.</label>
+        <mixed-citation publication-type="journal"><name><surname>Huang</surname><given-names>J</given-names></name>
+<etal/>
+<article-title>Structural basis for protein-RNA recognition in telomerase</article-title>. <source>Nat. Struct. Mol. Biol</source>. <volume>21</volume>, <fpage>507</fpage>â<lpage>512</lpage> (<year>2014</year>).<pub-id pub-id-type="pmid">24793650</pub-id></mixed-citation>
+      </ref>
+      <ref id="R34">
+        <label>34.</label>
+        <mixed-citation publication-type="journal"><name><surname>Jacobs</surname><given-names>SA</given-names></name>, <name><surname>Podell</surname><given-names>ER</given-names></name> &amp; <name><surname>Cech</surname><given-names>TR</given-names></name>
+<article-title>Crystal structure of the essential N-terminal domain of telomerase reverse transcriptase</article-title>. <source>Nat. Struct. Mol. Biol</source>. <volume>13</volume>, <fpage>218</fpage>â<lpage>225</lpage> (<year>2006</year>).<pub-id pub-id-type="pmid">16462747</pub-id></mixed-citation>
+      </ref>
+      <ref id="R35">
+        <label>35.</label>
+        <mixed-citation publication-type="journal"><name><surname>Petrova</surname><given-names>OA</given-names></name>
+<etal/>
+<article-title>Structure and function of the N-terminal domain of the yeast telomerase reverse transcriptase</article-title>. <source>Nucleic Acids Res</source>. doi: <pub-id pub-id-type="doi">10.1093/nar/gkx1275</pub-id>.</mixed-citation>
+      </ref>
+      <ref id="R36">
+        <label>36.</label>
+        <mixed-citation publication-type="journal"><name><surname>Kim</surname><given-names>N-K</given-names></name>
+<etal/>
+<article-title>Solution structure and dynamics of the wild-type pseudoknot of human telomerase RNA</article-title>. <source>J. Mol. Biol</source>. <volume>384</volume>, <fpage>1249</fpage>â<lpage>1261</lpage> (<year>2008</year>).<pub-id pub-id-type="pmid">18950640</pub-id></mixed-citation>
+      </ref>
+      <ref id="R37">
+        <label>37.</label>
+        <mixed-citation publication-type="journal"><name><surname>Zhang</surname><given-names>Q</given-names></name>, <name><surname>Kim</surname><given-names>N-K</given-names></name> &amp; <name><surname>Feigon</surname><given-names>J</given-names></name>
+<article-title>Architecture of human telomerase RNA</article-title>. <source>Proc. Nat Acad. Sci. USA</source>
+<volume>108</volume>, <fpage>20325</fpage>â<lpage>20332</lpage> (<year>2011</year>).<pub-id pub-id-type="pmid">21844345</pub-id></mixed-citation>
+      </ref>
+      <ref id="R38">
+        <label>38.</label>
+        <mixed-citation publication-type="journal"><name><surname>Wang</surname><given-names>Y</given-names></name>, <name><surname>Yesselman</surname><given-names>JD</given-names></name>, <name><surname>Zhang</surname><given-names>Q</given-names></name>, <name><surname>Kang</surname><given-names>M</given-names></name> &amp; <name><surname>Feigon</surname><given-names>J</given-names></name>
+<article-title>Structural conservation in the template/pseudoknot domain of vertebrate telomerase RNA from teleost fish to human</article-title>. <source>Proc. Nat Acad. Sci. USA</source>
+<volume>113</volume>, <fpage>E5125</fpage>â<lpage>5134</lpage> (<year>2016</year>).<pub-id pub-id-type="pmid">27531956</pub-id></mixed-citation>
+      </ref>
+      <ref id="R39">
+        <label>39.</label>
+        <mixed-citation publication-type="journal"><name><surname>Theimer</surname><given-names>CA</given-names></name>
+<etal/>
+<article-title>Structural and functional characterization of human telomerase RNA processing and Cajal body localization signals</article-title>. <source>Mol. Cell</source>
+<volume>27</volume>, <fpage>869</fpage>â<lpage>881</lpage> (<year>2007</year>).<pub-id pub-id-type="pmid">17889661</pub-id></mixed-citation>
+      </ref>
+      <ref id="R40">
+        <label>40.</label>
+        <mixed-citation publication-type="journal"><name><surname>Cash</surname><given-names>DD</given-names></name> &amp; <name><surname>Feigon</surname><given-names>J</given-names></name>
+<article-title>Structure and folding of the Tetrahymena telomerase RNA pseudoknot</article-title>. <source>Nucleic Acids Res</source>. <volume>45</volume>, <fpage>482</fpage>â<lpage>495</lpage>, (<year>2017</year>).<pub-id pub-id-type="pmid">27899638</pub-id></mixed-citation>
+      </ref>
+      <ref id="R41">
+        <label>41.</label>
+        <mixed-citation publication-type="journal"><name><surname>Jansson</surname><given-names>LI</given-names></name>, <etal/>
+<article-title>Structural basis of template-boundary definition in Tetrahymena telomerase</article-title>. <source>Nat. Struct. Mol. Biol</source>. <volume>22</volume>, <fpage>883</fpage>â<lpage>888</lpage> (<year>2015</year>).<pub-id pub-id-type="pmid">26436828</pub-id></mixed-citation>
+      </ref>
+      <ref id="R42">
+        <label>42.</label>
+        <mixed-citation publication-type="journal"><name><surname>Mitchell</surname><given-names>JR</given-names></name> &amp; <name><surname>Collins</surname><given-names>K</given-names></name>
+<article-title>Human telomerase activation requires two independent interactions between telomerase RNA and telomerase reverse transcriptase in vivo and in vitro</article-title>. <source>Mol. Cell</source>
+<volume>6</volume>, <fpage>361</fpage>â<lpage>371</lpage> (<year>2000</year>).<pub-id pub-id-type="pmid">10983983</pub-id></mixed-citation>
+      </ref>
+      <ref id="R43">
+        <label>43.</label>
+        <mixed-citation publication-type="journal"><name><surname>Chen</surname><given-names>J-L</given-names></name>, <name><surname>Opperman</surname><given-names>KK</given-names></name> &amp; <name><surname>Greider</surname><given-names>CW</given-names></name>
+<article-title>A critical stem-loop structure in the CR4-CR5 domain of mammalian telomerase RNA</article-title>. <source>Nucleic Acids Res</source>. <volume>30</volume>, <fpage>592</fpage>â<lpage>597</lpage> (<year>2002</year>).<pub-id pub-id-type="pmid">11788723</pub-id></mixed-citation>
+      </ref>
+      <ref id="R44">
+        <label>44.</label>
+        <mixed-citation publication-type="journal"><name><surname>Bley</surname><given-names>CJ</given-names></name>
+<etal/>
+<article-title>RNA-protein binding interface in the telomerase ribonucleoprotein</article-title>. <source>Proc. Nat Acad. Sci. USA</source>
+<volume>108</volume>, <fpage>20333</fpage>â<lpage>20338</lpage> (<year>2011</year>).<pub-id pub-id-type="pmid">22123986</pub-id></mixed-citation>
+      </ref>
+      <ref id="R45">
+        <label>45.</label>
+        <mixed-citation publication-type="journal"><name><surname>Chen</surname><given-names>J-L</given-names></name>, <name><surname>Blasco</surname><given-names>M</given-names></name>, &amp; <name><surname>Greider</surname><given-names>CW</given-names></name>
+<article-title>A Secondary structure of vertebrate telomerase RNA</article-title>. <source>Cell</source>
+<volume>100</volume>, <fpage>503</fpage>â<lpage>514</lpage> (<year>2000</year>).<pub-id pub-id-type="pmid">10721988</pub-id></mixed-citation>
+      </ref>
+      <ref id="R46">
+        <label>46.</label>
+        <mixed-citation publication-type="journal"><name><surname>Egan</surname><given-names>ED</given-names></name> &amp; <name><surname>Collins</surname><given-names>K</given-names></name>
+<article-title>An enhanced H/ACA RNP assembly mechanism for human telomerase RNA</article-title>. <source>Mol. Cell. Biol</source>. <volume>32</volume>, <fpage>2428</fpage>â<lpage>2439</lpage> (<year>2012</year>).<pub-id pub-id-type="pmid">22527283</pub-id></mixed-citation>
+      </ref>
+      <ref id="R47">
+        <label>47.</label>
+        <mixed-citation publication-type="journal"><name><surname>Kittur</surname><given-names>N</given-names></name>, <name><surname>Darzacq</surname><given-names>X</given-names></name>, <name><surname>Roy</surname><given-names>S</given-names></name>, <name><surname>Singer</surname><given-names>RH</given-names></name> &amp; <name><surname>Meier</surname><given-names>UT</given-names></name>
+<article-title>Dynamic association and localization of human H/ACA RNP proteins</article-title>. <source>RNA</source>
+<volume>12</volume>, <fpage>2057</fpage>â<lpage>2062</lpage> (<year>2006</year>).<pub-id pub-id-type="pmid">17135485</pub-id></mixed-citation>
+      </ref>
+      <ref id="R48">
+        <label>48.</label>
+        <mixed-citation publication-type="journal"><name><surname>Venteicher</surname><given-names>AS</given-names></name>
+<etal/>
+<article-title>A human telomerase holoenzyme protein required for Cajal body localization and telomere synthesis</article-title>. <source>Science</source>
+<volume>323</volume>, <fpage>644</fpage>â<lpage>648</lpage>, (<year>2009</year>).<pub-id pub-id-type="pmid">19179534</pub-id></mixed-citation>
+      </ref>
+      <ref id="R49">
+        <label>49.</label>
+        <mixed-citation publication-type="journal"><name><surname>Tycowski</surname><given-names>KT</given-names></name>, <name><surname>Shu</surname><given-names>MD</given-names></name>, <name><surname>Kukoyi</surname><given-names>A</given-names></name> &amp; <name><surname>Steitz</surname><given-names>JA</given-names></name>
+<article-title>A conserved WD40 protein binds the Cajal body localization signal of scaRNP particles</article-title>. <source>Mol. Cell</source>
+<volume>34</volume>, <fpage>47</fpage>â<lpage>57</lpage> (<year>2009</year>).<pub-id pub-id-type="pmid">19285445</pub-id></mixed-citation>
+      </ref>
+      <ref id="R50">
+        <label>50.</label>
+        <mixed-citation publication-type="journal"><name><surname>Sarek</surname><given-names>G</given-names></name>, <name><surname>Marzec</surname><given-names>P</given-names></name>, <name><surname>Margalef</surname><given-names>P</given-names></name> &amp; <name><surname>Boulton</surname><given-names>SJ</given-names></name>
+<article-title>Molecular basis of telomere dysfunction in huma genetic diseas</article-title>. <source>Nat. Struct. Mol. Biol</source>. <volume>22</volume>, <fpage>867</fpage>â<lpage>874</lpage> (<year>2015</year>).<pub-id pub-id-type="pmid">26581521</pub-id></mixed-citation>
+      </ref>
+    </ref-list>
+    <ref-list>
+      <title>References</title>
+      <ref id="R51">
+        <label>51.</label>
+        <mixed-citation publication-type="journal"><name><surname>Reeves</surname><given-names>PJ</given-names></name>, <name><surname>Callewaert</surname><given-names>N</given-names></name>, <name><surname>Contreras</surname><given-names>R</given-names></name> &amp; <name><surname>Khorana</surname><given-names>HG</given-names></name>
+<article-title>Structure and function in rhodopsin: High-level expression of rhodopsin with restricted and homogeneous N-glycosylation by a tetracycline-inducible N-acetyleglucosaminyltransferase I-negative HEK293S stable mammalian cell line</article-title>. <source>Proc. Nat Acad. Sci. USA</source>
+<volume>99</volume>, <fpage>13419</fpage>â<lpage>13424</lpage> (<year>2002</year>).<pub-id pub-id-type="pmid">12370423</pub-id></mixed-citation>
+      </ref>
+      <ref id="R52">
+        <label>52.</label>
+        <mixed-citation publication-type="journal"><name><surname>Durocher</surname><given-names>Y</given-names></name>, <name><surname>Perret</surname><given-names>S</given-names></name> &amp; <name><surname>Kamem</surname><given-names>A</given-names></name>
+<article-title>High-level and high-throughput recombinant protein production by transient transfection of suspension-growing human 293-EBNA1 cells</article-title>. <source>Nucleic Acids Res</source>. <volume>30</volume>, <fpage>e9</fpage> (<year>2002</year>).<pub-id pub-id-type="pmid">11788735</pub-id></mixed-citation>
+      </ref>
+      <ref id="R53">
+        <label>53.</label>
+        <mixed-citation publication-type="journal"><name><surname>Kim</surname><given-names>NW</given-names></name>
+<etal/>
+<article-title>Specific association of human telomerase activity with immortal cells and cancer</article-title>. <source>Science</source>
+<volume>266</volume>, <fpage>2011</fpage>â<lpage>2015</lpage> (<year>1994</year>).<pub-id pub-id-type="pmid">7605428</pub-id></mixed-citation>
+      </ref>
+      <ref id="R54">
+        <label>54.</label>
+        <mixed-citation publication-type="journal"><name><surname>Schirmer</surname><given-names>EC</given-names></name>, <name><surname>Yates</surname><given-names>JR</given-names><suffix>3rd</suffix></name> &amp; <name><surname>Gerace</surname><given-names>L</given-names></name>
+<article-title>MudPIT: a powerful proteomics tool for discovery</article-title>. <source>Discov. Med</source>. <volume>3</volume>, <fpage>38</fpage>â<lpage>29</lpage> (<year>2003</year>).<pub-id pub-id-type="pmid">20704860</pub-id></mixed-citation>
+      </ref>
+      <ref id="R55">
+        <label>55.</label>
+        <mixed-citation publication-type="journal"><name><surname>Sexton</surname><given-names>AN</given-names></name>
+<etal/>
+<article-title>Genetic and molecular identification of three human TPP1 functions in telomerase action: recruitment, activation, and homeostasis set point regulation</article-title>. <source>Genes &amp; Dev</source>. <volume>28</volume>, <fpage>1885</fpage>â<lpage>1899</lpage> (<year>2014</year>).<pub-id pub-id-type="pmid">25128433</pub-id></mixed-citation>
+      </ref>
+      <ref id="R56">
+        <label>56.</label>
+        <mixed-citation publication-type="journal"><name><surname>Suloway</surname><given-names>C</given-names></name>
+<etal/>
+<article-title>Automated molecular microscopy: the new Leginon system</article-title>. <source>J. Struct. Biol</source>. <volume>151</volume>, <fpage>41</fpage>â<lpage>60</lpage> (<year>2005</year>).<pub-id pub-id-type="pmid">15890530</pub-id></mixed-citation>
+      </ref>
+      <ref id="R57">
+        <label>57.</label>
+        <mixed-citation publication-type="journal"><name><surname>Scheres</surname><given-names>SHW</given-names></name>
+<article-title>RELION: implementation of a Bayesian approach to cryo-EM structure determination</article-title>. <source>J. Struct. Biol</source>. <volume>180</volume>, <fpage>519</fpage>â<lpage>530</lpage> (<year>2012</year>).<pub-id pub-id-type="pmid">23000701</pub-id></mixed-citation>
+      </ref>
+      <ref id="R58">
+        <label>58.</label>
+        <mixed-citation publication-type="journal"><name><surname>Scheres</surname><given-names>SHW</given-names></name>
+<article-title>Semi-automated selection of cryo-EM particles in RELION-1.3</article-title>. <source>J. Struct. Biol</source>. <volume>189</volume>, <fpage>114</fpage>â<lpage>122</lpage> (<year>2015</year>)<pub-id pub-id-type="pmid">25486611</pub-id></mixed-citation>
+      </ref>
+      <ref id="R59">
+        <label>59.</label>
+        <mixed-citation publication-type="journal"><name><surname>Voss</surname><given-names>NR</given-names></name>, <name><surname>Yoshioka</surname><given-names>CK</given-names></name>, <name><surname>Radermacher</surname><given-names>M</given-names></name>, <name><surname>Potter</surname><given-names>CS</given-names></name> &amp; <name><surname>Carragher</surname><given-names>B</given-names></name>
+<article-title>DoG Picker and TiltPicker: software tools to facilitate particle selection in single particle electron microscopy</article-title>. <source>J. Struct. Biol</source>. <volume>166</volume>, <fpage>205</fpage>â<lpage>213</lpage> (<year>2009</year>).<pub-id pub-id-type="pmid">19374019</pub-id></mixed-citation>
+      </ref>
+      <ref id="R60">
+        <label>60.</label>
+        <mixed-citation publication-type="journal"><name><surname>Lander</surname><given-names>GC</given-names></name>
+<etal/>
+<article-title>Appion: an integrated, database-driven pipeline to facilitate EM image processing</article-title>. <source>J. Struct. Biol</source>. <volume>166</volume>, <fpage>95</fpage>â<lpage>102</lpage> (<year>2009</year>).<pub-id pub-id-type="pmid">19263523</pub-id></mixed-citation>
+      </ref>
+      <ref id="R61">
+        <label>61.</label>
+        <mixed-citation publication-type="journal"><name><surname>Nguyen</surname><given-names>THD</given-names></name>
+<etal/>
+<article-title>The architecture of the spliceosomal U4/U6.U5 tri-snRNP</article-title>. <source>Nature</source>
+<volume>523</volume>, <fpage>47</fpage>â<lpage>52</lpage> (<year>2015</year>).<pub-id pub-id-type="pmid">26106855</pub-id></mixed-citation>
+      </ref>
+      <ref id="R62">
+        <label>62.</label>
+        <mixed-citation publication-type="journal"><name><surname>Tivol</surname><given-names>WF</given-names></name>, <name><surname>Briegel</surname><given-names>A</given-names></name> &amp; <name><surname>Jensen</surname><given-names>GJ</given-names></name>
+<article-title>An improved cryogen for plunge freezing</article-title>. <source>Microsc. Microanal</source>. <volume>14</volume>, <fpage>375</fpage>â<lpage>379</lpage> (<year>2008</year>).<pub-id pub-id-type="pmid">18793481</pub-id></mixed-citation>
+      </ref>
+      <ref id="R63">
+        <label>63.</label>
+        <mixed-citation publication-type="journal"><name><surname>Mastronarde</surname><given-names>DN</given-names></name>
+<article-title>Automated electron microscope tomography using robust prediction of specimen movements</article-title>. <source>J. Struct. Biol</source>. <volume>152</volume>, <fpage>36</fpage>â<lpage>51</lpage> (<year>2005</year>).<pub-id pub-id-type="pmid">16182563</pub-id></mixed-citation>
+      </ref>
+      <ref id="R64">
+        <label>64.</label>
+        <mixed-citation publication-type="journal"><name><surname>Kimanius</surname><given-names>D</given-names></name>, <name><surname>Forsberg</surname><given-names>BO</given-names></name>, <name><surname>Scheres</surname><given-names>SHW</given-names></name> &amp; <name><surname>Lindahl</surname><given-names>E</given-names></name>
+<article-title>Accelerated cryo-EM structure determination with parallelisation using GPUs in RELION-2</article-title>. <source>eLife</source>, <fpage>e18722</fpage> (<year>2016</year>).<pub-id pub-id-type="pmid">27845625</pub-id></mixed-citation>
+      </ref>
+      <ref id="R65">
+        <label>65.</label>
+        <mixed-citation publication-type="journal"><name><surname>Zheng</surname><given-names>SQ</given-names></name>, <name><surname>Palovcak</surname><given-names>E</given-names></name>, <name><surname>Armache</surname><given-names>J-P</given-names></name>, <name><surname>Cheng</surname><given-names>Y</given-names></name> &amp; <name><surname>Agard</surname><given-names>DA</given-names></name>
+<article-title>Anisotropic correction of beam-induced motion for improved single particle electron cryo-microscopy</article-title>. <source>Nature Methods</source>
+<volume>14</volume>, <fpage>331</fpage>â<lpage>332</lpage> (<year>2017</year>).<pub-id pub-id-type="pmid">28250466</pub-id></mixed-citation>
+      </ref>
+      <ref id="R66">
+        <label>66.</label>
+        <mixed-citation publication-type="journal"><name><surname>Biyani</surname><given-names>N</given-names></name>
+<etal/>
+<article-title>Focus: The interface between data collection and data processing in cryo-EM</article-title>. <source>J. Struct. Biol</source>. <volume>198</volume>, <fpage>124</fpage>â<lpage>133</lpage> (<year>2017</year>).<pub-id pub-id-type="pmid">28344036</pub-id></mixed-citation>
+      </ref>
+      <ref id="R67">
+        <label>67.</label>
+        <mixed-citation publication-type="journal"><name><surname>Zhang</surname><given-names>K</given-names></name>
+<article-title>Gctf: Real-time CTF determination and correction</article-title>, <source>J. Struct. Biol</source>. <volume>93</volume>, <fpage>1</fpage>â<lpage>12</lpage> (<year>2016</year>).</mixed-citation>
+      </ref>
+      <ref id="R68">
+        <label>68.</label>
+        <mixed-citation publication-type="journal"><name><surname>Rosenthal</surname><given-names>PB</given-names></name> &amp; <name><surname>Henderson</surname><given-names>R</given-names></name>
+<article-title>Optimal determination of particle orientation, absolute hand, and contrast loss in single-particle electron cryomicroscopy</article-title>. <source>J. Mol. Biol</source>. <volume>333</volume>, <fpage>721</fpage>â<lpage>745</lpage> (<year>2003</year>).<pub-id pub-id-type="pmid">14568533</pub-id></mixed-citation>
+      </ref>
+      <ref id="R69">
+        <label>69.</label>
+        <mixed-citation publication-type="journal"><name><surname>Scheres</surname><given-names>SH</given-names></name> &amp; <name><surname>Chen</surname><given-names>S</given-names></name>
+<article-title>Prevention of overfitting in cryo-EM structure determination</article-title>. <source>Nature Methods</source>
+<volume>9</volume>, <fpage>853</fpage>â<lpage>854</lpage> (<year>2012</year>).<pub-id pub-id-type="pmid">22842542</pub-id></mixed-citation>
+      </ref>
+      <ref id="R70">
+        <label>70.</label>
+        <mixed-citation publication-type="journal"><name><surname>Tang</surname><given-names>G</given-names></name>, <etal/>
+<article-title>EMAN2: an extensive image processing suite for electron microscopy</article-title>. <source>J. Struct. Biol</source>. <volume>157</volume>, <fpage>38</fpage>â<lpage>46</lpage> (<year>2007</year>).<pub-id pub-id-type="pmid">16859925</pub-id></mixed-citation>
+      </ref>
+      <ref id="R71">
+        <label>71.</label>
+        <mixed-citation publication-type="journal"><name><surname>Scheres</surname><given-names>SHW</given-names></name>, <name><surname>NuÃ±ez-Ramirez</surname><given-names>R</given-names></name>, <name><surname>Sorzano</surname><given-names>COS</given-names></name>, <name><surname>Carazo</surname><given-names>JM</given-names></name> &amp; <name><surname>Marabini</surname><given-names>R</given-names></name>
+<article-title>Image processing for electron microscopy single-particle analysis using Xmipp</article-title>. <source>Nature Protoc</source>. <volume>3</volume>, <fpage>977</fpage>â<lpage>990</lpage> (<year>2008</year>).<pub-id pub-id-type="pmid">18536645</pub-id></mixed-citation>
+      </ref>
+      <ref id="R72">
+        <label>72.</label>
+        <mixed-citation publication-type="journal"><name><surname>Goddard</surname><given-names>TD</given-names></name>, <name><surname>Huang</surname><given-names>CC</given-names></name> &amp; <name><surname>Ferrin</surname><given-names>TE</given-names></name>
+<article-title>Visualizing density maps with UCSF Chimera</article-title>. <source>J. Struct. Biol</source>. <volume>157</volume>, <fpage>281</fpage>â<lpage>287</lpage> (<year>2007</year>).<pub-id pub-id-type="pmid">16963278</pub-id></mixed-citation>
+      </ref>
+      <ref id="R73">
+        <label>73.</label>
+        <mixed-citation publication-type="journal"><name><surname>Kelley</surname><given-names>LA</given-names></name>, <name><surname>Mezulis</surname><given-names>S</given-names></name>
+<name><surname>Yates</surname><given-names>CM</given-names></name>, <name><surname>Wass</surname><given-names>MN</given-names></name> &amp; <name><surname>Sternberg</surname><given-names>MJE</given-names></name>
+<article-title>The Phyre2 web portal for protein modeling, prediction and analysis</article-title>. <source>Nature Protocols</source>
+<volume>10</volume>, <fpage>845</fpage>â<lpage>858</lpage> (<year>2015</year>).<pub-id pub-id-type="pmid">25950237</pub-id></mixed-citation>
+      </ref>
+      <ref id="R74">
+        <label>74.</label>
+        <mixed-citation publication-type="journal"><name><surname>Dodonova</surname><given-names>SO</given-names></name>
+<etal/>
+<article-title>The structure of the COPI coat linkage I</article-title>. <source>Science</source>
+<volume>349</volume>, <fpage>195</fpage>â<lpage>198</lpage>.<pub-id pub-id-type="pmid">26160949</pub-id></mixed-citation>
+      </ref>
+      <ref id="R75">
+        <label>75.</label>
+        <mixed-citation publication-type="journal"><name><surname>Emsley</surname><given-names>P</given-names></name>, <name><surname>Lohkamp</surname><given-names>B</given-names></name>, <name><surname>Scott</surname><given-names>WG</given-names></name>, &amp; <name><surname>Cowtan</surname><given-names>K</given-names></name>
+<article-title>Features and development of Coot</article-title>. <source>Acta. Cryst</source>. <volume>D66</volume>, <fpage>486</fpage>â<lpage>501</lpage> (<year>2010</year>).</mixed-citation>
+      </ref>
+      <ref id="R76">
+        <label>76.</label>
+        <mixed-citation publication-type="journal"><name><surname>Robert</surname><given-names>X</given-names></name> &amp; <name><surname>Gouet</surname><given-names>P</given-names></name>
+<article-title>Deciphering key features in protein structures with the new ENDscript server</article-title>. <source>Nucl. Acids Res</source>. <volume>42</volume>(<issue>W1</issue>), <fpage>W320</fpage>â<lpage>W324</lpage> (<year>2014</year>).<pub-id pub-id-type="pmid">24753421</pub-id></mixed-citation>
+      </ref>
+    </ref-list>
+  </back>
+  <floats-group>
+    <fig id="F1" orientation="portrait" position="float">
+      <label>Figure 1 |</label>
+      <caption>
+        <title>Telomerase holoenzyme reconstitution and characterization.</title>
+        <p id="P48"><bold>a</bold>, Domain architecture of TERT (top) and secondary structure of hTR. Paired stems (P) are shown compacted in length. <bold>b</bold>, Silver-stained SDS-PAGE gel showing fractionation of purified, heterogeneously active TERT RNP. Proteins were detected by mass spectrometry and immunoblotting (<xref ref-type="fig" rid="F6">Extended Data Fig. 1a</xref> and <xref rid="T1" ref-type="table">Extended Data Table 1</xref>). <bold>c</bold>, <italic>In vitro</italic> telomerase assays performed on the three elution fractions shown in <bold>b</bold>, the beads after elution, and five-fold diluted E1. A 12 nucleotide (nt) oligo was used as recovery control (RC). Processive repeat additions are numbered. <bold>d</bold>, <bold>e</bold>, Representative negative-stain 2D class averages for fractions E1 and E2, respectively. We also observed a small fraction of E2-like particles in E1 (data not shown), while E2 contained predominantly the particles shown in <bold>e</bold>. Experiments in <bold>b</bold> and <bold>c</bold> were performed three times and twice, respectively, with similar results. For gel source data, see <xref rid="SD4" ref-type="supplementary-material">Supplementary Figure 1</xref>.</p>
+      </caption>
+      <graphic xlink:href="nihms-955740-f0001"/>
+    </fig>
+    <fig id="F2" orientation="portrait" position="float">
+      <label>Figure 2 |</label>
+      <caption>
+        <title>Cryo-EM structure of the substrate-bound human telomerase holoenzyme.</title>
+        <p id="P49"><bold>a</bold>, Schematic of subunit arrangements. <bold>b</bold>, Front (left panel) and back (right panel) views of the cryo-EM reconstructions for the H/ACA lobe at 8.2 Ã and the catalytic core at 7.7 Ã, with fitted subunits color-coded as indicated.</p>
+      </caption>
+      <graphic xlink:href="nihms-955740-f0002"/>
+    </fig>
+    <fig id="F3" orientation="portrait" position="float">
+      <label>Figure 3 |</label>
+      <caption>
+        <title>hTR structure in human telomerase holoenzyme.</title>
+        <p id="P50"><bold>a</bold>, Schematic of secondary structure of hTR, with domains arranged based on the cryo-EM reconstruction. Regions modeled are highlighted with soft-colored background. <bold>b</bold>, Front and back views of the structure of hTR highlighted within the human telomerase holoenzyme structure, with domains color-coded as in <bold>a</bold> and unmodelled connections shown as dashes.</p>
+      </caption>
+      <graphic xlink:href="nihms-955740-f0003"/>
+    </fig>
+    <fig id="F4" orientation="portrait" position="float">
+      <label>Figure 4 |</label>
+      <caption>
+        <title>Structure of the catalytic core.</title>
+        <p id="P51"><bold>a</bold>, Front (left panel) and back (right panel) views of the catalytic core. Domains of human TERT and hTR are color-coded as in <xref rid="F1" ref-type="fig">Fig. 1a</xref>. hTR is in semi-transparent space-filling representation, and base-triples within the PK are indicated in blue. <bold>b</bold>, Route of single-stranded RNA connecting hTR P2a.1 and the template, which threads near the TEN domain. <bold>c</bold>, TERT interactions with the substrate-template duplex. Active site residues are shown as blue spheres. The human TERT IFD insertion missing in the <italic>Tribolium</italic> TERT is indicated between helices Î±10 and Î±11 of the <italic>Tribolium</italic> TERT<sup><xref rid="R13" ref-type="bibr">13</xref></sup> (<xref ref-type="fig" rid="F11">Extended Data Fig. 6b</xref>). A dotted line depicts the linker connection of TEN and TRBD domains. <bold>d</bold>, The human TRBD and CTE domains are encircled by hTR P2 (yellow) and PK (orange) and CR4/5 (wheat) domains. <bold>e, f</bold>, Architecture of <italic>Tetrahymena</italic> TERT domains with TER motif colors as indicated<sup><xref rid="R19" ref-type="bibr">19</xref></sup>: PK, orange; template recognition element (TRE), yellow; SL2, dark grey; and SL4, wheat. Base-triples within the PK are indicated in blue. For clarity, domains of TER colored in light grey in <bold>f</bold> are not shown in the structure in <bold>e</bold>. <bold>g</bold>, The <italic>Tetrahymena</italic> TRBD and CTE domains are encircled by t/PK (orange), TRE (yellow), SL2 (grey) and part of SL4 (wheat). Base-triples with the PK are indicated in blue.</p>
+      </caption>
+      <graphic xlink:href="nihms-955740-f0004"/>
+    </fig>
+    <fig id="F5" orientation="portrait" position="float">
+      <label>Figure 5 |</label>
+      <caption>
+        <title>The H/ACA domain and disease mutations.</title>
+        <p id="P52"><bold>a</bold>, Front and back views of the H/ACA lobe within the human telomerase structure, with color-coded subunits: TCAB1, yellow; dyskerin, blue; GAR1, red; NOP10, orange; NHP2, magenta; hTR, black. To distinguish the two sets of the H/ACA proteins, the first set bound to the 5â hairpin (P4 stem) is in lighter shade. <bold>b</bold>, Schematics of subunit arrangements within the H/ACA lobe. <bold>c</bold>, Interactions of TCAB1 with hTR and H/ACA proteins. The backbone amides of disease-associated mutations in dyskerin, NOP10 and NHP2 that mapped near TCAB1 and P8 interaction surfaces are highlighted as spheres. <bold>d</bold>, Mapping of a cluster of disease mutations (backbone amides shown as spheres) in dyskerin near the dyskerin-dyskerin and dyskerin-RNA interfaces.</p>
+      </caption>
+      <graphic xlink:href="nihms-955740-f0005"/>
+    </fig>
+  </floats-group>
+</article>

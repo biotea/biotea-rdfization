@@ -1,0 +1,423 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:dcterms="http://purl.org/dc/terms/"
+    xmlns:xsp="http://www.owl-ontologies.com/2005/08/07/xsp.owl#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:prov="http://www.w3.org/ns/prov#"
+    xmlns:doco="http://purl.org/spar/doco/"
+    xmlns:bibo="http://purl.org/ontology/bibo/"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:foaf="http://xmlns.com/foaf/0.1/"
+    xmlns:void="http://rdfs.org/ns/void#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pmc:3879346">
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:20957085">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Arif1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/20957085"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/20957085"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <owl:sameAs rdf:resource="http://dx.doi.org/10.1371/journal.pone.0084792"/>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:18757552">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Rogalski1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/18757552"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18757552"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:21239622">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Maliga1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/21239622"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21239622"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:23225155">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Gargano1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/23225155"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/23225155"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:20920211">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Atherton1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/20920211"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/20920211"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:doi>10.1371/journal.pone.0084792</bibo:doi>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Walker1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:18922764">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Goremykin1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/18922764"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18922764"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:6496932">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Bookjans1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/6496932"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/6496932"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <dcterms:description>research-article</dcterms:description>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:20924422">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Wolf1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/20924422"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/20924422"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <prov:wasDerivedFrom rdf:resource="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3879346"/>
+    <prov:generatedAtTime>27-09-2016 22:14:53</prov:generatedAtTime>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:24197309">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Ayliffe1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/24197309"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/24197309"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:21933779">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Wu1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/21933779"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21933779"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <dcterms:created>27-09-2016 22:14:53</dcterms:created>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Palmer1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <dcterms:isPartOf>
+      <bibo:Issue rdf:about="http://bio2rdf.org/pmc_resource:journal_issn_1932-6203_issue_1">
+        <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <dcterms:isPartOf>
+          <bibo:Journal rdf:about="http://bio2rdf.org/pmc_resource:journal_issn_1932-6203">
+            <dcterms:publisher>
+              <foaf:Organization rdf:about="http://bio2rdf.org/pmc_resource:publisher_pmc_internal_id_PONE-D-13-38424">
+                <dcterms:identifier>PONE-D-13-38424</dcterms:identifier>
+                <foaf:name>Public Library of Science</foaf:name>
+              </foaf:Organization>
+            </dcterms:publisher>
+            <dcterms:hasPart rdf:resource="http://bio2rdf.org/pmc_resource:journal_issn_1932-6203_issue_1"/>
+            <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/nlmcatalog?term=1932-6203"/>
+            <bibo:issn>1932-6203</bibo:issn>
+            <dcterms:title>PLoS ONE</dcterms:title>
+          </bibo:Journal>
+        </dcterms:isPartOf>
+        <bibo:issue>1</bibo:issue>
+      </bibo:Issue>
+    </dcterms:isPartOf>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:22384027">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Shi1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/22384027"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/22384027"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:9615455">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Ayliffe2"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/9615455"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/9615455"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:1332054">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Wolfe1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/1332054"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/1332054"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Werner1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Alkatib1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <dcterms:license rdf:resource="http://creativecommons.org/licenses/by/4.0/"/>
+    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/24392157"/>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:23361615">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Greiner1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/23361615"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/23361615"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <dcterms:identifier>doi:10.1371/journal.pone.0084792</dcterms:identifier>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:20651328">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Lin1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/20651328"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/20651328"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:Book rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Kubis1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+      </bibo:Book>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Bock1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+      </bibo:Document>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:22034627">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-RousseauGueutin1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/22034627"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/22034627"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Clarke1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:14735123">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Timmis1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/14735123"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/14735123"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:15865976">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Jansen2"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/15865976"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/15865976"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:18048330">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Jansen1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/18048330"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18048330"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:23538991">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Yi1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/23538991"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/23538991"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <rdf:type rdf:resource="http://purl.org/ontology/bibo/Document"/>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:21535359">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Rogalski2"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/21535359"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/21535359"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:20176954">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Moore2"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/20176954"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/20176954"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:18753151">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Cronn1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/18753151"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18753151"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <prov:wasAttributedTo rdf:resource="http://bio2rdf.org/agent/biotea_serializer/"/>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Mastroberti1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:15532064">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Yamamoto1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/15532064"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/15532064"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:17383970">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Wu2"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/17383970"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/17383970"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:authorList>
+      <rdf:Seq rdf:about="http://bio2rdf.org/pmc_resource:3879346_listOfAuthors_list1">
+        <rdf:li>
+          <foaf:Person rdf:about="http://bio2rdf.org/pmc_resource:3879346_person_name_LNVieira">
+            <foaf:publications rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+            <foaf:familyName>Vieira</foaf:familyName>
+            <foaf:givenName>Leila do Nascimento</foaf:givenName>
+            <foaf:name>Leila do Nascimento Vieira</foaf:name>
+          </foaf:Person>
+        </rdf:li>
+        <rdf:li>
+          <foaf:Person rdf:about="http://bio2rdf.org/pmc_resource:3879346_person_name_HFaoro">
+            <foaf:publications rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+            <foaf:familyName>Faoro</foaf:familyName>
+            <foaf:givenName>Helisson</foaf:givenName>
+            <foaf:name>Helisson Faoro</foaf:name>
+          </foaf:Person>
+        </rdf:li>
+        <rdf:li>
+          <foaf:Person rdf:about="http://bio2rdf.org/pmc_resource:3879346_person_name_HPFFraga">
+            <foaf:publications rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+            <foaf:familyName>Fraga</foaf:familyName>
+            <foaf:givenName>Hugo Pacheco de Freitas</foaf:givenName>
+            <foaf:name>Hugo Pacheco de Freitas Fraga</foaf:name>
+          </foaf:Person>
+        </rdf:li>
+        <rdf:li>
+          <foaf:Person rdf:about="http://bio2rdf.org/pmc_resource:3879346_person_name_MRogalski">
+            <foaf:publications rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+            <foaf:familyName>Rogalski</foaf:familyName>
+            <foaf:givenName>Marcelo</foaf:givenName>
+            <foaf:name>Marcelo Rogalski</foaf:name>
+          </foaf:Person>
+        </rdf:li>
+        <rdf:li>
+          <foaf:Person rdf:about="http://bio2rdf.org/pmc_resource:3879346_person_name_EMde-Souza">
+            <foaf:publications rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+            <foaf:familyName>de Souza</foaf:familyName>
+            <foaf:givenName>Emanuel Maltempi</foaf:givenName>
+            <foaf:name>Emanuel Maltempi de Souza</foaf:name>
+          </foaf:Person>
+        </rdf:li>
+        <rdf:li>
+          <foaf:Person rdf:about="http://bio2rdf.org/pmc_resource:3879346_person_name_Fde-Oliveira-Pedrosa">
+            <foaf:publications rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+            <foaf:familyName>de Oliveira Pedrosa</foaf:familyName>
+            <foaf:givenName>Fabio</foaf:givenName>
+            <foaf:name>Fabio de Oliveira Pedrosa</foaf:name>
+          </foaf:Person>
+        </rdf:li>
+        <rdf:li>
+          <foaf:Person rdf:about="http://bio2rdf.org/pmc_resource:3879346_person_name_RONodari">
+            <foaf:publications rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+            <foaf:familyName>Nodari</foaf:familyName>
+            <foaf:givenName>Rubens Onofre</foaf:givenName>
+            <foaf:name>Rubens Onofre Nodari</foaf:name>
+          </foaf:Person>
+        </rdf:li>
+        <rdf:li>
+          <foaf:Person rdf:about="http://bio2rdf.org/pmc_resource:3879346_person_name_MPGuerra">
+            <foaf:publications rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+            <foaf:familyName>Guerra</foaf:familyName>
+            <foaf:givenName>Miguel Pedro</foaf:givenName>
+            <foaf:name>Miguel Pedro Guerra</foaf:name>
+          </foaf:Person>
+        </rdf:li>
+      </rdf:Seq>
+    </bibo:authorList>
+    <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3879346"/>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:18665252">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Diekmann1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/18665252"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18665252"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <dcterms:issued>2014</dcterms:issued>
+    <bibo:volume>9</bibo:volume>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:7937893">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Wakasugi1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/7937893"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/7937893"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <dcterms:identifier>pmc:3879346</dcterms:identifier>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:16151190">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Chumley1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/16151190"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/16151190"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <dcterms:identifier>pmid:24392157</dcterms:identifier>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:8905231">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Kaneko1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/8905231"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/8905231"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <dcterms:publisher rdf:resource="http://bio2rdf.org/pmc_resource:publisher_pmc_internal_id_PONE-D-13-38424"/>
+    <bibo:pmid>24392157</bibo:pmid>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:18570682">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Hirao1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/18570682"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18570682"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Keeling1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <bibo:abstract>Background: Performing chloroplast DNA (cpDNA) isolation is considered a major challenge among different plant groups, especially conifers. Isolating chloroplasts in conifers by such conventional methods as sucrose gradient and high salt has not been successful. So far, plastid genome sequencing protocols for conifer species have been based mainly on long-range PCR, which is known to be time-consuming and difficult to implement. Methodology/Principal Findings: We developed a protocol for cpDNA isolation using three different conifer families: Araucaria angustifolia and Araucaria bidwilli (Araucariaceae), Podocarpus lambertii (Podocarpaceae) and Pinus patula (Pinaceae). The present protocol is based on high salt isolation buffer followed by saline Percoll gradient. Combining these two strategies allowed enhanced chloroplast isolation, along with decreased contamination caused by polysaccharides, polyphenols, proteins, and nuclear DNA in cpDNA. Microscopy images confirmed the presence of intact chloroplasts in high abundance. This method was applied to cpDNA isolation and subsequent sequencing by Illumina MiSeq (2X250 bp), using only 50 ng of cpDNA. Reference-guided chloroplast genome mapping showed that high average coverage was achieved for all evaluated species: 24.63 for A. angustifolia, 135.97 for A. bidwilli, 1196.10 for P. lambertii, and 64.68 for P. patula. Conclusion: Results show that this improved protocol is suitable for enhanced quality and yield of chloroplasts and cpDNA isolation from conifers, providing a useful tool for studies that require isolated chloroplasts and/or whole cpDNA sequences. </bibo:abstract>
+    <dcterms:title>An Improved Protocol for Intact Chloroplasts and cpDNA Isolation in Conifers</dcterms:title>
+    <void:inDataset rdf:resource="http://bio2rdf.org/bio2rdf_dataset:bio2rdf-pmc-vr3"/>
+    <bibo:cites>
+      <bibo:Document rdf:about="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-He1">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+      </bibo:Document>
+    </bibo:cites>
+    <bibo:cites>
+      <bibo:AcademicArticle rdf:about="http://bio2rdf.org/pubmed:18048334">
+        <bibo:citedBy rdf:resource="http://bio2rdf.org/pmc:3879346"/>
+        <owl:sameAs rdf:resource="http://bio2rdf.org/pmc_resource:3879346_reference_pone.0084792-Moore1"/>
+        <owl:sameAs rdf:resource="http://identifiers.org/pubmed/18048334"/>
+        <rdfs:seeAlso rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/18048334"/>
+      </bibo:AcademicArticle>
+    </bibo:cites>
+    <dcterms:creator rdf:resource="http://bio2rdf.org/agent/biotea_serializer/"/>
+  </bibo:AcademicArticle>
+</rdf:RDF>
