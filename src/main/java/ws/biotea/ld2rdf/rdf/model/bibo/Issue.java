@@ -8,6 +8,7 @@ import org.ontoware.rdf2go.exception.ModelRuntimeException;
 import org.ontoware.rdf2go.model.Model;
 import org.ontoware.rdf2go.model.Statement;
 import org.ontoware.rdf2go.model.node.BlankNode;
+import org.ontoware.rdf2go.model.node.Node;
 import org.ontoware.rdf2go.model.node.URI;
 import org.ontoware.rdf2go.model.node.impl.URIImpl;
 import org.ontoware.rdfreactor.runtime.Base;
@@ -497,5 +498,14 @@ public class Issue extends CollectedDocument {
 	    model.addStatement(stm); //journal hasPart issue
 	    Statement inv = model.createStatement(doc.asResource(), DCTERMS_IS_PART_OF, this.asResource());
 	    model.addStatement(inv); //section isPartOf document
+	}
+	
+	public String getOneBiboIssue() {
+		ClosableIterator<String> itr = Base.getAll(this.model, this.getResource(), ISSUE, String.class);
+		if (itr.hasNext()) {
+			return itr.next();
+		} else {
+			return null;
+		}
 	}
  }

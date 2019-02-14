@@ -271,6 +271,10 @@ public class Thing extends org.ontoware.rdfreactor.schema.rdfs.Class {
 	public Thing ( Model model, BlankNode bnode, boolean write ) {
 		super(model, RDFS_CLASS, bnode, write);
 	}
+	
+	public Thing ( Model model, String clazz, BlankNode bnode, boolean write) throws ModelRuntimeException {
+		super(model, new URIImpl(clazz, false), bnode, write);
+	}
 
 	/**
 	 * Returns a Java wrapper over an RDF object, identified by 
@@ -7052,8 +7056,14 @@ public class Thing extends org.ontoware.rdfreactor.schema.rdfs.Class {
 	 *
 	 * [Generated from RDFReactor template rule #add1dynamic] 
      */
+	private String biboIssued;
 	public void addbiboIssued( org.ontoware.rdf2go.model.node.Node value) {
 		Base.add(this.model, this.getResource(), ISSUED, value);
+		this.biboIssued = value.toString();
+	}
+	
+	public String getBiboIssued() {
+		return this.biboIssued;
 	}
     /**
      * Adds a value to property Issued from an instance of Thing 

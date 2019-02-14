@@ -78,6 +78,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 			    model.addStatement(document.asResource(), Thing.RDF_TYPE, ArticleType.valueOf(type).getBiboTypeURI()); //rdf:type
 			}
 			document.addDCDescription(model, this.articleType);
+			document.addDCVersion(model, ResourceConfig.getBioteaVersion(suffix));
 			
 			//TODO Read an existing document (do we really need to do this? Not so far...)
 			//model.readFrom(new FileReader(file));
@@ -276,7 +277,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		    document.addSeeAlso(resPubMed);		    
 		}
 		
-		//doi
+		//doi 
 		if (doi != null) {
 		    document.addDOI(model, doi);
 		    document.addIdentifier(model, "doi:" + doi);
@@ -290,7 +291,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 		try {
 			String license = article.getFront().getArticleMeta().getPermissions().getLicenses().get(0).getHref();
 			document.addDCLicense(model, license);
-		} catch (Exception e) {}		
+		} catch (Exception e) {	}		
 	    
 	    //Journal
 		JournalE journal = null;
@@ -354,6 +355,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
         				String issueURI = Conversion.replaceParameter(this.global.BASE_URL_ISSUE, params);
             			issue = new ws.biotea.ld2rdf.rdf.model.bibo.Issue(model, issueURI + issueNumberInURI, true);    		
         			}
+        			journal.addIssueAsIt(issue);
         			journal.addIssue(model, issue);
         			issue.addDocument(model, document);
         		} else {
@@ -362,6 +364,7 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
     		}
     	} catch (Exception e) {	
     		journal.addDocument(model, document);
+    		document.addJournalAsIt(journal);
     	}
     	
 		//Publisher
@@ -377,17 +380,21 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
 				}
 			} catch (Exception eId) {}
 			OrganizationE publisher;
-			if (publisherPMCId != null) {//we create the publisher with the id
-				publisher = new OrganizationE(model, this.global.BASE_URL_PUBLISHER_ID + publisherPMCId, true ); 
+			if (publisherPMCId != null) {//we create the publisher with the id				
+				publisher = new OrganizationE(model, this.global.BASE_URL_PUBLISHER_ID + publisherPMCId, true );
+				publisher.setIdInUri(publisherPMCId);
 				publisher.addName(model, publisherName);
 				PlainLiteral id = model.createPlainLiteral(publisherPMCId);					    
 			    model.addStatement(publisher.asResource(), Document.DCTERMS_IDENTIFIER, id); //id
-			} else {//we create the publisher with the name
-				publisher = new OrganizationE(model, this.global.BASE_URL_PUBLISHER_NAME + publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-"), true ); 
+			} else {//we create the publisher with the name				
+				String idInUri = publisherName.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
+				publisher = new OrganizationE(model, this.global.BASE_URL_PUBLISHER_NAME + idInUri, true );
+				publisher.setIdInUri(idInUri);
 				publisher.addName(model, publisherName);							
 			}
 			journal.addbiboPublisher(publisher);
 		    document.addbiboPublisher(publisher); 
+		    document.addPublisherAsIt(publisher);
 	    } catch (Exception e) {}
 	    
 	    //publication dates

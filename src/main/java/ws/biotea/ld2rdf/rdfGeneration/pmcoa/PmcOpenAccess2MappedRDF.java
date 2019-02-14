@@ -71,6 +71,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 				document = new Thing(model, MappingConfig.getClass(this.bioteaBase, "bibo", ArticleType.valueOf(type).getBiboType()), basePaper, true);
 			}
 			this.addDatatypeLiteral(model, document, "dcterms", "description", this.articleType);
+			this.addDatatypeLiteral(model, document, "dcterms", "description", ResourceConfig.getBioteaVersion(suffix));
 			
 			this.processBasic(model, document, paper.getName());
 			logger.info("=== basic processed");
@@ -311,7 +312,7 @@ public class PmcOpenAccess2MappedRDF extends PmcOpenAccess2AbstractRDF {
 					}
 				}
 			} catch (Exception eId) {}
-			Thing publisher;
+			Thing publisher = null;
 			if (publisherPMCId != null) {//we create the publisher with the id
 				publisher = new Thing(model, MappingConfig.getClass(this.bioteaBase, "foaf", "Organization"), this.global.BASE_URL_PUBLISHER_ID + publisherPMCId, true );
 				this.addDatatypeLiteral(model, publisher, "foaf", "name", publisherName);

@@ -12,7 +12,11 @@ import org.ontoware.rdf2go.model.node.URI;
 import org.ontoware.rdf2go.model.node.impl.URIImpl;
 
 import ws.biotea.ld2rdf.rdf.model.bibo.Document;
+import ws.biotea.ld2rdf.rdf.model.bibo.Issue;
 import ws.biotea.ld2rdf.rdf.model.bibo.Thing;
+import ws.biotea.ld2rdf.rdf.model.bibo.extension.JournalE;
+import ws.biotea.ld2rdf.rdf.model.bibo.extension.OrganizationE;
+import ws.biotea.ld2rdf.rdfGeneration.RDFHandler;
 import ws.biotea.ld2rdf.rdfGeneration.jats.GlobalArticleConfig;
 import ws.biotea.ld2rdf.util.Conversion;
 import ws.biotea.ld2rdf.util.HtmlUtil;
@@ -29,6 +33,7 @@ public class Biotea2Mapping {
 	private String pubmedID;
 	private String doi;
 	private String bioteaDataset;
+	private String useAsSuffix;
 	
 	private GlobalArticleConfig global;
 	private int nodeCounter;
@@ -41,6 +46,7 @@ public class Biotea2Mapping {
 		this.doi = doi;
 		
 		this.bioteaBase = ResourceConfig.getConfigBase(this.mapping); //TODO: will be empty for schema.org
+		this.useAsSuffix = this.bioteaBase.length() == 0 ? this.mapping : this.bioteaBase;
 		this.bioteaDataset = ResourceConfig.getConfigDataset(this.mapping);
 		
 		this.global = new GlobalArticleConfig(bioteaBase, pmcID);
@@ -52,21 +58,20 @@ public class Biotea2Mapping {
 		
 		Thing mapDocument;
 		String basePaper = GlobalArticleConfig.getArticleRdfUri(this.bioteaBase, this.pmcID);
-		String useAsBase = this.bioteaBase;
 		if (this.bioteaBase.length() == 0) {
 			basePaper = ResourceConfig.getDOIURL() + this.doi;
-			useAsBase = this.mapping;
 		}
 		
-		mapDocument = new Thing(mapModel, MappingConfig.getClass(useAsBase, "bibo", "Document"), basePaper, true);
+		mapDocument = new Thing(mapModel, MappingConfig.getClass(this.useAsSuffix, "bibo", "Document"), basePaper, true);
 		
 		String type = this.articleType.replace('-', '_').toUpperCase();
 		if (ArticleType.valueOf(type).getBiboType() != null) {
-			mapDocument = new Thing(mapModel, MappingConfig.getClass(useAsBase, "bibo", ArticleType.valueOf(type).getBiboType()), basePaper, true);
+			mapDocument = new Thing(mapModel, MappingConfig.getClass(this.useAsSuffix, "bibo", ArticleType.valueOf(type).getBiboType()), basePaper, true);
 		}
 		
 		this.addDatatypeLiteral(mapModel, mapDocument, "dcterms", "description", this.articleType);
-		//TODO: version and on the others too!!!
+		this.addDatatypeLiteral(mapModel, mapDocument, "dcterms", "version", ResourceConfig.getBioteaVersion(this.mapping));
+		
 		mapBasic(artDocument, artModel, mapDocument, mapModel);
 		//mapAuthors();
 		//mapAbstractAndKeywords();
@@ -80,16 +85,14 @@ public class Biotea2Mapping {
 	}
 	
 	private Model createAndOpenModel() {
-		String useAsBase = this.bioteaBase;
 		boolean additional = true;
 		if (this.bioteaBase.length() == 0) {
-			useAsBase = this.mapping;
 			additional = false;
 		}
 		
 		Model myModel = RDF2Go.getModelFactory().createModel();
 		myModel.open();	
-		for (Namespace namespace: MappingConfig.getAllNamespaces(useAsBase, additional)) {
+		for (Namespace namespace: MappingConfig.getAllNamespaces(this.useAsSuffix, additional)) {
 			myModel.setNamespace(namespace.getNamespace(), namespace.getUrl());
 		}
 		
@@ -106,28 +109,41 @@ public class Biotea2Mapping {
 	 * @param dtpName
 	 * @param literal
 	 */
-	protected void addDatatypeLiteral(Model mapModel, org.ontoware.rdfreactor.schema.rdfs.Class mapDocument, String namespace, String dtpName, String literal) {
-		String useAsBase = this.bioteaBase; 
-		if (this.bioteaBase.length() == 0) {
-			useAsBase = this.mapping;
+	private void addDatatypeLiteral(Model mapModel, org.ontoware.rdfreactor.schema.rdfs.Class mapDocument, String namespace, String dtpName, String literal, boolean isOP) {
+		if (literal == null) {
+			return ;
 		}
+				
 		if ((literal != null) && (literal.length() != 0)) {
-			DatatypeProperty dtp = MappingConfig.getDatatypeProperty(useAsBase, namespace, dtpName);
-			if (dtp != null) {
-				PlainLiteral descAsLiteral = mapModel.createPlainLiteral(literal);
-				if (dtp.isReified()) {
-					String nodeURL = global.BASE_URL_OTHER + namespace + "_" + dtpName + "_node" + (++nodeCounter) + "_" + Calendar.getInstance().getTimeInMillis(); 
-					Thing node = new Thing(mapModel, dtp.getClassName(), nodeURL, true );
-					URI uri = new URIImpl(dtp.getOpName(), false);
-					mapModel.addStatement(mapDocument.asResource(), uri, node.asResource());
-					Statement stm = mapModel.createStatement(node.asResource(), new URIImpl(dtp.getDtpName(), false), descAsLiteral);
-				    mapModel.addStatement(stm);
-				} else {
-					Statement stm = mapModel.createStatement(mapDocument.asResource(), new URIImpl(dtp.getDtpName(), false), descAsLiteral);
-				    mapModel.addStatement(stm);
-				}				
+			PlainLiteral descAsLiteral = mapModel.createPlainLiteral(literal);
+			DatatypeProperty dtp = null; 
+			String propertyName = null;
+			
+			if (isOP) {
+				propertyName = MappingConfig.getObjectProperty(this.useAsSuffix, namespace, dtpName);
+			} else {
+				dtp = MappingConfig.getDatatypeProperty(this.useAsSuffix, namespace, dtpName);
+				propertyName = dtp != null ? dtp.getDtpName() : null;
+			}
+
+			if ((dtp != null) && dtp.isReified()) {
+				String nodeURL = global.BASE_URL_OTHER + namespace + "_" + dtpName + "_node" + (++nodeCounter) + "_" + Calendar.getInstance().getTimeInMillis(); 
+				Thing node = new Thing(mapModel, dtp.getClassName(), nodeURL, true );
+				URI uri = new URIImpl(dtp.getOpName(), false);
+				mapModel.addStatement(mapDocument.asResource(), uri, node.asResource());
+				Statement stm = mapModel.createStatement(node.asResource(), new URIImpl(dtp.getDtpName(), false), descAsLiteral);
+			    mapModel.addStatement(stm); 				
+			}
+			
+			if (propertyName != null) {
+				Statement stm = mapModel.createStatement(mapDocument.asResource(), new URIImpl(propertyName, false), descAsLiteral);
+			    mapModel.addStatement(stm);
 			}
 		}		
+	}
+	
+	private void addDatatypeLiteral(Model mapModel, org.ontoware.rdfreactor.schema.rdfs.Class mapDocument, String namespace, String dtpName, String literal) {
+		this.addDatatypeLiteral(mapModel, mapDocument, namespace, dtpName, literal, false);
 	}
 	
 	/**
@@ -138,18 +154,34 @@ public class Biotea2Mapping {
 	 * @param namespace
 	 * @param opName
 	 */
-	protected void addObjectProperty(Model mapModel, org.ontoware.rdfreactor.schema.rdfs.Class from, String to, String namespace, String opName) {
+	private void addObjectProperty(Model mapModel, org.ontoware.rdfreactor.schema.rdfs.Class from, String to, String namespace, String opName) {
+		//TODO: is this always right?
 		if (this.bioteaBase.length() == 0) {
-			this.addDatatypeLiteral(mapModel, from, namespace, opName, to);
+			this.addDatatypeLiteral(mapModel, from, namespace, opName, to, true);
 			return;
 		}
 		
 		Node uriNodeTo = mapModel.createURI(to);
-		String str = MappingConfig.getObjectProperty(this.bioteaBase, namespace, opName);
+		String str = MappingConfig.getObjectProperty(this.useAsSuffix, namespace, opName);
 		if (str != null) {
 			URI uri = new URIImpl(str, false);
 			mapModel.addStatement(from.asResource(), uri, uriNodeTo);
 		}
+	}
+	
+	private  void addObjectProperty(Model mapModel, org.ontoware.rdfreactor.schema.rdfs.Class from, org.ontoware.rdfreactor.schema.rdfs.Class to, String namespace, String opName) {
+		//TODO: check if datatype is needed because bioteaBase can be empty ""
+		
+		String str = MappingConfig.getObjectProperty(this.useAsSuffix, namespace, opName);
+		if (str != null) {
+			URI uri = new URIImpl(str, false);
+			mapModel.addStatement(from.asResource(), uri, to.asResource());
+		}
+	}
+	
+	private void addHasPartIsPartOf(Model model, Thing whole, Thing element) {
+		this.addObjectProperty(model, whole, element, "dcterms", "hasPart");
+		this.addObjectProperty(model, element, whole, "dcterms", "isPartOf");
 	}
 	
 	private void addSeeAlso(Thing mapDocument, Model mapModel, String alsoUri) {
@@ -200,10 +232,10 @@ public class Biotea2Mapping {
 		}
 		
 		this.addDatatypeLiteral(mapModel, mapDocument, "dcterms", "identifier", mainId);
-		if (MappingConfig.getIdentifier(this.bioteaBase) != null) {
+		if (MappingConfig.getIdentifier(this.useAsSuffix) != null) {
 			//main identifier also goes directly to Model
 			PlainLiteral idAsLiteral = mapModel.createPlainLiteral(mainId);
-			Statement stm = mapModel.createStatement(mapDocument.asResource(), new URIImpl(MappingConfig.getIdentifier(this.bioteaBase)), idAsLiteral);
+			Statement stm = mapModel.createStatement(mapDocument.asResource(), new URIImpl(MappingConfig.getIdentifier(this.useAsSuffix)), idAsLiteral);
 		    mapModel.addStatement(stm);		    
 		}
 		
@@ -245,6 +277,80 @@ public class Biotea2Mapping {
 			    }
 			}					    
 		}
+		
+		//license
+		this.addObjectProperty(mapModel, mapDocument, artDocument.getDcLicense(), "dcterms", "license");
+
+		//One journal with one title, one issn, one Issue (one issue number)
+		JournalE journal = artDocument.getOneJournal();
+		String journalTitle = journal.getBiboTitle();
+		String journalTitleInURI = journalTitle.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
+		String issn = journal.getBiboISSN();
+		
+		String journalUri = this.global.BASE_URL_JOURNAL_ISSN + journalTitleInURI;
+		Thing journalRes = this.bioteaBase.length() == 0 
+				? new Thing(mapModel, MappingConfig.getClass(this.useAsSuffix, "bibo", "Journal"), mapModel.createBlankNode(), true)
+				: new Thing(mapModel, MappingConfig.getClass(this.useAsSuffix, "bibo", "Journal"), journalUri, true);
+		this.addDatatypeLiteral(mapModel, journalRes, "dcterms", "title", journalTitle);
+		this.addDatatypeLiteral(mapModel, journalRes, "bibo", "issn", issn);
+		this.addSeeAlso(journalRes, mapModel, GlobalArticleConfig.NLM_JOURNAL_CATALOG + issn);
+		this.addHasPartIsPartOf(mapModel, journalRes, mapDocument);
+		
+		String volumeNumber = artDocument.getBiboVolume();
+		Thing volumeRes = null;
+		if (volumeNumber != null) {
+			if (this.bioteaBase.length() == 0) {
+				volumeRes = new Thing(mapModel, MappingConfig.getClass(this.useAsSuffix, "schema", "Volume"), mapModel.createBlankNode(), true);
+				this.addDatatypeLiteral(mapModel, volumeRes, "bibo", "volume", volumeNumber);
+				this.addHasPartIsPartOf(mapModel, journalRes, volumeRes);
+				this.addHasPartIsPartOf(mapModel, volumeRes, mapDocument);
+			} else {
+				this.addDatatypeLiteral(mapModel, mapDocument, "bibo", "volume", volumeNumber);
+			}
+		}
+
+		Issue issue = journal.getOneIssue();
+		if (issue != null) {
+			String issueNumber = issue.getOneBiboIssue();
+			String issueNumberInURI = issueNumber.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
+			
+			String[] params = {"issn", journalTitleInURI};
+			String issueURI = Conversion.replaceParameter(this.global.BASE_URL_ISSUE, params);
+			Thing issueRes = this.bioteaBase.length() == 0 
+					? new Thing(mapModel, MappingConfig.getClass(this.useAsSuffix, "bibo", "Issue"), mapModel.createBlankNode(), true)
+					: new Thing(mapModel, MappingConfig.getClass(this.useAsSuffix, "bibo", "Issue"), issueURI + issueNumberInURI, true);
+			this.addDatatypeLiteral(mapModel, issueRes, "bibo", "issue", issueNumber);
+			
+			this.addHasPartIsPartOf(mapModel, journalRes, issueRes);
+			this.addHasPartIsPartOf(mapModel, issueRes, mapDocument);
+			
+			if (volumeRes != null) {
+				this.addHasPartIsPartOf(mapModel, volumeRes, issueRes);
+			}
+		}
+		
+		OrganizationE publisher = artDocument.getOnePublisher();
+		if (publisher != null) {
+			String publisheUri = this.global.BASE_URL_PUBLISHER_ID + publisher.getIdInUri();
+			Thing publisherRes = this.bioteaBase.length() == 0 
+					? new Thing(mapModel, MappingConfig.getClass(this.useAsSuffix, "foaf", "Organization"), mapModel.createBlankNode(), true)
+					: new Thing(mapModel, MappingConfig.getClass(this.useAsSuffix, "foaf", "Organization"), publisheUri, true);
+			this.addDatatypeLiteral(mapModel, publisherRes, "foaf", "name", publisher.getName());
+			this.addDatatypeLiteral(mapModel, publisherRes, "dcterms", "identifier", publisher.getIdInUri());
+			this.addObjectProperty(mapModel, journalRes, publisherRes, "dcterms", "publisher");
+			this.addObjectProperty(mapModel, mapDocument, publisherRes, "dcterms", "publisher");
+
+		}
+		
+		this.addDatatypeLiteral(mapModel, mapDocument, "dcterms", "issued", artDocument.getBiboIssued()); 
+		this.addDatatypeLiteral(mapModel, mapDocument, "bibo", "pageStart", artDocument.getBiboPageStart());
+		this.addDatatypeLiteral(mapModel, mapDocument, "bibo", "pageEnd", artDocument.getBiboPageEnd());
+		this.addDatatypeLiteral(mapModel, mapDocument, "dcterms", "title",artDocument.getBiboTitle());
+		
+	}
+	
+	private void mapAuthors(Document artDocument, Model artModel, Thing mapDocument, Model mapModel) {
+		
 	}
 
 }

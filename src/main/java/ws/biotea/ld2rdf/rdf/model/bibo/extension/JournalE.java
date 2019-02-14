@@ -3,6 +3,7 @@
  */
 package ws.biotea.ld2rdf.rdf.model.bibo.extension;
 
+import org.ontoware.aifbcommons.collection.ClosableIterator;
 import org.ontoware.rdf2go.exception.ModelRuntimeException;
 import org.ontoware.rdf2go.model.Model;
 import org.ontoware.rdf2go.model.Statement;
@@ -12,6 +13,7 @@ import org.ontoware.rdf2go.model.node.PlainLiteral;
 import org.ontoware.rdf2go.model.node.URI;
 import org.ontoware.rdf2go.model.node.impl.PlainLiteralImpl;
 import org.ontoware.rdf2go.model.node.impl.URIImpl;
+import org.ontoware.rdfreactor.runtime.Base;
 
 import ws.biotea.ld2rdf.rdf.model.bibo.Issue;
 import ws.biotea.ld2rdf.rdf.model.bibo.Journal;
@@ -22,6 +24,7 @@ import ws.biotea.ld2rdf.rdf.model.bibo.Journal;
  *
  */
 public class JournalE extends Journal {
+	private Issue issue;
 	public static final String BIBO_NS = "http://purl.org/ontology/bibo/";
 	public static final URI BIBO_ISSN = new URIImpl(BIBO_NS + "issn", false);
 	public static final String DCTERMS_NS = "http://purl.org/dc/terms/";
@@ -51,15 +54,35 @@ public class JournalE extends Journal {
 	    model.addStatement(inv); //section isPartOf document
 	}
 	
+	private String biboTitle;
 	public void addTitle(Model model, String title) {
 		Node titleNode = new PlainLiteralImpl(title);
 	    this.addbiboTitle(titleNode);
+	    this.biboTitle = title;
 	}
 	
+	public String getBiboTitle() {
+		return this.biboTitle;
+	}
+	
+	private String biboISSN;
 	public void addISSN(Model model, String issn) {
 		PlainLiteral doiAsLiteral = model.createPlainLiteral(issn);	    
 	    Statement stm = model.createStatement(this.asResource(), BIBO_ISSN, doiAsLiteral);
 	    model.addStatement(stm); //name
+	    this.biboISSN = issn;
 	}
+	
+	public String getBiboISSN() {
+		return this.biboISSN;
+	}
+	
+	public void addIssueAsIt(Issue issue) {
+		this.issue = issue;
+	}
+	
+	public Issue getOneIssue() {
+		return this.issue;
+	}		
 
 }

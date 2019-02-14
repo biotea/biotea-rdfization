@@ -27,5 +27,25 @@ public class OrganizationE extends Organization{
 		PlainLiteral nameAsLiteral = model.createPlainLiteral(name);	    
 	    Statement stm = model.createStatement(this.asResource(), FOAF_NAME, nameAsLiteral);
 	    model.addStatement(stm); //name
+	    this.setName(name);
 	}
+	
+	private String idInUri;
+	public void setIdInUri(String id) {
+		this.idInUri = id;
+	}
+	
+	public String getIdInUri() {
+		return this.idInUri;
+	}
+	
+	private String name;
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 }

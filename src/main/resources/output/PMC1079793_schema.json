@@ -1,15 +1,66 @@
 {
-  "@id" : "http://dx.doi.org/10.1186/1472-6882-5-6",
-  "@type" : [ "schema:CreativeWork", "schema:ScholarlyArticle" ],
-  "alternateName" : [ "pmid:15762997", "doi:10.1186/1472-6882-5-6", "pmc:1079793" ],
-  "isBasedOn" : [ "http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1079793", "http://info.identifiers.org/pubmed/15762997" ],
-  "sameAs" : [ "http://bio2rdf.org/pubmed:15762997", "http://identifiers.org/pubmed/15762997" ],
-  "sdDatePublished" : "13-02-2019 16:56:35",
+  "@graph" : [ {
+    "@id" : "_:b0",
+    "@type" : "schema:Organization",
+    "alternateName" : "1472-6882-5-6",
+    "name" : "BioMed Central"
+  }, {
+    "@id" : "_:b1",
+    "@type" : "schema:PublicationVolume",
+    "hasPart" : "http://dx.doi.org/10.1186/1472-6882-5-6",
+    "isPartOf" : "_:b2",
+    "volumeNumber" : "5"
+  }, {
+    "@id" : "_:b2",
+    "@type" : "schema:CreativeWorkSeries",
+    "hasPart" : [ "_:b1", "http://dx.doi.org/10.1186/1472-6882-5-6" ],
+    "headline" : "BMC Complementary and Alternative Medicine",
+    "isBasedOn" : "http://www.ncbi.nlm.nih.gov/nlmcatalog?term=1472-6882",
+    "issn" : "1472-6882",
+    "publisher" : "_:b0"
+  }, {
+    "@id" : "http://dx.doi.org/10.1186/1472-6882-5-6",
+    "@type" : [ "schema:CreativeWork", "schema:ScholarlyArticle" ],
+    "alternateName" : [ "pmid:15762997", "doi:10.1186/1472-6882-5-6", "pmc:1079793" ],
+    "headline" : "Screening of crude extracts of six medicinal plants used in South-West Nigerian unorthodox medicine for anti-methicillin resistant Staphylococcus aureus activity",
+    "isBasedOn" : [ "http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1079793", "http://info.identifiers.org/pubmed/15762997" ],
+    "isPartOf" : [ "_:b1", "_:b2" ],
+    "schema:isPartOf" : "http:///biotea-dataset:biotea.bioschemas.pmc.201902",
+    "license" : "http://creativecommons.org/licenses/by/2.0",
+    "pageEnd" : "6",
+    "pageStart" : "6",
+    "publisher" : "_:b0",
+    "sameAs" : [ "http://bio2rdf.org/pubmed:15762997", "http://identifiers.org/pubmed/15762997" ],
+    "sdDatePublished" : "14-02-2019 07:43:23",
+    "sdPublisher" : "http://biotea.github.io/agent/biotea_serializer",
+    "version" : "201902"
+  } ],
   "@context" : {
-    "sameAs" : "http://schema.org/sameAs",
     "alternateName" : "http://schema.org/alternateName",
+    "name" : "http://schema.org/name",
+    "sameAs" : "http://schema.org/sameAs",
+    "pageEnd" : "http://schema.org/pageEnd",
     "isBasedOn" : "http://schema.org/isBasedOn",
+    "isPartOf" : {
+      "@id" : "http://schema.org/isPartOf",
+      "@type" : "@id"
+    },
+    "publisher" : {
+      "@id" : "http://schema.org/publisher",
+      "@type" : "@id"
+    },
+    "pageStart" : "http://schema.org/pageStart",
     "sdDatePublished" : "http://schema.org/sdDatePublished",
+    "headline" : "http://schema.org/headline",
+    "version" : "http://schema.org/version",
+    "license" : "http://schema.org/license",
+    "sdPublisher" : "http://schema.org/sdPublisher",
+    "hasPart" : {
+      "@id" : "http://schema.org/hasPart",
+      "@type" : "@id"
+    },
+    "issn" : "http://schema.org/issn",
+    "volumeNumber" : "http://schema.org/volumeNumber",
     "schema" : "http://schema.org/",
     "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
     "xsd" : "http://www.w3.org/2001/XMLSchema#",
