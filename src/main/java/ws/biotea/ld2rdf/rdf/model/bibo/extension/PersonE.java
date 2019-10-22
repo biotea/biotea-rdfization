@@ -13,6 +13,7 @@ import org.ontoware.rdf2go.model.node.URI;
 import org.ontoware.rdf2go.model.node.impl.URIImpl;
 
 import ws.biotea.ld2rdf.rdf.model.bibo.Person;
+import ws.biotea.ld2rdf.util.OntologyPrefix;
 
 
 /**
@@ -20,7 +21,13 @@ import ws.biotea.ld2rdf.rdf.model.bibo.Person;
  *
  */
 public class PersonE extends Person {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6357115085027927513L;
 	public static final String FOAF_NS = "http://xmlns.com/foaf/0.1/";
+	public static final String WIKIDATA_NS = OntologyPrefix.WIKI_DATA.getURL();
+	public static final URI WIKIDATA_ORCID = new URIImpl(WIKIDATA_NS + "P496", false);
 	public static final URI FOAF_NAME = new URIImpl(FOAF_NS + "name", false);
 	public static final URI FOAF_FAMILYNAME = new URIImpl(FOAF_NS + "familyName", false);
 	public static final URI FOAF_GIVENNAME = new URIImpl(FOAF_NS + "givenName", false);
@@ -57,6 +64,12 @@ public class PersonE extends Person {
 	    model.addStatement(stm); //name
 	}
 	
+	public void addOrcid(Model model, String orcid){
+		PlainLiteral orcidAsLiteral = model.createPlainLiteral(orcid);
+		Statement stm = model.createStatement(this.asResource(), WIKIDATA_ORCID, orcidAsLiteral);
+	    model.addStatement(stm); //orcid
+	}
+	
 	public void addOnlineAccount( Model model, String account, String nodeUrl) {
 		//BlankNode bnode = model.createBlankNode();
 		Resource res = new URIImpl(nodeUrl, false);
@@ -76,4 +89,6 @@ public class PersonE extends Person {
 		Statement stm = model.createStatement(this.asResource(), FOAF_PROP_PUBLICATIONS, new URIImpl(publicationLink, false));
 		model.addStatement(stm);
 	}
+	
+	
 }

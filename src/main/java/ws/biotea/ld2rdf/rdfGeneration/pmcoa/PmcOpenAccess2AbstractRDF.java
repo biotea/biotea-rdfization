@@ -22,6 +22,7 @@ import ws.biotea.ld2rdf.rdfGeneration.exception.ArticleTypeException;
 import ws.biotea.ld2rdf.rdfGeneration.exception.DTDException;
 import ws.biotea.ld2rdf.rdfGeneration.exception.PMCIdException;
 import ws.biotea.ld2rdf.rdfGeneration.jats.GlobalArticleConfig;
+import ws.biotea.ld2rdf.rdfGeneration.orcid.OrcidServiceImpl;
 import ws.biotea.ld2rdf.util.Conversion;
 import ws.biotea.ld2rdf.util.ResourceConfig;
 import ws.biotea.ld2rdf.util.mapping.DatatypeProperty;
@@ -35,6 +36,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
 import java.util.Calendar;
 import java.util.List;
 
@@ -105,11 +107,11 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 		//url
 		this.pubmedID = null; this.doi = null;
 		for(pubmed.openAccess.jaxb.generated.ArticleId id: article.getFront().getArticleMeta().getArticleIds()) {
-			if (id.getPubIdType().equals("pmid")) {
+			if ("pmid".equals(id.getPubIdType())) {
 				this.pubmedID = id.getContent();
-			} else if (id.getPubIdType().equals("doi")) {
+			} else if ("doi".equals(id.getPubIdType())) {
 				this.doi = id.getContent();						
-			} else if (id.getPubIdType().equals("pmc") || id.getPubIdType().equals("pmcid")) {
+			} else if ("pmc".equals(id.getPubIdType()) || "pmcid".equals(id.getPubIdType())) {
 				this.pmcID = id.getContent();
 			}				
 		}
@@ -287,18 +289,30 @@ public abstract class PmcOpenAccess2AbstractRDF implements Publication2RDF {
 		} catch (Exception e) {}
 		String surname = name.getSurname().getContent().get(0).toString();
 		String idPerson = givenNames.replaceAll(NON_INITIAL, "") + surname;
-		idPerson = idPerson.replaceAll(RDFHandler.CHAR_NOT_ALLOWED, "-");
+		try {
+			idPerson = URLEncoder.encode(idPerson, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			logger.warn("Error encoding person id as url.", e);
+		}
+		String orcid = OrcidServiceImpl.getInstance().getOrcid(this.doi, givenNames, surname);
+		
 		if (asThing) {
 			Thing person = new Thing(model, MappingConfig.getClass(this.bioteaBase, "foaf", "Person"), personBaseURL + idPerson, true);
 			this.addDatatypeLiteral(model, person, "foaf", "name", givenNames + " " + surname);
 			this.addDatatypeLiteral(model, person, "foaf", "givenName", givenNames);
 			this.addDatatypeLiteral(model, person, "foaf", "familyName", surname);
+			if(orcid != null){
+				this.addDatatypeLiteral(model, person, "wd", "P496", orcid);
+			}
 		    return person;
 		} else {
 			PersonE person = new PersonE(model, personBaseURL + idPerson, true);
 		    person.addName(model, givenNames + " " + surname);
 		    person.addGivenName(model, givenNames);
 		    person.addFamilyName(model, surname);
+		    if(orcid != null){
+		    	person.addOrcid(model, orcid);
+		    }
 		    return person;
 		}
 	}

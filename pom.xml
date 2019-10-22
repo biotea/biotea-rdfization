@@ -6,10 +6,10 @@
 	<groupId>ws.biotea</groupId>
 	<artifactId>biotea_rdfization</artifactId>
 	<version>1.0</version>
-	
+
 	<!-- Output to jar format -->
-	<packaging>war</packaging>
-	
+	<packaging>jar</packaging>
+
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
@@ -18,101 +18,95 @@
 
 	<repositories>
 		<repository>
-		    <id>biotea-repo</id>
-		    <name>biotea internal repository</name>
-		    <url>file://${project.basedir}/lib</url>
+			<id>biotea-repo</id>
+			<name>biotea internal repository</name>
+			<url>file://${project.basedir}/lib</url>
 		</repository>
 	</repositories>
-	
+
 	<properties>
 		<java.version>1.8</java.version>
+		<start-class>ws.biotea.ld2rdf.rdfGeneration.batch.PMCOABatchApplication</start-class>
 	</properties>
 
-	<dependencies>		
-		<!--dependency>
-		    <groupId>biotea</groupId>
-		    <artifactId>biotea_utilities</artifactId>
-		    <version>1.0</version>
-		    <exclusions>
-				<exclusion>
-					<groupId>log4j</groupId>
-					<artifactId>log4j</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>junit</groupId>
-					<artifactId>junit</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency-->
-		
+	<dependencies>
+		<!--dependency> <groupId>biotea</groupId> <artifactId>biotea_utilities</artifactId> 
+			<version>1.0</version> <exclusions> <exclusion> <groupId>log4j</groupId> 
+			<artifactId>log4j</artifactId> </exclusion> <exclusion> <groupId>junit</groupId> 
+			<artifactId>junit</artifactId> </exclusion> </exclusions> </dependency -->
+		<dependency>
+			<groupId>biotea</groupId>
+			<artifactId>biotea_utilities</artifactId>
+			<version>1.0</version>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.jena</groupId>
 			<artifactId>apache-jena-libs</artifactId>
 			<type>pom</type>
-			<version>3.1.0</version>			
-		</dependency>	
-		
-		<dependency>
-		    <groupId>org.apache.jena</groupId>
-		    <artifactId>jena</artifactId>
-		    <version>3.1.0</version>
-		    <type>pom</type>
+			<version>3.1.0</version>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>edu_stanford_protege</groupId>
-		    <artifactId>protege_owl</artifactId>
-		    <version>05_08_2009</version>
-		</dependency>		
-		
+			<groupId>org.apache.jena</groupId>
+			<artifactId>jena</artifactId>
+			<version>3.1.0</version>
+			<type>pom</type>
+		</dependency>
+
+		<dependency>
+			<groupId>edu_stanford_protege</groupId>
+			<artifactId>protege_owl</artifactId>
+			<version>05_08_2009</version>
+		</dependency>
+
 		<dependency>
 			<groupId>edu.stanford.protege</groupId>
 			<artifactId>protege</artifactId>
 			<version>3.5.1</version>
 		</dependency>
-				
-        <dependency>
-            <groupId>org.semweb4j</groupId>
-            <artifactId>rdfreactor.runtime</artifactId>
-            <version>5.0.0</version>
-        </dependency>
-        
-        <dependency>
-            <groupId>org.semweb4j</groupId>
-            <artifactId>rdf2go.impl.jena</artifactId>
-            <version>5.0.0</version>
-        </dependency>			
-				
+
 		<dependency>
-		    <groupId>org.jdom</groupId>
-		    <artifactId>jdom</artifactId>
-		    <version>1.1</version>
+			<groupId>org.semweb4j</groupId>
+			<artifactId>rdfreactor.runtime</artifactId>
+			<version>5.0.0</version>
 		</dependency>
-						
+
+		<dependency>
+			<groupId>org.semweb4j</groupId>
+			<artifactId>rdf2go.impl.jena</artifactId>
+			<version>5.0.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jdom</groupId>
+			<artifactId>jdom</artifactId>
+			<version>1.1</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>	
+			<artifactId>spring-boot-starter-web</artifactId>
 			<exclusions>
-	            <exclusion>
-	                <groupId>org.springframework.boot</groupId>
-	                <artifactId>spring-boot-starter-logging</artifactId>
-	            </exclusion>
-	        </exclusions>		
-		</dependency>				
-		
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 		</dependency>
-				
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			</dependency>
-		
+		</dependency>
+
 	</dependencies>
-	
-	
+
+
 	<build>
 		<plugins>
 			<plugin>

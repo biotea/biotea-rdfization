@@ -364,9 +364,9 @@ public class PmcOpenAccess2RDF extends PmcOpenAccess2AbstractRDF {
     		}
     	} catch (Exception e) {	
     		journal.addDocument(model, document);
-    		document.addJournalAsIt(journal);
+    		//document.addJournalAsIt(journal);
     	}
-    	
+    	document.addJournalAsIt(journal);
 		//Publisher
 		try {
 			String publisherName = article.getFront().getJournalMeta().getPublisher().getPublisherName().getContent().get(0).toString();

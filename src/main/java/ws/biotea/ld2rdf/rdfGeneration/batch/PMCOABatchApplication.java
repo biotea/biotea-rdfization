@@ -95,7 +95,7 @@ public class PMCOABatchApplication {
 			System.out.println(usage);
 			System.exit(0);
 		}
-		PropertyConfigurator.configure("log4j.properties");					
+		PropertyConfigurator.configure(PMCOABatchApplication.class.getResourceAsStream("/log4j.properties"));
 		
 		int initPool = 10, maxPool = 10, keepAlive = 300;
 		String inputDir = null, outputDir = null;
@@ -154,10 +154,17 @@ public class PMCOABatchApplication {
 				for (String suffix: configOptions) {
 					String bioteaBase = ResourceConfig.getConfigBase(suffix);
 					String bioteaDataset = ResourceConfig.getConfigDataset(suffix);
-					boolean useBio2RDF = ResourceConfig.getUseBio2RDF(bioteaBase);								
+					boolean useBio2RDF = ResourceConfig.getUseBio2RDF(bioteaBase);
+					/* If sections param is not specified in the command line, take it from config file */
+					if(!sections){
+						sections = ResourceConfig.getConfigSections(suffix);
+					}
+					/* If references param is not specified in the command line, take it from config file */
+					if(!references){
+						references = ResourceConfig.getConfigReferences(suffix);
+					}
 					handler.rdfizeDirectory(inputDir, outputDir, bioteaBase, bioteaDataset, 
-						ResourceConfig.getConfigSections(suffix), ResourceConfig.getConfigReferences(suffix), 
-						suffix, useBio2RDF, limit, format
+						sections, references, suffix, useBio2RDF, limit, format
 					);
 				}
 			}
